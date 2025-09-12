@@ -15,78 +15,265 @@ This comprehensive document outlines the essential prerequisites and requirement
 
 The document serves as a pre-implementation checklist to ensure all necessary components, configurations, and dependencies are in place before deploying Securaa's security platform suite.
 
-## 🔧 Key Components Covered
+## 🌟 Securaa Platform Overview
 
-### 1. **System Requirements**
+Securaa brings together the benefits of a mature threat intelligence platform (TIP), proactive cyber security asset management (CSAM), and reliable security orchestration, automation, and response (SOAR) under a single umbrella.
 
-#### Hardware Specifications
-- **CPU:** Minimum 16 cores, Recommended 32+ cores for production
-- **Memory:** Minimum 64GB RAM, Recommended 128GB+ for optimal performance
-- **Storage:** 
-  - Primary: 1TB+ NVMe SSD for application and database
-  - Secondary: 5TB+ for data retention and backups
-  - Network: 10Gbps+ network interfaces with redundancy
+**Key Benefits:**
+- **Threat Intelligence feeds** for SOC teams to be predictive while enabling effective management of protective and detective security controls
+- **Unified compliance posture** across assets to proactively manage the organization's vulnerability posture and security controls coverage gaps
+- **Out of box API integrations** and pre-configured playbooks to improve SOC's ability to shrink the triage and response time
 
-#### Operating System Compatibility
-```yaml
-supported_os:
-  linux:
-    - "Ubuntu 20.04 LTS"
-    - "Ubuntu 22.04 LTS"
-    - "CentOS 8/9"
-    - "RHEL 8/9"
-    - "SUSE Linux Enterprise 15"
-  
-  virtualization:
-    - "VMware vSphere 7.0+"
-    - "Hyper-V 2019/2022"
-    - "KVM/QEMU"
-    - "Citrix XenServer"
-  
-  containers:
-    - "Docker 20.10+"
-    - "Kubernetes 1.20+"
-    - "OpenShift 4.8+"
-```
+## 🏗️ Product Components
 
-#### Network Configuration Requirements
-- **Bandwidth:** Minimum 1Gbps per platform component
-- **Latency:** Maximum 10ms between components
-- **Redundancy:** Dual network interfaces for high availability
-- **VLAN Support:** Network segmentation capabilities
+Securaa comprises of the following components:
+- **Application Server** (Developed in React)
+- **Databases** (MongoDB and Elasticsearch)
+- **Intelligence feeds** (Only with a TIP License) to use the Threat Intelligence Platform
+- **Docker Registry:** To pull the latest images from Securaa servers for installation
+- **Licensing Server:** To validate the license
 
-#### Storage and Memory Allocations
-| Component | CPU Cores | Memory (GB) | Storage (TB) | IOPS |
-|-----------|-----------|-------------|--------------|------|
-| **SIA** | 8-16 | 32-64 | 2-10 | 10,000+ |
-| **SOAR** | 4-8 | 16-32 | 0.5-2 | 5,000+ |
-| **TIP** | 4-8 | 16-32 | 1-5 | 5,000+ |
-| **CSAM** | 4-8 | 16-32 | 1-3 | 3,000+ |
+The product is accessible through a web interface for analysts and other users.
 
-### 2. **Software Dependencies**
+## 🔧 Prerequisites
 
-#### Required Software Packages
-```bash
-# Essential packages for all platforms
-apt-get install -y \
-    curl wget git \
-    python3 python3-pip \
-    nodejs npm \
-    openjdk-11-jdk \
-    nginx \
-    postgresql-14 \
-    redis-server \
-    elasticsearch \
-    docker.io docker-compose
+### 📋 SOAR Deployment Prerequisites
 
-# Additional security tools
-apt-get install -y \
-    fail2ban \
-    ufw \
-    certbot \
-    openssl \
-    ca-certificates
-```
+Securaa needs the following for a successful deployment:
+
+- **Internet connectivity** to Securaa Servers to download the latest software versions and Docker images
+- **Administrative privileges** on the operating system platform
+- **SSH Connectivity tools** like PuTTY to connect with Securaa platforms
+- **Browser software** like Chrome to access Securaa's web interface
+
+#### Operating System Requirements
+Securaa can be deployed on the following operating systems and must meet the minimum hardware requirements:
+
+| Operating System | Supported Version |
+|------------------|-------------------|
+| RHEL             | 9.x              |
+| Ubuntu           | 20.04x, 22.04x   |
+| OEL              | 8.10             |
+
+#### Hardware Requirements
+
+**Enterprise/Standalone Setup (Proof of Concept):**
+| Component | Single VM Minimum |
+|-----------|-------------------|
+| CPU       | 8 CPU cores       |
+| Memory    | 16 GB RAM         |
+| Storage   | 250 GB SSD        |
+
+**Enterprise/Standalone Setup (PRODUCTION):**
+| Component | Single VM Minimum | Remote Integration Server |
+|-----------|-------------------|---------------------------|
+| CPU       | 32 CPU cores      | 8 CPU                    |
+| Memory    | 64 GB RAM         | 4 GB RAM                 |
+| Storage   | 1 TB SSD          | 100 GB SSD               |
+
+**MSSP (Managed Security Service Provider) - Proof of Concept:**
+| Component | Single VM Minimum | Remote Integration Server |
+|-----------|-------------------|---------------------------|
+| CPU       | 8 CPU             | 8 CPU                    |
+| Memory    | 16 GB RAM         | 4 GB RAM                 |
+| Storage   | 250 GB SSD        | 100 GB SSD               |
+
+**MSSP (PRODUCTION):**
+| Component | Single VM Minimum |
+|-----------|-------------------|
+| CPU       | 32 CPU            |
+| Memory    | 64 GB RAM         |
+| Storage   | 1 TB SSD          |
+
+### 📋 TIP Deployment Prerequisites
+
+Securaa Threat Intelligence Platform needs the following for a successful deployment:
+
+- **Internet connectivity** to Securaa servers to download the latest software versions and Docker images
+- **Administrative privileges** on the operating system platform
+- **SSH Connectivity tools** like PuTTY to connect with Securaa TIP machine
+- **Browser software** like Chrome to access the Securaa web interface
+
+#### Operating System Requirements
+Securaa TIP can be deployed on the following operating systems and must meet the minimum hardware requirements:
+
+| Operating System | Supported Version |
+|------------------|-------------------|
+| RHEL             | 9.x              |
+| Ubuntu           | 20.04x, 22.04x   |
+
+#### Hardware Requirements
+
+**POC (Proof of Concept):**
+| Component | Specification |
+|-----------|---------------|
+| CPU       | 4 CPU         |
+| Memory    | 16 GB RAM     |
+| Storage   | 300 GB SSD    |
+
+**MSSP (PRODUCTION):**
+| Component | Specification |
+|-----------|---------------|
+| CPU       | 8 CPU         |
+| Memory    | 32 GB RAM     |
+| Storage   | 500 GB SSD    |
+
+**Note:** More storage needs to be added if records exceed 30 million.
+
+#### Network Connectivity Requirements
+The following URLs need to be whitelisted before installation. Securaa downloads the latest software version, docker images, and other dependencies from these URLs:
+
+- `https://s3.us-east-2.amazonaws.com/`
+- `https://665853670667.dkr.ecr.us-east-2.amazonaws.com/`
+- `https://release.securaa.io:9002`
+- `https://repo.securaa.io/`
+
+### 📋 CSAM Deployment Prerequisites
+
+Securaa CSAM needs the following for a successful deployment:
+
+- **Connectivity to Securaa servers** is required to download the latest software versions and Docker images. After establishing the connection, the application must be configured in the Application tab within the CSAM application. This configuration enables data fetching from cloud platforms, including AWS, Azure, and GCP, as well as on-premises infrastructure tools such as Nessus, QRadar, and Symantec.
+- **Port 8229** should be open in the CSAM machine to establish connectivity with SOAR
+- **Administrative privileges** on the operating system platform
+- **SSH Connectivity tools** like PuTTY to connect with Securaa CSAM machine
+- **Browser software** like Chrome to access the Securaa web interface
+
+#### Operating System Requirements
+Securaa CSAM can be deployed on the following operating systems and must meet the minimum hardware requirements:
+
+| Operating System | Supported Version |
+|------------------|-------------------|
+| RHEL             | 9.x              |
+| Ubuntu           | 20.04x, 22.04x   |
+
+#### Hardware Requirements
+
+**POC (Proof of Concept):**
+| Component | Specification |
+|-----------|---------------|
+| CPU       | 4 CPU         |
+| Memory    | 16 GB RAM     |
+| Storage   | 300 GB SSD    |
+
+**MSSP (PRODUCTION):**
+| Component | Specification |
+|-----------|---------------|
+| CPU       | 8 CPU         |
+| Memory    | 32 GB RAM     |
+| Storage   | 500 GB SSD    |
+
+**Note:** More storage needs to be added if records exceed 30 million.
+
+#### Network Connectivity Requirements
+The following URLs need to be whitelisted before installation. Securaa downloads the latest software version, docker images, and other dependencies from these URLs:
+
+- `https://s3.us-east-2.amazonaws.com/`
+- `https://665853670667.dkr.ecr.us-east-2.amazonaws.com/`
+- `https://release.securaa.io:9002`
+- `https://repo.securaa.io/`
+
+#### Application Configuration
+Application configuration that fetches data from cloud and on-premises environments:
+
+**On-premises:**
+- IBM QRadar Security Intelligence
+- Nessus
+- Symantec Endpoint Protection
+
+**Clouds:**
+- AWS EC2 Instance
+- Azure Compute
+- Google Cloud platform
+
+### 📋 SIA Hardware Specification
+
+To ensure optimal performance and scalability for SIA: Securaa's AI service, the following hardware requirements must be met. These specifications are designed to support the intensive computing tasks associated with AI workloads, including data processing, model training, and inference.
+
+#### Hardware Requirements
+
+**1. Processor (CPU)**
+- **Model:** Intel or AMD
+- **Cores:** 16 physical cores minimum (32 cores recommended)
+
+**2. Memory (RAM)**
+- **Minimum Installed:** 64GB DDR4
+- **Expandable Up To:** 128GB DDR4
+- **Configuration:** 4 x 16GB DDR4-3200MHz DIMMs (for minimum requirement)
+- **Slots Available:** At least 4 DIMM slots
+
+**3. Storage**
+- **Primary Drive:** 1TB SSD (Solid State Drive)
+  - **Type:** NVMe M.2 SSD
+  - **Purpose:** Operating System and Application installation
+- **Additional Storage Options:**
+  - Consider adding another SSD or HDD for data redundancy and backups, depending on the expected data usage and growth
+
+**4. Operating System**
+- **OS:** Ubuntu (Latest Version)
+
+**5. Network**
+- **Ethernet Ports:** Dual 1GbE ports (2 x 1 Gigabit Ethernet)
+  - **Optional:** 10GbE port if high network throughput is required
+- **Network Interface:** Integrated on motherboard or dedicated NIC (Network Interface Card)
+
+## 📊 Visual References
+
+### Prerequisites Architecture
+![Prerequisites Architecture](images/prerequisites-architecture.png)
+*Complete platform prerequisites and component dependencies*
+
+### Solution Overview
+![Solution Architecture Overview](images/solution-architecture-overview.png)
+*Comprehensive view of Securaa's integrated security platform*
+
+## ⚠️ Important Considerations
+
+### Deployment Notes
+> **Internet Connectivity:** All components require internet access to Securaa servers for software downloads and Docker images.
+
+> **Administrative Access:** Ensure administrative privileges are available on all target systems before beginning deployment.
+
+> **Network Requirements:** Proper firewall configurations and URL whitelisting are essential for successful deployment.
+
+### Performance Guidelines
+> **Scaling Requirements:** Production environments require significantly higher resources than POC deployments.
+
+> **Storage Planning:** Consider data growth patterns when sizing storage requirements, especially for TIP and CSAM components.
+
+> **Integration Dependencies:** CSAM requires specific port configurations (8229) for SOAR connectivity.
+
+### Security Considerations
+> **Browser Requirements:** Chrome browser recommended for optimal web interface experience.
+
+> **SSH Access:** Ensure SSH connectivity tools are available for system administration.
+
+> **Cloud Integration:** Proper authentication and permissions required for AWS, Azure, and GCP integrations.
+
+## 🔗 Related Documents
+
+- [SIA Hardware Specs](./SIA-Hardware-Specs-README.md) - Detailed SIA hardware specifications
+- [STS-Securaa Solution Architecture](./STS-Securaa-Solution-Architecture-README.md) - Complete solution architecture
+- [Securaa Installation and Deployment Guide](./Securaa-Installation-and-Deployment-Guide-README.md) - Installation procedures
+- [Prerequisites for SIA, SOAR, TIP & CSAM (Edited)](./Prerequisites-for-SIA-SOAR-TIP-CSAM-Edited-README.md) - Updated requirements
+
+## 📞 Support Information
+
+For prerequisites and deployment planning support:
+
+- **General Support:** support@securaa.io
+- **Technical Consultation:** Contact Bytamorph Zona Pvt Ltd
+- **Company Address:** 668/A, 9th Cross, Vijayanagar 1st Stage, Mysore 570017
+- **Website:** www.securaa.io
+
+### Additional Resources
+- Pre-deployment checklists and validation tools
+- Hardware sizing calculators
+- Network configuration templates
+- Integration planning assistance
+
+---
+
+*This README provides comprehensive details based on the Prerequisites for SIA, SOAR, TIP & CSAM document. The specifications ensure proper planning and preparation for Securaa platform deployment across all components.*
 
 #### Database Prerequisites
 **PostgreSQL Configuration (Primary Database)**

@@ -9,100 +9,167 @@
 
 ## 📝 Description
 
-This comprehensive datasheet provides detailed information about Securaa's automated playbook capabilities, including pre-built security automation workflows, custom playbook development, and orchestration features for security operations center (SOC) automation.
+This comprehensive datasheet provides detailed information about Securaa's automated playbook capabilities. Securaa is a comprehensive SOC automation product suite built entirely on NoCode, dramatically reducing the time required to implement, configure, and customize security automation workflows.
 
 ## 🎯 Purpose
 
-To provide security teams, SOC analysts, and automation engineers with complete specifications and capabilities for implementing automated security response playbooks within the Securaa platform ecosystem.
+Securaa is a versatile and user-friendly security management platform that simplifies threat monitoring and incident response for SOC teams. With 1000+ automated tasks and playbooks, Securaa empowers businesses to effectively manage their security applications, resources, and operations without the need for scripting or complex operations.
 
-## 🤖 Playbook Overview
+## 🌟 Key Platform Features
 
-### Core Automation Capabilities
-- **Incident Response Automation:** Automated incident handling workflows
-- **Threat Hunting Playbooks:** Systematic threat discovery procedures
-- **Compliance Automation:** Regulatory compliance checking and reporting
-- **Integration Orchestration:** Multi-tool workflow coordination
-- **Custom Logic Development:** Flexible automation scripting
+- **Comprehensive SOC Automation:** Includes SOAR, TIP, and Cyber Asset Management
+- **NoCode Platform:** Visual interface accessible even to low-skilled resources
+- **1000+ Automated Tasks:** Extensive library of pre-built automation workflows
+- **Unlimited Integrations:** Seamless connectivity with security tools
+- **Streamlined Management:** Simplified security operation processes
+- **Rapid Response:** Reduced mean time to respond to threats
 
-### Key Benefits
-- **Reduced Response Time:** Automated rapid response capabilities
-- **Consistent Processes:** Standardized security procedures
-- **Scalable Operations:** Handle increased security event volumes
-- **Analyst Efficiency:** Focus on high-value analysis tasks
-- **Process Documentation:** Built-in procedure documentation
+## 🤖 Playbook Library Overview
 
-## 📚 Pre-Built Playbook Library
+Securaa provides **103 pre-built playbooks** covering comprehensive security automation scenarios including threat response, network security, identity management, and incident handling.
 
-### 1. **Incident Response Playbooks**
+## 📚 Playbook Categories
 
-#### Malware Detection Response
-![Malware Response Playbook](images/malware-response-playbook.png)
-*Automated malware detection and containment workflow*
+### 1. **Network Security & IP Management**
+| Playbook | Description |
+|----------|-------------|
+| Block IP - Checkpoint | Automated IP blocking on Checkpoint firewalls |
+| Block IP - Fortinet | Automated IP blocking on Fortinet firewalls |
+| Block IP - PaloAlto | Automated IP blocking on Palo Alto firewalls |
+| Block IP - Generic | Generic IP blocking across multiple platforms |
+| Block Indicator - IP | IP reputation-based blocking automation |
+| Excessive firewall denies from remote host | Detection and response to excessive firewall denials |
+| Vertical Port Scan | Port scan detection and automated response |
 
-**Workflow Steps:**
-1. **Detection:** Malware signature or behavior detection
-2. **Isolation:** Automatic endpoint isolation
-3. **Analysis:** Automated malware analysis
-4. **Containment:** Network and system containment
-5. **Eradication:** Malware removal procedures
-6. **Recovery:** System restoration and monitoring
-7. **Documentation:** Incident documentation and reporting
+### 2. **Identity & Access Management**
+| Playbook | Description |
+|----------|-------------|
+| Multiple Logins Detected from VPN | VPN multiple login detection and response |
+| Remote Logins from Unauthorized locations in VPN | Unauthorized VPN location access handling |
+| AD_Block_User | Active Directory user blocking automation |
+| Account_Login_Failure V2 | Failed login attempt analysis and response |
+| Block Account - Generic | Generic account blocking procedures |
+| AssignCaseToUser | Automated case assignment workflows |
 
-#### Phishing Email Response
-```yaml
-# Phishing Response Playbook
-playbook_name: "Phishing Email Response"
-trigger: "email_security_alert"
-actions:
-  - name: "quarantine_email"
-    parameters:
-      email_id: "{{alert.email_id}}"
-      action: "quarantine"
-  - name: "block_sender"
-    parameters:
-      sender: "{{alert.sender_address}}"
-      duration: "24h"
-  - name: "scan_recipients"
-    parameters:
-      recipients: "{{alert.recipients}}"
-      scan_type: "full_system"
-  - name: "create_incident"
-    parameters:
-      severity: "medium"
-      category: "phishing"
-```
+### 3. **Threat Intelligence & Analysis**
+| Playbook | Description |
+|----------|-------------|
+| Check File Reputation V2 | Automated file reputation checking |
+| Check IP and URL Reputation V2 | IP and URL reputation validation |
+| C&C Communication V2 | Command and control communication detection |
+| C2C_Validation | C2 communication validation procedures |
+| TI Firewall Integrated Block Action | Threat intelligence integrated firewall blocking |
+| Validate IP | IP address validation and enrichment |
 
-#### Data Breach Response
-- **Immediate Actions:** Containment and assessment
-- **Investigation:** Forensic data collection
-- **Notification:** Regulatory and stakeholder notification
-- **Remediation:** Security control improvements
-- **Recovery:** Business operation restoration
+### 4. **Incident Response & Ticketing**
+| Playbook | Description |
+|----------|-------------|
+| Create Phishing SN Ticket | ServiceNow phishing ticket creation |
+| Get_Snow_tickets | ServiceNow ticket retrieval automation |
+| Custom App Playbook | Customizable application response workflows |
+| ARVT | Automated response and validation testing |
 
-### 2. **Threat Hunting Playbooks**
+### 5. **Web Application Security**
+| Playbook | Description |
+|----------|-------------|
+| WAF Directory Traversal Attack Detected | WAF directory traversal response automation |
+| HTTP_DDOS | HTTP DDoS attack detection and mitigation |
+| Domain Reputation | Domain reputation checking and blocking |
 
-#### Advanced Persistent Threat (APT) Hunting
+## 📊 Playbook Statistics
+
+### Total Coverage
+- **103 Total Playbooks** available for immediate deployment
+- **Multiple Versions** for enhanced capabilities (V2 updates)
+- **Vendor-Specific** implementations for major security platforms
+- **Generic Templates** for cross-platform compatibility
+
+### Key Playbook Types
+1. **Firewall Integration** - 15+ playbooks
+2. **Identity Management** - 10+ playbooks  
+3. **Threat Intelligence** - 12+ playbooks
+4. **Incident Response** - 8+ playbooks
+5. **Network Security** - 20+ playbooks
+6. **Endpoint Security** - 15+ playbooks
+7. **SIEM Integration** - 10+ playbooks
+8. **Custom Workflows** - 13+ playbooks
+
+## 📈 Implementation Benefits
+
+### Operational Efficiency
+- **NoCode Implementation:** Visual playbook creation without scripting
+- **Rapid Deployment:** Quick implementation across security tools
+- **Standardized Processes:** Consistent automated response procedures
+- **Reduced Response Time:** Faster threat identification and containment
+
+### Technical Advantages
+- **Cross-Platform Support:** Works with all major security vendor platforms
+- **Scalable Automation:** Handle increased security event volumes efficiently
+- **Version Control:** Enhanced capabilities with V2 playbook updates
+- **Customizable Workflows:** Adaptable to specific organizational needs
+
+## 📊 Visual References
+
+### Playbook Editor Interface
+![Playbook Editor Interface](images/playbook-editor-interface.png)
+*NoCode visual playbook creation and management interface*
+
+### Automation Workflow
+![Automation Metrics Dashboard](images/automation-metrics-dashboard.png)
+*Comprehensive automation performance and metrics tracking*
+
+### APT Hunting Playbook
 ![APT Hunting Playbook](images/apt-hunting-playbook.png)
-*Systematic APT detection and investigation workflow*
+*Advanced persistent threat hunting automation workflow*
 
-**Hunt Methodology:**
-1. **Hypothesis Formation:** Threat actor behavior modeling
-2. **Data Collection:** Multi-source data gathering
-3. **Analysis:** Pattern recognition and correlation
-4. **Investigation:** Deep-dive threat analysis
-5. **Attribution:** Threat actor identification
-6. **IOC Generation:** Indicator creation and sharing
+## ⚠️ Important Considerations
 
-#### Insider Threat Detection
-```python
-# Insider Threat Hunting Logic
-def insider_threat_hunt():
-    indicators = [
-        "unusual_file_access",
-        "off_hours_activity", 
-        "privilege_escalation",
-        "data_exfiltration_patterns"
-    ]
+### Playbook Management
+> **Version Control:** V2 playbooks provide enhanced capabilities and improved automation logic.
+
+> **Platform Compatibility:** Vendor-specific playbooks optimized for Checkpoint, Fortinet, Palo Alto, and other platforms.
+
+> **Customization:** Generic playbooks can be customized for specific organizational requirements.
+
+### Implementation Guidelines
+> **Testing Environment:** Validate playbooks in test environment before production deployment.
+
+> **Integration Dependencies:** Ensure proper API connectivity for all integrated security tools.
+
+> **User Training:** Provide training on playbook management and customization capabilities.
+
+### Performance Optimization
+> **Resource Management:** Monitor playbook execution performance and resource utilization.
+
+> **Alert Filtering:** Implement proper alert filtering to prevent playbook overload.
+
+> **Escalation Procedures:** Configure escalation paths for complex incident scenarios.
+
+## 🔗 Related Documents
+
+- [Securaa Datasheet Integrations](./Securaa-Datasheet-Integrations-README.md) - Integration capabilities for playbook automation
+- [Prerequisites for SIA, SOAR, TIP & CSAM](./Prerequisites-for-SIA-SOAR-TIP-CSAM-README.md) - Platform prerequisites
+- [Securaa Installation and Deployment Guide](./Securaa-Installation-and-Deployment-Guide-README.md) - Installation procedures
+- [STS-Securaa Solution Architecture](./STS-Securaa-Solution-Architecture-README.md) - Complete solution architecture
+
+## 📞 Support Information
+
+For playbook implementation and automation support:
+
+- **Playbook Support:** playbooks@securaa.io
+- **Automation Consulting:** Expert guidance on security automation implementation
+- **Custom Development:** Specialized playbook development services
+- **Training Services:** Comprehensive playbook management training
+
+### Additional Resources
+- Playbook development best practices
+- NoCode automation training materials
+- Custom playbook templates and examples
+- Integration-specific playbook libraries
+
+---
+
+*This README provides comprehensive details based on the Securaa Datasheet Playbooks document. The datasheet demonstrates Securaa's extensive automation capabilities with 103 pre-built playbooks covering comprehensive security scenarios, all accessible through a NoCode visual interface.*
     
     for user in get_high_privilege_users():
         risk_score = calculate_risk_score(user, indicators)

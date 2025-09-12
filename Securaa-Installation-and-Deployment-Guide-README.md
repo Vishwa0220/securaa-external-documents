@@ -15,94 +15,192 @@ This comprehensive guide provides step-by-step instructions for installing and d
 
 To enable system administrators and deployment teams to successfully install, configure, and deploy Securaa security solutions in various environments with confidence and reliability.
 
-## 🚀 Installation Overview
+## 🌟 Securaa Platform Overview
 
-### 1. **Pre-Installation Steps**
+Securaa brings together the benefits of a mature threat intelligence platform (TIP), proactive asset and vulnerability management (AVM), and reliable security orchestration, automation, and response (SOAR) under a single umbrella.
 
-#### Environment Preparation
-- [ ] Verify system prerequisites
-- [ ] Validate hardware requirements
-- [ ] Confirm network configuration
-- [ ] Prepare installation media
+### Key Benefits
+- **Threat Intelligence feeds** for SOC teams to be predictive while enabling effective management of protective and detective security controls
+- **Unified compliance posture** across assets to proactively manage the organization's vulnerability posture and security controls coverage gaps
+- **Out of box API integrations** and pre-configured playbooks to improve SOC's ability to shrink the triage and response time
 
-#### Security Setup
-- [ ] Configure firewall rules
-- [ ] Set up SSL certificates
-- [ ] Prepare user accounts
-- [ ] Establish security policies
+### Product Components
+- **Application Server** (Developed in React)
+- **Databases** (MongoDB and Elasticsearch)
+- **Intelligence feeds** (Only with a TIP License) to use the Threat Intelligence Platform
+- **Docker Registry:** To pull the latest images from Securaa servers for installation
+- **Licensing Server:** To validate the license
 
-### 2. **Installation Process**
+The product is accessible through a web interface for analysts and other users.
 
-#### Core Platform Installation
-- **Step 1:** Base system installation
-- **Step 2:** Database setup and configuration
-- **Step 3:** Application server deployment
-- **Step 4:** Web interface installation
+## 📋 Prerequisites for Deployment
 
-#### Component Installation
-- **SIA Module:** Security Intelligence & Analytics
-- **SOAR Module:** Security Orchestration & Response
-- **TIP Module:** Threat Intelligence Platform
-- **CSAM Module:** Cyber Security Asset Management
+Securaa needs the following for a successful deployment:
 
-### 3. **Configuration Steps**
+- **Internet connectivity** to Securaa Servers to download the latest software versions and Docker images
+- **Administrative privileges** on the operating system platform
+- **SSH Connectivity tools** like PuTTY to connect with Securaa platforms
+- **Browser software** like Chrome to access Securaa's web interface
 
-#### System Configuration
-- Database connection settings
-- Network interface configuration
-- Storage allocation and management
-- Performance optimization parameters
+### Operating System Requirements
 
-#### Security Configuration
-- User authentication setup
-- Role-based access control
-- Encryption configuration
-- Audit logging configuration
+Securaa can be deployed on the following operating systems and must meet the minimum hardware requirements:
 
-## 📊 Installation Workflow
+| Operating System | Supported Version |
+|------------------|-------------------|
+| RHEL             | 9.x, 8.x         |
+| Rocky Linux      | 8.x               |
+| Alma Linux       | 8.x               |
+| CentOS 9 Stream  | 9.x               |
 
-### Installation Process Flow
+**CentOS 9 Stream ISO Link:** http://mirror.stream.centos.org/9-stream/BaseOS/x86_64/iso/CentOS-Stream-9-latest-x86_64-boot.iso
+
+### AWS AMI Support
+
+| Operating System with Version | AMI ID |
+|-------------------------------|---------|
+| RED HAT #9                    | ami-0d03b1ad793d7ac93 |
+| RED HAT #8                    | ami-05a4c0ca40388112e |
+| ALMA LINUX 8.6               | ami-0fc548f4049251034 |
+| ROCKY Linux                   | ami-0246556fe022e6505 |
+
+## 🔧 Hardware Requirements
+
+### Enterprise/Standalone Setup (Proof of Concept)
+
+#### Single VM Minimum
+| Component | Specification |
+|-----------|---------------|
+| CPU       | 8 CPU cores   |
+| Memory    | 16 GB RAM     |
+| Storage   | 500 GB SSD    |
+
+#### Multi VM Deployment Options
+| Configuration | CPU Cores | Memory | Storage |
+|---------------|-----------|---------|---------|
+| **2 Servers Minimum** | 6 CPU cores | 8 GB RAM | 250 GB SSD |
+| **3 Servers Minimum** | 8 CPU cores | 16 GB RAM | 250 GB SSD |
+
+### Enterprise/Standalone Setup (PRODUCTION)
+
+#### Single VM Minimum
+| Component | Specification |
+|-----------|---------------|
+| CPU       | 16 CPU cores  |
+| Memory    | 32 GB RAM     |
+| Storage   | 500 GB SSD    |
+
+#### Multi VM Production Deployment
+| Configuration | CPU Cores | Memory | Storage | Remote Integration Server |
+|---------------|-----------|---------|---------|---------------------------|
+| **2 Servers Minimum** | 8 CPU cores | 16 GB RAM | 250 GB SSD | 8 CPU, 4 GB RAM, 100 GB SSD |
+| **3 Servers Minimum** | 8 CPU cores | 16 GB RAM | 250 GB SSD | 8 CPU, 4 GB RAM, 100 GB SSD |
+
+### MSSP (Managed Security Service Provider) Requirements
+
+#### Proof of Concept
+| Configuration | CPU Cores | Memory | Storage |
+|---------------|-----------|---------|---------|
+| **Single VM Minimum** | 8 CPU | 16 GB RAM | 250 GB SSD |
+| **Multi VM (2 servers) Minimum** | 4 CPU | 8 GB RAM | 150 GB SSD |
+| **Multi VM (3 servers) Minimum** | 4 CPU | 4 GB RAM | 150 GB SSD |
+
+## 🚀 Installation Process
+
+### Network Connectivity Requirements
+The following URLs need to be whitelisted before installation. Securaa downloads the latest software version, Docker images, and other dependencies from these URLs:
+
+- `https://s3.us-east-2.amazonaws.com/`
+- `https://665853670667.dkr.ecr.us-east-2.amazonaws.com/`
+- `https://release.securaa.io:9002`
+- `https://repo.securaa.io/`
+
+### Prerequisites Before Installation
+- Verify internet connectivity to Securaa servers
+- Ensure administrative privileges on target systems
+- Confirm SSH connectivity tools are available
+- Validate browser compatibility (Chrome recommended)
+
+### Securaa Installation Steps
+1. **System Preparation:** Configure operating system and network settings
+2. **Dependency Installation:** Install required packages and Docker components
+3. **Download Process:** Pull latest Securaa images from Docker registry
+4. **Component Deployment:** Deploy application servers, databases, and services
+5. **Configuration:** Set up tenant configuration and SMTP settings
+
+### Post Installation Configuration
+- **Accessing Securaa:** Configure web interface access
+- **Tenant Configuration:** Set up organizational tenant settings
+- **SMTP Server Setup:** Configure email notification settings
+- **SIEM Batch Settings:** Configure SIEM integration parameters
+
+## 📊 Visual Installation Guide
+
+### Installation Workflow
 ![Installation Workflow](images/installation-workflow.png)
 *Step-by-step installation process visualization*
 
-### Component Dependencies
-![Component Installation Order](images/component-dependencies.png)
-*Required installation sequence for components*
+### Deployment Architecture
+![Deployment Architecture](images/deployment-architecture.png)
+*Deployment architecture options for different environments*
 
 ### Network Configuration
-![Network Setup](images/network-configuration.png)
+![Network Configuration](images/network-configuration.png)
 *Network configuration requirements and setup*
 
-## 🔧 Deployment Scenarios
+## ⚠️ Important Considerations
 
-### 1. **Single-Server Deployment**
+### System Requirements
+> **Hardware Specifications:** Ensure systems meet minimum hardware requirements for chosen deployment scenario.
 
-#### Use Cases
-- Small to medium organizations
-- Proof of concept deployments
-- Development environments
-- Limited resource scenarios
+> **Operating System:** Verify supported OS versions and maintain system updates.
 
-#### Installation Steps
-```bash
-# Example installation commands
-sudo ./install-securaa.sh --mode single-server
-sudo systemctl enable securaa-platform
-sudo systemctl start securaa-platform
-```
+> **Network Connectivity:** Confirm internet access to Securaa servers for installation and updates.
 
-#### Configuration Files
-- `/etc/securaa/platform.conf` - Main configuration
-- `/etc/securaa/database.conf` - Database settings
-- `/etc/securaa/security.conf` - Security parameters
+### Installation Guidelines
+> **Administrative Access:** Root or administrator privileges required for installation.
 
-### 2. **Multi-Server Deployment**
+> **Docker Dependencies:** Installation process includes Docker containerization setup.
 
-#### Use Cases
-- Large enterprise environments
-- High availability requirements
-- Scalability needs
-- Performance optimization
+> **Storage Planning:** Adequate storage space required for databases and application data.
+
+### Post-Installation
+> **Browser Compatibility:** Chrome browser recommended for optimal web interface experience.
+
+> **Tenant Setup:** Proper tenant configuration required for multi-organization environments.
+
+> **SMTP Configuration:** Email notification setup essential for alert management.
+
+## 🔗 Related Documents
+
+- [Prerequisites for SIA, SOAR, TIP & CSAM](./Prerequisites-for-SIA-SOAR-TIP-CSAM-README.md) - Complete deployment prerequisites
+- [SIA Hardware Specs](./SIA-Hardware-Specs-README.md) - Detailed hardware specifications
+- [STS-Securaa Solution Architecture](./STS-Securaa-Solution-Architecture-README.md) - Platform architecture overview
+- [Securaa Datasheet Integrations](./Securaa-Datasheet-Integrations-README.md) - Integration capabilities
+
+## 📞 Support Information
+
+For installation and deployment support:
+
+- **Installation Support:** install-support@securaa.io
+- **Technical Documentation:** Comprehensive installation guides and troubleshooting
+- **Professional Services:** Expert installation and deployment assistance
+- **Training:** Installation and administration training programs
+
+### Contact Information
+- **General Support:** support@securaa.io
+- **Company:** Bytamorph Zona Pvt Ltd
+- **Address:** 432, 6th Main, Vijay Nagar, Mysore, 1st Stage KA 570017 IN
+
+### Additional Resources
+- Installation troubleshooting guides
+- Configuration templates and examples
+- Best practices for deployment planning
+- Performance optimization recommendations
+
+---
+
+*This README provides comprehensive details based on the Securaa Installation and Deployment Guide document. The guide ensures successful deployment of Securaa security platform across various environments and deployment scenarios.*
 
 #### Architecture Components
 - **Frontend Servers:** Web interface and API gateways

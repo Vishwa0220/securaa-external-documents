@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Securaa Product Documentation</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.28.0/themes/prism.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-content">
+                <div class="logo">
+                    <h1><i class="fas fa-shield-alt"></i> Securaa</h1>
+                    <span class="tagline">Advanced Cybersecurity Solutions</span>
+                </div>
+                <nav class="main-nav">
+                    <ul>
+                        <li><a href="#overview">Overview</a></li>
+                        <li><a href="#products">Products</a></li>
+                        <li><a href="#installation">Installation</a></li>
+                        <li><a href="#administration">Administration</a></li>
+                        <li><a href="#support">Support</a></li>
+                    </ul>
+                </nav>
+                <div class="search-container">
+                    <input type="text" id="searchInput" placeholder="Search documentation...">
+                    <i class="fas fa-search"></i>
+                </div>
+            </div>
+        </header>
+
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar">
+            <nav class="sidebar-nav">
+                <div class="nav-section">
+                    <h3><i class="fas fa-home"></i> Getting Started</h3>
+                    <ul>
+                        <li><a href="#overview">Product Overview</a></li>
+                        <li><a href="#architecture">Solution Architecture</a></li>
+                        <li><a href="#prerequisites">Prerequisites</a></li>
+                    </ul>
+                </div>
+                
+                <div class="nav-section">
+                    <h3><i class="fas fa-cube"></i> Products</h3>
+                    <ul>
+                        <li><a href="#sia">SIA (Security Intelligence Analytics)</a></li>
+                        <li><a href="#soar">SOAR (Security Orchestration)</a></li>
+                        <li><a href="#tip">TIP (Threat Intelligence Platform)</a></li>
+                        <li><a href="#csam">CSAM (Cyber Security Asset Management)</a></li>
+                    </ul>
+                </div>
+
+                <div class="nav-section">
+                    <h3><i class="fas fa-cogs"></i> Installation & Deployment</h3>
+                    <ul>
+                        <li><a href="#installation-guide">Installation Guide</a></li>
+                        <li><a href="#deployment">Deployment Guide</a></li>
+                        <li><a href="#hardware-specs">Hardware Specifications</a></li>
+                    </ul>
+                </div>
+
+                <div class="nav-section">
+                    <h3><i class="fas fa-users-cog"></i> Administration</h3>
+                    <ul>
+                        <li><a href="#csam-admin">CSAM Administration</a></li>
+                        <li><a href="#tip-admin">TIP Administration</a></li>
+                        <li><a href="#user-management">User Management</a></li>
+                    </ul>
+                </div>
+
+                <div class="nav-section">
+                    <h3><i class="fas fa-puzzle-piece"></i> Integrations</h3>
+                    <ul>
+                        <li><a href="#integrations">Available Integrations</a></li>
+                        <li><a href="#playbooks">Security Playbooks</a></li>
+                        <li><a href="#api-reference">API Reference</a></li>
+                    </ul>
+                </div>
+
+                <div class="nav-section">
+                    <h3><i class="fas fa-question-circle"></i> Support</h3>
+                    <ul>
+                        <li><a href="#troubleshooting">Troubleshooting</a></li>
+                        <li><a href="#faq">FAQ</a></li>
+                        <li><a href="#contact">Contact Support</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Hero Section -->
+            <section id="hero" class="hero">
+                <div class="hero-content">
+                    <h1>Securaa Product Documentation</h1>
+                    <p class="hero-subtitle">Comprehensive documentation for Securaa's cybersecurity solutions including SIA, SOAR, TIP, and CSAM platforms.</p>
+                    <div class="hero-buttons">
+                        <a href="#overview" class="btn btn-primary">Get Started</a>
+                        <a href="#products" class="btn btn-secondary">View Products</a>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <i class="fas fa-shield-alt"></i>
+                </div>
+            </section>
+
+            <!-- Overview Section -->
+            <section id="overview" class="content-section">
+                <div class="section-header">
+                    <h2><i class="fas fa-info-circle"></i> Product Overview</h2>
+                    <p>Securaa provides a comprehensive suite of cybersecurity solutions designed to protect, detect, and respond to modern cyber threats.</p>
+                </div>
+
+                <div class="feature-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <h3>SIA - Security Intelligence Analytics</h3>
+                        <p>Advanced analytics platform for threat detection and security intelligence gathering with real-time monitoring capabilities.</p>
+                        <a href="#sia" class="feature-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-robot"></i>
+                        </div>
+                        <h3>SOAR - Security Orchestration</h3>
+                        <p>Automated response and orchestration platform that streamlines security operations and incident response workflows.</p>
+                        <a href="#soar" class="feature-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-brain"></i>
+                        </div>
+                        <h3>TIP - Threat Intelligence Platform</h3>
+                        <p>Comprehensive threat intelligence platform for collecting, analyzing, and sharing threat information across your organization.</p>
+                        <a href="#tip" class="feature-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-server"></i>
+                        </div>
+                        <h3>CSAM - Cyber Security Asset Management</h3>
+                        <p>Complete asset management solution for tracking, monitoring, and securing all your digital and physical assets.</p>
+                        <a href="#csam" class="feature-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Quick Start Section -->
+            <section id="quick-start" class="content-section">
+                <div class="section-header">
+                    <h2><i class="fas fa-rocket"></i> Quick Start Guide</h2>
+                    <p>Get up and running with Securaa solutions in just a few steps.</p>
+                </div>
+
+                <div class="steps-container">
+                    <div class="step">
+                        <div class="step-number">1</div>
+                        <div class="step-content">
+                            <h3>Review Prerequisites</h3>
+                            <p>Check hardware requirements and software prerequisites for your chosen Securaa solution.</p>
+                            <a href="#prerequisites" class="btn btn-outline">View Prerequisites</a>
+                        </div>
+                    </div>
+
+                    <div class="step">
+                        <div class="step-number">2</div>
+                        <div class="step-content">
+                            <h3>Installation & Deployment</h3>
+                            <p>Follow our comprehensive installation guide to deploy Securaa solutions in your environment.</p>
+                            <a href="#installation-guide" class="btn btn-outline">Installation Guide</a>
+                        </div>
+                    </div>
+
+                    <div class="step">
+                        <div class="step-number">3</div>
+                        <div class="step-content">
+                            <h3>Configuration & Administration</h3>
+                            <p>Configure your Securaa solutions and set up user access and permissions.</p>
+                            <a href="#administration" class="btn btn-outline">Admin Guide</a>
+                        </div>
+                    </div>
+
+                    <div class="step">
+                        <div class="step-number">4</div>
+                        <div class="step-content">
+                            <h3>Integrations & Playbooks</h3>
+                            <p>Connect with existing security tools and implement automated response playbooks.</p>
+                            <a href="#integrations" class="btn btn-outline">View Integrations</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Documentation Sections Placeholder -->
+            <div id="dynamic-content">
+                <!-- Content will be loaded here dynamically -->
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Securaa</h3>
+                    <p>Advanced cybersecurity solutions for modern threats.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Products</h4>
+                    <ul>
+                        <li><a href="#sia">SIA</a></li>
+                        <li><a href="#soar">SOAR</a></li>
+                        <li><a href="#tip">TIP</a></li>
+                        <li><a href="#csam">CSAM</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Documentation</h4>
+                    <ul>
+                        <li><a href="#installation">Installation</a></li>
+                        <li><a href="#administration">Administration</a></li>
+                        <li><a href="#integrations">Integrations</a></li>
+                        <li><a href="#api-reference">API Reference</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="#contact">Contact Support</a></li>
+                        <li><a href="#troubleshooting">Troubleshooting</a></li>
+                        <li><a href="#faq">FAQ</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Securaa. All rights reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+                <p>Documentation Version 2.0 | Last Updated: October 2025</p>
+            </div>
+        </footer>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.28.0/components/prism-core.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.28.0/plugins/autoloader/prism-autoloader.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

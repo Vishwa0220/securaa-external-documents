@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Securaa Integrations & API Reference</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-content">
+                <div class="logo">
+                    <h1><i class="fas fa-shield-alt"></i> Securaa</h1>
+                    <span class="tagline">Integrations & API Reference</span>
+                </div>
+                <nav class="main-nav">
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="#integrations">Integrations</a></li>
+                        <li><a href="#playbooks">Playbooks</a></li>
+                        <li><a href="#api-reference">API Reference</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <section id="integrations" class="content-section">
+                <div class="section-header">
+                    <h2><i class="fas fa-puzzle-piece"></i> Available Integrations</h2>
+                    <p>Securaa integrates with 200+ security tools and platforms for comprehensive security operations.</p>
+                </div>
+
+                <div class="alert alert-info">
+                    <strong>Integration Categories:</strong> Our integrations span across SIEM, endpoint protection, threat intelligence, cloud security, and more.
+                </div>
+
+                <h3>SIEM & Log Management</h3>
+                <div class="feature-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <h3>Splunk</h3>
+                        <p>Bi-directional integration for log forwarding, alert management, and automated response actions.</p>
+                        <div class="integration-badges">
+                            <span class="badge badge-success">SIA</span>
+                            <span class="badge badge-primary">SOAR</span>
+                        </div>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-server"></i>
+                        </div>
+                        <h3>IBM QRadar</h3>
+                        <p>Real-time event correlation and automated incident response capabilities.</p>
+                        <div class="integration-badges">
+                            <span class="badge badge-success">SIA</span>
+                            <span class="badge badge-primary">SOAR</span>
+                            <span class="badge badge-warning">TIP</span>
+                        </div>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-eye"></i>
+                        </div>
+                        <h3>Elastic Security</h3>
+                        <p>Integration with Elasticsearch for advanced threat hunting and analytics.</p>
+                        <div class="integration-badges">
+                            <span class="badge badge-success">SIA</span>
+                            <span class="badge badge-warning">TIP</span>
+                        </div>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <h3>ArcSight</h3>
+                        <p>Enterprise SIEM integration with advanced correlation and response automation.</p>
+                        <div class="integration-badges">
+                            <span class="badge badge-success">SIA</span>
+                            <span class="badge badge-primary">SOAR</span>
+                        </div>
+                    </div>
+                </div>
+
+                <h3>Endpoint Protection</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Vendor</th>
+                            <th>Product</th>
+                            <th>Integration Type</th>
+                            <th>Supported Platforms</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>CrowdStrike</td>
+                            <td>Falcon</td>
+                            <td>API, Webhook</td>
+                            <td>SIA, SOAR, TIP</td>
+                        </tr>
+                        <tr>
+                            <td>Microsoft</td>
+                            <td>Defender for Endpoint</td>
+                            <td>Graph API, Webhook</td>
+                            <td>SIA, SOAR, CSAM</td>
+                        </tr>
+                        <tr>
+                            <td>Carbon Black</td>
+                            <td>CB Response</td>
+                            <td>REST API</td>
+                            <td>SIA, SOAR</td>
+                        </tr>
+                        <tr>
+                            <td>SentinelOne</td>
+                            <td>Singularity</td>
+                            <td>REST API, Webhook</td>
+                            <td>SIA, SOAR, CSAM</td>
+                        </tr>
+                        <tr>
+                            <td>Symantec</td>
+                            <td>Endpoint Protection</td>
+                            <td>SEPM API</td>
+                            <td>SIA, SOAR, CSAM</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h3>Cloud Security Platforms</h3>
+                <div class="feature-grid">
+                    <div class="feature-card">
+                        <h3>AWS Security Hub</h3>
+                        <p>Centralized security findings and automated remediation for AWS environments.</p>
+                        <ul style="text-align: left; list-style: disc; padding-left: 1rem;">
+                            <li>CloudTrail integration</li>
+                            <li>GuardDuty findings</li>
+                            <li>Config rule violations</li>
+                            <li>IAM policy analysis</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <h3>Azure Security Center</h3>
+                        <p>Comprehensive security monitoring and threat protection for Azure resources.</p>
+                        <ul style="text-align: left; list-style: disc; padding-left: 1rem;">
+                            <li>Security alerts</li>
+                            <li>Compliance assessments</li>
+                            <li>Threat protection</li>
+                            <li>Security recommendations</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <h3>Google Cloud Security</h3>
+                        <p>Security monitoring and incident response for Google Cloud Platform.</p>
+                        <ul style="text-align: left; list-style: disc; padding-left: 1rem;">
+                            <li>Cloud Security Scanner</li>
+                            <li>Event Threat Detection</li>
+                            <li>Cloud Armor</li>
+                            <li>Binary Authorization</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <h3>Network Security</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Category</th>
+                            <th>Vendors</th>
+                            <th>Integration Capabilities</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Firewalls</td>
+                            <td>Palo Alto, Fortinet, Cisco ASA, pfSense</td>
+                            <td>Rule management, traffic analysis, threat blocking</td>
+                        </tr>
+                        <tr>
+                            <td>IDS/IPS</td>
+                            <td>Snort, Suricata, Cisco Firepower</td>
+                            <td>Alert ingestion, signature updates, rule tuning</td>
+                        </tr>
+                        <tr>
+                            <td>Web Security</td>
+                            <td>Zscaler, Symantec WSS, Forcepoint</td>
+                            <td>URL filtering, threat detection, policy enforcement</td>
+                        </tr>
+                        <tr>
+                            <td>Email Security</td>
+                            <td>Proofpoint, Mimecast, Microsoft EOP</td>
+                            <td>Phishing detection, malware analysis, quarantine</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <section id="playbooks" class="content-section">
+                <div class="section-header">
+                    <h2><i class="fas fa-play"></i> Security Playbooks</h2>
+                    <p>Pre-built and customizable playbooks for automated security operations and incident response.</p>
+                </div>
+
+                <h3>Incident Response Playbooks</h3>
+                <div class="feature-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-bug"></i>
+                        </div>
+                        <h3>Malware Incident Response</h3>
+                        <p>Automated containment, analysis, and remediation of malware infections.</p>
+                        <div class="playbook-steps">
+                            <ol style="text-align: left; padding-left: 1rem;">
+                                <li>Isolate infected endpoints</li>
+                                <li>Collect forensic artifacts</li>
+                                <li>Analyze malware samples</li>
+                                <li>Update IOC databases</li>
+                                <li>Remediate and restore systems</li>
+                            </ol>
+                        </div>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-fishing-net"></i>
+                        </div>
+                        <h3>Phishing Response</h3>
+                        <p>Rapid response to phishing campaigns with automated investigation and blocking.</p>
+                        <div class="playbook-steps">
+                            <ol style="text-align: left; padding-left: 1rem;">
+                                <li>Analyze suspicious emails</li>
+                                <li>Extract IOCs and URLs</li>
+                                <li>Block malicious domains</li>
+                                <li>Quarantine similar emails</li>
+                                <li>Notify affected users</li>
+                            </ol>
+                        </div>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-user-secret"></i>
+                        </div>
+                        <h3>Data Breach Response</h3>
+                        <p>Comprehensive data breach investigation and containment procedures.</p>
+                        <div class="playbook-steps">
+                            <ol style="text-align: left; padding-left: 1rem;">
+                                <li>Contain the breach</li>
+                                <li>Assess data exposure</li>
+                                <li>Preserve evidence</li>
+                                <li>Notify stakeholders</li>
+                                <li>Implement remediation</li>
+                            </ol>
+                        </div>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-network-wired"></i>
+                        </div>
+                        <h3>Network Intrusion Response</h3>
+                        <p>Detect, investigate, and respond to network-based attacks and intrusions.</p>
+                        <div class="playbook-steps">
+                            <ol style="text-align: left; padding-left: 1rem;">
+                                <li>Analyze network traffic</li>
+                                <li>Identify attack vectors</li>
+                                <li>Block malicious IPs</li>
+                                <li>Hunt for persistence</li>
+                                <li>Strengthen defenses</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+
+                <h3>Threat Hunting Playbooks</h3>
+                <div class="steps-container">
+                    <div class="step">
+                        <div class="step-number">1</div>
+                        <div class="step-content">
+                            <h3>APT Hunting</h3>
+                            <p>Proactive hunting for Advanced Persistent Threat indicators and behaviors.</p>
+                            <pre><code># Example hunting query
+SELECT * FROM network_connections 
+WHERE destination_port IN (443, 80) 
+AND connection_duration > 3600 
+AND data_volume > 100MB</code></pre>
+                        </div>
+                    </div>
+                    
+                    <div class="step">
+                        <div class="step-number">2</div>
+                        <div class="step-content">
+                            <h3>Insider Threat Detection</h3>
+                            <p>Detect anomalous user behavior that may indicate insider threats.</p>
+                            <ul style="text-align: left; list-style: disc; padding-left: 1rem;">
+                                <li>Unusual access patterns</li>
+                                <li>Large data downloads</li>
+                                <li>Off-hours activities</li>
+                                <li>Privilege escalation attempts</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="step">
+                        <div class="step-number">3</div>
+                        <div class="step-content">
+                            <h3>Ransomware Hunting</h3>
+                            <p>Early detection of ransomware activity before encryption begins.</p>
+                            <ul style="text-align: left; list-style: disc; padding-left: 1rem;">
+                                <li>File encryption patterns</li>
+                                <li>Suspicious process behavior</li>
+                                <li>Network communication IOCs</li>
+                                <li>Shadow copy deletion</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="alert alert-success">
+                    <strong>Customization:</strong> All playbooks can be customized to match your organization's specific requirements and security policies.
+                </div>
+            </section>
+
+            <section id="api-reference" class="content-section">
+                <div class="section-header">
+                    <h2><i class="fas fa-code"></i> API Reference</h2>
+                    <p>Comprehensive REST API documentation for integrating with Securaa platforms.</p>
+                </div>
+
+                <h3>Authentication</h3>
+                <div class="alert alert-warning">
+                    <strong>API Security:</strong> All API requests must be authenticated using API keys or OAuth 2.0 tokens.
+                </div>
+                
+                <pre><code># API Key Authentication
+curl -H "Authorization: Bearer YOUR_API_KEY" \
+     -H "Content-Type: application/json" \
+     https://api.securaa.com/v1/assets</code></pre>
+
+                <h3>Common Endpoints</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Endpoint</th>
+                            <th>Method</th>
+                            <th>Description</th>
+                            <th>Platform</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>/v1/assets</td>
+                            <td>GET</td>
+                            <td>Retrieve asset inventory</td>
+                            <td>CSAM</td>
+                        </tr>
+                        <tr>
+                            <td>/v1/alerts</td>
+                            <td>GET, POST</td>
+                            <td>Manage security alerts</td>
+                            <td>SIA</td>
+                        </tr>
+                        <tr>
+                            <td>/v1/playbooks</td>
+                            <td>GET, POST</td>
+                            <td>Execute and manage playbooks</td>
+                            <td>SOAR</td>
+                        </tr>
+                        <tr>
+                            <td>/v1/iocs</td>
+                            <td>GET, POST</td>
+                            <td>Manage indicators of compromise</td>
+                            <td>TIP</td>
+                        </tr>
+                        <tr>
+                            <td>/v1/incidents</td>
+                            <td>GET, POST, PUT</td>
+                            <td>Incident management</td>
+                            <td>SOAR</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h3>API Examples</h3>
+                <div class="feature-grid">
+                    <div class="feature-card">
+                        <h3>Retrieve Assets</h3>
+                        <pre><code>GET /v1/assets
+{
+  "assets": [
+    {
+      "id": "asset-123",
+      "name": "web-server-01",
+      "type": "server",
+      "ip_address": "192.168.1.100",
+      "os": "Ubuntu 20.04",
+      "criticality": "high",
+      "last_scan": "2025-10-01T10:00:00Z"
+    }
+  ]
+}</code></pre>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <h3>Create Alert</h3>
+                        <pre><code>POST /v1/alerts
+{
+  "title": "Suspicious Network Activity",
+  "severity": "high",
+  "source": "192.168.1.100",
+  "description": "Unusual outbound connections detected",
+  "iocs": ["malicious-domain.com"]
+}</code></pre>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <h3>Execute Playbook</h3>
+                        <pre><code>POST /v1/playbooks/malware-response/execute
+{
+  "target_asset": "asset-123",
+  "parameters": {
+    "isolation_mode": "network",
+    "scan_type": "full"
+  }
+}</code></pre>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <h3>Add IOC</h3>
+                        <pre><code>POST /v1/iocs
+{
+  "type": "domain",
+  "value": "malicious-domain.com",
+  "threat_type": "malware",
+  "confidence": 85,
+  "source": "internal_analysis"
+}</code></pre>
+                    </div>
+                </div>
+
+                <h3>Webhook Configuration</h3>
+                <div class="alert alert-info">
+                    <strong>Real-time Updates:</strong> Configure webhooks to receive real-time notifications for security events.
+                </div>
+                
+                <pre><code># Webhook endpoint configuration
+POST /v1/webhooks
+{
+  "url": "https://your-endpoint.com/webhook",
+  "events": ["alert.created", "incident.updated"],
+  "secret": "your-webhook-secret"
+}</code></pre>
+
+                <h3>Rate Limits</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>API Tier</th>
+                            <th>Requests per Minute</th>
+                            <th>Burst Limit</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Standard</td>
+                            <td>100</td>
+                            <td>200</td>
+                        </tr>
+                        <tr>
+                            <td>Premium</td>
+                            <td>500</td>
+                            <td>1000</td>
+                        </tr>
+                        <tr>
+                            <td>Enterprise</td>
+                            <td>1000</td>
+                            <td>2000</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Securaa Integrations</h3>
+                    <p>Connect with 200+ security tools and platforms.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Developer Resources</h4>
+                    <ul>
+                        <li><a href="#api-reference">API Documentation</a></li>
+                        <li><a href="#">SDK Downloads</a></li>
+                        <li><a href="#">Code Examples</a></li>
+                        <li><a href="#">Developer Support</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Securaa. All rights reserved.</p>
+            </div>
+        </footer>
+    </div>
+
+    <script src="js/main.js"></script>
+    <style>
+        .integration-badges {
+            margin-top: 1rem;
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+        }
+        
+        .badge {
+            padding: 0.25rem 0.5rem;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            font-weight: 500;
+            color: white;
+        }
+        
+        .badge-success { background-color: var(--accent-color); }
+        .badge-primary { background-color: var(--primary-color); }
+        .badge-warning { background-color: var(--warning-color); }
+        
+        .playbook-steps ol {
+            margin-top: 0.5rem;
+        }
+    </style>
+</body>
+</html>

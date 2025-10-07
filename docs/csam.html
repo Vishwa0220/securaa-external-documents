@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSAM - Cyber Security Asset Management | Securaa Documentation</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.28.0/themes/prism.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-content">
+                <div class="logo">
+                    <h1><i class="fas fa-shield-alt"></i> Securaa</h1>
+                    <span class="tagline">Advanced Cybersecurity Solutions</span>
+                </div>
+                <nav class="main-nav">
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="sia.html">SIA</a></li>
+                        <li><a href="soar.html">SOAR</a></li>
+                        <li><a href="tip.html">TIP</a></li>
+                        <li><a href="csam.html" class="active">CSAM</a></li>
+                        <li><a href="support.html">Support</a></li>
+                    </ul>
+                </nav>
+                <div class="search-container">
+                    <input type="text" id="searchInput" placeholder="Search documentation...">
+                    <i class="fas fa-search"></i>
+                </div>
+            </div>
+        </header>
+
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar">
+            <nav class="sidebar-nav">
+                <div class="nav-section">
+                    <h3><i class="fas fa-home"></i> Getting Started</h3>
+                    <ul>
+                        <li><a href="index.html#overview">Product Overview</a></li>
+                        <li><a href="architecture.html">Solution Architecture</a></li>
+                        <li><a href="prerequisites.html">Prerequisites</a></li>
+                    </ul>
+                </div>
+                
+                <div class="nav-section">
+                    <h3><i class="fas fa-cube"></i> Products</h3>
+                    <ul>
+                        <li><a href="sia.html">SIA (Security Intelligence Analytics)</a></li>
+                        <li><a href="soar.html">SOAR (Security Orchestration)</a></li>
+                        <li><a href="tip.html">TIP (Threat Intelligence Platform)</a></li>
+                        <li><a href="csam.html" class="active">CSAM (Cyber Security Asset Management)</a></li>
+                    </ul>
+                </div>
+
+                <div class="nav-section">
+                    <h3><i class="fas fa-cogs"></i> Installation & Deployment</h3>
+                    <ul>
+                        <li><a href="installation.html">Installation Guide</a></li>
+                        <li><a href="deployment.html">Deployment Guide</a></li>
+                        <li><a href="hardware-specs.html">Hardware Specifications</a></li>
+                    </ul>
+                </div>
+
+                <div class="nav-section">
+                    <h3><i class="fas fa-users-cog"></i> Administration</h3>
+                    <ul>
+                        <li><a href="administration.html">Administration</a></li>
+                        <li><a href="csam-admin.html">CSAM Administration</a></li>
+                        <li><a href="tip-admin.html">TIP Administration</a></li>
+                    </ul>
+                </div>
+
+                <div class="nav-section">
+                    <h3><i class="fas fa-puzzle-piece"></i> Integrations</h3>
+                    <ul>
+                        <li><a href="integrations.html">Available Integrations</a></li>
+                        <li><a href="playbooks.html">Security Playbooks</a></li>
+                        <li><a href="api-reference.html">API Reference</a></li>
+                    </ul>
+                </div>
+
+                <div class="nav-section">
+                    <h3><i class="fas fa-question-circle"></i> Support</h3>
+                    <ul>
+                        <li><a href="troubleshooting.html">Troubleshooting</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                        <li><a href="support.html">Contact Support</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <section id="csam" class="content-section">
+                <div class="section-header">
+                    <h2><i class="fas fa-server"></i> CSAM - Cyber Security Asset Management</h2>
+                    <p>Complete asset management solution for tracking, monitoring, and securing all your digital and physical assets.</p>
+                </div>
+                
+                <div class="feature-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-search-plus"></i>
+                        </div>
+                        <h3>Asset Discovery</h3>
+                        <p>Automated discovery and inventory of all network-connected devices and software assets.</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-shield-virus"></i>
+                        </div>
+                        <h3>Vulnerability Assessment</h3>
+                        <p>Continuous vulnerability scanning and assessment of all managed assets.</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-clipboard-check"></i>
+                        </div>
+                        <h3>Compliance Monitoring</h3>
+                        <p>Monitor asset compliance with security policies and regulatory requirements.</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-chart-pie"></i>
+                        </div>
+                        <h3>Risk Assessment</h3>
+                        <p>Comprehensive risk scoring and prioritization based on asset criticality and vulnerabilities.</p>
+                    </div>
+                </div>
+
+                <div class="alert alert-info">
+                    <strong>Complete Visibility:</strong> CSAM provides 360-degree visibility into your entire IT infrastructure, helping you understand what you have, where it is, and how secure it is.
+                </div>
+
+                <h3>Asset Categories</h3>
+                <div class="steps-container">
+                    <div class="step">
+                        <div class="step-number">1</div>
+                        <div class="step-content">
+                            <h3>Hardware Assets</h3>
+                            <p>Servers, workstations, mobile devices, network equipment, and IoT devices with detailed specifications and ownership information.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="step">
+                        <div class="step-number">2</div>
+                        <div class="step-content">
+                            <h3>Software Assets</h3>
+                            <p>Operating systems, applications, licenses, and software configurations with version tracking and compliance monitoring.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="step">
+                        <div class="step-number">3</div>
+                        <div class="step-content">
+                            <h3>Cloud Assets</h3>
+                            <p>Cloud instances, containers, virtual machines, and cloud services across multiple cloud providers.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="step">
+                        <div class="step-number">4</div>
+                        <div class="step-content">
+                            <h3>Data Assets</h3>
+                            <p>Databases, file shares, sensitive data repositories, and data flows with classification and protection status.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <h3>Discovery Methods</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Method</th>
+                            <th>Description</th>
+                            <th>Asset Types</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Network Scanning</td>
+                            <td>Active and passive network discovery</td>
+                            <td>Network devices, servers, workstations</td>
+                        </tr>
+                        <tr>
+                            <td>Agent-based</td>
+                            <td>Software agents installed on endpoints</td>
+                            <td>Detailed system information, software inventory</td>
+                        </tr>
+                        <tr>
+                            <td>Cloud APIs</td>
+                            <td>Integration with cloud provider APIs</td>
+                            <td>Cloud instances, services, configurations</td>
+                        </tr>
+                        <tr>
+                            <td>Directory Services</td>
+                            <td>Integration with Active Directory and LDAP</td>
+                            <td>User accounts, group memberships, permissions</td>
+                        </tr>
+                        <tr>
+                            <td>SNMP</td>
+                            <td>Simple Network Management Protocol</td>
+                            <td>Network infrastructure, managed devices</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h3>Asset Lifecycle Management</h3>
+                <div class="feature-grid">
+                    <div class="feature-card">
+                        <h3>Acquisition</h3>
+                        <p>Track asset procurement, purchase orders, and initial deployment with vendor and cost information.</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <h3>Deployment</h3>
+                        <p>Monitor asset deployment status, configuration changes, and integration with existing infrastructure.</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <h3>Maintenance</h3>
+                        <p>Schedule and track maintenance activities, updates, patches, and configuration changes.</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <h3>Retirement</h3>
+                        <p>Manage asset retirement process including data sanitization, disposal, and certificate updates.</p>
+                    </div>
+                </div>
+
+                <h3>Risk-Based Prioritization</h3>
+                <div class="alert alert-warning">
+                    <strong>Smart Prioritization:</strong> CSAM uses risk-based scoring to help you focus on the most critical assets and vulnerabilities first.
+                </div>
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Risk Factor</th>
+                            <th>Weight</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Asset Criticality</td>
+                            <td>High</td>
+                            <td>Business importance and impact of asset compromise</td>
+                        </tr>
+                        <tr>
+                            <td>Vulnerability Severity</td>
+                            <td>High</td>
+                            <td>CVSS scores and exploitability of vulnerabilities</td>
+                        </tr>
+                        <tr>
+                            <td>Exposure Level</td>
+                            <td>Medium</td>
+                            <td>Network exposure and accessibility from external sources</td>
+                        </tr>
+                        <tr>
+                            <td>Threat Intelligence</td>
+                            <td>Medium</td>
+                            <td>Active threat campaigns targeting similar assets</td>
+                        </tr>
+                        <tr>
+                            <td>Compliance Requirements</td>
+                            <td>Medium</td>
+                            <td>Regulatory and policy compliance obligations</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h3>Integration Capabilities</h3>
+                <div class="steps-container">
+                    <div class="step">
+                        <div class="step-number">1</div>
+                        <div class="step-content">
+                            <h3>Vulnerability Scanners</h3>
+                            <p>Integrate with Nessus, OpenVAS, Qualys, and Rapid7 for comprehensive vulnerability data.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="step">
+                        <div class="step-number">2</div>
+                        <div class="step-content">
+                            <h3>CMDB Systems</h3>
+                            <p>Synchronize with Configuration Management Databases like ServiceNow and BMC Remedy.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="step">
+                        <div class="step-number">3</div>
+                        <div class="step-content">
+                            <h3>Cloud Platforms</h3>
+                            <p>Native integration with AWS, Azure, Google Cloud, and other cloud service providers.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="step">
+                        <div class="step-number">4</div>
+                        <div class="step-content">
+                            <h3>Security Tools</h3>
+                            <p>Feed asset data to SIEM, SOAR, and other security platforms for enhanced context.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <h3>Reporting and Analytics</h3>
+                <div class="feature-grid">
+                    <div class="feature-card">
+                        <h3>Executive Dashboards</h3>
+                        <p>High-level security posture and risk metrics for executive reporting and decision-making.</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <h3>Operational Reports</h3>
+                        <p>Detailed operational reports for IT and security teams with actionable insights and recommendations.</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <h3>Compliance Reports</h3>
+                        <p>Automated compliance reporting for frameworks like SOX, PCI-DSS, HIPAA, and ISO 27001.</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <h3>Trend Analysis</h3>
+                        <p>Historical trend analysis to track security posture improvements and identify emerging risks.</p>
+                    </div>
+                </div>
+
+                <div class="alert alert-success">
+                    <strong>Best Practice:</strong> Regular asset discovery scans should be scheduled to maintain an accurate and up-to-date asset inventory. We recommend daily scans for critical environments and weekly scans for general infrastructure.
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Securaa</h3>
+                    <p>Advanced cybersecurity solutions for modern threats.</p>
+                    <div class="social-links">
+                        <a href="https://linkedin.com/company/securaa" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://twitter.com/securaa" target="_blank" rel="noopener noreferrer"><i class="fab fa-twitter"></i></a>
+                        <a href="https://github.com/securaa" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Products</h4>
+                    <ul>
+                        <li><a href="sia.html">SIA</a></li>
+                        <li><a href="soar.html">SOAR</a></li>
+                        <li><a href="tip.html">TIP</a></li>
+                        <li><a href="csam.html">CSAM</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Documentation</h4>
+                    <ul>
+                        <li><a href="installation.html">Installation</a></li>
+                        <li><a href="administration.html">Administration</a></li>
+                        <li><a href="integrations.html">Integrations</a></li>
+                        <li><a href="api-reference.html">API Reference</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="support.html">Contact Support</a></li>
+                        <li><a href="troubleshooting.html">Troubleshooting</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Securaa. All rights reserved. | <a href="privacy-policy.html">Privacy Policy</a> | <a href="terms-of-service.html">Terms of Service</a></p>
+                <p>Documentation Version 2.0 | Last Updated: October 2025</p>
+            </div>
+        </footer>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.28.0/components/prism-core.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.28.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

@@ -362,6 +362,19 @@ Initial Password: [Auto-generated]</code></pre>
         </footer>
     </div>
 
-    <script src="js/main.js"></script>
+    <script>
+        // Add keyboard shortcut for search
+        document.addEventListener('DOMContentLoaded', () => {
+            document.addEventListener('keydown', (e) => {
+                if ((e.ctrlKey || e.metaKey) && e.key === 'k') {
+                    e.preventDefault();
+                    const searchInput = document.getElementById('searchInput');
+                    if (searchInput) {
+                        searchInput.focus();
+                    }
+                }
+            });
+        });
+    </script>
 </body>
 </html>

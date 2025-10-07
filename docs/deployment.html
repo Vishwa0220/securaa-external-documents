@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deployment Guide - Securaa Documentation</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/themes/prism.min.css">
+</head>
+<body>
+    <div class="container">
+        <nav class="sidebar">
+            <div class="sidebar-header">
+                <h2><i class="fas fa-shield-alt"></i> Securaa</h2>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-section">NAVIGATION</li>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="sia.html">SIA</a></li>
+                <li><a href="soar.html">SOAR</a></li>
+                <li><a href="tip.html">TIP</a></li>
+                <li><a href="csam.html">CSAM</a></li>
+                <li><a href="support.html">Support</a></li>
+            </ul>
+            
+            <ul class="nav-menu">
+                <li class="nav-section">OVERVIEW</li>
+                <li><a href="index.html#overview">Product Overview</a></li>
+                <li><a href="architecture.html">Solution Architecture</a></li>
+                <li><a href="prerequisites.html">Prerequisites</a></li>
+            </ul>
+
+            <ul class="nav-menu">
+                <li class="nav-section">PRODUCTS</li>
+                <li><a href="sia.html">SIA (Security Intelligence Analytics)</a></li>
+                <li><a href="soar.html">SOAR (Security Orchestration)</a></li>
+                <li><a href="tip.html">TIP (Threat Intelligence Platform)</a></li>
+                <li><a href="csam.html">CSAM (Cyber Security Asset Management)</a></li>
+            </ul>
+
+            <ul class="nav-menu">
+                <li class="nav-section">INSTALLATION</li>
+                <li><a href="installation.html">Installation Guide</a></li>
+                <li><a href="deployment.html" class="active">Deployment Guide</a></li>
+                <li><a href="hardware-specs.html">Hardware Specifications</a></li>
+            </ul>
+
+            <ul class="nav-menu">
+                <li class="nav-section">ADMINISTRATION</li>
+                <li><a href="administration.html">Administration</a></li>
+                <li><a href="csam-admin.html">CSAM Administration</a></li>
+                <li><a href="tip-admin.html">TIP Administration</a></li>
+            </ul>
+
+            <ul class="nav-menu">
+                <li class="nav-section">INTEGRATIONS & API</li>
+                <li><a href="integrations.html">Available Integrations</a></li>
+                <li><a href="playbooks.html">Security Playbooks</a></li>
+                <li><a href="api-reference.html">API Reference</a></li>
+            </ul>
+
+            <ul class="nav-menu">
+                <li class="nav-section">SUPPORT</li>
+                <li><a href="troubleshooting.html">Troubleshooting</a></li>
+                <li><a href="faq.html">FAQ</a></li>
+                <li><a href="support.html">Contact Support</a></li>
+            </ul>
+        </nav>
+
+        <main class="main-content">
+            <div class="header">
+                <h1><i class="fas fa-rocket"></i> Deployment Guide</h1>
+                <p class="subtitle">Step-by-step guide for deploying Securaa in production environments</p>
+            </div>
+
+            <div class="content">
+                <section class="info-box warning">
+                    <h2><i class="fas fa-exclamation-triangle"></i> Before You Begin</h2>
+                    <p>
+                        <strong>Important:</strong> Ensure all <a href="prerequisites.html">system requirements</a> are met and 
+                        you have completed the <a href="installation.html">installation process</a> before proceeding with deployment.
+                    </p>
+                </section>
+
+                <section>
+                    <h2><i class="fas fa-list-ol"></i> Deployment Overview</h2>
+                    <p>
+                        This guide covers the deployment of Securaa platform components in various environments, 
+                        from single-node deployments to large-scale enterprise configurations.
+                    </p>
+                    
+                    <div class="deployment-types">
+                        <div class="deployment-option">
+                            <h3><i class="fas fa-desktop"></i> Single Node Deployment</h3>
+                            <p>Ideal for testing, development, or small environments</p>
+                            <ul>
+                                <li>All components on single server</li>
+                                <li>Minimal resource requirements</li>
+                                <li>Quick setup and configuration</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="deployment-option">
+                            <h3><i class="fas fa-server"></i> Multi-Node Deployment</h3>
+                            <p>Recommended for production environments</p>
+                            <ul>
+                                <li>Distributed component architecture</li>
+                                <li>High availability and scalability</li>
+                                <li>Load balancing and redundancy</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="deployment-option">
+                            <h3><i class="fas fa-cloud"></i> Cloud Deployment</h3>
+                            <p>Scalable cloud-native deployment</p>
+                            <ul>
+                                <li>Container orchestration</li>
+                                <li>Auto-scaling capabilities</li>
+                                <li>Cloud-native integrations</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+
+                <section>
+                    <h2><i class="fas fa-cog"></i> Pre-Deployment Configuration</h2>
+                    
+                    <h3>1. Environment Preparation</h3>
+                    <div class="code-block">
+                        <pre><code class="language-bash"># Create deployment directory
+sudo mkdir -p /opt/securaa/deploy
+cd /opt/securaa/deploy
+
+# Set proper permissions
+sudo chown -R securaa:securaa /opt/securaa
+sudo chmod -R 755 /opt/securaa</code></pre>
+                    </div>
+                    
+                    <h3>2. Configuration Files</h3>
+                    <p>Prepare the main configuration file:</p>
+                    <div class="code-block">
+                        <pre><code class="language-bash"># Copy template configuration
+cp /opt/securaa/config/securaa.conf.template /opt/securaa/config/securaa.conf
+
+# Edit configuration
+nano /opt/securaa/config/securaa.conf</code></pre>
+                    </div>
+                    
+                    <h3>3. Database Configuration</h3>
+                    <div class="config-table">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Parameter</th>
+                                    <th>Description</th>
+                                    <th>Default Value</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>DB_HOST</td>
+                                    <td>Database server hostname</td>
+                                    <td>localhost</td>
+                                </tr>
+                                <tr>
+                                    <td>DB_PORT</td>
+                                    <td>Database server port</td>
+                                    <td>5432</td>
+                                </tr>
+                                <tr>
+                                    <td>DB_NAME</td>
+                                    <td>Database name</td>
+                                    <td>securaa</td>
+                                </tr>
+                                <tr>
+                                    <td>DB_USER</td>
+                                    <td>Database username</td>
+                                    <td>securaa_user</td>
+                                </tr>
+                                <tr>
+                                    <td>DB_SSL</td>
+                                    <td>Enable SSL connection</td>
+                                    <td>true</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+
+                <section>
+                    <h2><i class="fas fa-play"></i> Single Node Deployment</h2>
+                    
+                    <h3>Step 1: Start Core Services</h3>
+                    <div class="code-block">
+                        <pre><code class="language-bash"># Start database
+sudo systemctl start postgresql
+sudo systemctl enable postgresql
+
+# Start Redis cache
+sudo systemctl start redis
+sudo systemctl enable redis
+
+# Start Elasticsearch
+sudo systemctl start elasticsearch
+sudo systemctl enable elasticsearch</code></pre>
+                    </div>
+                    
+                    <h3>Step 2: Deploy Application Components</h3>
+                    <div class="code-block">
+                        <pre><code class="language-bash"># Deploy SIA component
+/opt/securaa/bin/deploy-sia.sh --config /opt/securaa/config/securaa.conf
+
+# Deploy SOAR component
+/opt/securaa/bin/deploy-soar.sh --config /opt/securaa/config/securaa.conf
+
+# Deploy TIP component
+/opt/securaa/bin/deploy-tip.sh --config /opt/securaa/config/securaa.conf
+
+# Deploy CSAM component
+/opt/securaa/bin/deploy-csam.sh --config /opt/securaa/config/securaa.conf</code></pre>
+                    </div>
+                    
+                    <h3>Step 3: Start Securaa Services</h3>
+                    <div class="code-block">
+                        <pre><code class="language-bash"># Start all Securaa services
+sudo systemctl start securaa-sia
+sudo systemctl start securaa-soar
+sudo systemctl start securaa-tip
+sudo systemctl start securaa-csam
+sudo systemctl start securaa-web
+
+# Enable auto-start on boot
+sudo systemctl enable securaa-sia
+sudo systemctl enable securaa-soar
+sudo systemctl enable securaa-tip
+sudo systemctl enable securaa-csam
+sudo systemctl enable securaa-web</code></pre>
+                    </div>
+                </section>
+
+                <section>
+                    <h2><i class="fas fa-network-wired"></i> Multi-Node Deployment</h2>
+                    
+                    <h3>Node Configuration</h3>
+                    <div class="node-architecture">
+                        <div class="node-type">
+                            <h4>Management Node</h4>
+                            <ul>
+                                <li>Web interface</li>
+                                <li>API gateway</li>
+                                <li>Load balancer</li>
+                                <li>Configuration management</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="node-type">
+                            <h4>Processing Nodes</h4>
+                            <ul>
+                                <li>SIA analytics engine</li>
+                                <li>SOAR automation engine</li>
+                                <li>TIP processing engine</li>
+                                <li>CSAM scanning engine</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="node-type">
+                            <h4>Data Nodes</h4>
+                            <ul>
+                                <li>Primary database</li>
+                                <li>Elasticsearch cluster</li>
+                                <li>Redis cluster</li>
+                                <li>File storage</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <h3>Cluster Configuration</h3>
+                    <div class="code-block">
+                        <pre><code class="language-bash"># Configure cluster on management node
+/opt/securaa/bin/cluster-init.sh \
+  --management-node \
+  --cluster-name "securaa-prod" \
+  --nodes "node1.securaa.local,node2.securaa.local,node3.securaa.local"
+
+# Join processing nodes to cluster
+/opt/securaa/bin/cluster-join.sh \
+  --processing-node \
+  --management-host "mgmt.securaa.local" \
+  --node-type "sia,soar"
+
+# Configure data nodes
+/opt/securaa/bin/cluster-join.sh \
+  --data-node \
+  --management-host "mgmt.securaa.local" \
+  --services "postgresql,elasticsearch,redis"</code></pre>
+                    </div>
+                </section>
+
+                <section>
+                    <h2><i class="fas fa-cloud"></i> Cloud Deployment</h2>
+                    
+                    <h3>Kubernetes Deployment</h3>
+                    <div class="code-block">
+                        <pre><code class="language-yaml"># Create namespace
+kubectl create namespace securaa
+
+# Deploy using Helm chart
+helm repo add securaa https://charts.securaa.com
+helm install securaa securaa/securaa \
+  --namespace securaa \
+  --set global.storageClass=fast-ssd \
+  --set global.ingress.enabled=true \
+  --set global.monitoring.enabled=true</code></pre>
+                    </div>
+                    
+                    <h3>Docker Compose Deployment</h3>
+                    <div class="code-block">
+                        <pre><code class="language-bash"># Clone deployment repository
+git clone https://github.com/securaa/deployment.git
+cd deployment/docker
+
+# Configure environment
+cp .env.template .env
+nano .env
+
+# Deploy stack
+docker-compose up -d</code></pre>
+                    </div>
+                </section>
+
+                <section>
+                    <h2><i class="fas fa-shield-check"></i> Security Configuration</h2>
+                    
+                    <h3>SSL/TLS Configuration</h3>
+                    <div class="code-block">
+                        <pre><code class="language-bash"># Generate SSL certificates
+/opt/securaa/bin/generate-certs.sh \
+  --domain "securaa.company.com" \
+  --country "US" \
+  --state "California" \
+  --city "San Francisco" \
+  --org "Your Company"
+
+# Configure SSL in Nginx
+sudo nano /etc/nginx/sites-available/securaa-ssl.conf</code></pre>
+                    </div>
+                    
+                    <h3>Firewall Configuration</h3>
+                    <div class="firewall-rules">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Port</th>
+                                    <th>Protocol</th>
+                                    <th>Service</th>
+                                    <th>Access</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>443</td>
+                                    <td>TCP</td>
+                                    <td>HTTPS Web Interface</td>
+                                    <td>External</td>
+                                </tr>
+                                <tr>
+                                    <td>8443</td>
+                                    <td>TCP</td>
+                                    <td>API Gateway</td>
+                                    <td>External</td>
+                                </tr>
+                                <tr>
+                                    <td>5432</td>
+                                    <td>TCP</td>
+                                    <td>PostgreSQL</td>
+                                    <td>Internal</td>
+                                </tr>
+                                <tr>
+                                    <td>9200</td>
+                                    <td>TCP</td>
+                                    <td>Elasticsearch</td>
+                                    <td>Internal</td>
+                                </tr>
+                                <tr>
+                                    <td>6379</td>
+                                    <td>TCP</td>
+                                    <td>Redis</td>
+                                    <td>Internal</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+
+                <section>
+                    <h2><i class="fas fa-check-circle"></i> Deployment Verification</h2>
+                    
+                    <h3>Health Checks</h3>
+                    <div class="code-block">
+                        <pre><code class="language-bash"># Check service status
+sudo systemctl status securaa-*
+
+# Verify component health
+curl -k https://localhost:8443/api/health
+
+# Check database connectivity
+/opt/securaa/bin/db-check.sh
+
+# Verify all integrations
+/opt/securaa/bin/integration-test.sh</code></pre>
+                    </div>
+                    
+                    <h3>Access Web Interface</h3>
+                    <div class="info-box">
+                        <p>
+                            After successful deployment, access the Securaa web interface at:<br>
+                            <strong>https://your-server-ip:443</strong>
+                        </p>
+                        <p>
+                            Default credentials:<br>
+                            Username: <code>admin</code><br>
+                            Password: <code>SecuraaAdmin123!</code>
+                        </p>
+                        <p>
+                            <strong>Important:</strong> Change the default password immediately after first login.
+                        </p>
+                    </div>
+                </section>
+
+                <section>
+                    <h2><i class="fas fa-tools"></i> Post-Deployment Tasks</h2>
+                    
+                    <div class="task-list">
+                        <div class="task-item">
+                            <h3><i class="fas fa-user-shield"></i> Security Hardening</h3>
+                            <ul>
+                                <li>Change default passwords</li>
+                                <li>Configure user authentication</li>
+                                <li>Set up role-based access control</li>
+                                <li>Enable audit logging</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="task-item">
+                            <h3><i class="fas fa-chart-line"></i> Monitoring Setup</h3>
+                            <ul>
+                                <li>Configure system monitoring</li>
+                                <li>Set up alerting rules</li>
+                                <li>Enable performance metrics</li>
+                                <li>Configure log aggregation</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="task-item">
+                            <h3><i class="fas fa-backup"></i> Backup Configuration</h3>
+                            <ul>
+                                <li>Set up automated backups</li>
+                                <li>Configure backup retention</li>
+                                <li>Test restore procedures</li>
+                                <li>Document backup locations</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+
+                <div class="cta-section">
+                    <h2><i class="fas fa-graduation-cap"></i> Next Steps</h2>
+                    <p>
+                        <strong>Deployment Complete!</strong> Now configure your platform by visiting the 
+                        <a href="administration.html">Administration Guide</a> and set up 
+                        <a href="integrations.html">integrations</a> with your existing security tools.
+                    </p>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Products</h3>
+                <ul>
+                    <li><a href="sia.html">SIA</a></li>
+                    <li><a href="soar.html">SOAR</a></li>
+                    <li><a href="tip.html">TIP</a></li>
+                    <li><a href="csam.html">CSAM</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Documentation</h3>
+                <ul>
+                    <li><a href="installation.html">Installation</a></li>
+                    <li><a href="administration.html">Administration</a></li>
+                    <li><a href="integrations.html">Integrations</a></li>
+                    <li><a href="api-reference.html">API Reference</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Support</h3>
+                <ul>
+                    <li><a href="support.html">Contact Support</a></li>
+                    <li><a href="troubleshooting.html">Troubleshooting</a></li>
+                    <li><a href="faq.html">FAQ</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Securaa. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/components/prism-core.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

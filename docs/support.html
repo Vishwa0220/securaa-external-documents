@@ -551,23 +551,35 @@ curl -X POST https://siem.company.com/api/events \
         </footer>
     </div>
 
-    <script src="js/main.js"></script>
     <script>
         // FAQ Toggle Functionality
-        document.querySelectorAll('.faq-question').forEach(question => {
-            question.addEventListener('click', () => {
-                const faqItem = question.closest('.faq-item');
-                const answer = faqItem.querySelector('.faq-answer');
-                const icon = question.querySelector('i');
-                
-                if (answer.style.display === 'block') {
-                    answer.style.display = 'none';
-                    icon.classList.remove('fa-minus');
-                    icon.classList.add('fa-plus');
-                } else {
-                    answer.style.display = 'block';
-                    icon.classList.remove('fa-plus');
-                    icon.classList.add('fa-minus');
+        document.addEventListener('DOMContentLoaded', () => {
+            document.querySelectorAll('.faq-question').forEach(question => {
+                question.addEventListener('click', () => {
+                    const faqItem = question.closest('.faq-item');
+                    const answer = faqItem.querySelector('.faq-answer');
+                    const icon = question.querySelector('i');
+                    
+                    if (answer.style.display === 'block') {
+                        answer.style.display = 'none';
+                        icon.classList.remove('fa-minus');
+                        icon.classList.add('fa-plus');
+                    } else {
+                        answer.style.display = 'block';
+                        icon.classList.remove('fa-plus');
+                        icon.classList.add('fa-minus');
+                    }
+                });
+            });
+            
+            // Add keyboard shortcut for search
+            document.addEventListener('keydown', (e) => {
+                if ((e.ctrlKey || e.metaKey) && e.key === 'k') {
+                    e.preventDefault();
+                    const searchInput = document.getElementById('searchInput');
+                    if (searchInput) {
+                        searchInput.focus();
+                    }
                 }
             });
         });

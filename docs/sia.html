@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SIA - Security Intelligence Analytics | Securaa Documentation</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.28.0/themes/prism.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-content">
+                <div class="logo">
+                    <h1><i class="fas fa-shield-alt"></i> Securaa</h1>
+                    <span class="tagline">Advanced Cybersecurity Solutions</span>
+                </div>
+                <nav class="main-nav">
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="sia.html" class="active">SIA</a></li>
+                        <li><a href="soar.html">SOAR</a></li>
+                        <li><a href="tip.html">TIP</a></li>
+                        <li><a href="csam.html">CSAM</a></li>
+                        <li><a href="support.html">Support</a></li>
+                    </ul>
+                </nav>
+                <div class="search-container">
+                    <input type="text" id="searchInput" placeholder="Search documentation...">
+                    <i class="fas fa-search"></i>
+                </div>
+            </div>
+        </header>
+
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar">
+            <nav class="sidebar-nav">
+                <div class="nav-section">
+                    <h3><i class="fas fa-home"></i> Getting Started</h3>
+                    <ul>
+                        <li><a href="index.html#overview">Product Overview</a></li>
+                        <li><a href="architecture.html">Solution Architecture</a></li>
+                        <li><a href="prerequisites.html">Prerequisites</a></li>
+                    </ul>
+                </div>
+                
+                <div class="nav-section">
+                    <h3><i class="fas fa-cube"></i> Products</h3>
+                    <ul>
+                        <li><a href="sia.html" class="active">SIA (Security Intelligence Analytics)</a></li>
+                        <li><a href="soar.html">SOAR (Security Orchestration)</a></li>
+                        <li><a href="tip.html">TIP (Threat Intelligence Platform)</a></li>
+                        <li><a href="csam.html">CSAM (Cyber Security Asset Management)</a></li>
+                    </ul>
+                </div>
+
+                <div class="nav-section">
+                    <h3><i class="fas fa-cogs"></i> Installation & Deployment</h3>
+                    <ul>
+                        <li><a href="installation.html">Installation Guide</a></li>
+                        <li><a href="deployment.html">Deployment Guide</a></li>
+                        <li><a href="hardware-specs.html">Hardware Specifications</a></li>
+                    </ul>
+                </div>
+
+                <div class="nav-section">
+                    <h3><i class="fas fa-users-cog"></i> Administration</h3>
+                    <ul>
+                        <li><a href="administration.html">Administration</a></li>
+                        <li><a href="csam-admin.html">CSAM Administration</a></li>
+                        <li><a href="tip-admin.html">TIP Administration</a></li>
+                    </ul>
+                </div>
+
+                <div class="nav-section">
+                    <h3><i class="fas fa-puzzle-piece"></i> Integrations</h3>
+                    <ul>
+                        <li><a href="integrations.html">Available Integrations</a></li>
+                        <li><a href="playbooks.html">Security Playbooks</a></li>
+                        <li><a href="api-reference.html">API Reference</a></li>
+                    </ul>
+                </div>
+
+                <div class="nav-section">
+                    <h3><i class="fas fa-question-circle"></i> Support</h3>
+                    <ul>
+                        <li><a href="troubleshooting.html">Troubleshooting</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                        <li><a href="support.html">Contact Support</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <section id="sia" class="content-section">
+                <div class="section-header">
+                    <h2><i class="fas fa-chart-line"></i> SIA - Security Intelligence Analytics</h2>
+                    <p>Advanced analytics platform for comprehensive threat detection and security intelligence gathering.</p>
+                </div>
+                
+                <div class="feature-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-eye"></i>
+                        </div>
+                        <h3>Real-time Monitoring</h3>
+                        <p>Continuous monitoring of network traffic, user behavior, and system activities with real-time threat detection capabilities.</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-brain"></i>
+                        </div>
+                        <h3>AI-Powered Analytics</h3>
+                        <p>Machine learning algorithms for anomaly detection, pattern recognition, and predictive threat analysis.</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-chart-bar"></i>
+                        </div>
+                        <h3>Advanced Reporting</h3>
+                        <p>Comprehensive dashboards and customizable reports for security metrics and compliance requirements.</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <h3>Threat Intelligence</h3>
+                        <p>Integration with global threat intelligence feeds and custom threat indicators for enhanced detection.</p>
+                    </div>
+                </div>
+
+                <div class="alert alert-info">
+                    <strong>Key Benefits:</strong> SIA provides organizations with advanced threat detection capabilities, reducing false positives by up to 80% while improving incident response times by 60%.
+                </div>
+
+                <h3>SIA Architecture Overview</h3>
+                <div class="architecture-section">
+                    <div class="architecture-diagram">
+                        <img src="https://i.imgur.com/architecture-diagram.png" alt="SIA Architecture Diagram" style="max-width: 100%; height: auto; border: 1px solid #ddd; border-radius: 8px; margin: 20px 0;">
+                        <p class="diagram-caption"><em>Figure 1: SIA Service Architecture - Integrated AI-Powered Security Intelligence Platform</em></p>
+                    </div>
+                    
+                    <div class="architecture-explanation">
+                        <h4><i class="fas fa-sitemap"></i> Architecture Components</h4>
+                        <p>The SIA (Security Intelligence Analytics) platform employs a sophisticated multi-layered architecture that integrates advanced AI capabilities with traditional security analytics. The system is designed with both on-premise and cloud-hybrid deployment options to provide maximum flexibility and scalability.</p>
+                        
+                        <div class="architecture-layers">
+                            <div class="layer-card">
+                                <h5><i class="fas fa-desktop"></i> SOAR Integration Layer</h5>
+                                <p><strong>SIA Agent, Cases, Playbooks (UI)</strong></p>
+                                <p>The top-tier user interface layer provides seamless integration with SOAR capabilities, enabling security analysts to:</p>
+                                <ul>
+                                    <li>Manage security cases through an intuitive interface</li>
+                                    <li>Execute automated playbooks for incident response</li>
+                                    <li>Access AI-powered investigation tools and recommendations</li>
+                                    <li>Coordinate response activities across multiple security tools</li>
+                                </ul>
+                                <p>The <strong>SOAR-SIA Integration Module</strong> acts as a bridge between the user interface and the core SIA services, ensuring real-time data flow and coordinated automation.</p>
+                            </div>
+
+                            <div class="layer-card">
+                                <h5><i class="fas fa-cogs"></i> SIA Core Service Layer</h5>
+                                <p>The heart of the SIA platform consists of three primary engines working in concert:</p>
+                                
+                                <div class="component-grid">
+                                    <div class="component-item">
+                                        <h6><i class="fas fa-search"></i> Case Investigation Engine</h6>
+                                        <p>Provides advanced investigative capabilities including:</p>
+                                        <ul>
+                                            <li>Automated evidence collection and correlation</li>
+                                            <li>Timeline reconstruction of security events</li>
+                                            <li>Entity relationship mapping and analysis</li>
+                                            <li>Forensic data processing and preservation</li>
+                                        </ul>
+                                    </div>
+                                    
+                                    <div class="component-item">
+                                        <h6><i class="fas fa-comments"></i> Chat Engine</h6>
+                                        <p>AI-powered conversational interface that enables:</p>
+                                        <ul>
+                                            <li>Natural language queries for security data</li>
+                                            <li>Interactive threat hunting sessions</li>
+                                            <li>Contextual assistance during investigations</li>
+                                            <li>Knowledge sharing and collaboration features</li>
+                                        </ul>
+                                    </div>
+                                    
+                                    <div class="component-item">
+                                        <h6><i class="fas fa-database"></i> Indexing Engine</h6>
+                                        <p>High-performance data processing system featuring:</p>
+                                        <ul>
+                                            <li>Real-time data ingestion and normalization</li>
+                                            <li>Advanced search and retrieval capabilities</li>
+                                            <li>Scalable indexing for massive datasets</li>
+                                            <li>Optimized query performance and caching</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                
+                                <div class="vector-database-section">
+                                    <h6><i class="fas fa-project-diagram"></i> Vector Database Integration</h6>
+                                    <p>The <strong>Vector Database</strong> component enables advanced AI capabilities by:</p>
+                                    <ul>
+                                        <li>Storing high-dimensional vector representations of security data</li>
+                                        <li>Enabling semantic search and similarity matching</li>
+                                        <li>Supporting machine learning model inference</li>
+                                        <li>Facilitating rapid pattern recognition and anomaly detection</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="layer-card">
+                                <h5><i class="fas fa-brain"></i> LLM Service Layer</h5>
+                                <p>The AI foundation layer provides enterprise-grade language model capabilities with flexible deployment options:</p>
+                                
+                                <div class="deployment-options">
+                                    <div class="deployment-option">
+                                        <h6><i class="fas fa-server"></i> On-Premise Deployment</h6>
+                                        <p>For organizations requiring complete data sovereignty and control:</p>
+                                        <ul>
+                                            <li>Local LLM inference APIs hosted within your infrastructure</li>
+                                            <li>Support for multiple model architectures including Llama 3</li>
+                                            <li>Custom embedding models for domain-specific security contexts</li>
+                                            <li>No external data transmission ensuring maximum privacy</li>
+                                        </ul>
+                                    </div>
+                                    
+                                    <div class="deployment-option">
+                                        <h6><i class="fas fa-cloud"></i> Shared Cloud Deployment</h6>
+                                        <p>Hybrid approach balancing performance and cost-effectiveness:</p>
+                                        <ul>
+                                            <li>Load balancer (AWS/Nginx) for high availability</li>
+                                            <li>Scalable LLM inference APIs with auto-scaling capabilities</li>
+                                            <li>Distributed processing for handling large workloads</li>
+                                            <li>Secure API gateways with enterprise authentication</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="architecture-benefits">
+                            <h4><i class="fas fa-star"></i> Architectural Advantages</h4>
+                            <div class="benefits-grid">
+                                <div class="benefit-item">
+                                    <h5><i class="fas fa-expand-arrows-alt"></i> Scalability</h5>
+                                    <p>Microservices architecture enables horizontal scaling of individual components based on workload demands.</p>
+                                </div>
+                                
+                                <div class="benefit-item">
+                                    <h5><i class="fas fa-shield-check"></i> Security</h5>
+                                    <p>Defense-in-depth approach with encrypted communications, secure APIs, and isolated processing environments.</p>
+                                </div>
+                                
+                                <div class="benefit-item">
+                                    <h5><i class="fas fa-cogs"></i> Flexibility</h5>
+                                    <p>Modular design allows for customization and integration with existing security infrastructure.</p>
+                                </div>
+                                
+                                <div class="benefit-item">
+                                    <h5><i class="fas fa-rocket"></i> Performance</h5>
+                                    <p>Optimized data flow and intelligent caching provide sub-second response times for critical operations.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="data-flow-section">
+                            <h4><i class="fas fa-route"></i> Data Flow Architecture</h4>
+                            <p>The SIA platform processes security data through a sophisticated pipeline:</p>
+                            <ol>
+                                <li><strong>Data Ingestion:</strong> Security events from multiple sources are collected and normalized</li>
+                                <li><strong>Vector Processing:</strong> Data is converted to vector representations for AI analysis</li>
+                                <li><strong>LLM Analysis:</strong> Large language models process and analyze the vectorized data</li>
+                                <li><strong>Investigation Engine:</strong> Results are fed into the case investigation system</li>
+                                <li><strong>User Interface:</strong> Insights are presented through the integrated SOAR interface</li>
+                                <li><strong>Response Automation:</strong> Automated responses are triggered based on analysis results</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+
+                <h3>System Requirements</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Component</th>
+                            <th>Minimum</th>
+                            <th>Recommended</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>CPU</td>
+                            <td>8 cores</td>
+                            <td>16+ cores</td>
+                        </tr>
+                        <tr>
+                            <td>RAM</td>
+                            <td>32 GB</td>
+                            <td>64+ GB</td>
+                        </tr>
+                        <tr>
+                            <td>Storage</td>
+                            <td>1 TB SSD</td>
+                            <td>2+ TB NVMe SSD</td>
+                        </tr>
+                        <tr>
+                            <td>Network</td>
+                            <td>1 Gbps</td>
+                            <td>10+ Gbps</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h3>Key Features</h3>
+                <div class="steps-container">
+                    <div class="step">
+                        <div class="step-number">1</div>
+                        <div class="step-content">
+                            <h3>Data Collection</h3>
+                            <p>Collect and normalize security data from multiple sources including logs, network traffic, and endpoint data.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="step">
+                        <div class="step-number">2</div>
+                        <div class="step-content">
+                            <h3>Threat Analysis</h3>
+                            <p>Advanced analytics engine processes data using machine learning algorithms to identify potential threats.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="step">
+                        <div class="step-number">3</div>
+                        <div class="step-content">
+                            <h3>Alert Generation</h3>
+                            <p>Generate intelligent alerts with context and priority scoring to reduce alert fatigue.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="step">
+                        <div class="step-number">4</div>
+                        <div class="step-content">
+                            <h3>Response Coordination</h3>
+                            <p>Coordinate response activities with integrated playbooks and automated remediation capabilities.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <h3>Use Cases</h3>
+                <div class="feature-grid">
+                    <div class="feature-card">
+                        <h3>Advanced Persistent Threats</h3>
+                        <p>Detect sophisticated, long-term attacks that traditional security tools might miss through behavioral analysis and correlation.</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <h3>Insider Threat Detection</h3>
+                        <p>Monitor user behavior patterns to identify potential insider threats and unauthorized access attempts.</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <h3>Compliance Monitoring</h3>
+                        <p>Ensure compliance with regulatory requirements through continuous monitoring and automated reporting.</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <h3>Network Security</h3>
+                        <p>Monitor network traffic for suspicious activities, data exfiltration attempts, and lateral movement.</p>
+                    </div>
+                </div>
+
+                <div class="alert alert-success">
+                    <strong>Getting Started:</strong> Ready to deploy SIA? Check out our <a href="installation.html">Installation Guide</a> or review the <a href="prerequisites.html">Prerequisites</a> first.
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Securaa</h3>
+                    <p>Advanced cybersecurity solutions for modern threats.</p>
+                    <div class="social-links">
+                        <a href="https://linkedin.com/company/securaa" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://twitter.com/securaa" target="_blank" rel="noopener noreferrer"><i class="fab fa-twitter"></i></a>
+                        <a href="https://github.com/securaa" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Products</h4>
+                    <ul>
+                        <li><a href="sia.html">SIA</a></li>
+                        <li><a href="soar.html">SOAR</a></li>
+                        <li><a href="tip.html">TIP</a></li>
+                        <li><a href="csam.html">CSAM</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Documentation</h4>
+                    <ul>
+                        <li><a href="installation.html">Installation</a></li>
+                        <li><a href="administration.html">Administration</a></li>
+                        <li><a href="integrations.html">Integrations</a></li>
+                        <li><a href="api-reference.html">API Reference</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="support.html">Contact Support</a></li>
+                        <li><a href="troubleshooting.html">Troubleshooting</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Securaa. All rights reserved. | <a href="privacy-policy.html">Privacy Policy</a> | <a href="terms-of-service.html">Terms of Service</a></p>
+                <p>Documentation Version 2.0 | Last Updated: October 2025</p>
+            </div>
+        </footer>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.28.0/components/prism-core.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.28.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

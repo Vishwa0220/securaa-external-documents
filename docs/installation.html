@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Securaa Product Documentation</title>
+    <title>Installation & Deployment Guide | Securaa Documentation</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.28.0/themes/prism.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/styles.css">
@@ -20,7 +20,7 @@
                 </div>
                 <nav class="main-nav">
                     <ul>
-                        <li><a href="index.html" class="active">Home</a></li>
+                        <li><a href="index.html">Home</a></li>
                         <li><a href="sia.html">SIA</a></li>
                         <li><a href="soar.html">SOAR</a></li>
                         <li><a href="tip.html">TIP</a></li>
@@ -41,7 +41,7 @@
                 <div class="nav-section">
                     <h3><i class="fas fa-home"></i> Getting Started</h3>
                     <ul>
-                        <li><a href="#overview">Product Overview</a></li>
+                        <li><a href="index.html#overview">Product Overview</a></li>
                         <li><a href="architecture.html">Solution Architecture</a></li>
                         <li><a href="prerequisites.html">Prerequisites</a></li>
                     </ul>
@@ -60,7 +60,7 @@
                 <div class="nav-section">
                     <h3><i class="fas fa-cogs"></i> Installation & Deployment</h3>
                     <ul>
-                        <li><a href="installation.html">Installation Guide</a></li>
+                        <li><a href="installation.html" class="active">Installation Guide</a></li>
                         <li><a href="deployment.html">Deployment Guide</a></li>
                         <li><a href="hardware-specs.html">Hardware Specifications</a></li>
                     </ul>
@@ -97,110 +97,143 @@
 
         <!-- Main Content -->
         <main class="main-content">
-            <!-- Hero Section -->
-            <section id="hero" class="hero">
-                <div class="hero-content">
-                    <h1>Securaa Product Documentation</h1>
-                    <p class="hero-subtitle">Comprehensive documentation for Securaa's cybersecurity solutions including SIA, SOAR, TIP, and CSAM platforms.</p>
-                    <div class="hero-buttons">
-                        <a href="#overview" class="btn btn-primary">Get Started</a>
-                        <a href="#products" class="btn btn-secondary">View Products</a>
-                    </div>
-                </div>
-                <div class="hero-image">
-                    <i class="fas fa-shield-alt"></i>
-                </div>
-            </section>
-
-            <!-- Overview Section -->
-            <section id="overview" class="content-section">
+            <section id="installation-guide" class="content-section">
                 <div class="section-header">
-                    <h2><i class="fas fa-info-circle"></i> Product Overview</h2>
-                    <p>Securaa provides a comprehensive suite of cybersecurity solutions designed to protect, detect, and respond to modern cyber threats.</p>
+                    <h2><i class="fas fa-download"></i> Installation & Deployment Guide</h2>
+                    <p>Step-by-step guide for installing and deploying Securaa solutions.</p>
                 </div>
 
+                <div class="alert alert-warning">
+                    <strong>Before You Begin:</strong> Ensure all prerequisites are met and system requirements are satisfied before starting the installation process. Review our <a href="prerequisites.html">Prerequisites Guide</a> first.
+                </div>
+
+                <h3>Installation Methods</h3>
                 <div class="feature-grid">
-                    <div class="feature-card">
-                        <div class="feature-icon">
-                            <i class="fas fa-chart-line"></i>
-                        </div>
-                        <h3>SIA - Security Intelligence Analytics</h3>
-                        <p>Advanced analytics platform for threat detection and security intelligence gathering with real-time monitoring capabilities.</p>
-                        <a href="sia.html" class="feature-link">Learn More <i class="fas fa-arrow-right"></i></a>
-                    </div>
-
-                    <div class="feature-card">
-                        <div class="feature-icon">
-                            <i class="fas fa-robot"></i>
-                        </div>
-                        <h3>SOAR - Security Orchestration</h3>
-                        <p>Automated response and orchestration platform that streamlines security operations and incident response workflows.</p>
-                        <a href="soar.html" class="feature-link">Learn More <i class="fas fa-arrow-right"></i></a>
-                    </div>
-
-                    <div class="feature-card">
-                        <div class="feature-icon">
-                            <i class="fas fa-brain"></i>
-                        </div>
-                        <h3>TIP - Threat Intelligence Platform</h3>
-                        <p>Comprehensive threat intelligence platform for collecting, analyzing, and sharing threat information across your organization.</p>
-                        <a href="tip.html" class="feature-link">Learn More <i class="fas fa-arrow-right"></i></a>
-                    </div>
-
                     <div class="feature-card">
                         <div class="feature-icon">
                             <i class="fas fa-server"></i>
                         </div>
-                        <h3>CSAM - Cyber Security Asset Management</h3>
-                        <p>Complete asset management solution for tracking, monitoring, and securing all your digital and physical assets.</p>
-                        <a href="csam.html" class="feature-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                        <h3>On-Premises Installation</h3>
+                        <p>Deploy Securaa solutions directly on your hardware infrastructure for maximum control and security.</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-cloud"></i>
+                        </div>
+                        <h3>Cloud Deployment</h3>
+                        <p>Deploy on AWS, Azure, or Google Cloud Platform with automated scaling and management.</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-boxes"></i>
+                        </div>
+                        <h3>Container Deployment</h3>
+                        <p>Use Docker containers and Kubernetes for scalable and portable deployments.</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-laptop"></i>
+                        </div>
+                        <h3>Virtual Machine</h3>
+                        <p>Deploy using pre-configured virtual machine images for quick setup and testing.</p>
                     </div>
                 </div>
-            </section>
 
-            <!-- Quick Start Section -->
-            <section id="quick-start" class="content-section">
-                <div class="section-header">
-                    <h2><i class="fas fa-rocket"></i> Quick Start Guide</h2>
-                    <p>Get up and running with Securaa solutions in just a few steps.</p>
-                </div>
-
+                <h3>Quick Installation Steps</h3>
                 <div class="steps-container">
                     <div class="step">
                         <div class="step-number">1</div>
                         <div class="step-content">
-                            <h3>Review Prerequisites</h3>
-                            <p>Check hardware requirements and software prerequisites for your chosen Securaa solution.</p>
-                            <a href="prerequisites.html" class="btn btn-outline">View Prerequisites</a>
+                            <h3>Download Installation Package</h3>
+                            <p>Download the latest Securaa installation package from the customer portal.</p>
+                            <pre><code>wget https://download.securaa.com/latest/securaa-installer.tar.gz</code></pre>
                         </div>
                     </div>
-
+                    
                     <div class="step">
                         <div class="step-number">2</div>
                         <div class="step-content">
-                            <h3>Installation & Deployment</h3>
-                            <p>Follow our comprehensive installation guide to deploy Securaa solutions in your environment.</p>
-                            <a href="installation.html" class="btn btn-outline">Installation Guide</a>
+                            <h3>Extract and Prepare</h3>
+                            <p>Extract the installation package and run the system preparation script.</p>
+                            <pre><code>tar -xzf securaa-installer.tar.gz
+cd securaa-installer
+sudo ./prepare-system.sh</code></pre>
                         </div>
                     </div>
-
+                    
                     <div class="step">
                         <div class="step-number">3</div>
                         <div class="step-content">
-                            <h3>Configuration & Administration</h3>
-                            <p>Configure your Securaa solutions and set up user access and permissions.</p>
-                            <a href="administration.html" class="btn btn-outline">Admin Guide</a>
+                            <h3>Configure Installation</h3>
+                            <p>Edit the configuration file with your environment-specific settings.</p>
+                            <pre><code>cp config/default.conf config/custom.conf
+nano config/custom.conf</code></pre>
                         </div>
                     </div>
-
+                    
                     <div class="step">
                         <div class="step-number">4</div>
                         <div class="step-content">
-                            <h3>Integrations & Playbooks</h3>
-                            <p>Connect with existing security tools and implement automated response playbooks.</p>
-                            <a href="integrations.html" class="btn btn-outline">View Integrations</a>
+                            <h3>Run Installation</h3>
+                            <p>Execute the installation script and follow the interactive prompts.</p>
+                            <pre><code>sudo ./install-securaa.sh --config config/custom.conf</code></pre>
                         </div>
                     </div>
+                    
+                    <div class="step">
+                        <div class="step-number">5</div>
+                        <div class="step-content">
+                            <h3>Verify Installation</h3>
+                            <p>Check the installation status and access the web interface.</p>
+                            <pre><code>sudo systemctl status securaa
+curl -k https://localhost:443/health</code></pre>
+                        </div>
+                    </div>
+                </div>
+
+                <h3>Post-Installation Configuration</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Task</th>
+                            <th>Description</th>
+                            <th>Priority</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>SSL Certificate</td>
+                            <td>Install valid SSL certificate for secure access</td>
+                            <td>High</td>
+                        </tr>
+                        <tr>
+                            <td>Admin Account</td>
+                            <td>Create initial administrator account</td>
+                            <td>High</td>
+                        </tr>
+                        <tr>
+                            <td>Database Backup</td>
+                            <td>Configure automated database backups</td>
+                            <td>High</td>
+                        </tr>
+                        <tr>
+                            <td>Integration Setup</td>
+                            <td>Configure integrations with existing security tools</td>
+                            <td>Medium</td>
+                        </tr>
+                        <tr>
+                            <td>Monitoring</td>
+                            <td>Set up system monitoring and alerting</td>
+                            <td>Medium</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="alert alert-success">
+                    <strong>Next Steps:</strong> After installation, review our <a href="administration.html">Administration Guide</a> for initial configuration and <a href="integrations.html">Integration Guide</a> for connecting to existing security tools.
                 </div>
             </section>
         </main>

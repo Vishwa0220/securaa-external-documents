@@ -1,0 +1,1067 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TIP Administration - Securaa Documentation</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/themes/prism.min.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-content">
+                <div class="logo">
+                    <h1><i class="fas fa-shield-alt"></i> Securaa</h1>
+                    <span class="tagline">Advanced Cybersecurity Solutions</span>
+                </div>
+                <nav class="main-nav">
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="sia.html">SIA</a></li>
+                        <li><a href="soar.html">SOAR</a></li>
+                        <li><a href="tip.html">TIP</a></li>
+                        <li><a href="csam.html">CSAM</a></li>
+                        <li><a href="support.html">Support</a></li>
+                    </ul>
+                </nav>
+                <div class="header-right">
+                    <div class="search-container">
+                        <input type="text" id="searchInput" placeholder="Search documentation...">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <button class="mobile-menu-toggle" onclick="toggleMobileMenu()">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar">
+            <nav class="sidebar-nav">
+                <div class="nav-section">
+                    <h3><i class="fas fa-home"></i> Getting Started</h3>
+                    <ul>
+                        <li><a href="index.html#overview">Product Overview</a></li>
+                        <li><a href="architecture.html">Solution Architecture</a></li>
+                        <li><a href="prerequisites.html">Prerequisites</a></li>
+                    </ul>
+                </div>
+                
+                <div class="nav-section">
+                    <h3><i class="fas fa-cube"></i> Products</h3>
+                    <ul>
+                        <li><a href="sia.html">SIA (Security Intelligence Analytics)</a></li>
+                        <li><a href="soar.html">SOAR (Security Orchestration)</a></li>
+                        <li><a href="tip.html">TIP (Threat Intelligence Platform)</a></li>
+                        <li><a href="csam.html">CSAM (Cyber Security Asset Management)</a></li>
+                    </ul>
+                </div>
+
+                <div class="nav-section">
+                    <h3><i class="fas fa-cogs"></i> Installation & Deployment</h3>
+                    <ul>
+                        <li><a href="installation.html">Installation Guide</a></li>
+                        <li><a href="deployment.html">Deployment Guide</a></li>
+                        <li><a href="hardware-specs.html">Hardware Specifications</a></li>
+                    </ul>
+                </div>
+
+                <div class="nav-section">
+                    <h3><i class="fas fa-users-cog"></i> Administration</h3>
+                    <ul>
+                        <li><a href="administration.html">Administration</a></li>
+                        <li><a href="csam-admin.html">CSAM Administration</a></li>
+                        <li><a href="tip-admin.html" class="active">TIP Administration</a></li>
+                    </ul>
+                </div>
+
+                <div class="nav-section">
+                    <h3><i class="fas fa-puzzle-piece"></i> Integrations</h3>
+                    <ul>
+                        <li><a href="integrations.html">Available Integrations</a></li>
+                        <li><a href="playbooks.html">Security Playbooks</a></li>
+                        <li><a href="api-reference.html">API Reference</a></li>
+                    </ul>
+                </div>
+
+                <div class="nav-section">
+                    <h3><i class="fas fa-question-circle"></i> Support</h3>
+                    <ul>
+                        <li><a href="troubleshooting.html">Troubleshooting</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                        <li><a href="support.html">Contact Support</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </aside>
+        </nav>
+
+        <main class="main-content">
+            <div class="header">
+                <h1><i class="fas fa-brain"></i> TIP Administration Guide</h1>
+                <p class="subtitle">Comprehensive administration guide for Threat Intelligence Platform</p>
+            </div>
+
+            <div class="content">
+                <section class="info-box">
+                    <h2><i class="fas fa-info-circle"></i> Overview</h2>
+                    <p>
+                        The TIP (Threat Intelligence Platform) administration interface provides comprehensive 
+                        tools for managing threat intelligence feeds, indicators of compromise (IoCs), 
+                        threat actor profiles, campaign tracking, and intelligence analysis workflows.
+                    </p>
+                </section>
+
+                <section>
+                    <h2><i class="fas fa-tachometer-alt"></i> TIP Administrator Dashboard</h2>
+                    
+                    <div class="feature-grid">
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <i class="fas fa-rss"></i>
+                            </div>
+                            <h3>Intelligence Feeds</h3>
+                            <p>Monitor and manage threat intelligence feeds from multiple sources</p>
+                            <ul>
+                                <li>Active feed status and health monitoring</li>
+                                <li>Feed reliability and confidence scoring</li>
+                                <li>Data ingestion rates and statistics</li>
+                                <li>Feed source reputation management</li>
+                            </ul>
+                        </div>
+
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <i class="fas fa-exclamation-triangle"></i>
+                            </div>
+                            <h3>Indicators of Compromise (IoCs)</h3>
+                            <p>Comprehensive IoC management and threat indicator analytics</p>
+                            <ul>
+                                <li>Active IoC count by type and severity</li>
+                                <li>Recent high-confidence indicators</li>
+                                <li>IoC aging and expiration tracking</li>
+                                <li>Detection and blocking effectiveness</li>
+                            </ul>
+                        </div>
+
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <i class="fas fa-users"></i>
+                            </div>
+                            <h3>Threat Actor Profiles</h3>
+                            <p>Track and analyze threat actor activities and campaigns</p>
+                            <ul>
+                                <li>Active threat actor tracking</li>
+                                <li>Attribution confidence levels</li>
+                                <li>Campaign timeline and evolution</li>
+                                <li>Tactics, Techniques, and Procedures (TTPs)</li>
+                            </ul>
+                        </div>
+
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <i class="fas fa-chart-line"></i>
+                            </div>
+                            <h3>Intelligence Analytics</h3>
+                            <p>Advanced analytics and intelligence processing metrics</p>
+                            <ul>
+                                <li>Intelligence enrichment success rates</li>
+                                <li>Correlation and relationship mapping</li>
+                                <li>Threat landscape trending</li>
+                                <li>Predictive threat modeling</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+
+                <section>
+                    <h2><i class="fas fa-cogs"></i> Feed Management Configuration</h2>
+                    
+                    <h3>Supported Feed Types</h3>
+                    <div class="feed-types">
+                        <div class="feed-card">
+                            <h4><i class="fas fa-file-alt"></i> STIX/TAXII Feeds</h4>
+                            <p>Structured Threat Information eXpression feeds</p>
+                            <div class="code-block">
+                                <pre><code class="language-json">{
+  "feed_type": "TAXII",
+  "version": "2.1",
+  "collection_url": "https://threat-intel.example.com/taxii2/",
+  "authentication": "api_key",
+  "poll_interval": "300",
+  "confidence_threshold": 70
+}</code></pre>
+                            </div>
+                        </div>
+                        
+                        <div class="feed-card">
+                            <h4><i class="fas fa-code"></i> JSON/XML Feeds</h4>
+                            <p>Custom format threat intelligence feeds</p>
+                            <div class="code-block">
+                                <pre><code class="language-json">{
+  "feed_type": "JSON",
+  "endpoint": "https://api.threat-feed.com/v1/indicators",
+  "format": "custom",
+  "parser": "threat_feed_parser_v2",
+  "update_frequency": "hourly"
+}</code></pre>
+                            </div>
+                        </div>
+                        
+                        <div class="feed-card">
+                            <h4><i class="fas fa-file-csv"></i> CSV/TSV Feeds</h4>
+                            <p>Comma or tab-separated value feeds</p>
+                            <div class="code-block">
+                                <pre><code class="language-bash"># CSV Feed Configuration
+URL: https://feeds.malwaredomains.com/domains.csv
+Format: CSV
+Delimiter: ","
+Headers: domain,type,category,confidence,first_seen
+Skip_lines: 1</code></pre>
+                            </div>
+                        </div>
+                        
+                        <div class="feed-card">
+                            <h4><i class="fas fa-cloud"></i> Commercial Feeds</h4>
+                            <p>Integration with commercial threat intelligence providers</p>
+                            <div class="supported-providers">
+                                <span class="provider-tag">CrowdStrike</span>
+                                <span class="provider-tag">FireEye</span>
+                                <span class="provider-tag">Recorded Future</span>
+                                <span class="provider-tag">ThreatQ</span>
+                                <span class="provider-tag">VirusTotal</span>
+                                <span class="provider-tag">IBM X-Force</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <h3>Feed Quality Management</h3>
+                    <div class="quality-metrics">
+                        <div class="metric-section">
+                            <h4>Feed Reliability Scoring</h4>
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Score Range</th>
+                                        <th>Reliability Level</th>
+                                        <th>Description</th>
+                                        <th>Usage Recommendation</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="high-reliability">
+                                        <td>90-100</td>
+                                        <td>High</td>
+                                        <td>Consistently accurate with low false positives</td>
+                                        <td>Automatic blocking recommended</td>
+                                    </tr>
+                                    <tr class="medium-reliability">
+                                        <td>70-89</td>
+                                        <td>Medium</td>
+                                        <td>Generally accurate with occasional false positives</td>
+                                        <td>Manual review before blocking</td>
+                                    </tr>
+                                    <tr class="low-reliability">
+                                        <td>50-69</td>
+                                        <td>Low</td>
+                                        <td>Moderate accuracy with regular false positives</td>
+                                        <td>Alert only, manual investigation</td>
+                                    </tr>
+                                    <tr class="unreliable">
+                                        <td>&lt; 50</td>
+                                        <td>Unreliable</td>
+                                        <td>Poor accuracy with high false positive rate</td>
+                                        <td>Disable or exclude from processing</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        
+                        <div class="metric-section">
+                            <h4>Feed Health Monitoring</h4>
+                            <div class="health-indicators">
+                                <div class="health-item">
+                                    <i class="fas fa-heartbeat"></i>
+                                    <h5>Uptime & Availability</h5>
+                                    <p>Monitor feed availability and response times</p>
+                                </div>
+                                <div class="health-item">
+                                    <i class="fas fa-clock"></i>
+                                    <h5>Freshness & Timeliness</h5>
+                                    <p>Track data freshness and update frequencies</p>
+                                </div>
+                                <div class="health-item">
+                                    <i class="fas fa-check-circle"></i>
+                                    <h5>Data Quality</h5>
+                                    <p>Validate data format and completeness</p>
+                                </div>
+                                <div class="health-item">
+                                    <i class="fas fa-shield-check"></i>
+                                    <h5>Confidence Levels</h5>
+                                    <p>Assess and track confidence scoring</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section>
+                    <h2><i class="fas fa-flag"></i> Indicator Management</h2>
+                    
+                    <h3>IoC Categories</h3>
+                    <div class="ioc-categories">
+                        <div class="category-grid">
+                            <div class="category-item">
+                                <h4><i class="fas fa-globe"></i> Network Indicators</h4>
+                                <ul>
+                                    <li>IP Addresses (IPv4/IPv6)</li>
+                                    <li>Domain Names</li>
+                                    <li>URLs and URIs</li>
+                                    <li>Email Addresses</li>
+                                    <li>Network Signatures</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="category-item">
+                                <h4><i class="fas fa-file"></i> File Indicators</h4>
+                                <ul>
+                                    <li>File Hashes (MD5, SHA1, SHA256)</li>
+                                    <li>File Names and Paths</li>
+                                    <li>YARA Rules</li>
+                                    <li>File Sizes and Types</li>
+                                    <li>Digital Signatures</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="category-item">
+                                <h4><i class="fas fa-cogs"></i> System Indicators</h4>
+                                <ul>
+                                    <li>Registry Keys and Values</li>
+                                    <li>Process Names and Paths</li>
+                                    <li>Service Names</li>
+                                    <li>Mutex Names</li>
+                                    <li>User Accounts</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="category-item">
+                                <h4><i class="fas fa-code"></i> Behavioral Indicators</h4>
+                                <ul>
+                                    <li>Attack Patterns</li>
+                                    <li>Malware Families</li>
+                                    <li>Tool Signatures</li>
+                                    <li>Campaign Identifiers</li>
+                                    <li>TTP Combinations</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <h3>IoC Lifecycle Management</h3>
+                    <div class="lifecycle-stages">
+                        <div class="stage-flow">
+                            <div class="stage">
+                                <div class="stage-icon"><i class="fas fa-plus-circle"></i></div>
+                                <h4>Ingestion</h4>
+                                <p>New indicators collected from feeds</p>
+                                <ul>
+                                    <li>Automated feed processing</li>
+                                    <li>Manual indicator submission</li>
+                                    <li>API-based ingestion</li>
+                                    <li>Format validation and parsing</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="stage-arrow">→</div>
+                            
+                            <div class="stage">
+                                <div class="stage-icon"><i class="fas fa-search"></i></div>
+                                <h4>Enrichment</h4>
+                                <p>Additional context and intelligence</p>
+                                <ul>
+                                    <li>WHOIS and DNS lookups</li>
+                                    <li>Geolocation and ASN data</li>
+                                    <li>Malware analysis reports</li>
+                                    <li>Cross-reference with known TTPs</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="stage-arrow">→</div>
+                            
+                            <div class="stage">
+                                <div class="stage-icon"><i class="fas fa-shield-alt"></i></div>
+                                <h4>Active</h4>
+                                <p>Indicators in active use for detection</p>
+                                <ul>
+                                    <li>Real-time monitoring</li>
+                                    <li>Blocking and alerting</li>
+                                    <li>Threat hunting queries</li>
+                                    <li>SIEM/SOAR integration</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="stage-arrow">→</div>
+                            
+                            <div class="stage">
+                                <div class="stage-icon"><i class="fas fa-archive"></i></div>
+                                <h4>Archived</h4>
+                                <p>Expired or deprecated indicators</p>
+                                <ul>
+                                    <li>Automatic aging rules</li>
+                                    <li>Historical analysis</li>
+                                    <li>Trend identification</li>
+                                    <li>Long-term storage</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <h3>IoC Confidence and Scoring</h3>
+                    <div class="confidence-matrix">
+                        <div class="confidence-section">
+                            <h4>Confidence Calculation Factors</h4>
+                            <div class="factors-grid">
+                                <div class="factor-item">
+                                    <h5>Source Reliability (40%)</h5>
+                                    <p>Historical accuracy of the intelligence source</p>
+                                </div>
+                                <div class="factor-item">
+                                    <h5>Indicator Age (20%)</h5>
+                                    <p>Time since first observation, with decay over time</p>
+                                </div>
+                                <div class="factor-item">
+                                    <h5>Corroboration (25%)</h5>
+                                    <p>Number of independent sources reporting the indicator</p>
+                                </div>
+                                <div class="factor-item">
+                                    <h5>Context Relevance (15%)</h5>
+                                    <p>Relevance to your organization's threat landscape</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="confidence-section">
+                            <h4>Confidence Levels</h4>
+                            <div class="confidence-levels">
+                                <div class="confidence-level high">
+                                    <h5>High Confidence (80-100%)</h5>
+                                    <p>Multiple reliable sources, recent activity, high relevance</p>
+                                    <span class="action-tag">Automatic Blocking</span>
+                                </div>
+                                <div class="confidence-level medium">
+                                    <h5>Medium Confidence (60-79%)</h5>
+                                    <p>Reliable source or multiple sources with some concerns</p>
+                                    <span class="action-tag">Alert & Monitor</span>
+                                </div>
+                                <div class="confidence-level low">
+                                    <h5>Low Confidence (40-59%)</h5>
+                                    <p>Single source or aging indicators with limited context</p>
+                                    <span class="action-tag">Hunt & Investigate</span>
+                                </div>
+                                <div class="confidence-level minimal">
+                                    <h5>Minimal Confidence (&lt;40%)</h5>
+                                    <p>Unverified or historical indicators for research purposes</p>
+                                    <span class="action-tag">Reference Only</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section>
+                    <h2><i class="fas fa-user-secret"></i> Threat Actor Intelligence</h2>
+                    
+                    <h3>Actor Profile Management</h3>
+                    <div class="actor-profiles">
+                        <div class="profile-section">
+                            <h4>Actor Classification</h4>
+                            <div class="classification-grid">
+                                <div class="actor-type">
+                                    <h5><i class="fas fa-flag"></i> Nation-State APTs</h5>
+                                    <p>Advanced Persistent Threat groups sponsored by nation-states</p>
+                                    <ul>
+                                        <li>Sophisticated tools and techniques</li>
+                                        <li>Long-term persistent campaigns</li>
+                                        <li>High-value target focus</li>
+                                        <li>Government backing and resources</li>
+                                    </ul>
+                                </div>
+                                
+                                <div class="actor-type">
+                                    <h5><i class="fas fa-dollar-sign"></i> Cybercriminal Groups</h5>
+                                    <p>Financially motivated threat actors and criminal organizations</p>
+                                    <ul>
+                                        <li>Ransomware and extortion</li>
+                                        <li>Banking and financial fraud</li>
+                                        <li>Cryptocurrency theft</li>
+                                        <li>Underground market operations</li>
+                                    </ul>
+                                </div>
+                                
+                                <div class="actor-type">
+                                    <h5><i class="fas fa-mask"></i> Hacktivists</h5>
+                                    <p>Ideologically motivated groups and individuals</p>
+                                    <ul>
+                                        <li>Political and social causes</li>
+                                        <li>Website defacements</li>
+                                        <li>DDoS attacks and disruption</li>
+                                        <li>Information disclosure</li>
+                                    </ul>
+                                </div>
+                                
+                                <div class="actor-type">
+                                    <h5><i class="fas fa-user-ninja"></i> Insider Threats</h5>
+                                    <p>Malicious or negligent insiders with legitimate access</p>
+                                    <ul>
+                                        <li>Privileged access abuse</li>
+                                        <li>Data exfiltration</li>
+                                        <li>Sabotage and disruption</li>
+                                        <li>Unintentional exposure</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="profile-section">
+                            <h4>TTP Analysis (MITRE ATT&CK)</h4>
+                            <div class="attack-matrix">
+                                <div class="tactic-column">
+                                    <h5>Initial Access</h5>
+                                    <ul>
+                                        <li>Spear Phishing</li>
+                                        <li>Supply Chain Compromise</li>
+                                        <li>Valid Accounts</li>
+                                        <li>Public Applications</li>
+                                    </ul>
+                                </div>
+                                <div class="tactic-column">
+                                    <h5>Execution</h5>
+                                    <ul>
+                                        <li>PowerShell</li>
+                                        <li>Windows Management</li>
+                                        <li>Command and Scripting</li>
+                                        <li>User Execution</li>
+                                    </ul>
+                                </div>
+                                <div class="tactic-column">
+                                    <h5>Persistence</h5>
+                                    <ul>
+                                        <li>Registry Run Keys</li>
+                                        <li>Scheduled Tasks</li>
+                                        <li>Valid Accounts</li>
+                                        <li>Boot/Login Scripts</li>
+                                    </ul>
+                                </div>
+                                <div class="tactic-column">
+                                    <h5>Defense Evasion</h5>
+                                    <ul>
+                                        <li>Obfuscated Files</li>
+                                        <li>Process Injection</li>
+                                        <li>Signed Binary</li>
+                                        <li>Disable Security</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <h3>Campaign Tracking</h3>
+                    <div class="campaign-tracking">
+                        <div class="tracking-features">
+                            <div class="feature-card">
+                                <h4><i class="fas fa-project-diagram"></i> Campaign Relationships</h4>
+                                <p>Track relationships between campaigns, actors, and TTPs</p>
+                                <ul>
+                                    <li>Campaign attribution and confidence</li>
+                                    <li>Timeline and evolution tracking</li>
+                                    <li>Cross-campaign pattern analysis</li>
+                                    <li>Victim targeting analysis</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="feature-card">
+                                <h4><i class="fas fa-map-marked-alt"></i> Geographic Targeting</h4>
+                                <p>Analyze geographic patterns and targeting preferences</p>
+                                <ul>
+                                    <li>Regional targeting analysis</li>
+                                    <li>Industry sector preferences</li>
+                                    <li>Infrastructure location tracking</li>
+                                    <li>Geopolitical correlation</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="feature-card">
+                                <h4><i class="fas fa-chart-timeline"></i> Temporal Analysis</h4>
+                                <p>Track campaign timing and operational patterns</p>
+                                <ul>
+                                    <li>Activity timeline visualization</li>
+                                    <li>Operational tempo analysis</li>
+                                    <li>Seasonal pattern identification</li>
+                                    <li>Predictive modeling</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section>
+                    <h2><i class="fas fa-link"></i> Intelligence Correlation & Analytics</h2>
+                    
+                    <h3>Correlation Engine</h3>
+                    <div class="correlation-engine">
+                        <div class="correlation-types">
+                            <div class="correlation-card">
+                                <h4><i class="fas fa-sitemap"></i> Infrastructure Correlation</h4>
+                                <p>Link related infrastructure components and patterns</p>
+                                <div class="code-block">
+                                    <pre><code class="language-yaml"># Infrastructure Correlation Rules
+correlation_rules:
+  shared_infrastructure:
+    - shared_ip_addresses
+    - common_nameservers
+    - certificate_relationships
+    - hosting_provider_patterns
+  
+  domain_patterns:
+    - registrant_information
+    - creation_date_clusters
+    - naming_conventions
+    - dns_patterns</code></pre>
+                                </div>
+                            </div>
+                            
+                            <div class="correlation-card">
+                                <h4><i class="fas fa-dna"></i> Malware Family Correlation</h4>
+                                <p>Identify relationships between malware samples and families</p>
+                                <ul>
+                                    <li>Code similarity analysis</li>
+                                    <li>Behavioral pattern matching</li>
+                                    <li>C2 infrastructure overlap</li>
+                                    <li>Campaign timeline correlation</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="correlation-card">
+                                <h4><i class="fas fa-users-cog"></i> Actor Attribution</h4>
+                                <p>Connect activities to known threat actors</p>
+                                <ul>
+                                    <li>TTP fingerprinting</li>
+                                    <li>Tool preference analysis</li>
+                                    <li>Operational timing patterns</li>
+                                    <li>Target selection criteria</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <h3>Advanced Analytics</h3>
+                    <div class="analytics-capabilities">
+                        <div class="analytics-grid">
+                            <div class="analytics-item">
+                                <h4><i class="fas fa-robot"></i> Machine Learning Models</h4>
+                                <p>AI-powered threat detection and classification</p>
+                                <ul>
+                                    <li>Anomaly detection algorithms</li>
+                                    <li>Threat family classification</li>
+                                    <li>Campaign attribution models</li>
+                                    <li>Predictive threat modeling</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="analytics-item">
+                                <h4><i class="fas fa-chart-network"></i> Graph Analytics</h4>
+                                <p>Relationship mapping and network analysis</p>
+                                <ul>
+                                    <li>Entity relationship graphs</li>
+                                    <li>Centrality and influence scoring</li>
+                                    <li>Community detection</li>
+                                    <li>Path analysis and traversal</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="analytics-item">
+                                <h4><i class="fas fa-microscope"></i> Deep Analysis</h4>
+                                <p>Advanced investigative capabilities</p>
+                                <ul>
+                                    <li>Multi-source data fusion</li>
+                                    <li>Temporal correlation analysis</li>
+                                    <li>Behavioral clustering</li>
+                                    <li>Attribution confidence scoring</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section>
+                    <h2><i class="fas fa-share-alt"></i> Intelligence Sharing & Collaboration</h2>
+                    
+                    <h3>Information Sharing Standards</h3>
+                    <div class="sharing-standards">
+                        <div class="standard-card">
+                            <h4><i class="fas fa-exchange-alt"></i> STIX/TAXII 2.1</h4>
+                            <p>Industry standard for threat intelligence sharing</p>
+                            <div class="code-block">
+                                <pre><code class="language-json">{
+  "type": "bundle",
+  "id": "bundle--12345678-1234-1234-1234-123456789012",
+  "objects": [
+    {
+      "type": "indicator",
+      "id": "indicator--12345678-1234-1234-1234-123456789012",
+      "pattern": "[file:hashes.MD5 = 'abc123...']",
+      "labels": ["malicious-activity"],
+      "confidence": 85
+    }
+  ]
+}</code></pre>
+                            </div>
+                        </div>
+                        
+                        <div class="standard-card">
+                            <h4><i class="fas fa-shield-check"></i> TLP (Traffic Light Protocol)</h4>
+                            <p>Information sharing classification system</p>
+                            <div class="tlp-levels">
+                                <div class="tlp-level tlp-red">
+                                    <span class="tlp-label">TLP:RED</span>
+                                    <p>Not for disclosure, restricted to specific individuals</p>
+                                </div>
+                                <div class="tlp-level tlp-amber">
+                                    <span class="tlp-label">TLP:AMBER</span>
+                                    <p>Limited disclosure, restricted to organization</p>
+                                </div>
+                                <div class="tlp-level tlp-green">
+                                    <span class="tlp-label">TLP:GREEN</span>
+                                    <p>Limited disclosure, community sharing</p>
+                                </div>
+                                <div class="tlp-level tlp-white">
+                                    <span class="tlp-label">TLP:WHITE</span>
+                                    <p>Disclosure not limited, public sharing</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <h3>Collaboration Features</h3>
+                    <div class="collaboration-features">
+                        <div class="feature-set">
+                            <h4>Internal Collaboration</h4>
+                            <ul>
+                                <li>Analyst workspaces and notebooks</li>
+                                <li>Intelligence report collaboration</li>
+                                <li>Annotation and tagging systems</li>
+                                <li>Peer review and validation workflows</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="feature-set">
+                            <h4>External Sharing</h4>
+                            <ul>
+                                <li>Trusted partner information exchange</li>
+                                <li>Industry sector intelligence sharing</li>
+                                <li>Government and law enforcement feeds</li>
+                                <li>Commercial intelligence partnerships</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="feature-set">
+                            <h4>Community Integration</h4>
+                            <ul>
+                                <li>ISAC/ISAO participation</li>
+                                <li>Threat intelligence communities</li>
+                                <li>Academic research collaboration</li>
+                                <li>Open source intelligence projects</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+
+                <section>
+                    <h2><i class="fas fa-users-cog"></i> User Management & Access Control</h2>
+                    
+                    <h3>Role-Based Access Control</h3>
+                    <div class="rbac-table">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Role</th>
+                                    <th>Feed Management</th>
+                                    <th>IoC Management</th>
+                                    <th>Actor Intelligence</th>
+                                    <th>Analytics & Reporting</th>
+                                    <th>System Admin</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>TIP Administrator</strong></td>
+                                    <td>Full Access</td>
+                                    <td>Full Access</td>
+                                    <td>Full Access</td>
+                                    <td>Full Access</td>
+                                    <td>Full Access</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Intelligence Analyst</strong></td>
+                                    <td>Read/Write</td>
+                                    <td>Full Access</td>
+                                    <td>Full Access</td>
+                                    <td>Full Access</td>
+                                    <td>Limited</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Threat Hunter</strong></td>
+                                    <td>Read Only</td>
+                                    <td>Read/Write</td>
+                                    <td>Read/Write</td>
+                                    <td>Read/Write</td>
+                                    <td>None</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>SOC Analyst</strong></td>
+                                    <td>Read Only</td>
+                                    <td>Read Only</td>
+                                    <td>Read Only</td>
+                                    <td>Read Only</td>
+                                    <td>None</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Research Analyst</strong></td>
+                                    <td>Read Only</td>
+                                    <td>Read Only</td>
+                                    <td>Full Access</td>
+                                    <td>Full Access</td>
+                                    <td>None</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Viewer</strong></td>
+                                    <td>Read Only</td>
+                                    <td>Read Only</td>
+                                    <td>Read Only</td>
+                                    <td>Read Only</td>
+                                    <td>None</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    
+                    <h3>Data Classification & Access</h3>
+                    <div class="data-classification">
+                        <div class="classification-levels">
+                            <div class="level-card sensitive">
+                                <h4><i class="fas fa-lock"></i> Sensitive Intelligence</h4>
+                                <p>Highly classified or sensitive threat intelligence</p>
+                                <ul>
+                                    <li>Limited to senior analysts</li>
+                                    <li>Audit trail required</li>
+                                    <li>Time-limited access</li>
+                                    <li>Export restrictions</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="level-card restricted">
+                                <h4><i class="fas fa-eye"></i> Restricted Access</h4>
+                                <p>Internal intelligence with distribution limits</p>
+                                <ul>
+                                    <li>Organization-wide access</li>
+                                    <li>No external sharing</li>
+                                    <li>Standard audit logging</li>
+                                    <li>Role-based filtering</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="level-card standard">
+                                <h4><i class="fas fa-users"></i> Standard Intelligence</h4>
+                                <p>General threat intelligence for operational use</p>
+                                <ul>
+                                    <li>All analyst access</li>
+                                    <li>Controlled sharing permitted</li>
+                                    <li>API access available</li>
+                                    <li>Integration with tools</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section>
+                    <h2><i class="fas fa-chart-line"></i> Performance Monitoring & Optimization</h2>
+                    
+                    <h3>TIP Performance Metrics</h3>
+                    <div class="performance-dashboard">
+                        <div class="metric-group">
+                            <h4>Feed Processing Performance</h4>
+                            <div class="metrics-grid">
+                                <div class="metric-card">
+                                    <div class="metric-icon"><i class="fas fa-tachometer-alt"></i></div>
+                                    <div class="metric-value">15,420</div>
+                                    <div class="metric-label">IoCs/Hour Processed</div>
+                                </div>
+                                <div class="metric-card">
+                                    <div class="metric-icon"><i class="fas fa-clock"></i></div>
+                                    <div class="metric-value">2.3s</div>
+                                    <div class="metric-label">Avg Processing Time</div>
+                                </div>
+                                <div class="metric-card">
+                                    <div class="metric-icon"><i class="fas fa-check-circle"></i></div>
+                                    <div class="metric-value">99.2%</div>
+                                    <div class="metric-label">Feed Reliability</div>
+                                </div>
+                                <div class="metric-card">
+                                    <div class="metric-icon"><i class="fas fa-database"></i></div>
+                                    <div class="metric-value">2.1TB</div>
+                                    <div class="metric-label">Intelligence Data</div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="metric-group">
+                            <h4>Analysis & Correlation Performance</h4>
+                            <div class="metrics-grid">
+                                <div class="metric-card">
+                                    <div class="metric-icon"><i class="fas fa-project-diagram"></i></div>
+                                    <div class="metric-value">847</div>
+                                    <div class="metric-label">Correlations/Day</div>
+                                </div>
+                                <div class="metric-card">
+                                    <div class="metric-icon"><i class="fas fa-search"></i></div>
+                                    <div class="metric-value">0.8s</div>
+                                    <div class="metric-label">Avg Query Response</div>
+                                </div>
+                                <div class="metric-card">
+                                    <div class="metric-icon"><i class="fas fa-brain"></i></div>
+                                    <div class="metric-value">94.1%</div>
+                                    <div class="metric-label">ML Model Accuracy</div>
+                                </div>
+                                <div class="metric-card">
+                                    <div class="metric-icon"><i class="fas fa-share-alt"></i></div>
+                                    <div class="metric-value">1,234</div>
+                                    <div class="metric-label">Daily API Calls</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <h3>Optimization Recommendations</h3>
+                    <div class="optimization-tips">
+                        <div class="tip-section">
+                            <h4><i class="fas fa-rss"></i> Feed Optimization</h4>
+                            <ul>
+                                <li>Optimize polling frequencies based on feed update patterns</li>
+                                <li>Implement intelligent filtering to reduce processing overhead</li>
+                                <li>Use batch processing for high-volume feeds</li>
+                                <li>Configure appropriate timeout and retry policies</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="tip-section">
+                            <h4><i class="fas fa-database"></i> Data Management</h4>
+                            <ul>
+                                <li>Implement tiered storage for aging intelligence data</li>
+                                <li>Regular database maintenance and index optimization</li>
+                                <li>Archive expired indicators to maintain performance</li>
+                                <li>Use data compression for historical intelligence</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="tip-section">
+                            <h4><i class="fas fa-cogs"></i> System Tuning</h4>
+                            <ul>
+                                <li>Monitor and adjust correlation engine thresholds</li>
+                                <li>Optimize machine learning model parameters</li>
+                                <li>Scale processing resources based on workload</li>
+                                <li>Implement caching for frequently accessed data</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+
+                <div class="cta-section">
+                    <h2><i class="fas fa-graduation-cap"></i> Additional Resources</h2>
+                    <p>
+                        <strong>Need more help?</strong> Check out our <a href="support.html">support resources</a>, 
+                        view <a href="troubleshooting.html">troubleshooting guides</a>, or explore 
+                        <a href="integrations.html">integration options</a> to extend TIP functionality.
+                    </p>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Products</h3>
+                <ul>
+                    <li><a href="sia.html">SIA</a></li>
+                    <li><a href="soar.html">SOAR</a></li>
+                    <li><a href="tip.html">TIP</a></li>
+                    <li><a href="csam.html">CSAM</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Documentation</h3>
+                <ul>
+                    <li><a href="hardware-specs.html">Hardware Specifications</a></li>
+                    <li><a href="administration.html">Administration</a></li>
+                    <li><a href="integrations.html">Integrations</a></li>
+                    <li><a href="api-reference.html">API Reference</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Support</h3>
+                <ul>
+                    <li><a href="support.html">Contact Support</a></li>
+                    <li><a href="troubleshooting.html">Troubleshooting</a></li>
+                    <li><a href="faq.html">FAQ</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Securaa. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/components/prism-core.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/plugins/autoloader/prism-autoloader.min.js"></script>
+    
+    <script>
+        // Mobile menu functionality
+        function toggleMobileMenu() {
+            const sidebar = document.querySelector('.sidebar');
+            const overlay = document.querySelector('.sidebar-overlay');
+            
+            if (!overlay) {
+                // Create overlay if it doesn't exist
+                const newOverlay = document.createElement('div');
+                newOverlay.className = 'sidebar-overlay';
+                newOverlay.onclick = closeMobileMenu;
+                document.body.appendChild(newOverlay);
+            }
+            
+            sidebar.classList.toggle('show');
+            (overlay || document.querySelector('.sidebar-overlay')).classList.toggle('show');
+        }
+        
+        function closeMobileMenu() {
+            const sidebar = document.querySelector('.sidebar');
+            const overlay = document.querySelector('.sidebar-overlay');
+            
+            sidebar.classList.remove('show');
+            if (overlay) overlay.classList.remove('show');
+        }
+        
+        // Close mobile menu when clicking sidebar links
+        document.addEventListener('DOMContentLoaded', function() {
+            const sidebarLinks = document.querySelectorAll('.sidebar a');
+            sidebarLinks.forEach(link => {
+                link.addEventListener('click', closeMobileMenu);
+            });
+        });
+    </script>
+</body>
+</html>

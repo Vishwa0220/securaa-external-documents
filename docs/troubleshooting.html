@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Troubleshooting - Securaa Documentation</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/themes/prism.min.css">
+</head>
+<body>
+    <div class="container">
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="logo">
+                    <i class="fas fa-shield-alt"></i>
+                    <span>Securaa Docs</span>
+                </div>
+                <button class="mobile-menu-toggle" onclick="toggleMobileMenu()">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+            
+            <nav class="sidebar-nav">
+                <a href="index.html" class="nav-item">
+                    <i class="fas fa-home"></i>
+                    <span>Home</span>
+                </a>
+                
+                <div class="nav-section">
+                    <div class="nav-section-title">Products</div>
+                    <a href="sia.html" class="nav-item">
+                        <i class="fas fa-brain"></i>
+                        <span>SIA</span>
+                    </a>
+                    <a href="soar.html" class="nav-item">
+                        <i class="fas fa-robot"></i>
+                        <span>SOAR</span>
+                    </a>
+                    <a href="tip.html" class="nav-item">
+                        <i class="fas fa-shield-virus"></i>
+                        <span>TIP</span>
+                    </a>
+                    <a href="csam.html" class="nav-item">
+                        <i class="fas fa-user-shield"></i>
+                        <span>CSAM</span>
+                    </a>
+                </div>
+                
+                <div class="nav-section">
+                    <div class="nav-section-title">Setup & Configuration</div>
+                    <a href="prerequisites.html" class="nav-item">
+                        <i class="fas fa-list-check"></i>
+                        <span>Prerequisites</span>
+                    </a>
+                    <a href="hardware-specs.html" class="nav-item">
+                        <i class="fas fa-server"></i>
+                        <span>Hardware Specs</span>
+                    </a>
+                    <a href="installation.html" class="nav-item">
+                        <i class="fas fa-download"></i>
+                        <span>Installation</span>
+                    </a>
+                    <a href="deployment.html" class="nav-item">
+                        <i class="fas fa-rocket"></i>
+                        <span>Deployment</span>
+                    </a>
+                    <a href="architecture.html" class="nav-item">
+                        <i class="fas fa-sitemap"></i>
+                        <span>Architecture</span>
+                    </a>
+                </div>
+                
+                <div class="nav-section">
+                    <div class="nav-section-title">Administration</div>
+                    <a href="administration.html" class="nav-item">
+                        <i class="fas fa-cogs"></i>
+                        <span>Administration</span>
+                    </a>
+                    <a href="tip-admin.html" class="nav-item">
+                        <i class="fas fa-shield-virus"></i>
+                        <span>TIP Admin</span>
+                    </a>
+                    <a href="csam-admin.html" class="nav-item">
+                        <i class="fas fa-user-cog"></i>
+                        <span>CSAM Admin</span>
+                    </a>
+                </div>
+                
+                <div class="nav-section">
+                    <div class="nav-section-title">Integration</div>
+                    <a href="integrations.html" class="nav-item">
+                        <i class="fas fa-plug"></i>
+                        <span>Integrations</span>
+                    </a>
+                    <a href="playbooks.html" class="nav-item">
+                        <i class="fas fa-book"></i>
+                        <span>Playbooks</span>
+                    </a>
+                    <a href="api-reference.html" class="nav-item">
+                        <i class="fas fa-code"></i>
+                        <span>API Reference</span>
+                    </a>
+                </div>
+                
+                <div class="nav-section">
+                    <div class="nav-section-title">Support</div>
+                    <a href="troubleshooting.html" class="nav-item active">
+                        <i class="fas fa-tools"></i>
+                        <span>Troubleshooting</span>
+                    </a>
+                    <a href="faq.html" class="nav-item">
+                        <i class="fas fa-question-circle"></i>
+                        <span>FAQ</span>
+                    </a>
+                    <a href="support.html" class="nav-item">
+                        <i class="fas fa-life-ring"></i>
+                        <span>Support</span>
+                    </a>
+                </div>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+            <div class="header">
+                <h1><i class="fas fa-tools"></i> Troubleshooting Guide</h1>
+                <p class="subtitle">Common issues, solutions, and diagnostic procedures for the Securaa platform</p>
+            </div>
+
+            <div class="content">
+                <section class="info-box">
+                    <h2><i class="fas fa-info-circle"></i> Troubleshooting Guide</h2>
+                    <p>
+                        This troubleshooting guide provides basic steps to help resolve common issues. 
+                        Follow these general troubleshooting steps, and if problems persist, 
+                        contact our <a href="support.html">support team</a> for assistance.
+                    </p>
+                </section>
+
+                <section>
+                    <h2><i class="fas fa-tools"></i> General Troubleshooting Steps</h2>
+                    
+                    <div class="troubleshooting-steps">
+                        <div class="step">
+                            <h3><i class="fas fa-step-forward"></i> Step 1: Verify System Status</h3>
+                            <p>Check if all required services are running and accessible:</p>
+                            <ul>
+                                <li>Ensure the application is running</li>
+                                <li>Verify network connectivity</li>
+                                <li>Check system resources (CPU, memory, disk space)</li>
+                                <li>Confirm database connectivity</li>
+                            </ul>
+                        </div>
+
+                        <div class="step">
+                            <h3><i class="fas fa-redo"></i> Step 2: Restart Services</h3>
+                            <p>Often, a simple restart can resolve temporary issues:</p>
+                            <ul>
+                                <li>Restart the application services</li>
+                                <li>Restart database services if needed</li>
+                                <li>Clear browser cache and cookies</li>
+                                <li>Try accessing from a different browser or device</li>
+                            </ul>
+                        </div>
+
+                        <div class="step">
+                            <h3><i class="fas fa-search"></i> Step 3: Check Logs</h3>
+                            <p>Review log files to identify specific error messages:</p>
+                            <ul>
+                                <li>Look for recent error messages</li>
+                                <li>Note any warning or critical alerts</li>
+                                <li>Check system logs for hardware issues</li>
+                                <li>Document any error codes or messages</li>
+                            </ul>
+                        </div>
+
+                        <div class="step">
+                            <h3><i class="fas fa-cog"></i> Step 4: Verify Configuration</h3>
+                            <p>Ensure all configurations are correct:</p>
+                            <ul>
+                                <li>Check network settings and firewall rules</li>
+                                <li>Verify database connection settings</li>
+                                <li>Confirm API keys and authentication settings</li>
+                                <li>Review integration configurations</li>
+                            </ul>
+                        </div>
+
+                        <div class="step">
+                            <h3><i class="fas fa-sync-alt"></i> Step 5: Update and Patch</h3>
+                            <p>Ensure you're running the latest versions:</p>
+                            <ul>
+                                <li>Check for application updates</li>
+                                <li>Apply any available security patches</li>
+                                <li>Update browser to the latest version</li>
+                                <li>Verify system dependencies are current</li>
+                            </ul>
+                        </div>
+
+                        <div class="step">
+                            <h3><i class="fas fa-life-ring"></i> Step 6: Contact Support</h3>
+                            <p>If the issue persists after following the above steps:</p>
+                            <ul>
+                                <li>Gather all error messages and log entries</li>
+                                <li>Document the steps you've already tried</li>
+                                <li>Note the exact time when the issue occurred</li>
+                                <li>Contact our support team with this information</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+
+                <section>
+                    <h2><i class="fas fa-exclamation-triangle"></i> Common Issues</h2>
+                    <p>Here are some common issues and quick resolution tips:</p>
+                    
+                    <div class="common-issues">
+                        <div class="issue">
+                            <h4>Cannot Access Web Interface</h4>
+                            <ul>
+                                <li>Check if the service is running</li>
+                                <li>Verify firewall settings</li>
+                                <li>Try different browser or clear cache</li>
+                                <li>Check network connectivity</li>
+                            </ul>
+                        </div>
+
+                        <div class="issue">
+                            <h4>Login Problems</h4>
+                            <ul>
+                                <li>Verify username and password</li>
+                                <li>Check for account lockouts</li>
+                                <li>Clear browser cookies</li>
+                                <li>Try password reset if available</li>
+                            </ul>
+                        </div>
+
+                        <div class="issue">
+                            <h4>Slow Performance</h4>
+                            <ul>
+                                <li>Check system resources</li>
+                                <li>Review network connectivity</li>
+                                <li>Clear temporary files</li>
+                                <li>Restart services</li>
+                            </ul>
+                        </div>
+
+                        <div class="issue">
+                            <h4>Integration Failures</h4>
+                            <ul>
+                                <li>Verify API credentials</li>
+                                <li>Check network connectivity to external services</li>
+                                <li>Review firewall rules</li>
+                                <li>Test connection settings</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+
+                <div class="cta-section">
+                    <h2><i class="fas fa-question-circle"></i> Need Additional Help?</h2>
+                    <p>
+                        <strong>Still experiencing issues?</strong> Check our <a href="faq.html">FAQ section</a> 
+                        for additional solutions, review the <a href="api-reference.html">API documentation</a> 
+                        for integration issues, or <a href="support.html">contact our support team</a> 
+                        with your specific problem details.
+                    </p>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Products</h3>
+                <ul>
+                    <li><a href="sia.html">SIA</a></li>
+                    <li><a href="soar.html">SOAR</a></li>
+                    <li><a href="tip.html">TIP</a></li>
+                    <li><a href="csam.html">CSAM</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Documentation</h3>
+                <ul>
+                    <li><a href="installation.html">Installation</a></li>
+                    <li><a href="api-reference.html">API Reference</a></li>
+                    <li><a href="integrations.html">Integrations</a></li>
+                    <li><a href="troubleshooting.html">Troubleshooting</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Support</h3>
+                <ul>
+                    <li><a href="support.html">Contact Support</a></li>
+                    <li><a href="faq.html">FAQ</a></li>
+                    <li><a href="mailto:support@securaa.com">support@securaa.com</a></li>
+                    <li><a href="tel:+1-555-0123">+1 (555) 012-3456</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Legal</h3>
+                <ul>
+                    <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                    <li><a href="terms-of-service.html">Terms of Service</a></li>
+                    <li>&copy; 2024 Securaa. All rights reserved.</li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/components/prism-core.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/plugins/autoloader/prism-autoloader.min.js"></script>
+    
+    <script>
+        function toggleMobileMenu() {
+            const sidebar = document.querySelector('.sidebar');
+            const overlay = document.querySelector('.sidebar-overlay');
+            
+            if (!overlay) {
+                const newOverlay = document.createElement('div');
+                newOverlay.className = 'sidebar-overlay';
+                newOverlay.onclick = closeMobileMenu;
+                document.body.appendChild(newOverlay);
+            }
+            
+            sidebar.classList.toggle('show');
+            (overlay || document.querySelector('.sidebar-overlay')).classList.toggle('show');
+        }
+        
+        function closeMobileMenu() {
+            const sidebar = document.querySelector('.sidebar');
+            const overlay = document.querySelector('.sidebar-overlay');
+            
+            sidebar.classList.remove('show');
+            if (overlay) overlay.classList.remove('show');
+        }
+        
+        document.addEventListener('DOMContentLoaded', function() {
+            const sidebarLinks = document.querySelectorAll('.sidebar a');
+            sidebarLinks.forEach(link => {
+                link.addEventListener('click', closeMobileMenu);
+            });
+        });
+    </script>
+</body>
+</html>

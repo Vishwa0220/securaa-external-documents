@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solution Architecture - Securaa Documentation</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/themes/prism.min.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-content">
+                <div class="logo">
+                    <h1><i class="fas fa-shield-alt"></i> Securaa</h1>
+                    <span class="tagline">Advanced Cybersecurity Solutions</span>
+                </div>
+                <nav class="main-nav">
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="sia.html">SIA</a></li>
+                        <li><a href="soar.html">SOAR</a></li>
+                        <li><a href="tip.html">TIP</a></li>
+                        <li><a href="csam.html">CSAM</a></li>
+                        <li><a href="support.html">Support</a></li>
+                    </ul>
+                </nav>
+                <div class="header-right">
+                    <div class="search-container">
+                        <input type="text" id="searchInput" placeholder="Search documentation...">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <button class="mobile-menu-toggle" onclick="toggleMobileMenu()">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar">
+            <nav class="sidebar-nav">
+                <div class="nav-section">
+                    <h3><i class="fas fa-home"></i> Getting Started</h3>
+                    <ul>
+                        <li><a href="index.html#overview">Product Overview</a></li>
+                        <li><a href="architecture.html" class="active">Solution Architecture</a></li>
+                        <li><a href="prerequisites.html">Prerequisites</a></li>
+                    </ul>
+                </div>
+                
+                <div class="nav-section">
+                    <h3><i class="fas fa-cube"></i> Products</h3>
+                    <ul>
+                        <li><a href="sia.html">SIA (Security Intelligence Analytics)</a></li>
+                        <li><a href="soar.html">SOAR (Security Orchestration)</a></li>
+                        <li><a href="tip.html">TIP (Threat Intelligence Platform)</a></li>
+                        <li><a href="csam.html">CSAM (Cyber Security Asset Management)</a></li>
+                    </ul>
+                </div>
+
+                <div class="nav-section">
+                    <h3><i class="fas fa-cogs"></i> Installation & Deployment</h3>
+                    <ul>
+                        <li><a href="installation.html">Installation Guide</a></li>
+                        <li><a href="deployment.html">Deployment Guide</a></li>
+                        <li><a href="hardware-specs.html">Hardware Specifications</a></li>
+                    </ul>
+                </div>
+
+                <div class="nav-section">
+                    <h3><i class="fas fa-users-cog"></i> Administration</h3>
+                    <ul>
+                        <li><a href="administration.html">Administration</a></li>
+                        <li><a href="csam-admin.html">CSAM Administration</a></li>
+                        <li><a href="tip-admin.html">TIP Administration</a></li>
+                    </ul>
+                </div>
+
+                <div class="nav-section">
+                    <h3><i class="fas fa-puzzle-piece"></i> Integrations</h3>
+                    <ul>
+                        <li><a href="integrations.html">Available Integrations</a></li>
+                        <li><a href="playbooks.html">Security Playbooks</a></li>
+                        <li><a href="api-reference.html">API Reference</a></li>
+                    </ul>
+                </div>
+
+                <div class="nav-section">
+                    <h3><i class="fas fa-question-circle"></i> Support</h3>
+                    <ul>
+                        <li><a href="troubleshooting.html">Troubleshooting</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                        <li><a href="support.html">Contact Support</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+            <div class="header">
+                <h1><i class="fas fa-sitemap"></i> Solution Architecture</h1>
+                <p class="subtitle">Comprehensive overview of Securaa's cybersecurity platform architecture</p>
+            </div>
+
+            <div class="content">
+                <section class="reference-section">
+                    <h2><i class="fas fa-info-circle"></i> Architecture Overview</h2>
+                    <p>
+                        The Securaa cybersecurity platform is built on a modular, scalable architecture that integrates 
+                        Security Intelligence Analytics (SIA), Security Orchestration, Automation, and Response (SOAR), 
+                        Threat Intelligence Platform (TIP), and Cyber Security Asset Management (CSAM) capabilities 
+                        into a unified security ecosystem.
+                    </p>
+                </section>
+
+                <section class="content-section">
+                    <h2><i class="fas fa-layer-group"></i> Platform Components</h2>
+                    
+                    <div class="feature-grid">
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <i class="fas fa-chart-line"></i>
+                            </div>
+                            <h3>Security Intelligence Analytics (SIA)</h3>
+                            <p>Real-time security data analysis, threat detection, and intelligence correlation engine.</p>
+                            <ul>
+                                <li>Advanced analytics engine</li>
+                                <li>Machine learning algorithms</li>
+                                <li>Behavioral analysis</li>
+                                <li>Risk scoring and prioritization</li>
+                            </ul>
+                        </div>
+
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <i class="fas fa-cogs"></i>
+                            </div>
+                            <h3>Security Orchestration (SOAR)</h3>
+                            <p>Automated incident response, workflow orchestration, and security process automation.</p>
+                            <ul>
+                                <li>Automated playbook execution</li>
+                                <li>Incident response workflows</li>
+                                <li>Multi-tool integration</li>
+                                <li>Case management system</li>
+                            </ul>
+                        </div>
+
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <i class="fas fa-shield-virus"></i>
+                            </div>
+                            <h3>Threat Intelligence Platform (TIP)</h3>
+                            <p>Centralized threat intelligence collection, analysis, and sharing capabilities.</p>
+                            <ul>
+                                <li>Threat data aggregation</li>
+                                <li>IOC management</li>
+                                <li>Intelligence feeds integration</li>
+                                <li>Threat hunting support</li>
+                            </ul>
+                        </div>
+
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <i class="fas fa-server"></i>
+                            </div>
+                            <h3>Cyber Security Asset Management (CSAM)</h3>
+                            <p>Comprehensive asset discovery, inventory management, and vulnerability assessment.</p>
+                            <ul>
+                                <li>Asset discovery and mapping</li>
+                                <li>Vulnerability assessment</li>
+                                <li>Configuration management</li>
+                                <li>Compliance monitoring</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+
+                <section>
+                    <h2><i class="fas fa-network-wired"></i> System Architecture</h2>
+                    
+                    <div class="architecture-diagram">
+                        <h3>High-Level Architecture</h3>
+                        <div class="diagram-container">
+                            <div class="architecture-layer">
+                                <h4>Presentation Layer</h4>
+                                <div class="layer-components">
+                                    <span class="component">Web Interface</span>
+                                    <span class="component">Mobile Apps</span>
+                                    <span class="component">API Gateway</span>
+                                    <span class="component">Dashboards</span>
+                                </div>
+                            </div>
+                            
+                            <div class="architecture-layer">
+                                <h4>Application Layer</h4>
+                                <div class="layer-components">
+                                    <span class="component">SIA Engine</span>
+                                    <span class="component">SOAR Orchestrator</span>
+                                    <span class="component">TIP Processor</span>
+                                    <span class="component">CSAM Scanner</span>
+                                </div>
+                            </div>
+                            
+                            <div class="architecture-layer">
+                                <h4>Integration Layer</h4>
+                                <div class="layer-components">
+                                    <span class="component">Message Queue</span>
+                                    <span class="component">Event Bus</span>
+                                    <span class="component">Integration APIs</span>
+                                    <span class="component">Connectors</span>
+                                </div>
+                            </div>
+                            
+                            <div class="architecture-layer">
+                                <h4>Data Layer</h4>
+                                <div class="layer-components">
+                                    <span class="component">Security Database</span>
+                                    <span class="component">Time Series DB</span>
+                                    <span class="component">Document Store</span>
+                                    <span class="component">Cache Layer</span>
+                                </div>
+                            </div>
+                            
+                            <div class="architecture-layer">
+                                <h4>Infrastructure Layer</h4>
+                                <div class="layer-components">
+                                    <span class="component">Container Runtime</span>
+                                    <span class="component">Load Balancers</span>
+                                    <span class="component">Storage Systems</span>
+                                    <span class="component">Network Security</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section>
+                    <h2><i class="fas fa-exchange-alt"></i> Data Flow Architecture</h2>
+                    
+                    <div class="info-box">
+                        <h3>Security Data Pipeline</h3>
+                        <ol>
+                            <li><strong>Data Ingestion:</strong> Security events, logs, and intelligence feeds are collected from multiple sources</li>
+                            <li><strong>Data Processing:</strong> Raw data is normalized, enriched, and correlated using SIA analytics</li>
+                            <li><strong>Intelligence Enhancement:</strong> TIP enriches events with threat intelligence and context</li>
+                            <li><strong>Analysis & Scoring:</strong> Advanced analytics engines assess risk and generate actionable insights</li>
+                            <li><strong>Automated Response:</strong> SOAR workflows trigger automated response actions based on predefined playbooks</li>
+                            <li><strong>Asset Context:</strong> CSAM provides asset context and vulnerability information for enhanced decision-making</li>
+                        </ol>
+                    </div>
+                </section>
+
+                <section>
+                    <h2><i class="fas fa-plug"></i> Integration Architecture</h2>
+                    
+                    <div class="integration-grid">
+                        <div class="integration-category">
+                            <h3>Security Tools</h3>
+                            <ul>
+                                <li>SIEM/SOAR Platforms</li>
+                                <li>Endpoint Detection & Response</li>
+                                <li>Network Security Monitoring</li>
+                                <li>Vulnerability Scanners</li>
+                                <li>Threat Intelligence Feeds</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="integration-category">
+                            <h3>IT Infrastructure</h3>
+                            <ul>
+                                <li>Active Directory</li>
+                                <li>Cloud Platforms (AWS, Azure, GCP)</li>
+                                <li>Container Orchestration</li>
+                                <li>Network Management</li>
+                                <li>Asset Management Systems</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="integration-category">
+                            <h3>Communication</h3>
+                            <ul>
+                                <li>Email Systems</li>
+                                <li>Slack/Teams</li>
+                                <li>Ticketing Systems</li>
+                                <li>SMS/Voice Alerts</li>
+                                <li>Webhook Notifications</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+
+                <section>
+                    <h2><i class="fas fa-shield-check"></i> Security & Compliance</h2>
+                    
+                    <div class="security-features">
+                        <div class="security-item">
+                            <h3><i class="fas fa-lock"></i> Security Controls</h3>
+                            <ul>
+                                <li>End-to-end encryption</li>
+                                <li>Multi-factor authentication</li>
+                                <li>Role-based access control</li>
+                                <li>Audit logging and monitoring</li>
+                                <li>Data loss prevention</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="security-item">
+                            <h3><i class="fas fa-certificate"></i> Compliance Standards</h3>
+                            <ul>
+                                <li>ISO 27001/27002</li>
+                                <li>NIST Cybersecurity Framework</li>
+                                <li>SOC 2 Type II</li>
+                                <li>GDPR Compliance</li>
+                                <li>Industry-specific regulations</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+
+                <section>
+                    <h2><i class="fas fa-expand-arrows-alt"></i> Scalability & Performance</h2>
+                    
+                    <div class="performance-metrics">
+                        <div class="metric-item">
+                            <h3>Horizontal Scaling</h3>
+                            <p>Microservices architecture enables independent scaling of components based on demand</p>
+                        </div>
+                        
+                        <div class="metric-item">
+                            <h3>High Availability</h3>
+                            <p>Multi-zone deployment with automatic failover and 99.9% uptime SLA</p>
+                        </div>
+                        
+                        <div class="metric-item">
+                            <h3>Performance Optimization</h3>
+                            <p>Distributed caching, load balancing, and optimized data structures for real-time processing</p>
+                        </div>
+                    </div>
+                </section>
+
+                <div class="cta-section">
+                    <h2><i class="fas fa-rocket"></i> Next Steps</h2>
+                    <p>
+                        <strong>Ready to deploy Securaa?</strong> Review the <a href="prerequisites.html">system requirements</a> 
+                        and <a href="hardware-specs.html">hardware specifications</a> to get started with the platform.
+                    </p>
+                </div>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Securaa</h3>
+                    <p>Advanced cybersecurity solutions for modern threats.</p>
+                    <div class="social-links">
+                        <a href="https://linkedin.com/company/securaa" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://twitter.com/securaa" target="_blank" rel="noopener noreferrer"><i class="fab fa-twitter"></i></a>
+                        <a href="https://github.com/securaa" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Products</h4>
+                    <ul>
+                        <li><a href="sia.html">SIA</a></li>
+                        <li><a href="soar.html">SOAR</a></li>
+                        <li><a href="tip.html">TIP</a></li>
+                        <li><a href="csam.html">CSAM</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Documentation</h4>
+                    <ul>
+                        <li><a href="hardware-specs.html">Hardware Specifications</a></li>
+                        <li><a href="administration.html">Administration</a></li>
+                        <li><a href="integrations.html">Integrations</a></li>
+                        <li><a href="api-reference.html">API Reference</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="support.html">Contact Support</a></li>
+                        <li><a href="troubleshooting.html">Troubleshooting</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Securaa. All rights reserved. | <a href="privacy-policy.html">Privacy Policy</a> | <a href="terms-of-service.html">Terms of Service</a></p>
+                <p>Documentation Version 2.0 | Last Updated: October 2025</p>
+            </div>
+        </footer>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/components/prism-core.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/plugins/autoloader/prism-autoloader.min.js"></script>
+    
+    <script>
+        // Mobile menu functionality
+        function toggleMobileMenu() {
+            const sidebar = document.querySelector('.sidebar');
+            const overlay = document.querySelector('.sidebar-overlay');
+            
+            if (!overlay) {
+                // Create overlay if it doesn't exist
+                const newOverlay = document.createElement('div');
+                newOverlay.className = 'sidebar-overlay';
+                newOverlay.onclick = closeMobileMenu;
+                document.body.appendChild(newOverlay);
+            }
+            
+            sidebar.classList.toggle('show');
+            (overlay || document.querySelector('.sidebar-overlay')).classList.toggle('show');
+        }
+        
+        function closeMobileMenu() {
+            const sidebar = document.querySelector('.sidebar');
+            const overlay = document.querySelector('.sidebar-overlay');
+            
+            sidebar.classList.remove('show');
+            if (overlay) overlay.classList.remove('show');
+        }
+        
+        // Close mobile menu when clicking sidebar links
+        document.addEventListener('DOMContentLoaded', function() {
+            const sidebarLinks = document.querySelectorAll('.sidebar a');
+            sidebarLinks.forEach(link => {
+                link.addEventListener('click', closeMobileMenu);
+            });
+        });
+    </script>
+</body>
+</html>

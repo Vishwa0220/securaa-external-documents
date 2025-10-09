@@ -1,0 +1,803 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSAM Administration - Securaa Documentation</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/themes/prism.min.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-content">
+                <div class="logo">
+                    <h1><i class="fas fa-shield-alt"></i> Securaa</h1>
+                    <span class="tagline">Advanced Cybersecurity Solutions</span>
+                </div>
+                <nav class="main-nav">
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="sia.html">SIA</a></li>
+                        <li><a href="soar.html">SOAR</a></li>
+                        <li><a href="tip.html">TIP</a></li>
+                        <li><a href="csam.html">CSAM</a></li>
+                        <li><a href="support.html">Support</a></li>
+                    </ul>
+                </nav>
+                <div class="header-right">
+                    <div class="search-container">
+                        <input type="text" id="searchInput" placeholder="Search documentation...">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <button class="mobile-menu-toggle" onclick="toggleMobileMenu()">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar">
+            <nav class="sidebar-nav">
+                <div class="nav-section">
+                    <h3><i class="fas fa-home"></i> Getting Started</h3>
+                    <ul>
+                        <li><a href="index.html#overview">Product Overview</a></li>
+                        <li><a href="architecture.html">Solution Architecture</a></li>
+                        <li><a href="prerequisites.html">Prerequisites</a></li>
+                    </ul>
+                </div>
+                
+                <div class="nav-section">
+                    <h3><i class="fas fa-cube"></i> Products</h3>
+                    <ul>
+                        <li><a href="sia.html">SIA (Security Intelligence Analytics)</a></li>
+                        <li><a href="soar.html">SOAR (Security Orchestration)</a></li>
+                        <li><a href="tip.html">TIP (Threat Intelligence Platform)</a></li>
+                        <li><a href="csam.html">CSAM (Cyber Security Asset Management)</a></li>
+                    </ul>
+                </div>
+
+                <div class="nav-section">
+                    <h3><i class="fas fa-cogs"></i> Installation & Deployment</h3>
+                    <ul>
+                        <li><a href="installation.html">Installation Guide</a></li>
+                        <li><a href="deployment.html">Deployment Guide</a></li>
+                        <li><a href="hardware-specs.html">Hardware Specifications</a></li>
+                    </ul>
+                </div>
+
+                <div class="nav-section">
+                    <h3><i class="fas fa-users-cog"></i> Administration</h3>
+                    <ul>
+                        <li><a href="administration.html">Administration</a></li>
+                        <li><a href="csam-admin.html" class="active">CSAM Administration</a></li>
+                        <li><a href="tip-admin.html">TIP Administration</a></li>
+                    </ul>
+                </div>
+
+                <div class="nav-section">
+                    <h3><i class="fas fa-puzzle-piece"></i> Integrations</h3>
+                    <ul>
+                        <li><a href="integrations.html">Available Integrations</a></li>
+                        <li><a href="playbooks.html">Security Playbooks</a></li>
+                        <li><a href="api-reference.html">API Reference</a></li>
+                    </ul>
+                </div>
+
+                <div class="nav-section">
+                    <h3><i class="fas fa-question-circle"></i> Support</h3>
+                    <ul>
+                        <li><a href="troubleshooting.html">Troubleshooting</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                        <li><a href="support.html">Contact Support</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </aside>
+        </nav>
+
+        <main class="main-content">
+            <div class="header">
+                <h1><i class="fas fa-server"></i> CSAM Administration Guide</h1>
+                <p class="subtitle">Comprehensive administration guide for Cyber Security Asset Management</p>
+            </div>
+
+            <div class="content">
+                <section class="info-box">
+                    <h2><i class="fas fa-info-circle"></i> Overview</h2>
+                    <p>
+                        The CSAM (Cyber Security Asset Management) administration interface provides 
+                        comprehensive tools for managing your organization's digital and physical assets, 
+                        vulnerability assessments, compliance monitoring, and security posture management.
+                    </p>
+                </section>
+
+                <section>
+                    <h2><i class="fas fa-tachometer-alt"></i> Administrator Dashboard</h2>
+                    
+                    <div class="feature-grid">
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <i class="fas fa-chart-pie"></i>
+                            </div>
+                            <h3>Asset Summary</h3>
+                            <p>Real-time overview of all managed assets with categorization by type, criticality, and status</p>
+                            <ul>
+                                <li>Total asset count and distribution</li>
+                                <li>Asset type breakdown (servers, workstations, mobile, IoT)</li>
+                                <li>Risk level categorization</li>
+                                <li>Asset lifecycle status tracking</li>
+                            </ul>
+                        </div>
+
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <i class="fas fa-exclamation-triangle"></i>
+                            </div>
+                            <h3>Vulnerability Overview</h3>
+                            <p>Critical vulnerability metrics and remediation status across your asset inventory</p>
+                            <ul>
+                                <li>Critical and high-risk vulnerability counts</li>
+                                <li>CVSS score distribution</li>
+                                <li>Remediation progress tracking</li>
+                                <li>SLA compliance monitoring</li>
+                            </ul>
+                        </div>
+
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <i class="fas fa-shield-check"></i>
+                            </div>
+                            <h3>Compliance Status</h3>
+                            <p>Real-time compliance monitoring against industry standards and frameworks</p>
+                            <ul>
+                                <li>NIST Cybersecurity Framework compliance</li>
+                                <li>ISO 27001/27002 alignment</li>
+                                <li>PCI DSS compliance status</li>
+                                <li>Custom compliance frameworks</li>
+                            </ul>
+                        </div>
+
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <i class="fas fa-sync-alt"></i>
+                            </div>
+                            <h3>Discovery Status</h3>
+                            <p>Asset discovery scan status and automated inventory management</p>
+                            <ul>
+                                <li>Active discovery scans</li>
+                                <li>Last scan results and timestamps</li>
+                                <li>Network coverage statistics</li>
+                                <li>Discovery accuracy metrics</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+
+                <section>
+                    <h2><i class="fas fa-cogs"></i> Asset Discovery Configuration</h2>
+                    
+                    <h3>Discovery Methods</h3>
+                    <div class="discovery-methods">
+                        <div class="method-card">
+                            <h4><i class="fas fa-network-wired"></i> Network Discovery</h4>
+                            <p>Automated network scanning for asset identification</p>
+                            <div class="code-block">
+                                <pre><code class="language-bash"># Configure network ranges
+Network Ranges: 10.0.0.0/8, 192.168.0.0/16, 172.16.0.0/12
+Scan Ports: 22, 80, 135, 139, 443, 445, 3389
+Discovery Schedule: Daily at 2:00 AM
+Scan Intensity: Adaptive (based on network load)</code></pre>
+                            </div>
+                        </div>
+                        
+                        <div class="method-card">
+                            <h4><i class="fas fa-hdd"></i> Agent-Based Discovery</h4>
+                            <p>Deploy lightweight agents for detailed asset information</p>
+                            <div class="code-block">
+                                <pre><code class="language-bash"># Agent deployment
+Agent Package: securaa-agent-v2.1.3
+Supported OS: Windows, Linux, macOS
+Collection Interval: 15 minutes
+Data Points: Hardware, Software, Patches, Configurations</code></pre>
+                            </div>
+                        </div>
+                        
+                        <div class="method-card">
+                            <h4><i class="fas fa-cloud"></i> Cloud API Integration</h4>
+                            <p>Integrate with cloud providers for automatic asset discovery</p>
+                            <div class="supported-clouds">
+                                <span class="cloud-tag">AWS</span>
+                                <span class="cloud-tag">Azure</span>
+                                <span class="cloud-tag">GCP</span>
+                                <span class="cloud-tag">VMware vSphere</span>
+                                <span class="cloud-tag">Hyper-V</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <h3>Discovery Schedule Configuration</h3>
+                    <div class="schedule-table">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Discovery Type</th>
+                                    <th>Frequency</th>
+                                    <th>Recommended Schedule</th>
+                                    <th>Impact</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Full Network Scan</td>
+                                    <td>Weekly</td>
+                                    <td>Sunday 2:00 AM</td>
+                                    <td>Medium</td>
+                                </tr>
+                                <tr>
+                                    <td>Incremental Scan</td>
+                                    <td>Daily</td>
+                                    <td>Every day 6:00 PM</td>
+                                    <td>Low</td>
+                                </tr>
+                                <tr>
+                                    <td>Agent Collection</td>
+                                    <td>Continuous</td>
+                                    <td>Every 15 minutes</td>
+                                    <td>Minimal</td>
+                                </tr>
+                                <tr>
+                                    <td>Cloud Sync</td>
+                                    <td>Hourly</td>
+                                    <td>Top of every hour</td>
+                                    <td>Minimal</td>
+                                </tr>
+                                <tr>
+                                    <td>Vulnerability Scan</td>
+                                    <td>Weekly</td>
+                                    <td>Saturday 10:00 PM</td>
+                                    <td>High</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+
+                <section>
+                    <h2><i class="fas fa-tags"></i> Asset Classification & Tagging</h2>
+                    
+                    <h3>Asset Categories</h3>
+                    <div class="classification-grid">
+                        <div class="classification-item">
+                            <h4>IT Infrastructure</h4>
+                            <ul>
+                                <li>Physical Servers</li>
+                                <li>Virtual Machines</li>
+                                <li>Network Equipment</li>
+                                <li>Storage Systems</li>
+                                <li>Security Appliances</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="classification-item">
+                            <h4>End-User Devices</h4>
+                            <ul>
+                                <li>Workstations</li>
+                                <li>Laptops</li>
+                                <li>Mobile Devices</li>
+                                <li>Tablets</li>
+                                <li>Printers</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="classification-item">
+                            <h4>IoT & Specialized</h4>
+                            <ul>
+                                <li>IoT Sensors</li>
+                                <li>Industrial Control Systems</li>
+                                <li>Medical Devices</li>
+                                <li>Building Management</li>
+                                <li>Video Surveillance</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <h3>Criticality Levels</h3>
+                    <div class="criticality-levels">
+                        <div class="criticality-item critical">
+                            <h4><i class="fas fa-exclamation-circle"></i> Critical</h4>
+                            <p>Mission-critical assets whose failure would cause significant business impact</p>
+                            <ul>
+                                <li>Production database servers</li>
+                                <li>Domain controllers</li>
+                                <li>Payment processing systems</li>
+                                <li>Core network infrastructure</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="criticality-item high">
+                            <h4><i class="fas fa-exclamation-triangle"></i> High</h4>
+                            <p>Important assets that support business operations</p>
+                            <ul>
+                                <li>Application servers</li>
+                                <li>Email servers</li>
+                                <li>File servers</li>
+                                <li>Executive workstations</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="criticality-item medium">
+                            <h4><i class="fas fa-minus-circle"></i> Medium</h4>
+                            <p>Standard business assets with moderate impact if compromised</p>
+                            <ul>
+                                <li>Standard workstations</li>
+                                <li>Development systems</li>
+                                <li>Testing environments</li>
+                                <li>Office printers</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="criticality-item low">
+                            <h4><i class="fas fa-info-circle"></i> Low</h4>
+                            <p>Non-critical assets with minimal business impact</p>
+                            <ul>
+                                <li>Personal devices</li>
+                                <li>Guest networks</li>
+                                <li>Demonstration systems</li>
+                                <li>Archive servers</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+
+                <section>
+                    <h2><i class="fas fa-bug"></i> Vulnerability Management</h2>
+                    
+                    <h3>Vulnerability Assessment Configuration</h3>
+                    <div class="vulnerability-config">
+                        <div class="config-section">
+                            <h4>Scan Configuration</h4>
+                            <div class="code-block">
+                                <pre><code class="language-yaml"># Vulnerability Scan Settings
+scan_profiles:
+  full_scan:
+    frequency: weekly
+    depth: comprehensive
+    plugins: all
+    credentialed: true
+  
+  compliance_scan:
+    frequency: monthly
+    standards: [CIS, NIST, OWASP]
+    remediation_tracking: true
+  
+  critical_asset_scan:
+    frequency: daily
+    targets: critical_assets
+    severity_threshold: medium
+    immediate_notification: true</code></pre>
+                            </div>
+                        </div>
+                        
+                        <div class="config-section">
+                            <h4>Risk Scoring Matrix</h4>
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>CVSS Score</th>
+                                        <th>Severity</th>
+                                        <th>SLA (Business Hours)</th>
+                                        <th>Action Required</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="critical">
+                                        <td>9.0 - 10.0</td>
+                                        <td>Critical</td>
+                                        <td>4 hours</td>
+                                        <td>Immediate patching</td>
+                                    </tr>
+                                    <tr class="high">
+                                        <td>7.0 - 8.9</td>
+                                        <td>High</td>
+                                        <td>24 hours</td>
+                                        <td>Priority patching</td>
+                                    </tr>
+                                    <tr class="medium">
+                                        <td>4.0 - 6.9</td>
+                                        <td>Medium</td>
+                                        <td>7 days</td>
+                                        <td>Scheduled patching</td>
+                                    </tr>
+                                    <tr class="low">
+                                        <td>0.1 - 3.9</td>
+                                        <td>Low</td>
+                                        <td>30 days</td>
+                                        <td>Next maintenance cycle</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    
+                    <h3>Remediation Workflow</h3>
+                    <div class="workflow-steps">
+                        <div class="workflow-step">
+                            <div class="step-number">1</div>
+                            <div class="step-content">
+                                <h4>Detection & Assessment</h4>
+                                <p>Automated vulnerability scanning identifies and assesses security weaknesses</p>
+                                <ul>
+                                    <li>CVSS scoring and risk calculation</li>
+                                    <li>Asset criticality weighting</li>
+                                    <li>Business impact assessment</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="workflow-step">
+                            <div class="step-number">2</div>
+                            <div class="step-content">
+                                <h4>Prioritization & Assignment</h4>
+                                <p>Vulnerabilities are prioritized and assigned to appropriate teams</p>
+                                <ul>
+                                    <li>SLA-based prioritization</li>
+                                    <li>Automatic team assignment</li>
+                                    <li>Notification and escalation</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="workflow-step">
+                            <div class="step-number">3</div>
+                            <div class="step-content">
+                                <h4>Remediation & Verification</h4>
+                                <p>Patches are applied and verified for successful remediation</p>
+                                <ul>
+                                    <li>Patch testing and deployment</li>
+                                    <li>Verification scanning</li>
+                                    <li>Compliance validation</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section>
+                    <h2><i class="fas fa-clipboard-check"></i> Compliance Management</h2>
+                    
+                    <h3>Supported Frameworks</h3>
+                    <div class="compliance-frameworks">
+                        <div class="framework-card">
+                            <h4><i class="fas fa-shield-alt"></i> NIST Cybersecurity Framework</h4>
+                            <p>Comprehensive cybersecurity risk management framework</p>
+                            <div class="framework-functions">
+                                <span class="function-tag">Identify</span>
+                                <span class="function-tag">Protect</span>
+                                <span class="function-tag">Detect</span>
+                                <span class="function-tag">Respond</span>
+                                <span class="function-tag">Recover</span>
+                            </div>
+                        </div>
+                        
+                        <div class="framework-card">
+                            <h4><i class="fas fa-certificate"></i> ISO 27001/27002</h4>
+                            <p>Information security management system standards</p>
+                            <ul>
+                                <li>114 security controls</li>
+                                <li>Risk-based approach</li>
+                                <li>Continuous improvement</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="framework-card">
+                            <h4><i class="fas fa-credit-card"></i> PCI DSS</h4>
+                            <p>Payment card industry data security standards</p>
+                            <ul>
+                                <li>12 core requirements</li>
+                                <li>Cardholder data protection</li>
+                                <li>Regular security testing</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="framework-card">
+                            <h4><i class="fas fa-hospital"></i> HIPAA</h4>
+                            <p>Healthcare information privacy and security</p>
+                            <ul>
+                                <li>Administrative safeguards</li>
+                                <li>Physical safeguards</li>
+                                <li>Technical safeguards</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <h3>Compliance Reporting</h3>
+                    <div class="reporting-options">
+                        <div class="report-type">
+                            <h4>Executive Dashboard</h4>
+                            <p>High-level compliance status for executive reporting</p>
+                            <ul>
+                                <li>Compliance percentage by framework</li>
+                                <li>Trend analysis and projections</li>
+                                <li>Risk heat map visualization</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="report-type">
+                            <h4>Detailed Compliance Report</h4>
+                            <p>Comprehensive compliance assessment with remediation guidance</p>
+                            <ul>
+                                <li>Control-by-control assessment</li>
+                                <li>Evidence collection and documentation</li>
+                                <li>Gap analysis and recommendations</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="report-type">
+                            <h4>Audit Ready Reports</h4>
+                            <p>Formatted reports ready for compliance audits</p>
+                            <ul>
+                                <li>Evidence packages</li>
+                                <li>Policy and procedure documentation</li>
+                                <li>Asset inventory with security posture</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+
+                <section>
+                    <h2><i class="fas fa-users-cog"></i> User Management & Access Control</h2>
+                    
+                    <h3>Role-Based Access Control</h3>
+                    <div class="rbac-table">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Role</th>
+                                    <th>Asset Management</th>
+                                    <th>Vulnerability Management</th>
+                                    <th>Compliance Reporting</th>
+                                    <th>System Configuration</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>CSAM Administrator</strong></td>
+                                    <td>Full Access</td>
+                                    <td>Full Access</td>
+                                    <td>Full Access</td>
+                                    <td>Full Access</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Security Manager</strong></td>
+                                    <td>Read/Write</td>
+                                    <td>Full Access</td>
+                                    <td>Full Access</td>
+                                    <td>Limited</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Asset Manager</strong></td>
+                                    <td>Full Access</td>
+                                    <td>Read Only</td>
+                                    <td>Read Only</td>
+                                    <td>None</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Compliance Officer</strong></td>
+                                    <td>Read Only</td>
+                                    <td>Read Only</td>
+                                    <td>Full Access</td>
+                                    <td>None</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Security Analyst</strong></td>
+                                    <td>Read Only</td>
+                                    <td>Read/Write</td>
+                                    <td>Read Only</td>
+                                    <td>None</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Viewer</strong></td>
+                                    <td>Read Only</td>
+                                    <td>Read Only</td>
+                                    <td>Read Only</td>
+                                    <td>None</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    
+                    <h3>User Account Management</h3>
+                    <div class="user-management-actions">
+                        <div class="action-card">
+                            <h4><i class="fas fa-user-plus"></i> Create User Account</h4>
+                            <div class="code-block">
+                                <pre><code class="language-bash"># User Creation Example
+Username: john.doe
+Email: john.doe@company.com
+Role: Security Analyst
+Department: IT Security
+Manager: jane.smith@company.com
+Access Level: Standard
+MFA Required: Yes</code></pre>
+                            </div>
+                        </div>
+                        
+                        <div class="action-card">
+                            <h4><i class="fas fa-key"></i> Password Policy Configuration</h4>
+                            <div class="code-block">
+                                <pre><code class="language-yaml"># Password Policy Settings
+password_policy:
+  minimum_length: 12
+  require_uppercase: true
+  require_lowercase: true
+  require_numbers: true
+  require_special_chars: true
+  password_history: 12
+  max_age_days: 90
+  lockout_threshold: 3
+  lockout_duration_minutes: 30</code></pre>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section>
+                    <h2><i class="fas fa-chart-line"></i> Performance Monitoring & Optimization</h2>
+                    
+                    <h3>System Performance Metrics</h3>
+                    <div class="performance-metrics">
+                        <div class="metric-card">
+                            <h4>Asset Discovery Performance</h4>
+                            <ul>
+                                <li>Discovery scan completion time</li>
+                                <li>Asset detection accuracy rate</li>
+                                <li>Network coverage percentage</li>
+                                <li>False positive/negative rates</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="metric-card">
+                            <h4>Vulnerability Management Metrics</h4>
+                            <ul>
+                                <li>Mean time to detection (MTTD)</li>
+                                <li>Mean time to remediation (MTTR)</li>
+                                <li>SLA compliance percentage</li>
+                                <li>Risk reduction trending</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="metric-card">
+                            <h4>System Resource Utilization</h4>
+                            <ul>
+                                <li>CPU and memory usage</li>
+                                <li>Database performance metrics</li>
+                                <li>Network bandwidth utilization</li>
+                                <li>Storage capacity and growth</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <h3>Optimization Recommendations</h3>
+                    <div class="optimization-tips">
+                        <div class="tip-card">
+                            <h4><i class="fas fa-clock"></i> Scan Optimization</h4>
+                            <ul>
+                                <li>Schedule intensive scans during off-peak hours</li>
+                                <li>Use incremental scanning for frequently changing assets</li>
+                                <li>Implement adaptive scanning based on asset criticality</li>
+                                <li>Configure scan throttling to minimize network impact</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="tip-card">
+                            <h4><i class="fas fa-database"></i> Database Optimization</h4>
+                            <ul>
+                                <li>Regular database maintenance and indexing</li>
+                                <li>Archive old vulnerability scan data</li>
+                                <li>Optimize queries for large asset inventories</li>
+                                <li>Implement data retention policies</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="tip-card">
+                            <h4><i class="fas fa-server"></i> Resource Scaling</h4>
+                            <ul>
+                                <li>Monitor resource usage trends</li>
+                                <li>Scale compute resources based on asset count</li>
+                                <li>Implement load balancing for high availability</li>
+                                <li>Plan for peak scanning periods</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+
+                <div class="cta-section">
+                    <h2><i class="fas fa-graduation-cap"></i> Additional Resources</h2>
+                    <p>
+                        <strong>Need more help?</strong> Check out our <a href="support.html">support resources</a>, 
+                        view <a href="troubleshooting.html">troubleshooting guides</a>, or explore 
+                        <a href="integrations.html">integration options</a> to extend CSAM functionality.
+                    </p>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Products</h3>
+                <ul>
+                    <li><a href="sia.html">SIA</a></li>
+                    <li><a href="soar.html">SOAR</a></li>
+                    <li><a href="tip.html">TIP</a></li>
+                    <li><a href="csam.html">CSAM</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Documentation</h3>
+                <ul>
+                    <li><a href="hardware-specs.html">Hardware Specifications</a></li>
+                    <li><a href="administration.html">Administration</a></li>
+                    <li><a href="integrations.html">Integrations</a></li>
+                    <li><a href="api-reference.html">API Reference</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Support</h3>
+                <ul>
+                    <li><a href="support.html">Contact Support</a></li>
+                    <li><a href="troubleshooting.html">Troubleshooting</a></li>
+                    <li><a href="faq.html">FAQ</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Securaa. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/components/prism-core.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/plugins/autoloader/prism-autoloader.min.js"></script>
+    
+    <script>
+        // Mobile menu functionality
+        function toggleMobileMenu() {
+            const sidebar = document.querySelector('.sidebar');
+            const overlay = document.querySelector('.sidebar-overlay');
+            
+            if (!overlay) {
+                // Create overlay if it doesn't exist
+                const newOverlay = document.createElement('div');
+                newOverlay.className = 'sidebar-overlay';
+                newOverlay.onclick = closeMobileMenu;
+                document.body.appendChild(newOverlay);
+            }
+            
+            sidebar.classList.toggle('show');
+            (overlay || document.querySelector('.sidebar-overlay')).classList.toggle('show');
+        }
+        
+        function closeMobileMenu() {
+            const sidebar = document.querySelector('.sidebar');
+            const overlay = document.querySelector('.sidebar-overlay');
+            
+            sidebar.classList.remove('show');
+            if (overlay) overlay.classList.remove('show');
+        }
+        
+        // Close mobile menu when clicking sidebar links
+        document.addEventListener('DOMContentLoaded', function() {
+            const sidebarLinks = document.querySelectorAll('.sidebar a');
+            sidebarLinks.forEach(link => {
+                link.addEventListener('click', closeMobileMenu);
+            });
+        });
+    </script>
+</body>
+</html>

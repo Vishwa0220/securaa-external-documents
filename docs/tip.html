@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TIP - Threat Intelligence Platform | Securaa Documentation</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.28.0/themes/prism.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-content">
+                <div class="logo">
+                    <h1><i class="fas fa-shield-alt"></i> Securaa</h1>
+                    <span class="tagline">Advanced Cybersecurity Solutions</span>
+                </div>
+                <nav class="main-nav">
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="sia.html">SIA</a></li>
+                        <li><a href="soar.html">SOAR</a></li>
+                        <li><a href="tip.html" class="active">TIP</a></li>
+                        <li><a href="csam.html">CSAM</a></li>
+                        <li><a href="support.html">Support</a></li>
+                    </ul>
+                </nav>
+                <div class="search-container">
+                    <input type="text" id="searchInput" placeholder="Search documentation...">
+                    <i class="fas fa-search"></i>
+                </div>
+            </div>
+        </header>
+
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar">
+            <nav class="sidebar-nav">
+                <div class="nav-section">
+                    <h3><i class="fas fa-home"></i> Getting Started</h3>
+                    <ul>
+                        <li><a href="index.html#overview">Product Overview</a></li>
+                        <li><a href="architecture.html">Solution Architecture</a></li>
+                        <li><a href="prerequisites.html">Prerequisites</a></li>
+                    </ul>
+                </div>
+                
+                <div class="nav-section">
+                    <h3><i class="fas fa-cube"></i> Products</h3>
+                    <ul>
+                        <li><a href="sia.html">SIA (Security Intelligence Analytics)</a></li>
+                        <li><a href="soar.html">SOAR (Security Orchestration)</a></li>
+                        <li><a href="tip.html" class="active">TIP (Threat Intelligence Platform)</a></li>
+                        <li><a href="csam.html">CSAM (Cyber Security Asset Management)</a></li>
+                    </ul>
+                </div>
+
+                <div class="nav-section">
+                    <h3><i class="fas fa-cogs"></i> Installation & Deployment</h3>
+                    <ul>
+                        <li><a href="installation.html">Installation Guide</a></li>
+                        <li><a href="deployment.html">Deployment Guide</a></li>
+                        <li><a href="hardware-specs.html">Hardware Specifications</a></li>
+                    </ul>
+                </div>
+
+                <div class="nav-section">
+                    <h3><i class="fas fa-users-cog"></i> Administration</h3>
+                    <ul>
+                        <li><a href="administration.html">Administration</a></li>
+                        <li><a href="csam-admin.html">CSAM Administration</a></li>
+                        <li><a href="tip-admin.html">TIP Administration</a></li>
+                    </ul>
+                </div>
+
+                <div class="nav-section">
+                    <h3><i class="fas fa-puzzle-piece"></i> Integrations</h3>
+                    <ul>
+                        <li><a href="integrations.html">Available Integrations</a></li>
+                        <li><a href="playbooks.html">Security Playbooks</a></li>
+                        <li><a href="api-reference.html">API Reference</a></li>
+                    </ul>
+                </div>
+
+                <div class="nav-section">
+                    <h3><i class="fas fa-question-circle"></i> Support</h3>
+                    <ul>
+                        <li><a href="troubleshooting.html">Troubleshooting</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                        <li><a href="support.html">Contact Support</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <div class="header">
+                <h1><i class="fas fa-brain"></i> TIP - Threat Intelligence Platform</h1>
+                <p class="subtitle">Comprehensive threat intelligence aggregation and analysis platform for enhanced security awareness</p>
+            </div>
+
+            <div class="content">
+                <section class="content-section">
+                    <h2><i class="fas fa-star"></i> Key Features</h2>
+                    <div class="feature-grid">
+                        <div class="feature-card">
+                            <div class="feature-icon">
+                                <i class="fas fa-globe"></i>
+                            </div>
+                            <h3>Global Threat Feeds</h3>
+                            <p>Integration with premium and open-source threat intelligence feeds from around the world.</p>
+                        </div>
+                        
+                        <div class="feature-card">
+                            <div class="feature-icon">
+                                <i class="fas fa-search"></i>
+                            </div>
+                            <h3>IOC Analysis</h3>
+                            <p>Advanced analysis of indicators of compromise with context and attribution information.</p>
+                        </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-share-alt"></i>
+                        </div>
+                        <h3>Intelligence Sharing</h3>
+                        <p>Secure sharing of threat intelligence with trusted partners and industry groups.</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-filter"></i>
+                        </div>
+                        <h3>Custom Filtering</h3>
+                        <p>Advanced filtering and correlation capabilities to focus on relevant threats for your organization.</p>
+                    </div>
+                </div>
+
+                <div class="alert alert-success">
+                    <strong>Integration Ready:</strong> TIP seamlessly integrates with SIEM platforms, firewalls, and other security tools to automatically apply threat intelligence.
+                </div>
+
+                <h3>Supported IOC Types</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>IOC Type</th>
+                            <th>Description</th>
+                            <th>Examples</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>IP Addresses</td>
+                            <td>Malicious IP addresses and ranges</td>
+                            <td>Command & Control servers, botnets</td>
+                        </tr>
+                        <tr>
+                            <td>Domain Names</td>
+                            <td>Malicious domains and subdomains</td>
+                            <td>Phishing sites, malware distribution</td>
+                        </tr>
+                        <tr>
+                            <td>File Hashes</td>
+                            <td>MD5, SHA1, SHA256 hashes</td>
+                            <td>Malware samples, suspicious files</td>
+                        </tr>
+                        <tr>
+                            <td>URLs</td>
+                            <td>Malicious URLs and paths</td>
+                            <td>Exploit kits, phishing pages</td>
+                        </tr>
+                        <tr>
+                            <td>Email Addresses</td>
+                            <td>Malicious email addresses</td>
+                            <td>Spam sources, phishing campaigns</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h3>Threat Intelligence Lifecycle</h3>
+                <div class="steps-container">
+                    <div class="step">
+                        <div class="step-number">1</div>
+                        <div class="step-content">
+                            <h3>Collection</h3>
+                            <p>Gather threat intelligence from multiple sources including commercial feeds, open source intelligence, and internal security events.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="step">
+                        <div class="step-number">2</div>
+                        <div class="step-content">
+                            <h3>Processing</h3>
+                            <p>Normalize, deduplicate, and enrich threat data with additional context and attribution information.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="step">
+                        <div class="step-number">3</div>
+                        <div class="step-content">
+                            <h3>Analysis</h3>
+                            <p>Analyze threat patterns, correlate indicators, and assess relevance to your organization's threat landscape.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="step">
+                        <div class="step-number">4</div>
+                        <div class="step-content">
+                            <h3>Dissemination</h3>
+                            <p>Distribute actionable intelligence to security tools, teams, and stakeholders through automated feeds and reports.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <h3>Intelligence Sources</h3>
+                <div class="feature-grid">
+                    <div class="feature-card">
+                        <h3>Commercial Feeds</h3>
+                        <p>Premium threat intelligence from leading commercial providers with high-fidelity indicators and detailed analysis.</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <h3>Open Source Intelligence</h3>
+                        <p>Community-driven threat intelligence from public repositories, research organizations, and security communities.</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <h3>Government Sources</h3>
+                        <p>Threat intelligence from government agencies, including classified and unclassified threat bulletins.</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <h3>Internal Intelligence</h3>
+                        <p>Organization-specific threat intelligence derived from security incidents, honeypots, and internal analysis.</p>
+                    </div>
+                </div>
+
+                <h3>STIX/TAXII Support</h3>
+                <div class="alert alert-info">
+                    <strong>Standards Compliance:</strong> Full support for STIX 2.1 and TAXII 2.1 standards for structured threat intelligence exchange.
+                </div>
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Standard</th>
+                            <th>Version</th>
+                            <th>Capabilities</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>STIX</td>
+                            <td>2.1</td>
+                            <td>Structured threat information representation</td>
+                        </tr>
+                        <tr>
+                            <td>TAXII</td>
+                            <td>2.1</td>
+                            <td>Automated threat intelligence exchange</td>
+                        </tr>
+                        <tr>
+                            <td>OpenIOC</td>
+                            <td>1.1</td>
+                            <td>Indicator of compromise representation</td>
+                        </tr>
+                        <tr>
+                            <td>MISP</td>
+                            <td>Core</td>
+                            <td>Malware information sharing platform integration</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h3>Threat Actor Tracking</h3>
+                <div class="steps-container">
+                    <div class="step">
+                        <div class="step-number">1</div>
+                        <div class="step-content">
+                            <h3>Attribution Analysis</h3>
+                            <p>Track and attribute cyber attacks to specific threat actors using TTPs and infrastructure patterns.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="step">
+                        <div class="step-number">2</div>
+                        <div class="step-content">
+                            <h3>Campaign Tracking</h3>
+                            <p>Monitor ongoing threat campaigns and track their evolution over time with indicators and tactics.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="step">
+                        <div class="step-number">3</div>
+                        <div class="step-content">
+                            <h3>Predictive Analysis</h3>
+                            <p>Predict future threat actor behavior based on historical patterns and intelligence trends.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="alert alert-success">
+                    <strong>Getting Started:</strong> Ready to deploy TIP? Check out our <a href="installation.html">Installation Guide</a> or review the <a href="prerequisites.html">Prerequisites</a> first.
+                </div>
+                </section>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Securaa</h3>
+                    <p>Advanced cybersecurity solutions for modern threats.</p>
+                    <div class="social-links">
+                        <a href="https://linkedin.com/company/securaa" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://twitter.com/securaa" target="_blank" rel="noopener noreferrer"><i class="fab fa-twitter"></i></a>
+                        <a href="https://github.com/securaa" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Products</h4>
+                    <ul>
+                        <li><a href="sia.html">SIA</a></li>
+                        <li><a href="soar.html">SOAR</a></li>
+                        <li><a href="tip.html">TIP</a></li>
+                        <li><a href="csam.html">CSAM</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Documentation</h4>
+                    <ul>
+                        <li><a href="hardware-specs.html">Hardware Specifications</a></li>
+                        <li><a href="administration.html">Administration</a></li>
+                        <li><a href="integrations.html">Integrations</a></li>
+                        <li><a href="api-reference.html">API Reference</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="support.html">Contact Support</a></li>
+                        <li><a href="troubleshooting.html">Troubleshooting</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Securaa. All rights reserved. | <a href="privacy-policy.html">Privacy Policy</a> | <a href="terms-of-service.html">Terms of Service</a></p>
+                <p>Documentation Version 2.0 | Last Updated: October 2025</p>
+            </div>
+        </footer>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.28.0/components/prism-core.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.28.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

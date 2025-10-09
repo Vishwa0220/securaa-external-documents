@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Securaa Administration Guides</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.28.0/themes/prism.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-content">
+                <div class="logo">
+                    <h1><i class="fas fa-shield-alt"></i> Securaa</h1>
+                    <span class="tagline">Administration Guides</span>
+                </div>
+                <nav class="main-nav">
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="#csam-admin">CSAM Admin</a></li>
+                        <li><a href="#tip-admin">TIP Admin</a></li>
+                        <li><a href="#user-management">User Management</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar">
+            <nav class="sidebar-nav">
+                <div class="nav-section">
+                    <h3><i class="fas fa-home"></i> Getting Started</h3>
+                    <ul>
+                        <li><a href="index.html#overview">Product Overview</a></li>
+                        <li><a href="architecture.html">Solution Architecture</a></li>
+                        <li><a href="prerequisites.html">Prerequisites</a></li>
+                    </ul>
+                </div>
+                
+                <div class="nav-section">
+                    <h3><i class="fas fa-cube"></i> Products</h3>
+                    <ul>
+                        <li><a href="sia.html">SIA (Security Intelligence Analytics)</a></li>
+                        <li><a href="soar.html">SOAR (Security Orchestration)</a></li>
+                        <li><a href="tip.html">TIP (Threat Intelligence Platform)</a></li>
+                        <li><a href="csam.html">CSAM (Cyber Security Asset Management)</a></li>
+                    </ul>
+                </div>
+
+                <div class="nav-section">
+                    <h3><i class="fas fa-cogs"></i> Installation & Deployment</h3>
+                    <ul>
+                        <li><a href="installation.html">Installation Guide</a></li>
+                        <li><a href="deployment.html">Deployment Guide</a></li>
+                        <li><a href="hardware-specs.html">Hardware Specifications</a></li>
+                    </ul>
+                </div>
+
+                <div class="nav-section">
+                    <h3><i class="fas fa-users-cog"></i> Administration</h3>
+                    <ul>
+                        <li><a href="administration.html" class="active">Administration</a></li>
+                        <li><a href="csam-admin.html">CSAM Administration</a></li>
+                        <li><a href="tip-admin.html">TIP Administration</a></li>
+                    </ul>
+                </div>
+
+                <div class="nav-section">
+                    <h3><i class="fas fa-puzzle-piece"></i> Integrations</h3>
+                    <ul>
+                        <li><a href="integrations.html">Available Integrations</a></li>
+                        <li><a href="playbooks.html">Security Playbooks</a></li>
+                        <li><a href="api-reference.html">API Reference</a></li>
+                    </ul>
+                </div>
+
+                <div class="nav-section">
+                    <h3><i class="fas fa-question-circle"></i> Support</h3>
+                    <ul>
+                        <li><a href="troubleshooting.html">Troubleshooting</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                        <li><a href="support.html">Contact Support</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <section id="csam-admin" class="content-section">
+                <div class="section-header">
+                    <h2><i class="fas fa-users-cog"></i> CSAM Administration Guide</h2>
+                    <p>Comprehensive guide for administering the Cyber Security Asset Management platform.</p>
+                </div>
+
+                <div class="alert alert-info">
+                    <strong>Administrator Access:</strong> Ensure you have administrative privileges before performing these tasks.
+                </div>
+
+                <h3>Dashboard Overview</h3>
+                <div class="feature-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-chart-bar"></i>
+                        </div>
+                        <h3>Asset Summary</h3>
+                        <p>View total asset count, categorized by type, status, and risk level across your organization.</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-exclamation-triangle"></i>
+                        </div>
+                        <h3>Risk Alerts</h3>
+                        <p>Monitor high-risk assets and critical vulnerabilities requiring immediate attention.</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-sync"></i>
+                        </div>
+                        <h3>Scan Status</h3>
+                        <p>Track ongoing and completed discovery scans across all network segments.</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-clipboard-list"></i>
+                        </div>
+                        <h3>Compliance Reports</h3>
+                        <p>Access compliance status reports for various regulatory frameworks and standards.</p>
+                    </div>
+                </div>
+
+                <h3>Asset Management Tasks</h3>
+                <div class="steps-container">
+                    <div class="step">
+                        <div class="step-number">1</div>
+                        <div class="step-content">
+                            <h3>Configure Asset Discovery</h3>
+                            <p>Set up automated asset discovery scans for different network segments and schedules.</p>
+                            <pre><code># Configure network ranges for discovery
+Network Ranges: 192.168.1.0/24, 10.0.0.0/16
+Scan Schedule: Daily at 2:00 AM
+Discovery Methods: SNMP, WMI, SSH, Nmap</code></pre>
+                        </div>
+                    </div>
+                    
+                    <div class="step">
+                        <div class="step-number">2</div>
+                        <div class="step-content">
+                            <h3>Asset Classification</h3>
+                            <p>Define asset categories and criticality levels for proper risk assessment.</p>
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Category</th>
+                                        <th>Criticality</th>
+                                        <th>Description</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Servers</td>
+                                        <td>High</td>
+                                        <td>Production servers and critical infrastructure</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Workstations</td>
+                                        <td>Medium</td>
+                                        <td>Employee workstations and laptops</td>
+                                    </tr>
+                                    <tr>
+                                        <td>IoT Devices</td>
+                                        <td>Low</td>
+                                        <td>Smart devices and sensors</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    
+                    <div class="step">
+                        <div class="step-number">3</div>
+                        <div class="step-content">
+                            <h3>Vulnerability Management</h3>
+                            <p>Configure vulnerability scanning and remediation workflows.</p>
+                            <ul style="text-align: left; list-style: disc; padding-left: 1rem;">
+                                <li>Schedule regular vulnerability scans</li>
+                                <li>Set up risk scoring thresholds</li>
+                                <li>Configure automated remediation tasks</li>
+                                <li>Define escalation procedures</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <h3>User Access Control</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Role</th>
+                            <th>Permissions</th>
+                            <th>Access Level</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Super Admin</td>
+                            <td>Full system access, user management, configuration</td>
+                            <td>All assets and functions</td>
+                        </tr>
+                        <tr>
+                            <td>Security Admin</td>
+                            <td>Asset management, vulnerability scanning, reporting</td>
+                            <td>Security-related functions</td>
+                        </tr>
+                        <tr>
+                            <td>Asset Manager</td>
+                            <td>Asset inventory, classification, basic reporting</td>
+                            <td>Asset data only</td>
+                        </tr>
+                        <tr>
+                            <td>Viewer</td>
+                            <td>Read-only access to dashboards and reports</td>
+                            <td>View-only access</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <section id="tip-admin" class="content-section">
+                <div class="section-header">
+                    <h2><i class="fas fa-brain"></i> TIP Administration Guide</h2>
+                    <p>Complete administration guide for the Threat Intelligence Platform.</p>
+                </div>
+
+                <h3>Feed Management</h3>
+                <div class="feature-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-rss"></i>
+                        </div>
+                        <h3>Configure Intelligence Feeds</h3>
+                        <p>Set up and manage threat intelligence feeds from various sources including commercial and open source providers.</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-filter"></i>
+                        </div>
+                        <h3>Apply Filters</h3>
+                        <p>Configure filtering rules to focus on relevant threats and reduce noise from intelligence feeds.</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-share-alt"></i>
+                        </div>
+                        <h3>Sharing Groups</h3>
+                        <p>Manage threat intelligence sharing with trusted partners and industry groups.</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <h3>IOC Lifecycle</h3>
+                        <p>Configure IOC aging, expiration, and automatic cleanup policies.</p>
+                    </div>
+                </div>
+
+                <h3>Intelligence Feed Sources</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Source Type</th>
+                            <th>Examples</th>
+                            <th>Update Frequency</th>
+                            <th>Data Quality</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Commercial Feeds</td>
+                            <td>CrowdStrike, FireEye, Recorded Future</td>
+                            <td>Real-time</td>
+                            <td>High</td>
+                        </tr>
+                        <tr>
+                            <td>Government Feeds</td>
+                            <td>US-CERT, MISP, STIX/TAXII</td>
+                            <td>Daily</td>
+                            <td>High</td>
+                        </tr>
+                        <tr>
+                            <td>Open Source</td>
+                            <td>OTX, VirusTotal, Abuse.ch</td>
+                            <td>Hourly</td>
+                            <td>Medium</td>
+                        </tr>
+                        <tr>
+                            <td>Internal Sources</td>
+                            <td>Security team, incident response</td>
+                            <td>Ad-hoc</td>
+                            <td>High</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="alert alert-success">
+                    <strong>Best Practice:</strong> Combine multiple intelligence sources for comprehensive threat coverage and cross-validation of IOCs.
+                </div>
+            </section>
+
+            <section id="user-management" class="content-section">
+                <div class="section-header">
+                    <h2><i class="fas fa-users"></i> User Management</h2>
+                    <p>Manage user accounts, roles, and permissions across all Securaa platforms.</p>
+                </div>
+
+                <h3>User Account Management</h3>
+                <div class="steps-container">
+                    <div class="step">
+                        <div class="step-number">1</div>
+                        <div class="step-content">
+                            <h3>Create User Account</h3>
+                            <p>Add new users with appropriate roles and permissions.</p>
+                            <pre><code>Username: john.doe
+Email: john.doe@company.com
+Role: Security Analyst
+Department: IT Security
+Initial Password: [Auto-generated]</code></pre>
+                        </div>
+                    </div>
+                    
+                    <div class="step">
+                        <div class="step-number">2</div>
+                        <div class="step-content">
+                            <h3>Configure Authentication</h3>
+                            <p>Set up multi-factor authentication and password policies.</p>
+                            <ul style="text-align: left; list-style: disc; padding-left: 1rem;">
+                                <li>Enable MFA for all users</li>
+                                <li>Configure password complexity</li>
+                                <li>Set session timeout policies</li>
+                                <li>Enable account lockout protection</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="step">
+                        <div class="step-number">3</div>
+                        <div class="step-content">
+                            <h3>Role Assignment</h3>
+                            <p>Assign appropriate roles based on job function and security clearance.</p>
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Role</th>
+                                        <th>SIA Access</th>
+                                        <th>SOAR Access</th>
+                                        <th>TIP Access</th>
+                                        <th>CSAM Access</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Security Analyst</td>
+                                        <td>Full</td>
+                                        <td>Execute</td>
+                                        <td>Read</td>
+                                        <td>Read</td>
+                                    </tr>
+                                    <tr>
+                                        <td>SOC Manager</td>
+                                        <td>Full</td>
+                                        <td>Full</td>
+                                        <td>Full</td>
+                                        <td>Read</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Threat Hunter</td>
+                                        <td>Full</td>
+                                        <td>Read</td>
+                                        <td>Full</td>
+                                        <td>Read</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="alert alert-warning">
+                    <strong>Security Note:</strong> Regularly review user permissions and remove access for users who no longer require it.
+                </div>
+                
+                <h2><i class="fas fa-cogs"></i> Configuration Reference</h2>
+                <p>Comprehensive reference for configuring Securaa platform components.</p>
+                
+                <h3>System Configuration Parameters</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Parameter</th>
+                            <th>Default Value</th>
+                            <th>Valid Range/Options</th>
+                            <th>Description</th>
+                            <th>Restart Required</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><code>max_connections</code></td>
+                            <td>1000</td>
+                            <td>100-10000</td>
+                            <td>Maximum concurrent database connections</td>
+                            <td>Yes</td>
+                        </tr>
+                        <tr>
+                            <td><code>session_timeout</code></td>
+                            <td>3600</td>
+                            <td>300-86400 (seconds)</td>
+                            <td>User session timeout duration</td>
+                            <td>No</td>
+                        </tr>
+                        <tr>
+                            <td><code>log_level</code></td>
+                            <td>INFO</td>
+                            <td>DEBUG, INFO, WARN, ERROR</td>
+                            <td>Application logging verbosity</td>
+                            <td>No</td>
+                        </tr>
+                        <tr>
+                            <td><code>ssl_enabled</code></td>
+                            <td>true</td>
+                            <td>true, false</td>
+                            <td>Enable SSL/TLS encryption</td>
+                            <td>Yes</td>
+                        </tr>
+                        <tr>
+                            <td><code>backup_retention</code></td>
+                            <td>30</td>
+                            <td>1-365 (days)</td>
+                            <td>Number of days to retain backups</td>
+                            <td>No</td>
+                        </tr>
+                        <tr>
+                            <td><code>api_rate_limit</code></td>
+                            <td>1000</td>
+                            <td>100-10000 (requests/hour)</td>
+                            <td>API request rate limit per user</td>
+                            <td>No</td>
+                        </tr>
+                        <tr>
+                            <td><code>scan_threads</code></td>
+                            <td>10</td>
+                            <td>1-50</td>
+                            <td>Concurrent asset discovery threads</td>
+                            <td>Yes</td>
+                        </tr>
+                        <tr>
+                            <td><code>alert_retention</code></td>
+                            <td>90</td>
+                            <td>7-365 (days)</td>
+                            <td>Security alert retention period</td>
+                            <td>No</td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+                <h3>Component-Specific Settings</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Component</th>
+                            <th>Setting</th>
+                            <th>Default</th>
+                            <th>Options</th>
+                            <th>Impact</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td rowspan="3"><strong>SIA</strong></td>
+                            <td>ml_model_refresh</td>
+                            <td>24h</td>
+                            <td>1h-168h</td>
+                            <td>AI accuracy vs. performance</td>
+                        </tr>
+                        <tr>
+                            <td>alert_threshold</td>
+                            <td>7.5</td>
+                            <td>1.0-10.0</td>
+                            <td>False positive rate</td>
+                        </tr>
+                        <tr>
+                            <td>data_retention</td>
+                            <td>365 days</td>
+                            <td>30-2555 days</td>
+                            <td>Storage requirements</td>
+                        </tr>
+                        <tr>
+                            <td rowspan="3"><strong>SOAR</strong></td>
+                            <td>playbook_timeout</td>
+                            <td>3600s</td>
+                            <td>60-86400s</td>
+                            <td>Automation reliability</td>
+                        </tr>
+                        <tr>
+                            <td>concurrent_executions</td>
+                            <td>50</td>
+                            <td>1-500</td>
+                            <td>System load</td>
+                        </tr>
+                        <tr>
+                            <td>retry_attempts</td>
+                            <td>3</td>
+                            <td>0-10</td>
+                            <td>Resilience vs. speed</td>
+                        </tr>
+                        <tr>
+                            <td rowspan="3"><strong>TIP</strong></td>
+                            <td>feed_update_interval</td>
+                            <td>1h</td>
+                            <td>15m-24h</td>
+                            <td>Threat freshness</td>
+                        </tr>
+                        <tr>
+                            <td>ioc_expiration</td>
+                            <td>90 days</td>
+                            <td>1-365 days</td>
+                            <td>Database size</td>
+                        </tr>
+                        <tr>
+                            <td>confidence_threshold</td>
+                            <td>70</td>
+                            <td>0-100</td>
+                            <td>Alert volume</td>
+                        </tr>
+                        <tr>
+                            <td rowspan="3"><strong>CSAM</strong></td>
+                            <td>discovery_interval</td>
+                            <td>24h</td>
+                            <td>1h-168h</td>
+                            <td>Network load</td>
+                        </tr>
+                        <tr>
+                            <td>asset_timeout</td>
+                            <td>7 days</td>
+                            <td>1-30 days</td>
+                            <td>Asset accuracy</td>
+                        </tr>
+                        <tr>
+                            <td>vulnerability_scan_depth</td>
+                            <td>Standard</td>
+                            <td>Light, Standard, Deep</td>
+                            <td>Scan time vs. coverage</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <section>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Securaa Administration</h3>
+                    <p>Comprehensive administration guides for all Securaa platforms.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Main Documentation</a></li>
+                        <li><a href="#csam-admin">CSAM Admin</a></li>
+                        <li><a href="#tip-admin">TIP Admin</a></li>
+                        <li><a href="#user-management">User Management</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Securaa. All rights reserved.</p>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        // Add keyboard shortcut for search
+        document.addEventListener('DOMContentLoaded', () => {
+            document.addEventListener('keydown', (e) => {
+                if ((e.ctrlKey || e.metaKey) && e.key === 'k') {
+                    e.preventDefault();
+                    const searchInput = document.getElementById('searchInput');
+                    if (searchInput) {
+                        searchInput.focus();
+                    }
+                }
+            });
+        });
+    </script>
+
+    <!-- Prism.js for syntax highlighting -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.28.0/components/prism-core.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.28.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

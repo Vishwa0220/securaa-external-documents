@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SOAR - Security Orchestration, Automation & Response | Securaa Documentation</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.28.0/themes/prism.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-content">
+                <div class="logo">
+                    <h1><i class="fas fa-shield-alt"></i> Securaa</h1>
+                    <span class="tagline">Advanced Cybersecurity Solutions</span>
+                </div>
+                <nav class="main-nav">
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="sia.html">SIA</a></li>
+                        <li><a href="soar.html" class="active">SOAR</a></li>
+                        <li><a href="tip.html">TIP</a></li>
+                        <li><a href="csam.html">CSAM</a></li>
+                        <li><a href="support.html">Support</a></li>
+                    </ul>
+                </nav>
+                <div class="search-container">
+                    <input type="text" id="searchInput" placeholder="Search documentation...">
+                    <i class="fas fa-search"></i>
+                </div>
+            </div>
+        </header>
+
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar">
+            <nav class="sidebar-nav">
+                <div class="nav-section">
+                    <h3><i class="fas fa-home"></i> Getting Started</h3>
+                    <ul>
+                        <li><a href="index.html#overview">Product Overview</a></li>
+                        <li><a href="architecture.html">Solution Architecture</a></li>
+                        <li><a href="prerequisites.html">Prerequisites</a></li>
+                    </ul>
+                </div>
+                
+                <div class="nav-section">
+                    <h3><i class="fas fa-cube"></i> Products</h3>
+                    <ul>
+                        <li><a href="sia.html">SIA (Security Intelligence Analytics)</a></li>
+                        <li><a href="soar.html" class="active">SOAR (Security Orchestration)</a></li>
+                        <li><a href="tip.html">TIP (Threat Intelligence Platform)</a></li>
+                        <li><a href="csam.html">CSAM (Cyber Security Asset Management)</a></li>
+                    </ul>
+                </div>
+
+                <div class="nav-section">
+                    <h3><i class="fas fa-cogs"></i> Installation & Deployment</h3>
+                    <ul>
+                        <li><a href="installation.html">Installation Guide</a></li>
+                        <li><a href="deployment.html">Deployment Guide</a></li>
+                        <li><a href="hardware-specs.html">Hardware Specifications</a></li>
+                    </ul>
+                </div>
+
+                <div class="nav-section">
+                    <h3><i class="fas fa-users-cog"></i> Administration</h3>
+                    <ul>
+                        <li><a href="administration.html">Administration</a></li>
+                        <li><a href="csam-admin.html">CSAM Administration</a></li>
+                        <li><a href="tip-admin.html">TIP Administration</a></li>
+                    </ul>
+                </div>
+
+                <div class="nav-section">
+                    <h3><i class="fas fa-puzzle-piece"></i> Integrations</h3>
+                    <ul>
+                        <li><a href="integrations.html">Available Integrations</a></li>
+                        <li><a href="playbooks.html">Security Playbooks</a></li>
+                        <li><a href="api-reference.html">API Reference</a></li>
+                    </ul>
+                </div>
+
+                <div class="nav-section">
+                    <h3><i class="fas fa-question-circle"></i> Support</h3>
+                    <ul>
+                        <li><a href="troubleshooting.html">Troubleshooting</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                        <li><a href="support.html">Contact Support</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <div class="header">
+                <h1><i class="fas fa-robot"></i> SOAR - Security Orchestration, Automation & Response</h1>
+                <p class="subtitle">Intelligent automation platform for streamlined security operations and rapid incident response</p>
+            </div>
+
+            <div class="content">
+                <section class="content-section">
+                    <h2><i class="fas fa-star"></i> Key Features</h2>
+                    <div class="feature-grid">
+                        <div class="feature-card">
+                            <div class="feature-icon">
+                                <i class="fas fa-cogs"></i>
+                            </div>
+                            <h3>Automated Workflows</h3>
+                            <p>Pre-built and customizable playbooks for automated incident response and threat remediation.</p>
+                        </div>
+                        
+                        <div class="feature-card">
+                            <div class="feature-icon">
+                                <i class="fas fa-link"></i>
+                            </div>
+                            <h3>Tool Integration</h3>
+                            <p>Seamless integration with 200+ security tools including SIEM, firewalls, and threat intelligence platforms.</p>
+                        </div>
+                        
+                        <div class="feature-card">
+                            <div class="feature-icon">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <h3>Rapid Response</h3>
+                            <p>Reduce incident response times from hours to minutes with automated investigation and containment.</p>
+                        </div>
+                        
+                        <div class="feature-card">
+                            <div class="feature-icon">
+                                <i class="fas fa-users"></i>
+                            </div>
+                            <h3>Collaborative Platform</h3>
+                            <p>Centralized platform for security teams to collaborate on incidents and share threat intelligence.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="content-section">
+                    <div class="alert alert-info">
+                        <strong>Performance Improvement:</strong> SOAR reduces mean time to response (MTTR) by up to 95% and automates 80% of routine security tasks.
+                    </div>
+
+                    <h3>Playbook Categories</h3>
+                    <div class="steps-container">
+                        <div class="step">
+                            <div class="step-number">1</div>
+                            <div class="step-content">
+                                <h3>Incident Response</h3>
+                                <p>Automated workflows for incident classification, investigation, and containment procedures.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="step">
+                            <div class="step-number">2</div>
+                            <div class="step-content">
+                                <h3>Threat Hunting</h3>
+                                <p>Proactive threat hunting playbooks with automated IOC searches and threat correlation.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="step">
+                            <div class="step-number">3</div>
+                            <div class="step-content">
+                                <h3>Vulnerability Management</h3>
+                                <p>Automated vulnerability assessment, prioritization, and remediation workflows.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="step">
+                            <div class="step-number">4</div>
+                            <div class="step-content">
+                                <h3>Compliance Automation</h3>
+                                <p>Automated compliance checks and reporting for various regulatory frameworks.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h3>Core Capabilities</h3>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Capability</th>
+                                <th>Description</th>
+                                <th>Benefits</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Orchestration</td>
+                                <td>Coordinate actions across multiple security tools</td>
+                                <td>Unified response workflows</td>
+                            </tr>
+                            <tr>
+                                <td>Automation</td>
+                                <td>Execute repetitive tasks automatically</td>
+                                <td>Reduced manual effort</td>
+                            </tr>
+                            <tr>
+                                <td>Response</td>
+                                <td>Standardized incident response procedures</td>
+                                <td>Consistent, faster response</td>
+                            </tr>
+                            <tr>
+                                <td>Case Management</td>
+                                <td>Track and manage security incidents</td>
+                                <td>Better incident visibility</td>
+                            </tr>
+                            <tr>
+                                <td>Reporting</td>
+                                <td>Generate detailed incident reports</td>
+                                <td>Compliance and metrics</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <h3>Integration Ecosystem</h3>
+                    <div class="feature-grid">
+                        <div class="feature-card">
+                            <h3>SIEM Platforms</h3>
+                            <p>Splunk, QRadar, ArcSight, LogRhythm, Elastic Security, Microsoft Sentinel</p>
+                        </div>
+                        
+                        <div class="feature-card">
+                            <h3>Network Security</h3>
+                            <p>Palo Alto Networks, Cisco, Fortinet, Check Point, Juniper</p>
+                        </div>
+                        
+                        <div class="feature-card">
+                            <h3>Endpoint Protection</h3>
+                            <p>CrowdStrike, SentinelOne, Microsoft Defender, Carbon Black</p>
+                        </div>
+                        
+                        <div class="feature-card">
+                            <h3>Threat Intelligence</h3>
+                            <p>VirusTotal, ThreatConnect, MISP, AlienVault OTX</p>
+                        </div>
+                    </div>
+
+                    <div class="alert alert-success">
+                        <strong>Getting Started:</strong> Ready to deploy SOAR? Check out our <a href="installation.html">Installation Guide</a> or review the <a href="prerequisites.html">Prerequisites</a> first.
+                    </div>
+                </section>
+            </div>
+                            <h3>Trigger Definition</h3>
+                            <p>Define triggers based on alerts, schedules, or manual execution to start your workflows.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="step">
+                        <div class="step-number">2</div>
+                        <div class="step-content">
+                            <h3>Action Configuration</h3>
+                            <p>Configure actions like enrichment, analysis, containment, and notification steps.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="step">
+                        <div class="step-number">3</div>
+                        <div class="step-content">
+                            <h3>Decision Logic</h3>
+                            <p>Add conditional logic and decision points to create intelligent, adaptive workflows.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="step">
+                        <div class="step-number">4</div>
+                        <div class="step-content">
+                            <h3>Testing & Deployment</h3>
+                            <p>Test workflows in simulation mode before deploying them to production environments.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="alert alert-warning">
+                    <strong>Best Practice:</strong> Start with simple playbooks and gradually increase complexity as your team becomes more familiar with the platform.
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Securaa</h3>
+                    <p>Advanced cybersecurity solutions for modern threats.</p>
+                    <div class="social-links">
+                        <a href="https://linkedin.com/company/securaa" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://twitter.com/securaa" target="_blank" rel="noopener noreferrer"><i class="fab fa-twitter"></i></a>
+                        <a href="https://github.com/securaa" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Products</h4>
+                    <ul>
+                        <li><a href="sia.html">SIA</a></li>
+                        <li><a href="soar.html">SOAR</a></li>
+                        <li><a href="tip.html">TIP</a></li>
+                        <li><a href="csam.html">CSAM</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Documentation</h4>
+                    <ul>
+                        <li><a href="hardware-specs.html">Hardware Specifications</a></li>
+                        <li><a href="administration.html">Administration</a></li>
+                        <li><a href="integrations.html">Integrations</a></li>
+                        <li><a href="api-reference.html">API Reference</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="support.html">Contact Support</a></li>
+                        <li><a href="troubleshooting.html">Troubleshooting</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Securaa. All rights reserved. | <a href="privacy-policy.html">Privacy Policy</a> | <a href="terms-of-service.html">Terms of Service</a></p>
+                <p>Documentation Version 2.0 | Last Updated: October 2025</p>
+            </div>
+        </footer>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.28.0/components/prism-core.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.28.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

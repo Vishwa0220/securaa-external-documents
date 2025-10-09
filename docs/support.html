@@ -1,0 +1,767 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Securaa Support & FAQ</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.28.0/themes/prism.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-content">
+                <div class="logo">
+                    <h1><i class="fas fa-shield-alt"></i> Securaa</h1>
+                    <span class="tagline">Advanced Cybersecurity Solutions</span>
+                </div>
+                <nav class="main-nav">
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="sia.html">SIA</a></li>
+                        <li><a href="soar.html">SOAR</a></li>
+                        <li><a href="tip.html">TIP</a></li>
+                        <li><a href="csam.html">CSAM</a></li>
+                        <li><a href="support.html" class="active">Support</a></li>
+                    </ul>
+                </nav>
+                <div class="search-container">
+                    <input type="text" id="searchInput" placeholder="Search documentation...">
+                    <i class="fas fa-search"></i>
+                </div>
+            </div>
+        </header>
+
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar">
+            <nav class="sidebar-nav">
+                <div class="nav-section">
+                    <h3><i class="fas fa-home"></i> Getting Started</h3>
+                    <ul>
+                        <li><a href="index.html#overview">Product Overview</a></li>
+                        <li><a href="architecture.html">Solution Architecture</a></li>
+                        <li><a href="prerequisites.html">Prerequisites</a></li>
+                    </ul>
+                </div>
+                
+                <div class="nav-section">
+                    <h3><i class="fas fa-cube"></i> Products</h3>
+                    <ul>
+                        <li><a href="sia.html">SIA (Security Intelligence Analytics)</a></li>
+                        <li><a href="soar.html">SOAR (Security Orchestration)</a></li>
+                        <li><a href="tip.html">TIP (Threat Intelligence Platform)</a></li>
+                        <li><a href="csam.html">CSAM (Cyber Security Asset Management)</a></li>
+                    </ul>
+                </div>
+
+                <div class="nav-section">
+                    <h3><i class="fas fa-cogs"></i> Installation & Deployment</h3>
+                    <ul>
+                        <li><a href="installation.html">Installation Guide</a></li>
+                        <li><a href="deployment.html">Deployment Guide</a></li>
+                        <li><a href="hardware-specs.html">Hardware Specifications</a></li>
+                    </ul>
+                </div>
+
+                <div class="nav-section">
+                    <h3><i class="fas fa-users-cog"></i> Administration</h3>
+                    <ul>
+                        <li><a href="administration.html">Administration</a></li>
+                        <li><a href="csam-admin.html">CSAM Administration</a></li>
+                        <li><a href="tip-admin.html">TIP Administration</a></li>
+                    </ul>
+                </div>
+
+                <div class="nav-section">
+                    <h3><i class="fas fa-puzzle-piece"></i> Integrations</h3>
+                    <ul>
+                        <li><a href="integrations.html">Available Integrations</a></li>
+                        <li><a href="playbooks.html">Security Playbooks</a></li>
+                        <li><a href="api-reference.html">API Reference</a></li>
+                    </ul>
+                </div>
+
+                <div class="nav-section">
+                    <h3><i class="fas fa-question-circle"></i> Support</h3>
+                    <ul>
+                        <li><a href="troubleshooting.html">Troubleshooting</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                        <li><a href="support.html" class="active">Contact Support</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <section id="faq" class="content-section">
+                <div class="section-header">
+                    <h2><i class="fas fa-question-circle"></i> Frequently Asked Questions</h2>
+                    <p>Common questions and answers about Securaa products and services.</p>
+                </div>
+
+                <h3>General Questions</h3>
+                <div class="faq-container">
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h4><i class="fas fa-plus"></i> What is Securaa and what does it offer?</h4>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Securaa is a comprehensive cybersecurity platform that provides four main solutions:</p>
+                            <ul>
+                                <li><strong>SIA (Security Intelligence Analytics):</strong> Advanced threat detection and analytics</li>
+                                <li><strong>SOAR (Security Orchestration):</strong> Automated incident response and orchestration</li>
+                                <li><strong>TIP (Threat Intelligence Platform):</strong> Threat intelligence collection and analysis</li>
+                                <li><strong>CSAM (Cyber Security Asset Management):</strong> Comprehensive asset management and vulnerability assessment</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h4><i class="fas fa-plus"></i> What are the system requirements for Securaa?</h4>
+                        </div>
+                        <div class="faq-answer">
+                            <p>System requirements vary by solution:</p>
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Solution</th>
+                                        <th>CPU</th>
+                                        <th>RAM</th>
+                                        <th>Storage</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>SIA</td>
+                                        <td>16+ cores</td>
+                                        <td>64+ GB</td>
+                                        <td>2+ TB SSD</td>
+                                    </tr>
+                                    <tr>
+                                        <td>SOAR</td>
+                                        <td>8+ cores</td>
+                                        <td>32+ GB</td>
+                                        <td>1+ TB SSD</td>
+                                    </tr>
+                                    <tr>
+                                        <td>TIP</td>
+                                        <td>8+ cores</td>
+                                        <td>32+ GB</td>
+                                        <td>1+ TB SSD</td>
+                                    </tr>
+                                    <tr>
+                                        <td>CSAM</td>
+                                        <td>12+ cores</td>
+                                        <td>48+ GB</td>
+                                        <td>1.5+ TB SSD</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h4><i class="fas fa-plus"></i> How long does it take to deploy Securaa?</h4>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Deployment time depends on the scope and complexity:</p>
+                            <ul>
+                                <li><strong>Proof of Concept (POC):</strong> 1-2 weeks</li>
+                                <li><strong>Single Solution:</strong> 2-4 weeks</li>
+                                <li><strong>Multiple Solutions:</strong> 4-8 weeks</li>
+                                <li><strong>Enterprise Deployment:</strong> 8-12 weeks</li>
+                            </ul>
+                            <p>Our professional services team works with you to ensure smooth deployment and minimal disruption to your operations.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h4><i class="fas fa-plus"></i> What integrations are available?</h4>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Securaa integrates with 200+ security tools including:</p>
+                            <ul>
+                                <li><strong>SIEM:</strong> Splunk, QRadar, ArcSight, Elastic Security</li>
+                                <li><strong>Endpoint:</strong> CrowdStrike, Microsoft Defender, Carbon Black</li>
+                                <li><strong>Cloud:</strong> AWS Security Hub, Azure Security Center, Google Cloud Security</li>
+                                <li><strong>Network:</strong> Palo Alto, Fortinet, Cisco, pfSense</li>
+                                <li><strong>Threat Intelligence:</strong> MISP, STIX/TAXII, OTX, VirusTotal</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <h3>Technical Questions</h3>
+                <div class="faq-container">
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h4><i class="fas fa-plus"></i> How does Securaa handle data privacy and compliance?</h4>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Securaa is designed with privacy and compliance in mind:</p>
+                            <ul>
+                                <li><strong>Data Encryption:</strong> All data is encrypted in transit and at rest using AES-256</li>
+                                <li><strong>Access Controls:</strong> Role-based access control (RBAC) with multi-factor authentication</li>
+                                <li><strong>Compliance:</strong> Supports SOC 2, ISO 27001, GDPR, HIPAA, and other frameworks</li>
+                                <li><strong>Audit Logging:</strong> Comprehensive audit trails for all system activities</li>
+                                <li><strong>Data Residency:</strong> Options for on-premises, cloud, or hybrid deployments</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h4><i class="fas fa-plus"></i> Can Securaa be deployed in air-gapped environments?</h4>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Yes, Securaa supports air-gapped deployments with the following considerations:</p>
+                            <ul>
+                                <li>Offline installation packages available</li>
+                                <li>Manual threat intelligence feed updates</li>
+                                <li>Local certificate management</li>
+                                <li>Isolated network configurations supported</li>
+                                <li>Custom update mechanisms for security patches</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h4><i class="fas fa-plus"></i> What backup and disaster recovery options are available?</h4>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Securaa provides comprehensive backup and disaster recovery features:</p>
+                            <ul>
+                                <li><strong>Automated Backups:</strong> Scheduled database and configuration backups</li>
+                                <li><strong>High Availability:</strong> Active-passive clustering for minimal downtime</li>
+                                <li><strong>Geo-Replication:</strong> Multi-site replication for disaster recovery</li>
+                                <li><strong>Point-in-Time Recovery:</strong> Restore to specific timestamps</li>
+                                <li><strong>Testing:</strong> Regular DR testing and validation procedures</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <h3>Licensing & Support</h3>
+                <div class="faq-container">
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h4><i class="fas fa-plus"></i> What support options are available?</h4>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Securaa offers multiple support tiers:</p>
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Support Tier</th>
+                                        <th>Response Time</th>
+                                        <th>Availability</th>
+                                        <th>Channels</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Standard</td>
+                                        <td>4-8 hours</td>
+                                        <td>Business hours</td>
+                                        <td>Email, Portal</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Premium</td>
+                                        <td>2-4 hours</td>
+                                        <td>Extended hours</td>
+                                        <td>Email, Phone, Portal</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Enterprise</td>
+                                        <td>1 hour</td>
+                                        <td>24/7</td>
+                                        <td>All channels + Dedicated CSM</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h4><i class="fas fa-plus"></i> How is Securaa licensed?</h4>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Securaa offers flexible licensing models:</p>
+                            <ul>
+                                <li><strong>Per-Asset Licensing:</strong> Based on number of monitored assets</li>
+                                <li><strong>User-Based Licensing:</strong> Based on number of concurrent users</li>
+                                <li><strong>Volume Licensing:</strong> Discounted rates for large deployments</li>
+                                <li><strong>Cloud Licensing:</strong> Pay-as-you-use model for cloud deployments</li>
+                                <li><strong>Enterprise Licensing:</strong> Unlimited usage within organization</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="troubleshooting" class="content-section">
+                <div class="section-header">
+                    <h2><i class="fas fa-tools"></i> Troubleshooting Guide</h2>
+                    <p>Common issues and their solutions for Securaa platforms.</p>
+                </div>
+
+                <div class="alert alert-info">
+                    <strong>Before You Begin:</strong> Always check the system logs and error messages for detailed information about any issues.
+                </div>
+
+                <h3>Installation Issues</h3>
+                <div class="troubleshooting-section">
+                    <div class="issue-card">
+                        <h4><i class="fas fa-exclamation-triangle"></i> Installation Fails with Database Connection Error</h4>
+                        <div class="issue-content">
+                            <p><strong>Symptoms:</strong> Installation stops with "Cannot connect to database" error</p>
+                            <p><strong>Possible Causes:</strong></p>
+                            <ul>
+                                <li>Database server not running</li>
+                                <li>Incorrect database credentials</li>
+                                <li>Firewall blocking database port</li>
+                                <li>Database user lacks required permissions</li>
+                            </ul>
+                            <p><strong>Solution:</strong></p>
+                            <pre><code># Check database status
+systemctl status postgresql
+
+# Test database connection
+psql -h localhost -U securaa -d securaa_db
+
+# Check firewall rules
+ufw status
+iptables -L
+
+# Grant database permissions
+GRANT ALL PRIVILEGES ON DATABASE securaa_db TO securaa;</code></pre>
+                        </div>
+                    </div>
+                    
+                    <div class="issue-card">
+                        <h4><i class="fas fa-exclamation-triangle"></i> SSL Certificate Installation Fails</h4>
+                        <div class="issue-content">
+                            <p><strong>Symptoms:</strong> Web interface shows SSL certificate errors</p>
+                            <p><strong>Solution:</strong></p>
+                            <pre><code># Check certificate file permissions
+ls -la /etc/ssl/certs/securaa.crt
+ls -la /etc/ssl/private/securaa.key
+
+# Verify certificate validity
+openssl x509 -in /etc/ssl/certs/securaa.crt -text -noout
+
+# Restart web service
+systemctl restart securaa-web</code></pre>
+                        </div>
+                    </div>
+                </div>
+
+                <h3>Performance Issues</h3>
+                <div class="troubleshooting-section">
+                    <div class="issue-card">
+                        <h4><i class="fas fa-exclamation-triangle"></i> High CPU Usage</h4>
+                        <div class="issue-content">
+                            <p><strong>Symptoms:</strong> System becomes slow, high CPU utilization</p>
+                            <p><strong>Troubleshooting Steps:</strong></p>
+                            <pre><code># Check CPU usage by process
+top -p $(pgrep securaa)
+
+# Check system load
+uptime
+
+# Review recent log entries
+journalctl -u securaa --since "1 hour ago"
+
+# Check for runaway processes
+ps aux | grep securaa | sort -k3 -nr</code></pre>
+                            <p><strong>Common Solutions:</strong></p>
+                            <ul>
+                                <li>Increase CPU resources if possible</li>
+                                <li>Optimize scan schedules to reduce overlap</li>
+                                <li>Tune database query performance</li>
+                                <li>Enable query caching</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="issue-card">
+                        <h4><i class="fas fa-exclamation-triangle"></i> Memory Issues</h4>
+                        <div class="issue-content">
+                            <p><strong>Symptoms:</strong> Out of memory errors, system freezes</p>
+                            <p><strong>Diagnosis:</strong></p>
+                            <pre><code># Check memory usage
+free -h
+cat /proc/meminfo
+
+# Check for memory leaks
+valgrind --tool=memcheck --leak-check=full securaa-process
+
+# Monitor memory usage over time
+sar -r 1 60</code></pre>
+                        </div>
+                    </div>
+                </div>
+
+                <h3>Network Issues</h3>
+                <div class="troubleshooting-section">
+                    <div class="issue-card">
+                        <h4><i class="fas fa-exclamation-triangle"></i> Asset Discovery Not Working</h4>
+                        <div class="issue-content">
+                            <p><strong>Symptoms:</strong> New assets not being discovered automatically</p>
+                            <p><strong>Troubleshooting:</strong></p>
+                            <pre><code># Test network connectivity
+nmap -sn 192.168.1.0/24
+
+# Check SNMP connectivity
+snmpwalk -v2c -c public 192.168.1.100
+
+# Verify discovery credentials
+ssh user@192.168.1.100 "echo 'Connection successful'"
+
+# Check discovery logs
+tail -f /var/log/securaa/discovery.log</code></pre>
+                        </div>
+                    </div>
+                </div>
+
+                <h3>Integration Issues</h3>
+                <div class="troubleshooting-section">
+                    <div class="issue-card">
+                        <h4><i class="fas fa-exclamation-triangle"></i> SIEM Integration Not Receiving Data</h4>
+                        <div class="issue-content">
+                            <p><strong>Symptoms:</strong> No data flowing to external SIEM</p>
+                            <p><strong>Troubleshooting Steps:</strong></p>
+                            <ol>
+                                <li>Verify network connectivity to SIEM</li>
+                                <li>Check authentication credentials</li>
+                                <li>Validate data format and API endpoints</li>
+                                <li>Review integration logs for errors</li>
+                                <li>Test with sample data</li>
+                            </ol>
+                            <pre><code># Test API connectivity
+curl -X POST https://siem.company.com/api/events \
+     -H "Authorization: Bearer YOUR_TOKEN" \
+     -H "Content-Type: application/json" \
+     -d '{"test": "message"}'</code></pre>
+                        </div>
+                    </div>
+                </div>
+
+                <h3>Log Analysis</h3>
+                <div class="alert alert-warning">
+                    <strong>Important:</strong> Always check log files for detailed error information. Logs are located in <code>/var/log/securaa/</code>
+                </div>
+                
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Log File</th>
+                            <th>Purpose</th>
+                            <th>Location</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>securaa.log</td>
+                            <td>Main application log</td>
+                            <td>/var/log/securaa/securaa.log</td>
+                        </tr>
+                        <tr>
+                            <td>discovery.log</td>
+                            <td>Asset discovery activities</td>
+                            <td>/var/log/securaa/discovery.log</td>
+                        </tr>
+                        <tr>
+                            <td>api.log</td>
+                            <td>API requests and responses</td>
+                            <td>/var/log/securaa/api.log</td>
+                        </tr>
+                        <tr>
+                            <td>integration.log</td>
+                            <td>Third-party integrations</td>
+                            <td>/var/log/securaa/integration.log</td>
+                        </tr>
+                        <tr>
+                            <td>error.log</td>
+                            <td>System errors and exceptions</td>
+                            <td>/var/log/securaa/error.log</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <section id="contact" class="content-section">
+                <div class="section-header">
+                    <h2><i class="fas fa-phone"></i> Contact Support</h2>
+                    <p>Get expert help from our support team for any questions or issues.</p>
+                </div>
+
+                <div class="feature-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <h3>Email Support</h3>
+                        <p><strong>support@securaa.com</strong></p>
+                        <p>Response time: 4-8 hours</p>
+                        <p>Available for all customers</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <h3>Phone Support</h3>
+                        <p><strong>+1 (555) 123-4567</strong></p>
+                        <p>Available 24/7 for Enterprise customers</p>
+                        <p>Business hours for Premium</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-globe"></i>
+                        </div>
+                        <h3>Support Portal</h3>
+                        <p><strong>support.securaa.com</strong></p>
+                        <p>Create tickets, track status</p>
+                        <p>Access knowledge base</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-comments"></i>
+                        </div>
+                        <h3>Live Chat</h3>
+                        <p><strong>Available on website</strong></p>
+                        <p>Real-time assistance</p>
+                        <p>Business hours only</p>
+                    </div>
+                </div>
+
+                <h3>Emergency Support</h3>
+                <div class="alert alert-danger">
+                    <strong>Critical Issues:</strong> For security incidents or system-down situations, call our emergency line at <strong>+1 (555) 911-HELP</strong> (available 24/7 for all customers).
+                </div>
+
+                <h3>What to Include in Support Requests</h3>
+                <div class="steps-container">
+                    <div class="step">
+                        <div class="step-number">1</div>
+                        <div class="step-content">
+                            <h3>System Information</h3>
+                            <ul style="text-align: left; list-style: disc; padding-left: 1rem;">
+                                <li>Securaa version and build number</li>
+                                <li>Operating system and version</li>
+                                <li>Hardware specifications</li>
+                                <li>Network configuration</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="step">
+                        <div class="step-number">2</div>
+                        <div class="step-content">
+                            <h3>Issue Description</h3>
+                            <ul style="text-align: left; list-style: disc; padding-left: 1rem;">
+                                <li>Detailed description of the problem</li>
+                                <li>Steps to reproduce the issue</li>
+                                <li>Expected vs actual behavior</li>
+                                <li>When the issue first occurred</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="step">
+                        <div class="step-number">3</div>
+                        <div class="step-content">
+                            <h3>Supporting Information</h3>
+                            <ul style="text-align: left; list-style: disc; padding-left: 1rem;">
+                                <li>Relevant log files</li>
+                                <li>Screenshots or error messages</li>
+                                <li>Configuration files (sanitized)</li>
+                                <li>Recent changes to the system</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Securaa Support</h3>
+                    <p>Expert support for all your cybersecurity needs.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Support Resources</h4>
+                    <ul>
+                        <li><a href="#faq">FAQ</a></li>
+                        <li><a href="#troubleshooting">Troubleshooting</a></li>
+                        <li><a href="index.html">Documentation</a></li>
+                        <li><a href="#contact">Contact Support</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Securaa. All rights reserved.</p>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        // FAQ Toggle Functionality
+        document.addEventListener('DOMContentLoaded', () => {
+            document.querySelectorAll('.faq-question').forEach(question => {
+                question.addEventListener('click', () => {
+                    const faqItem = question.closest('.faq-item');
+                    const answer = faqItem.querySelector('.faq-answer');
+                    const icon = question.querySelector('i');
+                    
+                    if (answer.style.display === 'block') {
+                        answer.style.display = 'none';
+                        icon.classList.remove('fa-minus');
+                        icon.classList.add('fa-plus');
+                    } else {
+                        answer.style.display = 'block';
+                        icon.classList.remove('fa-plus');
+                        icon.classList.add('fa-minus');
+                    }
+                });
+            });
+            
+            // Add keyboard shortcut for search
+            document.addEventListener('keydown', (e) => {
+                if ((e.ctrlKey || e.metaKey) && e.key === 'k') {
+                    e.preventDefault();
+                    const searchInput = document.getElementById('searchInput');
+                    if (searchInput) {
+                        searchInput.focus();
+                    }
+                }
+            });
+        });
+    </script>
+    <style>
+        .faq-container {
+            margin-bottom: 2rem;
+        }
+        
+        .faq-item {
+            margin-bottom: 1rem;
+            border: 1px solid var(--border-color);
+            border-radius: var(--border-radius);
+            background-color: white;
+        }
+        
+        .faq-question {
+            padding: 1rem;
+            cursor: pointer;
+            background-color: var(--light-color);
+            border-radius: var(--border-radius) var(--border-radius) 0 0;
+            transition: var(--transition);
+            color: var(--text-primary) !important;
+        }
+        
+        .faq-question:hover {
+            background-color: #e2e8f0;
+        }
+        
+        .faq-question h4 {
+            margin: 0;
+            color: var(--primary-color) !important;
+            font-size: 1rem;
+        }
+        
+        .faq-question i {
+            margin-right: 0.5rem;
+            transition: var(--transition);
+            color: var(--primary-color) !important;
+        }
+        
+        .faq-answer {
+            padding: 1rem;
+            display: none;
+            border-top: 1px solid var(--border-color);
+            background-color: white;
+            color: var(--text-primary) !important;
+        }
+        
+        .faq-answer * {
+            color: var(--text-primary) !important;
+        }
+        
+        .troubleshooting-section {
+            margin-bottom: 2rem;
+        }
+        
+        .issue-card {
+            margin-bottom: 2rem;
+            padding: 1.5rem;
+            border: 1px solid var(--border-color);
+            border-radius: var(--border-radius);
+            background-color: white;
+            color: var(--text-primary) !important;
+        }
+        
+        .issue-card h4 {
+            color: var(--danger-color) !important;
+            margin-bottom: 1rem;
+        }
+        
+        .issue-content {
+            margin-top: 1rem;
+            color: var(--text-primary) !important;
+        }
+        
+        .issue-content * {
+            color: var(--text-primary) !important;
+        }
+        
+        .issue-content p {
+            margin-bottom: 0.5rem;
+        }
+        
+        .issue-content ul {
+            margin: 0.5rem 0;
+            padding-left: 1.5rem;
+        }
+        
+        .issue-content ol {
+            margin: 0.5rem 0;
+            padding-left: 1.5rem;
+        }
+        
+        /* Ensure proper contrast for all elements */
+        .faq-item, .faq-item *, 
+        .issue-card, .issue-card *,
+        .troubleshooting-section, .troubleshooting-section * {
+            color: var(--text-primary) !important;
+        }
+        
+        /* Exception for specific colored elements */
+        .faq-question h4,
+        .faq-question i {
+            color: var(--primary-color) !important;
+        }
+        
+        .issue-card h4 {
+            color: var(--danger-color) !important;
+        }
+    </style>
+
+    <!-- JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.28.0/components/prism-core.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.28.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

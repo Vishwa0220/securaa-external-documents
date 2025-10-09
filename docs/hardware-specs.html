@@ -1,0 +1,774 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hardware Specifications - Securaa Documentation</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.28.0/themes/prism.min.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-content">
+                <div class="logo">
+                    <h1><i class="fas fa-shield-alt"></i> Securaa</h1>
+                    <span class="tagline">Advanced Cybersecurity Solutions</span>
+                </div>
+                <nav class="main-nav">
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="sia.html">SIA</a></li>
+                        <li><a href="soar.html">SOAR</a></li>
+                        <li><a href="tip.html">TIP</a></li>
+                        <li><a href="csam.html">CSAM</a></li>
+                        <li><a href="support.html">Support</a></li>
+                    </ul>
+                </nav>
+                <div class="header-right">
+                    <div class="search-container">
+                        <input type="text" id="searchInput" placeholder="Search documentation...">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <button class="mobile-menu-toggle" onclick="toggleMobileMenu()">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar">
+            <nav class="sidebar-nav">
+                <div class="nav-section">
+                    <h3><i class="fas fa-home"></i> Getting Started</h3>
+                    <ul>
+                        <li><a href="index.html#overview">Product Overview</a></li>
+                        <li><a href="architecture.html">Solution Architecture</a></li>
+                        <li><a href="prerequisites.html">Prerequisites</a></li>
+                    </ul>
+                </div>
+
+                <div class="nav-section">
+                    <h3><i class="fas fa-cube"></i> Products</h3>
+                    <ul>
+                        <li><a href="sia.html">SIA (Security Intelligence Analytics)</a></li>
+                        <li><a href="soar.html">SOAR (Security Orchestration)</a></li>
+                        <li><a href="tip.html">TIP (Threat Intelligence Platform)</a></li>
+                        <li><a href="csam.html">CSAM (Cyber Security Asset Management)</a></li>
+                    </ul>
+                </div>
+
+                <div class="nav-section">
+                    <h3><i class="fas fa-cogs"></i> Installation & Deployment</h3>
+                    <ul>
+                        <li><a href="installation.html">Installation Guide</a></li>
+                        <li><a href="deployment.html">Deployment Guide</a></li>
+                        <li><a href="hardware-specs.html" class="active">Hardware Specifications</a></li>
+                    </ul>
+                </div>
+
+                <div class="nav-section">
+                    <h3><i class="fas fa-users-cog"></i> Administration</h3>
+                    <ul>
+                        <li><a href="administration.html">Administration</a></li>
+                        <li><a href="csam-admin.html">CSAM Administration</a></li>
+                        <li><a href="tip-admin.html">TIP Administration</a></li>
+                    </ul>
+                </div>
+
+                <div class="nav-section">
+                    <h3><i class="fas fa-puzzle-piece"></i> Integrations</h3>
+                    <ul>
+                        <li><a href="integrations.html">Available Integrations</a></li>
+                        <li><a href="playbooks.html">Security Playbooks</a></li>
+                        <li><a href="api-reference.html">API Reference</a></li>
+                    </ul>
+                </div>
+
+                <div class="nav-section">
+                    <h3><i class="fas fa-question-circle"></i> Support</h3>
+                    <ul>
+                        <li><a href="troubleshooting.html">Troubleshooting</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                        <li><a href="support.html">Contact Support</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+            <div class="header">
+                <h1><i class="fas fa-server"></i> Hardware Specifications</h1>
+                <p class="subtitle">Detailed hardware requirements for optimal Securaa platform performance</p>
+            </div>
+
+            <div class="content">
+                <section class="info-box">
+                    <h2><i class="fas fa-info-circle"></i> Overview</h2>
+                    <p>
+                        The hardware specifications vary based on your deployment size, expected data volume, 
+                        and performance requirements. This guide provides recommendations for different 
+                        deployment scenarios to ensure optimal platform performance.
+                    </p>
+                </section>
+
+                <section>
+                    <h2><i class="fas fa-layer-group"></i> Deployment Sizing</h2>
+                    
+                    <div class="sizing-grid">
+                        <div class="sizing-option">
+                            <h3><i class="fas fa-laptop"></i> Small Environment</h3>
+                            <div class="sizing-details">
+                                <p><strong>Ideal for:</strong></p>
+                                <ul>
+                                    <li>Development/Testing</li>
+                                    <li>Small organizations (&lt; 500 endpoints)</li>
+                                    <li>Proof of Concept deployments</li>
+                                    <li>Event volume: &lt; 10K events/day</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="sizing-option">
+                            <h3><i class="fas fa-building"></i> Medium Environment</h3>
+                            <div class="sizing-details">
+                                <p><strong>Ideal for:</strong></p>
+                                <ul>
+                                    <li>Mid-size organizations (500-5K endpoints)</li>
+                                    <li>Regional deployments</li>
+                                    <li>Production environments</li>
+                                    <li>Event volume: 10K-100K events/day</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="sizing-option">
+                            <h3><i class="fas fa-city"></i> Large Environment</h3>
+                            <div class="sizing-details">
+                                <p><strong>Ideal for:</strong></p>
+                                <ul>
+                                    <li>Enterprise organizations (&gt; 5K endpoints)</li>
+                                    <li>High-volume environments</li>
+                                    <li>Multi-tenant deployments</li>
+                                    <li>Event volume: &gt; 100K events/day</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section>
+                    <h2><i class="fas fa-desktop"></i> Small Environment Specifications</h2>
+                    
+                    <div class="spec-table">
+                        <h3>Single Node Deployment</h3>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Component</th>
+                                    <th>Minimum</th>
+                                    <th>Recommended</th>
+                                    <th>Notes</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>CPU</strong></td>
+                                    <td>4 cores, 2.4 GHz</td>
+                                    <td>8 cores, 3.0 GHz</td>
+                                    <td>Intel Xeon or AMD EPYC preferred</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Memory</strong></td>
+                                    <td>16 GB RAM</td>
+                                    <td>32 GB RAM</td>
+                                    <td>ECC memory recommended</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Storage</strong></td>
+                                    <td>500 GB SSD</td>
+                                    <td>1 TB NVMe SSD</td>
+                                    <td>High IOPS required for database</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Network</strong></td>
+                                    <td>1 Gbps</td>
+                                    <td>10 Gbps</td>
+                                    <td>Low latency preferred</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>OS</strong></td>
+                                    <td colspan="2">Ubuntu 20.04 LTS, RHEL 8+, CentOS 8+</td>
+                                    <td>64-bit required</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+
+                <section>
+                    <h2><i class="fas fa-building"></i> Medium Environment Specifications</h2>
+                    
+                    <div class="spec-table">
+                        <h3>Multi-Node Deployment</h3>
+                        
+                        <h4>Management Node</h4>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Component</th>
+                                    <th>Minimum</th>
+                                    <th>Recommended</th>
+                                    <th>Notes</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>CPU</strong></td>
+                                    <td>8 cores, 2.4 GHz</td>
+                                    <td>16 cores, 3.0 GHz</td>
+                                    <td>High single-thread performance</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Memory</strong></td>
+                                    <td>32 GB RAM</td>
+                                    <td>64 GB RAM</td>
+                                    <td>Web interface and API gateway</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Storage</strong></td>
+                                    <td>1 TB SSD</td>
+                                    <td>2 TB NVMe SSD</td>
+                                    <td>Configuration and logs</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        
+                        <h4>Processing Nodes (2-3 nodes)</h4>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Component</th>
+                                    <th>Minimum</th>
+                                    <th>Recommended</th>
+                                    <th>Notes</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>CPU</strong></td>
+                                    <td>16 cores, 2.8 GHz</td>
+                                    <td>32 cores, 3.2 GHz</td>
+                                    <td>High computational requirements</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Memory</strong></td>
+                                    <td>64 GB RAM</td>
+                                    <td>128 GB RAM</td>
+                                    <td>Analytics and processing</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Storage</strong></td>
+                                    <td>2 TB SSD</td>
+                                    <td>4 TB NVMe SSD</td>
+                                    <td>Temporary processing data</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        
+                        <h4>Data Nodes (3 nodes for HA)</h4>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Component</th>
+                                    <th>Minimum</th>
+                                    <th>Recommended</th>
+                                    <th>Notes</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>CPU</strong></td>
+                                    <td>12 cores, 2.4 GHz</td>
+                                    <td>24 cores, 3.0 GHz</td>
+                                    <td>Database and search operations</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Memory</strong></td>
+                                    <td>64 GB RAM</td>
+                                    <td>256 GB RAM</td>
+                                    <td>Database caching crucial</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Storage</strong></td>
+                                    <td>10 TB SSD</td>
+                                    <td>20 TB NVMe SSD</td>
+                                    <td>RAID 10 configuration recommended</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+
+                <section>
+                    <h2><i class="fas fa-city"></i> Large Environment Specifications</h2>
+                    
+                    <div class="spec-table">
+                        <h3>Enterprise Deployment</h3>
+                        
+                        <h4>Load Balancer Nodes (2 nodes for HA)</h4>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Component</th>
+                                    <th>Specification</th>
+                                    <th>Notes</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>CPU</strong></td>
+                                    <td>8 cores, 3.0 GHz</td>
+                                    <td>High network throughput</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Memory</strong></td>
+                                    <td>16 GB RAM</td>
+                                    <td>Connection state management</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Network</strong></td>
+                                    <td>40 Gbps</td>
+                                    <td>Multiple 10G interfaces</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        
+                        <h4>Management Cluster (3 nodes)</h4>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Component</th>
+                                    <th>Specification</th>
+                                    <th>Notes</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>CPU</strong></td>
+                                    <td>16 cores, 3.2 GHz</td>
+                                    <td>Cluster coordination</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Memory</strong></td>
+                                    <td>128 GB RAM</td>
+                                    <td>Management overhead</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Storage</strong></td>
+                                    <td>4 TB NVMe SSD</td>
+                                    <td>Configuration replication</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        
+                        <h4>Processing Cluster (6-12 nodes)</h4>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Component</th>
+                                    <th>Specification</th>
+                                    <th>Notes</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>CPU</strong></td>
+                                    <td>32-64 cores, 3.5 GHz</td>
+                                    <td>Dedicated processing power</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Memory</strong></td>
+                                    <td>256-512 GB RAM</td>
+                                    <td>In-memory analytics</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Storage</strong></td>
+                                    <td>8 TB NVMe SSD</td>
+                                    <td>High-speed temporary storage</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Accelerators</strong></td>
+                                    <td>GPU cards (optional)</td>
+                                    <td>ML/AI workloads acceleration</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        
+                        <h4>Data Storage Cluster (6+ nodes)</h4>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Component</th>
+                                    <th>Specification</th>
+                                    <th>Notes</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>CPU</strong></td>
+                                    <td>24 cores, 3.0 GHz</td>
+                                    <td>Database operations</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Memory</strong></td>
+                                    <td>512 GB - 1 TB RAM</td>
+                                    <td>Large dataset caching</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Storage</strong></td>
+                                    <td>50-100 TB NVMe SSD</td>
+                                    <td>Distributed storage with replication</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Network</strong></td>
+                                    <td>25 Gbps</td>
+                                    <td>Data replication traffic</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+
+                <section>
+                    <h2><i class="fas fa-cloud"></i> Cloud Specifications</h2>
+                    
+                    <div class="cloud-specs">
+                        <h3>AWS Instance Types</h3>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Environment</th>
+                                    <th>Management</th>
+                                    <th>Processing</th>
+                                    <th>Data Storage</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>Small</strong></td>
+                                    <td>t3.2xlarge</td>
+                                    <td>c5.4xlarge</td>
+                                    <td>r5.2xlarge</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Medium</strong></td>
+                                    <td>c5.4xlarge</td>
+                                    <td>c5.12xlarge</td>
+                                    <td>r5.8xlarge</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Large</strong></td>
+                                    <td>c5.9xlarge</td>
+                                    <td>c5.24xlarge</td>
+                                    <td>r5.24xlarge</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        
+                        <h3>Azure VM Sizes</h3>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Environment</th>
+                                    <th>Management</th>
+                                    <th>Processing</th>
+                                    <th>Data Storage</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>Small</strong></td>
+                                    <td>Standard_D8s_v3</td>
+                                    <td>Standard_F16s_v2</td>
+                                    <td>Standard_E8s_v3</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Medium</strong></td>
+                                    <td>Standard_D16s_v3</td>
+                                    <td>Standard_F48s_v2</td>
+                                    <td>Standard_E32s_v3</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Large</strong></td>
+                                    <td>Standard_D32s_v3</td>
+                                    <td>Standard_F72s_v2</td>
+                                    <td>Standard_E64s_v3</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+
+                <section>
+                    <h2><i class="fas fa-network-wired"></i> Network Requirements</h2>
+                    
+                    <div class="network-requirements">
+                        <h3>Bandwidth Requirements</h3>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Traffic Type</th>
+                                    <th>Small Environment</th>
+                                    <th>Medium Environment</th>
+                                    <th>Large Environment</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>Management Traffic</strong></td>
+                                    <td>100 Mbps</td>
+                                    <td>1 Gbps</td>
+                                    <td>10 Gbps</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Data Ingestion</strong></td>
+                                    <td>500 Mbps</td>
+                                    <td>5 Gbps</td>
+                                    <td>25 Gbps</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Inter-Node Communication</strong></td>
+                                    <td>1 Gbps</td>
+                                    <td>10 Gbps</td>
+                                    <td>40 Gbps</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Backup/Replication</strong></td>
+                                    <td>1 Gbps</td>
+                                    <td>10 Gbps</td>
+                                    <td>25 Gbps</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        
+                        <h3>Network Architecture</h3>
+                        <ul>
+                            <li><strong>Redundancy:</strong> Dual network paths for high availability</li>
+                            <li><strong>Segmentation:</strong> Separate VLANs for management, data, and backup traffic</li>
+                            <li><strong>Security:</strong> Network firewalls and intrusion detection systems</li>
+                            <li><strong>Monitoring:</strong> Network performance monitoring and alerting</li>
+                        </ul>
+                    </div>
+                </section>
+
+                <section>
+                    <h2><i class="fas fa-database"></i> Storage Requirements</h2>
+                    
+                    <div class="storage-requirements">
+                        <h3>Storage Performance</h3>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Storage Type</th>
+                                    <th>IOPS Requirement</th>
+                                    <th>Throughput</th>
+                                    <th>Use Case</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>Database Storage</strong></td>
+                                    <td>10,000+ IOPS</td>
+                                    <td>500+ MB/s</td>
+                                    <td>Transactional workloads</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Analytics Storage</strong></td>
+                                    <td>5,000+ IOPS</td>
+                                    <td>1,000+ MB/s</td>
+                                    <td>Large dataset processing</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Log Storage</strong></td>
+                                    <td>1,000+ IOPS</td>
+                                    <td>200+ MB/s</td>
+                                    <td>Sequential write operations</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Backup Storage</strong></td>
+                                    <td>500+ IOPS</td>
+                                    <td>100+ MB/s</td>
+                                    <td>Archival and recovery</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        
+                        <h3>Data Retention Guidelines</h3>
+                        <div class="retention-guidelines">
+                            <div class="retention-tier">
+                                <h4>Hot Data (Active)</h4>
+                                <ul>
+                                    <li>Recent security events (30 days)</li>
+                                    <li>Active investigations</li>
+                                    <li>Real-time analytics data</li>
+                                    <li>Storage: High-performance NVMe SSD</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="retention-tier">
+                                <h4>Warm Data (Occasional Access)</h4>
+                                <ul>
+                                    <li>Historical events (3-12 months)</li>
+                                    <li>Compliance data</li>
+                                    <li>Archived investigations</li>
+                                    <li>Storage: Standard SSD</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="retention-tier">
+                                <h4>Cold Data (Archive)</h4>
+                                <ul>
+                                    <li>Long-term historical data (&gt; 1 year)</li>
+                                    <li>Regulatory compliance archives</li>
+                                    <li>Forensic evidence</li>
+                                    <li>Storage: High-capacity HDD or cloud archive</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section>
+                    <h2><i class="fas fa-exclamation-triangle"></i> Important Considerations</h2>
+                    
+                    <div class="considerations-grid">
+                        <div class="consideration-item">
+                            <h3><i class="fas fa-thermometer-half"></i> Environmental</h3>
+                            <ul>
+                                <li>Operating temperature: 18-27°C (64-80°F)</li>
+                                <li>Humidity: 20-80% non-condensing</li>
+                                <li>Adequate ventilation and cooling</li>
+                                <li>Uninterruptible Power Supply (UPS)</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="consideration-item">
+                            <h3><i class="fas fa-expand-arrows-alt"></i> Scalability</h3>
+                            <ul>
+                                <li>Plan for 50% growth capacity</li>
+                                <li>Modular architecture for easy expansion</li>
+                                <li>Load balancer capacity planning</li>
+                                <li>Network bandwidth scaling</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="consideration-item">
+                            <h3><i class="fas fa-shield-check"></i> Redundancy</h3>
+                            <ul>
+                                <li>N+1 redundancy for critical components</li>
+                                <li>Geographic distribution for DR</li>
+                                <li>Automated failover mechanisms</li>
+                                <li>Regular backup and recovery testing</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+
+                <div class="cta-section">
+                    <h2><i class="fas fa-tools"></i> Ready to Deploy?</h2>
+                    <p>
+                        <strong>Hardware specifications confirmed?</strong> Proceed to the 
+                        <a href="prerequisites.html">prerequisites checklist</a> to prepare for your Securaa platform deployment.
+                    </p>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Securaa</h3>
+                <p>Advanced cybersecurity solutions for modern threats.</p>
+                <div class="social-links">
+                    <a href="https://linkedin.com/company/securaa" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://twitter.com/securaa" target="_blank" rel="noopener noreferrer"><i class="fab fa-twitter"></i></a>
+                    <a href="https://github.com/securaa" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i></a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h4>Products</h4>
+                <ul>
+                    <li><a href="sia.html">SIA</a></li>
+                    <li><a href="soar.html">SOAR</a></li>
+                    <li><a href="tip.html">TIP</a></li>
+                    <li><a href="csam.html">CSAM</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Documentation</h4>
+                <ul>
+                    <li><a href="hardware-specs.html">Hardware Specifications</a></li>
+                    <li><a href="administration.html">Administration</a></li>
+                    <li><a href="integrations.html">Integrations</a></li>
+                    <li><a href="api-reference.html">API Reference</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Support</h4>
+                <ul>
+                    <li><a href="support.html">Contact Support</a></li>
+                    <li><a href="troubleshooting.html">Troubleshooting</a></li>
+                    <li><a href="faq.html">FAQ</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Securaa. All rights reserved. | <a href="privacy-policy.html">Privacy Policy</a> | <a href="terms-of-service.html">Terms of Service</a></p>
+            <p>Documentation Version 2.0 | Last Updated: October 2025</p>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.28.0/components/prism-core.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.28.0/plugins/autoloader/prism-autoloader.min.js"></script>
+    
+    <script>
+        // Mobile menu functionality
+        function toggleMobileMenu() {
+            const sidebar = document.querySelector('.sidebar');
+            const overlay = document.querySelector('.sidebar-overlay');
+            
+            if (!overlay) {
+                // Create overlay if it doesn't exist
+                const newOverlay = document.createElement('div');
+                newOverlay.className = 'sidebar-overlay';
+                newOverlay.onclick = closeMobileMenu;
+                document.body.appendChild(newOverlay);
+            }
+            
+            sidebar.classList.toggle('show');
+            (overlay || document.querySelector('.sidebar-overlay')).classList.toggle('show');
+        }
+        
+        function closeMobileMenu() {
+            const sidebar = document.querySelector('.sidebar');
+            const overlay = document.querySelector('.sidebar-overlay');
+            
+            sidebar.classList.remove('show');
+            if (overlay) overlay.classList.remove('show');
+        }
+        
+        // Close mobile menu when clicking sidebar links
+        document.addEventListener('DOMContentLoaded', function() {
+            const sidebarLinks = document.querySelectorAll('.sidebar a');
+            sidebarLinks.forEach(link => {
+                link.addEventListener('click', closeMobileMenu);
+            });
+        });
+    </script>
+</body>
+</html>

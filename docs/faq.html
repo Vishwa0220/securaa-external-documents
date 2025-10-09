@@ -1,0 +1,1032 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ - Securaa Documentation</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/themes/prism.min.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-content">
+                <div class="logo">
+                    <h1><i class="fas fa-shield-alt"></i> Securaa</h1>
+                    <span class="tagline">Advanced Cybersecurity Solutions</span>
+                </div>
+                <nav class="main-nav">
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="sia.html">SIA</a></li>
+                        <li><a href="soar.html">SOAR</a></li>
+                        <li><a href="tip.html">TIP</a></li>
+                        <li><a href="csam.html">CSAM</a></li>
+                        <li><a href="support.html">Support</a></li>
+                    </ul>
+                </nav>
+                <div class="header-right">
+                    <div class="search-container">
+                        <input type="text" id="searchInput" placeholder="Search documentation...">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <button class="mobile-menu-toggle" onclick="toggleMobileMenu()">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar">
+            <nav class="sidebar-nav">
+                <div class="nav-section">
+                    <h3><i class="fas fa-home"></i> Getting Started</h3>
+                    <ul>
+                        <li><a href="index.html#overview">Product Overview</a></li>
+                        <li><a href="architecture.html">Solution Architecture</a></li>
+                        <li><a href="prerequisites.html">Prerequisites</a></li>
+                    </ul>
+                </div>
+                
+                <div class="nav-section">
+                    <h3><i class="fas fa-cube"></i> Products</h3>
+                    <ul>
+                        <li><a href="sia.html">SIA (Security Intelligence Analytics)</a></li>
+                        <li><a href="soar.html">SOAR (Security Orchestration)</a></li>
+                        <li><a href="tip.html">TIP (Threat Intelligence Platform)</a></li>
+                        <li><a href="csam.html">CSAM (Cyber Security Asset Management)</a></li>
+                    </ul>
+                </div>
+
+                <div class="nav-section">
+                    <h3><i class="fas fa-cogs"></i> Installation & Deployment</h3>
+                    <ul>
+                        <li><a href="installation.html">Installation Guide</a></li>
+                        <li><a href="deployment.html">Deployment Guide</a></li>
+                        <li><a href="hardware-specs.html">Hardware Specifications</a></li>
+                    </ul>
+                </div>
+
+                <div class="nav-section">
+                    <h3><i class="fas fa-users-cog"></i> Administration</h3>
+                    <ul>
+                        <li><a href="administration.html">Administration</a></li>
+                        <li><a href="csam-admin.html">CSAM Administration</a></li>
+                        <li><a href="tip-admin.html">TIP Administration</a></li>
+                    </ul>
+                </div>
+
+                <div class="nav-section">
+                    <h3><i class="fas fa-puzzle-piece"></i> Integrations</h3>
+                    <ul>
+                        <li><a href="integrations.html">Available Integrations</a></li>
+                        <li><a href="playbooks.html">Security Playbooks</a></li>
+                        <li><a href="api-reference.html">API Reference</a></li>
+                    </ul>
+                </div>
+
+                <div class="nav-section">
+                    <h3><i class="fas fa-question-circle"></i> Support</h3>
+                    <ul>
+                        <li><a href="troubleshooting.html">Troubleshooting</a></li>
+                        <li><a href="faq.html" class="active">FAQ</a></li>
+                        <li><a href="support.html">Contact Support</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+            <div class="header">
+                <h1><i class="fas fa-question-circle"></i> Frequently Asked Questions</h1>
+                <p class="subtitle">Common questions and answers about the Securaa cybersecurity platform</p>
+            </div>
+
+            <div class="content">
+                <section class="info-box">
+                    <h2><i class="fas fa-info-circle"></i> Quick Search</h2>
+                    <p>
+                        Find answers to common questions about installation, configuration, features, and troubleshooting. 
+                        Use the categories below to navigate to specific topics or 
+                        <a href="support.html">contact support</a> for additional assistance.
+                    </p>
+                </section>
+
+                <section>
+                    <h2><i class="fas fa-download"></i> Installation & Setup</h2>
+                    
+                    <div class="faq-category">
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <h3><i class="fas fa-chevron-right"></i> What are the minimum system requirements for Securaa?</h3>
+                            </div>
+                            <div class="faq-answer">
+                                <p>The minimum requirements vary by deployment size:</p>
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <th>Environment</th>
+                                            <th>CPU</th>
+                                            <th>RAM</th>
+                                            <th>Storage</th>
+                                            <th>Network</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Small (1-100 assets)</td>
+                                            <td>4 cores</td>
+                                            <td>16 GB</td>
+                                            <td>500 GB SSD</td>
+                                            <td>1 Gbps</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Medium (100-1000 assets)</td>
+                                            <td>8 cores</td>
+                                            <td>32 GB</td>
+                                            <td>1 TB SSD</td>
+                                            <td>1 Gbps</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Large (1000+ assets)</td>
+                                            <td>16+ cores</td>
+                                            <td>64+ GB</td>
+                                            <td>2+ TB SSD</td>
+                                            <td>10 Gbps</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <p>For detailed specifications, see our <a href="hardware-specs.html">Hardware Specifications</a> guide.</p>
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <h3><i class="fas fa-chevron-right"></i> Which operating systems are supported?</h3>
+                            </div>
+                            <div class="faq-answer">
+                                <p>Securaa supports the following operating systems:</p>
+                                <ul>
+                                    <li><strong>Linux:</strong> Ubuntu 20.04+, CentOS 8+, RHEL 8+, Debian 10+</li>
+                                    <li><strong>Container:</strong> Docker 20.10+, Kubernetes 1.20+</li>
+                                    <li><strong>Cloud:</strong> AWS, Azure, GCP, Oracle Cloud</li>
+                                    <li><strong>Virtualization:</strong> VMware vSphere 6.7+, Hyper-V 2019+</li>
+                                </ul>
+                                <p>Windows Server support is available through containerized deployment. See the <a href="hardware-specs.html">Hardware Specifications</a> for platform-specific requirements.</p>
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <h3><i class="fas fa-chevron-right"></i> How long does installation typically take?</h3>
+                            </div>
+                            <div class="faq-answer">
+                                <p>Installation time depends on your environment and configuration:</p>
+                                <ul>
+                                    <li><strong>Single-node deployment:</strong> 30-60 minutes</li>
+                                    <li><strong>Multi-node cluster:</strong> 2-4 hours</li>
+                                    <li><strong>Cloud deployment (automated):</strong> 45-90 minutes</li>
+                                    <li><strong>Air-gapped environment:</strong> 4-8 hours</li>
+                                </ul>
+                                <p>This includes system preparation, software installation, and initial configuration. Additional time may be needed for integrations and customization.</p>
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <h3><i class="fas fa-chevron-right"></i> Can I upgrade from a previous version?</h3>
+                            </div>
+                            <div class="faq-answer">
+                                <p>Yes, in-place upgrades are supported with some considerations:</p>
+                                <ul>
+                                    <li><strong>Supported upgrade paths:</strong> v2.0+ to current version</li>
+                                    <li><strong>Backup required:</strong> Always create a full backup before upgrading</li>
+                                    <li><strong>Downtime:</strong> Typically 15-30 minutes for small deployments</li>
+                                    <li><strong>Rolling upgrades:</strong> Available for multi-node clusters</li>
+                                </ul>
+                                <p>Review the upgrade documentation and test in a non-production environment first.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section>
+                    <h2><i class="fas fa-cogs"></i> Configuration & Administration</h2>
+                    
+                    <div class="faq-category">
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <h3><i class="fas fa-chevron-right"></i> How do I add users and manage permissions?</h3>
+                            </div>
+                            <div class="faq-answer">
+                                <p>User management is handled through the administration interface:</p>
+                                <ol>
+                                    <li>Navigate to <strong>Administration → User Management</strong></li>
+                                    <li>Click <strong>"Add User"</strong> and fill in the required information</li>
+                                    <li>Assign appropriate roles: Administrator, Analyst, Viewer, etc.</li>
+                                    <li>Configure multi-factor authentication (recommended)</li>
+                                </ol>
+                                <p>You can also integrate with LDAP/Active Directory for centralized user management. See the <a href="administration.html">Administration Guide</a> for details.</p>
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <h3><i class="fas fa-chevron-right"></i> How do I configure SSL/TLS certificates?</h3>
+                            </div>
+                            <div class="faq-answer">
+                                <p>SSL/TLS configuration depends on your deployment method:</p>
+                                <div class="code-block">
+                                    <pre><code class="language-bash"># For direct installation
+sudo cp your-certificate.crt /opt/securaa/ssl/
+sudo cp your-private-key.key /opt/securaa/ssl/
+sudo chown securaa:securaa /opt/securaa/ssl/*
+
+# Update configuration
+sudo nano /opt/securaa/config/ssl.yml
+
+# Restart web service
+sudo systemctl restart securaa-web</code></pre>
+                                </div>
+                                <p>For load balancer deployments, configure SSL termination at the load balancer level. Let's Encrypt certificates are supported for automatic renewal.</p>
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <h3><i class="fas fa-chevron-right"></i> How do I backup and restore Securaa data?</h3>
+                            </div>
+                            <div class="faq-answer">
+                                <p>Regular backups are essential for data protection:</p>
+                                <div class="code-block">
+                                    <pre><code class="language-bash"># Manual backup
+sudo /opt/securaa/bin/backup.sh --full --output /backup/securaa-$(date +%Y%m%d).tar.gz
+
+# Automated daily backup (crontab)
+0 2 * * * /opt/securaa/bin/backup.sh --incremental --output /backup/daily/
+
+# Restore from backup
+sudo /opt/securaa/bin/restore.sh --file /backup/securaa-20240115.tar.gz</code></pre>
+                                </div>
+                                <p>Backups include configuration files, database, and user-uploaded content. Test restore procedures regularly.</p>
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <h3><i class="fas fa-chevron-right"></i> How do I monitor system health and performance?</h3>
+                            </div>
+                            <div class="faq-answer">
+                                <p>Securaa provides multiple monitoring options:</p>
+                                <ul>
+                                    <li><strong>Built-in Dashboard:</strong> System health metrics in the web interface</li>
+                                    <li><strong>API Endpoints:</strong> <code>/api/v1/health</code> and <code>/api/v1/metrics</code></li>
+                                    <li><strong>Log Files:</strong> Structured logging in <code>/var/log/securaa/</code></li>
+                                    <li><strong>SNMP:</strong> Integration with network monitoring systems</li>
+                                    <li><strong>External Tools:</strong> Prometheus, Grafana, Nagios compatible</li>
+                                </ul>
+                                <p>Set up alerting for critical metrics like CPU, memory, disk space, and service availability.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section>
+                    <h2><i class="fas fa-puzzle-piece"></i> Features & Functionality</h2>
+                    
+                    <div class="faq-category">
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <h3><i class="fas fa-chevron-right"></i> What's the difference between SIA, SOAR, TIP, and CSAM?</h3>
+                            </div>
+                            <div class="faq-answer">
+                                <p>Each component serves a specific security function:</p>
+                                
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <th>Component</th>
+                                            <th>Primary Function</th>
+                                            <th>Key Features</th>
+                                            <th>Best For</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td><strong>SIA</strong><br><small>Security Intelligence Analytics</small></td>
+                                            <td>Advanced threat detection and analytics</td>
+                                            <td>ML algorithms, behavior analysis, dashboards</td>
+                                            <td>SOCs, threat hunting teams</td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>SOAR</strong><br><small>Security Orchestration</small></td>
+                                            <td>Incident response automation</td>
+                                            <td>Playbooks, workflow automation, integrations</td>
+                                            <td>Response teams, automation</td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>TIP</strong><br><small>Threat Intelligence Platform</small></td>
+                                            <td>Threat intelligence management</td>
+                                            <td>IoC feeds, STIX/TAXII, enrichment</td>
+                                            <td>Intelligence analysts, threat hunting</td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>CSAM</strong><br><small>Cyber Security Asset Management</small></td>
+                                            <td>Asset discovery and management</td>
+                                            <td>Network scanning, inventory, vulnerability correlation</td>
+                                            <td>Asset managers, compliance teams</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                
+                                <h4>Integration Matrix</h4>
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <th>Feature</th>
+                                            <th>SIA</th>
+                                            <th>SOAR</th>
+                                            <th>TIP</th>
+                                            <th>CSAM</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Real-time Monitoring</td>
+                                            <td>✅</td>
+                                            <td>✅</td>
+                                            <td>✅</td>
+                                            <td>✅</td>
+                                        </tr>
+                                        <tr>
+                                            <td>API Integration</td>
+                                            <td>✅</td>
+                                            <td>✅</td>
+                                            <td>✅</td>
+                                            <td>✅</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Machine Learning</td>
+                                            <td>✅</td>
+                                            <td>❌</td>
+                                            <td>✅</td>
+                                            <td>✅</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Workflow Automation</td>
+                                            <td>❌</td>
+                                            <td>✅</td>
+                                            <td>❌</td>
+                                            <td>❌</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Threat Feeds</td>
+                                            <td>✅</td>
+                                            <td>✅</td>
+                                            <td>✅</td>
+                                            <td>❌</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Asset Discovery</td>
+                                            <td>❌</td>
+                                            <td>❌</td>
+                                            <td>❌</td>
+                                            <td>✅</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                
+                                <p>All components work together as an integrated platform for comprehensive cybersecurity operations.</p>
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <h3><i class="fas fa-chevron-right"></i> How many assets can Securaa manage?</h3>
+                            </div>
+                            <div class="faq-answer">
+                                <p>Securaa scales to support organizations of all sizes:</p>
+                                <ul>
+                                    <li><strong>Small deployment:</strong> 1-1,000 assets</li>
+                                    <li><strong>Medium deployment:</strong> 1,000-10,000 assets</li>
+                                    <li><strong>Large deployment:</strong> 10,000-100,000 assets</li>
+                                    <li><strong>Enterprise deployment:</strong> 100,000+ assets</li>
+                                </ul>
+                                <p>Performance depends on hardware resources, network bandwidth, and scanning frequency. Contact our <a href="support.html">support team</a> for custom sizing recommendations.</p>
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <h3><i class="fas fa-chevron-right"></i> What types of integrations are supported?</h3>
+                            </div>
+                            <div class="faq-answer">
+                                <p>Securaa integrates with 200+ security and IT tools across multiple categories:</p>
+                                
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <th>Category</th>
+                                            <th>Popular Tools</th>
+                                            <th>Integration Method</th>
+                                            <th>Use Cases</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td><strong>SIEM Platforms</strong></td>
+                                            <td>Splunk, QRadar, ArcSight, LogRhythm, Sentinel</td>
+                                            <td>API, Syslog, CEF</td>
+                                            <td>Log ingestion, alert correlation</td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>Endpoint Security</strong></td>
+                                            <td>CrowdStrike, CarbonBlack, Symantec, Trend Micro</td>
+                                            <td>REST API, Webhooks</td>
+                                            <td>Threat detection, response automation</td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>Network Security</strong></td>
+                                            <td>Palo Alto, Fortinet, Cisco, Check Point</td>
+                                            <td>SSH, SNMP, REST API</td>
+                                            <td>Policy enforcement, traffic analysis</td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>Vulnerability Scanners</strong></td>
+                                            <td>Nessus, Qualys, Rapid7, OpenVAS</td>
+                                            <td>API, File import</td>
+                                            <td>Vulnerability correlation, prioritization</td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>Threat Intelligence</strong></td>
+                                            <td>VirusTotal, ThreatQ, Recorded Future, IBM X-Force</td>
+                                            <td>API, STIX/TAXII</td>
+                                            <td>IoC enrichment, threat context</td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>Ticketing Systems</strong></td>
+                                            <td>ServiceNow, Jira, Remedy, Cherwell</td>
+                                            <td>REST API, Webhooks</td>
+                                            <td>Incident management, workflow tracking</td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>Communication</strong></td>
+                                            <td>Slack, Microsoft Teams, PagerDuty, Email</td>
+                                            <td>Webhooks, SMTP, Bot APIs</td>
+                                            <td>Alert notifications, collaboration</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                
+                                <h4>Integration Complexity Matrix</h4>
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <th>Integration Type</th>
+                                            <th>Setup Time</th>
+                                            <th>Technical Skills Required</th>
+                                            <th>Maintenance Level</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Pre-built Connectors</td>
+                                            <td>15-30 minutes</td>
+                                            <td>Low</td>
+                                            <td>Low</td>
+                                        </tr>
+                                        <tr>
+                                            <td>REST API Integration</td>
+                                            <td>1-4 hours</td>
+                                            <td>Medium</td>
+                                            <td>Medium</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Custom Development</td>
+                                            <td>1-4 weeks</td>
+                                            <td>High</td>
+                                            <td>High</td>
+                                        </tr>
+                                        <tr>
+                                            <td>File-based Integration</td>
+                                            <td>30-60 minutes</td>
+                                            <td>Low</td>
+                                            <td>Low</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                
+                                <p>See our complete <a href="integrations.html">Integrations Guide</a> for configuration details.</p>
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <h3><i class="fas fa-chevron-right"></i> How do playbooks work and can I create custom ones?</h3>
+                            </div>
+                            <div class="faq-answer">
+                                <p>Playbooks automate security workflows through predefined actions:</p>
+                                <ul>
+                                    <li><strong>Pre-built Library:</strong> 50+ ready-to-use playbooks for common scenarios</li>
+                                    <li><strong>Visual Designer:</strong> Drag-and-drop interface for creating custom workflows</li>
+                                    <li><strong>Code-based Creation:</strong> YAML/JSON for advanced logic and conditions</li>
+                                    <li><strong>Human-in-the-Loop:</strong> Approval gates and manual decision points</li>
+                                    <li><strong>Testing Environment:</strong> Safe testing before production deployment</li>
+                                </ul>
+                                <p>Examples include malware containment, phishing response, vulnerability management, and compliance checks. See our <a href="playbooks.html">Playbooks Guide</a> for details.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section>
+                    <h2><i class="fas fa-lock"></i> Security & Compliance</h2>
+                    
+                    <div class="faq-category">
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <h3><i class="fas fa-chevron-right"></i> What compliance frameworks does Securaa support?</h3>
+                            </div>
+                            <div class="faq-answer">
+                                <p>Securaa includes built-in compliance templates and monitoring for major frameworks:</p>
+                                
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <th>Framework</th>
+                                            <th>Industry Focus</th>
+                                            <th>Key Requirements</th>
+                                            <th>Securaa Coverage</th>
+                                            <th>Reporting</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td><strong>NIST CSF</strong></td>
+                                            <td>All industries</td>
+                                            <td>Identify, Protect, Detect, Respond, Recover</td>
+                                            <td>Full automation</td>
+                                            <td>Executive dashboards</td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>ISO 27001/27002</strong></td>
+                                            <td>Global standard</td>
+                                            <td>114 security controls</td>
+                                            <td>Automated controls monitoring</td>
+                                            <td>Audit-ready reports</td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>PCI DSS</strong></td>
+                                            <td>Payment processing</td>
+                                            <td>12 core requirements</td>
+                                            <td>Network segmentation, monitoring</td>
+                                            <td>Quarterly reporting</td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>HIPAA</strong></td>
+                                            <td>Healthcare</td>
+                                            <td>Administrative, physical, technical safeguards</td>
+                                            <td>PHI protection controls</td>
+                                            <td>Breach detection alerts</td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>SOX</strong></td>
+                                            <td>Public companies</td>
+                                            <td>Financial controls and reporting</td>
+                                            <td>IT general controls</td>
+                                            <td>Auditor-ready evidence</td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>GDPR</strong></td>
+                                            <td>EU data processing</td>
+                                            <td>Data protection by design</td>
+                                            <td>Data discovery, classification</td>
+                                            <td>Data subject rights</td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>SOC 2</strong></td>
+                                            <td>Service providers</td>
+                                            <td>Trust services criteria</td>
+                                            <td>Security, availability controls</td>
+                                            <td>Type I/II reports</td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>CIS Controls</strong></td>
+                                            <td>Cybersecurity</td>
+                                            <td>20 critical security controls</td>
+                                            <td>Implementation guidance</td>
+                                            <td>Maturity assessments</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                
+                                <h4>Compliance Automation Features</h4>
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <th>Feature</th>
+                                            <th>Description</th>
+                                            <th>Benefits</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Automated Evidence Collection</td>
+                                            <td>Continuous gathering of compliance artifacts</td>
+                                            <td>Reduces manual audit preparation time by 80%</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Policy Template Library</td>
+                                            <td>Pre-built policies for each framework</td>
+                                            <td>Accelerates compliance program setup</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Control Testing</td>
+                                            <td>Automated validation of security controls</td>
+                                            <td>Provides real-time compliance posture</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Gap Analysis</td>
+                                            <td>Identifies compliance gaps and remediation</td>
+                                            <td>Prioritizes security improvements</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Continuous Monitoring</td>
+                                            <td>Real-time compliance status tracking</td>
+                                            <td>Prevents compliance drift</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                
+                                <p>Custom compliance frameworks can be configured to meet specific organizational requirements.</p>
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <h3><i class="fas fa-chevron-right"></i> How is data encrypted and protected?</h3>
+                            </div>
+                            <div class="faq-answer">
+                                <p>Securaa implements comprehensive data protection:</p>
+                                <ul>
+                                    <li><strong>Encryption at Rest:</strong> AES-256 encryption for all stored data</li>
+                                    <li><strong>Encryption in Transit:</strong> TLS 1.3 for all network communications</li>
+                                    <li><strong>Database Encryption:</strong> Transparent data encryption (TDE)</li>
+                                    <li><strong>Key Management:</strong> Hardware security module (HSM) support</li>
+                                    <li><strong>Access Controls:</strong> Role-based permissions and MFA</li>
+                                    <li><strong>Audit Logging:</strong> Comprehensive activity tracking</li>
+                                    <li><strong>Data Masking:</strong> Sensitive data protection in reports</li>
+                                </ul>
+                                <p>All encryption keys are automatically rotated and can be managed through external key management systems.</p>
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <h3><i class="fas fa-chevron-right"></i> Can Securaa be deployed in air-gapped environments?</h3>
+                            </div>
+                            <div class="faq-answer">
+                                <p>Yes, Securaa supports completely offline deployments:</p>
+                                <ul>
+                                    <li><strong>Offline Installation:</strong> Complete installation package with dependencies</li>
+                                    <li><strong>Local Repositories:</strong> Internal package and update mirrors</li>
+                                    <li><strong>Manual Updates:</strong> Secure update process for isolated environments</li>
+                                    <li><strong>Internal Intelligence:</strong> Threat intelligence generation from internal data</li>
+                                    <li><strong>Custom Integrations:</strong> API-based integration with internal tools</li>
+                                </ul>
+                                <p>Contact our team for air-gapped deployment planning and offline installation media.</p>
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <h3><i class="fas fa-chevron-right"></i> What audit and compliance reporting is available?</h3>
+                            </div>
+                            <div class="faq-answer">
+                                <p>Comprehensive reporting supports audit and compliance requirements:</p>
+                                <ul>
+                                    <li><strong>Executive Dashboards:</strong> High-level compliance status and trends</li>
+                                    <li><strong>Detailed Control Reports:</strong> Control-by-control assessment results</li>
+                                    <li><strong>Evidence Collection:</strong> Automated evidence gathering and documentation</li>
+                                    <li><strong>Gap Analysis:</strong> Identification of compliance gaps and remediation</li>
+                                    <li><strong>Audit Trail:</strong> Complete activity logs with tamper protection</li>
+                                    <li><strong>Custom Reports:</strong> Configurable reporting for specific requirements</li>
+                                    <li><strong>Scheduled Reports:</strong> Automated report generation and distribution</li>
+                                </ul>
+                                <p>Reports can be exported in multiple formats (PDF, Excel, CSV) and automatically delivered to stakeholders.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section>
+                    <h2><i class="fas fa-tools"></i> Troubleshooting & Support</h2>
+                    
+                    <div class="faq-category">
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <h3><i class="fas fa-chevron-right"></i> The web interface is slow or unresponsive. What should I do?</h3>
+                            </div>
+                            <div class="faq-answer">
+                                <p>Performance issues can be caused by several factors:</p>
+                                <ol>
+                                    <li><strong>Check system resources:</strong> Monitor CPU, memory, and disk usage</li>
+                                    <li><strong>Review database performance:</strong> Look for slow queries or connection issues</li>
+                                    <li><strong>Clear browser cache:</strong> Force refresh and clear cached data</li>
+                                    <li><strong>Check network connectivity:</strong> Verify network latency and bandwidth</li>
+                                    <li><strong>Review recent changes:</strong> Consider recent configuration changes or updates</li>
+                                </ol>
+                                <p>See our <a href="troubleshooting.html">Troubleshooting Guide</a> for detailed diagnostic procedures.</p>
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <h3><i class="fas fa-chevron-right"></i> API calls are returning errors. How do I troubleshoot this?</h3>
+                            </div>
+                            <div class="faq-answer">
+                                <p>API issues are often related to authentication or configuration:</p>
+                                <div class="code-block">
+                                    <pre><code class="language-bash"># Test API connectivity
+curl -I https://your-securaa-instance.com/api/v1/health
+
+# Validate API key
+curl -H "Authorization: Bearer YOUR_API_KEY" \
+     https://your-securaa-instance.com/api/v1/auth/validate
+
+# Check API logs
+tail -f /var/log/securaa/api.log</code></pre>
+                                </div>
+                                <p>Common issues include expired API keys, insufficient permissions, rate limiting, or network connectivity problems. Check the <a href="api-reference.html">API Reference</a> for detailed error codes.</p>
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <h3><i class="fas fa-chevron-right"></i> Threat intelligence feeds aren't updating. What's wrong?</h3>
+                            </div>
+                            <div class="faq-answer">
+                                <p>Feed update issues can have several causes:</p>
+                                <ul>
+                                    <li><strong>Check feed status:</strong> Verify feed health in the TIP administration panel</li>
+                                    <li><strong>Test connectivity:</strong> Ensure external feed providers are reachable</li>
+                                    <li><strong>Verify credentials:</strong> Check API keys and authentication for external feeds</li>
+                                    <li><strong>Review rate limits:</strong> Ensure you're not exceeding provider rate limits</li>
+                                    <li><strong>Check formatting:</strong> Verify feed data formats match expected schemas</li>
+                                </ul>
+                                <p>Feed update logs are available in <code>/var/log/securaa/tip-feeds.log</code> for detailed diagnostics.</p>
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <h3><i class="fas fa-chevron-right"></i> How do I get support for critical issues?</h3>
+                            </div>
+                            <div class="faq-answer">
+                                <p>We provide multiple support channels based on issue severity:</p>
+                                <div class="support-channels">
+                                    <div class="support-level critical">
+                                        <h4><i class="fas fa-fire"></i> Critical Issues (P1)</h4>
+                                        <ul>
+                                            <li><strong>Phone:</strong> +1-800-SECURAA (24/7)</li>
+                                            <li><strong>Email:</strong> emergency@securaa.com</li>
+                                            <li><strong>Response:</strong> 1 hour</li>
+                                        </ul>
+                                    </div>
+                                    <div class="support-level standard">
+                                        <h4><i class="fas fa-headset"></i> Standard Support</h4>
+                                        <ul>
+                                            <li><strong>Portal:</strong> <a href="support.html">support.securaa.com</a></li>
+                                            <li><strong>Email:</strong> support@securaa.com</li>
+                                            <li><strong>Response:</strong> 4-24 hours</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <p>Always include system information, error messages, and steps to reproduce when reporting issues.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section>
+                    <h2><i class="fas fa-graduation-cap"></i> Training & Best Practices</h2>
+                    
+                    <div class="faq-category">
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <h3><i class="fas fa-chevron-right"></i> What training resources are available?</h3>
+                            </div>
+                            <div class="faq-answer">
+                                <p>We offer comprehensive training programs for all user levels:</p>
+                                <ul>
+                                    <li><strong>Administrator Training:</strong> 3-day intensive course covering installation, configuration, and maintenance</li>
+                                    <li><strong>Analyst Training:</strong> 2-day program focused on daily operations and incident response</li>
+                                    <li><strong>Developer Training:</strong> API integration and custom playbook development</li>
+                                    <li><strong>Online Learning:</strong> Self-paced modules and video tutorials</li>
+                                    <li><strong>Certification Program:</strong> Securaa Certified Administrator (SCA) and Analyst (SCSA) certifications</li>
+                                    <li><strong>Webinars:</strong> Monthly feature updates and best practice sessions</li>
+                                </ul>
+                                <p>Contact <a href="support.html">our training team</a> to schedule sessions or access online resources.</p>
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <h3><i class="fas fa-chevron-right"></i> What are the recommended best practices for deployment?</h3>
+                            </div>
+                            <div class="faq-answer">
+                                <p>Follow these best practices for optimal Securaa deployment:</p>
+                                <ul>
+                                    <li><strong>Environment Separation:</strong> Use separate instances for development, testing, and production</li>
+                                    <li><strong>High Availability:</strong> Deploy in clustered configuration for critical environments</li>
+                                    <li><strong>Regular Backups:</strong> Implement automated daily backups with tested restore procedures</li>
+                                    <li><strong>Security Hardening:</strong> Follow security hardening guidelines and keep systems updated</li>
+                                    <li><strong>Monitoring:</strong> Set up comprehensive monitoring and alerting</li>
+                                    <li><strong>Documentation:</strong> Maintain current documentation of configurations and procedures</li>
+                                    <li><strong>Change Management:</strong> Use proper change control for configuration updates</li>
+                                    <li><strong>User Training:</strong> Ensure all users receive appropriate training</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <h3><i class="fas fa-chevron-right"></i> How often should I update Securaa?</h3>
+                            </div>
+                            <div class="faq-answer">
+                                <p>Update frequency depends on your environment and risk tolerance:</p>
+                                <ul>
+                                    <li><strong>Security Updates:</strong> Apply immediately (within 24-48 hours)</li>
+                                    <li><strong>Bug Fixes:</strong> Apply within 1-2 weeks after testing</li>
+                                    <li><strong>Feature Updates:</strong> Quarterly or as business needs require</li>
+                                    <li><strong>Major Versions:</strong> Plan upgrades 6-12 months after release</li>
+                                </ul>
+                                <p>Always test updates in a non-production environment first and ensure you have current backups before upgrading.</p>
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <h3><i class="fas fa-chevron-right"></i> What should I monitor on a daily basis?</h3>
+                            </div>
+                            <div class="faq-answer">
+                                <p>Daily monitoring should include these key areas:</p>
+                                <ul>
+                                    <li><strong>System Health:</strong> CPU, memory, disk space, and service status</li>
+                                    <li><strong>Data Ingestion:</strong> Feed update status and data processing rates</li>
+                                    <li><strong>Active Incidents:</strong> Open incidents requiring attention</li>
+                                    <li><strong>Critical Alerts:</strong> High-priority security events and system alerts</li>
+                                    <li><strong>Playbook Executions:</strong> Failed or stuck automated workflows</li>
+                                    <li><strong>Integration Status:</strong> Third-party tool connectivity and health</li>
+                                    <li><strong>User Activity:</strong> Login patterns and user access anomalies</li>
+                                    <li><strong>Compliance Status:</strong> Critical control failures or gaps</li>
+                                </ul>
+                                <p>Set up automated alerting for critical metrics to ensure timely response to issues.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section>
+                    <h2><i class="fas fa-road"></i> Licensing & Roadmap</h2>
+                    
+                    <div class="faq-category">
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <h3><i class="fas fa-chevron-right"></i> What licensing options are available?</h3>
+                            </div>
+                            <div class="faq-answer">
+                                <p>Securaa offers flexible licensing based on your needs:</p>
+                                <ul>
+                                    <li><strong>Asset-Based Licensing:</strong> Pay per managed asset (most common)</li>
+                                    <li><strong>User-Based Licensing:</strong> Pay per active user account</li>
+                                    <li><strong>Site Licensing:</strong> Unlimited usage within a specific location</li>
+                                    <li><strong>Enterprise Licensing:</strong> Organization-wide unlimited usage</li>
+                                    <li><strong>Evaluation License:</strong> 30-day full-featured trial</li>
+                                    <li><strong>Academic License:</strong> Special pricing for educational institutions</li>
+                                </ul>
+                                <p>Contact our <a href="support.html">sales team</a> to discuss the best licensing option for your organization.</p>
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <h3><i class="fas fa-chevron-right"></i> What's coming in future releases?</h3>
+                            </div>
+                            <div class="faq-answer">
+                                <p>Our roadmap includes exciting new features:</p>
+                                <ul>
+                                    <li><strong>Q2 2024:</strong> Enhanced machine learning for threat detection</li>
+                                    <li><strong>Q3 2024:</strong> Cloud-native architecture improvements</li>
+                                    <li><strong>Q4 2024:</strong> Advanced threat hunting capabilities</li>
+                                    <li><strong>2025:</strong> Zero-trust security framework integration</li>
+                                    <li><strong>Ongoing:</strong> Additional integrations and API enhancements</li>
+                                </ul>
+                                <p>Feature requests from customers help drive our development priorities. Submit requests through the <a href="support.html">support portal</a>.</p>
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <h3><i class="fas fa-chevron-right"></i> How can I request new features or integrations?</h3>
+                            </div>
+                            <div class="faq-answer">
+                                <p>We welcome feature requests and integration suggestions:</p>
+                                <ol>
+                                    <li><strong>Submit through portal:</strong> Use the feature request form in our support portal</li>
+                                    <li><strong>Provide details:</strong> Include use case, business justification, and requirements</li>
+                                    <li><strong>Community voting:</strong> Popular requests get prioritized based on community interest</li>
+                                    <li><strong>Custom development:</strong> Sponsored development for urgent organizational needs</li>
+                                </ol>
+                                <p>We review all requests quarterly and provide updates on development status and expected delivery timelines.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <div class="cta-section">
+                    <h2><i class="fas fa-comments"></i> Still Have Questions?</h2>
+                    <p>
+                        <strong>Can't find what you're looking for?</strong> Check our 
+                        <a href="troubleshooting.html">troubleshooting guide</a> for technical issues, 
+                        review the <a href="api-reference.html">API documentation</a> for integration questions, 
+                        or <a href="support.html">contact our support team</a> for personalized assistance.
+                    </p>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Products</h3>
+                <ul>
+                    <li><a href="sia.html">SIA</a></li>
+                    <li><a href="soar.html">SOAR</a></li>
+                    <li><a href="tip.html">TIP</a></li>
+                    <li><a href="csam.html">CSAM</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Documentation</h3>
+                <ul>
+                    <li><a href="hardware-specs.html">Hardware Specifications</a></li>
+                    <li><a href="administration.html">Administration</a></li>
+                    <li><a href="integrations.html">Integrations</a></li>
+                    <li><a href="api-reference.html">API Reference</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Support</h3>
+                <ul>
+                    <li><a href="support.html">Contact Support</a></li>
+                    <li><a href="troubleshooting.html">Troubleshooting</a></li>
+                    <li><a href="faq.html">FAQ</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Securaa. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/components/prism-core.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/plugins/autoloader/prism-autoloader.min.js"></script>
+    
+    <script>
+        function toggleMobileMenu() {
+            const sidebar = document.querySelector('.sidebar');
+            const overlay = document.querySelector('.sidebar-overlay');
+            
+            if (!overlay) {
+                const newOverlay = document.createElement('div');
+                newOverlay.className = 'sidebar-overlay';
+                newOverlay.onclick = closeMobileMenu;
+                document.body.appendChild(newOverlay);
+            }
+            
+            sidebar.classList.toggle('show');
+            (overlay || document.querySelector('.sidebar-overlay')).classList.toggle('show');
+        }
+        
+        function closeMobileMenu() {
+            const sidebar = document.querySelector('.sidebar');
+            const overlay = document.querySelector('.sidebar-overlay');
+            
+            sidebar.classList.remove('show');
+            if (overlay) overlay.classList.remove('show');
+        }
+        
+        document.addEventListener('DOMContentLoaded', function() {
+            const sidebarLinks = document.querySelectorAll('.sidebar a');
+            sidebarLinks.forEach(link => {
+                link.addEventListener('click', closeMobileMenu);
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,1667 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API Reference - Securaa Documentation</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/themes/prism.min.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-content">
+                <div class="logo">
+                    <h1><i class="fas fa-shield-alt"></i> Securaa</h1>
+                    <span class="tagline">Advanced Cybersecurity Solutions</span>
+                </div>
+                <nav class="main-nav">
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="sia.html">SIA</a></li>
+                        <li><a href="soar.html">SOAR</a></li>
+                        <li><a href="tip.html">TIP</a></li>
+                        <li><a href="csam.html">CSAM</a></li>
+                        <li><a href="support.html">Support</a></li>
+                    </ul>
+                </nav>
+                <div class="header-right">
+                    <div class="search-container">
+                        <input type="text" id="searchInput" placeholder="Search documentation...">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <button class="mobile-menu-toggle" onclick="toggleMobileMenu()">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar">
+            <nav class="sidebar-nav">
+                <div class="nav-section">
+                    <h3><i class="fas fa-home"></i> Getting Started</h3>
+                    <ul>
+                        <li><a href="index.html#overview">Product Overview</a></li>
+                        <li><a href="architecture.html">Solution Architecture</a></li>
+                        <li><a href="prerequisites.html">Prerequisites</a></li>
+                    </ul>
+                </div>
+                
+                <div class="nav-section">
+                    <h3><i class="fas fa-cube"></i> Products</h3>
+                    <ul>
+                        <li><a href="sia.html">SIA (Security Intelligence Analytics)</a></li>
+                        <li><a href="soar.html">SOAR (Security Orchestration)</a></li>
+                        <li><a href="tip.html">TIP (Threat Intelligence Platform)</a></li>
+                        <li><a href="csam.html">CSAM (Cyber Security Asset Management)</a></li>
+                    </ul>
+                </div>
+
+                <div class="nav-section">
+                    <h3><i class="fas fa-cogs"></i> Installation & Deployment</h3>
+                    <ul>
+                        <li><a href="installation.html">Installation Guide</a></li>
+                        <li><a href="deployment.html">Deployment Guide</a></li>
+                        <li><a href="hardware-specs.html">Hardware Specifications</a></li>
+                    </ul>
+                </div>
+
+                <div class="nav-section">
+                    <h3><i class="fas fa-users-cog"></i> Administration</h3>
+                    <ul>
+                        <li><a href="administration.html">Administration</a></li>
+                        <li><a href="csam-admin.html">CSAM Administration</a></li>
+                        <li><a href="tip-admin.html">TIP Administration</a></li>
+                    </ul>
+                </div>
+
+                <div class="nav-section">
+                    <h3><i class="fas fa-puzzle-piece"></i> Integrations</h3>
+                    <ul>
+                        <li><a href="integrations.html">Available Integrations</a></li>
+                        <li><a href="playbooks.html">Security Playbooks</a></li>
+                        <li><a href="api-reference.html" class="active">API Reference</a></li>
+                    </ul>
+                </div>
+
+                <div class="nav-section">
+                    <h3><i class="fas fa-question-circle"></i> Support</h3>
+                    <ul>
+                        <li><a href="troubleshooting.html">Troubleshooting</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                        <li><a href="support.html">Contact Support</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+            <div class="header">
+                <h1><i class="fas fa-code"></i> Securaa API Reference</h1>
+                <p class="subtitle">Comprehensive API documentation for the Securaa cybersecurity platform</p>
+            </div>
+
+            <div class="content">
+                <section class="reference-section">
+                    <h2><i class="fas fa-info-circle"></i> API Overview</h2>
+                    <p>
+                        The Securaa platform provides comprehensive RESTful APIs for all components including 
+                        SIA, SOAR, TIP, and CSAM. These APIs enable seamless integration with third-party tools, 
+                        custom applications, and automated workflows.
+                    </p>
+                    <div class="api-basics">
+                        <div class="basic-info">
+                            <strong>Base URL:</strong> <code>https://your-securaa-instance.com/api/v1</code><br>
+                            <strong>Authentication:</strong> API Key / OAuth 2.0<br>
+                            <strong>Format:</strong> JSON<br>
+                            <strong>Rate Limiting:</strong> 1000 requests/hour (configurable)
+                        </div>
+                    </div>
+                </section>
+
+                <section>
+                    <h2><i class="fas fa-key"></i> Authentication</h2>
+                    
+                    <h3>API Key Authentication</h3>
+                    <div class="auth-section">
+                        <p>Include your API key in the Authorization header:</p>
+                        <div class="code-block">
+                            <pre><code class="language-bash">curl -H "Authorization: Bearer YOUR_API_KEY" \
+     -H "Content-Type: application/json" \
+     https://your-securaa-instance.com/api/v1/assets</code></pre>
+                        </div>
+                    </div>
+                    
+                    <h3>OAuth 2.0 Authentication</h3>
+                    <div class="auth-section">
+                        <p>For more secure applications, use OAuth 2.0 with client credentials flow:</p>
+                        <div class="code-block">
+                            <pre><code class="language-bash"># Get access token
+curl -X POST https://your-securaa-instance.com/api/oauth/token \
+     -H "Content-Type: application/x-www-form-urlencoded" \
+     -d "grant_type=client_credentials" \
+     -d "client_id=YOUR_CLIENT_ID" \
+     -d "client_secret=YOUR_CLIENT_SECRET"
+
+# Use access token
+curl -H "Authorization: Bearer ACCESS_TOKEN" \
+     -H "Content-Type: application/json" \
+     https://your-securaa-instance.com/api/v1/threats</code></pre>
+                        </div>
+                    </div>
+                    
+                    <h3>API Key Management</h3>
+                    <div class="key-management">
+                        <div class="management-card">
+                            <h4>Generate API Key</h4>
+                            <div class="code-block">
+                                <pre><code class="language-json">POST /api/v1/auth/keys
+{
+  "name": "Integration API Key",
+  "description": "Key for SIEM integration",
+  "permissions": ["read:assets", "write:incidents"],
+  "expires_in": 365
+}</code></pre>
+                            </div>
+                        </div>
+                        
+                        <div class="management-card">
+                            <h4>Key Permissions</h4>
+                            <ul>
+                                <li><code>read:assets</code> - Read asset information</li>
+                                <li><code>write:assets</code> - Create/update assets</li>
+                                <li><code>read:threats</code> - Access threat intelligence</li>
+                                <li><code>write:incidents</code> - Create/update incidents</li>
+                                <li><code>execute:playbooks</code> - Execute SOAR playbooks</li>
+                                <li><code>admin:*</code> - Full administrative access</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <h3>Authentication Methods Comparison</h3>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Method</th>
+                                <th>Security Level</th>
+                                <th>Use Case</th>
+                                <th>Expiration</th>
+                                <th>Scope Control</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>API Key</td>
+                                <td>Medium</td>
+                                <td>Server-to-server integration</td>
+                                <td>Configurable (1-365 days)</td>
+                                <td>Permission-based</td>
+                            </tr>
+                            <tr>
+                                <td>OAuth 2.0</td>
+                                <td>High</td>
+                                <td>User-authenticated applications</td>
+                                <td>Access: 1 hour, Refresh: 30 days</td>
+                                <td>Scope-based</td>
+                            </tr>
+                            <tr>
+                                <td>JWT Token</td>
+                                <td>High</td>
+                                <td>Single sign-on integration</td>
+                                <td>Configurable (15 min - 24 hours)</td>
+                                <td>Claims-based</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    
+                    <h3>Rate Limits by Authentication Method</h3>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Authentication Type</th>
+                                <th>Requests/Hour</th>
+                                <th>Requests/Day</th>
+                                <th>Concurrent Requests</th>
+                                <th>Burst Limit</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>API Key (Basic)</td>
+                                <td>1,000</td>
+                                <td>20,000</td>
+                                <td>10</td>
+                                <td>50</td>
+                            </tr>
+                            <tr>
+                                <td>API Key (Premium)</td>
+                                <td>5,000</td>
+                                <td>100,000</td>
+                                <td>25</td>
+                                <td>200</td>
+                            </tr>
+                            <tr>
+                                <td>OAuth 2.0</td>
+                                <td>2,000</td>
+                                <td>40,000</td>
+                                <td>15</td>
+                                <td>100</td>
+                            </tr>
+                            <tr>
+                                <td>Enterprise SSO</td>
+                                <td>10,000</td>
+                                <td>200,000</td>
+                                <td>50</td>
+                                <td>500</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </section>
+                
+                <section>
+                    <h2><i class="fas fa-code"></i> HTTP Response Codes</h2>
+                    <p>
+                        The Securaa API uses standard HTTP response codes to indicate the success or failure of requests. 
+                        Error responses include detailed error messages in JSON format.
+                    </p>
+                    
+                    <h3>Success Codes</h3>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Code</th>
+                                <th>Status</th>
+                                <th>Description</th>
+                                <th>When Used</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>200</td>
+                                <td>OK</td>
+                                <td>Request successful, data returned</td>
+                                <td>GET, PUT operations</td>
+                            </tr>
+                            <tr>
+                                <td>201</td>
+                                <td>Created</td>
+                                <td>Resource successfully created</td>
+                                <td>POST operations</td>
+                            </tr>
+                            <tr>
+                                <td>202</td>
+                                <td>Accepted</td>
+                                <td>Request accepted, processing asynchronously</td>
+                                <td>Long-running operations</td>
+                            </tr>
+                            <tr>
+                                <td>204</td>
+                                <td>No Content</td>
+                                <td>Request successful, no data returned</td>
+                                <td>DELETE operations</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    
+                    <h3>Client Error Codes</h3>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Code</th>
+                                <th>Status</th>
+                                <th>Description</th>
+                                <th>Common Causes</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>400</td>
+                                <td>Bad Request</td>
+                                <td>Invalid request syntax or parameters</td>
+                                <td>Malformed JSON, missing required fields</td>
+                            </tr>
+                            <tr>
+                                <td>401</td>
+                                <td>Unauthorized</td>
+                                <td>Authentication required or failed</td>
+                                <td>Missing/invalid API key, expired token</td>
+                            </tr>
+                            <tr>
+                                <td>403</td>
+                                <td>Forbidden</td>
+                                <td>Insufficient permissions</td>
+                                <td>API key lacks required permissions</td>
+                            </tr>
+                            <tr>
+                                <td>404</td>
+                                <td>Not Found</td>
+                                <td>Resource does not exist</td>
+                                <td>Invalid asset ID, deleted resource</td>
+                            </tr>
+                            <tr>
+                                <td>409</td>
+                                <td>Conflict</td>
+                                <td>Resource already exists or conflict</td>
+                                <td>Duplicate asset name, concurrent modification</td>
+                            </tr>
+                            <tr>
+                                <td>422</td>
+                                <td>Unprocessable Entity</td>
+                                <td>Valid syntax but semantic errors</td>
+                                <td>Invalid field values, business logic violations</td>
+                            </tr>
+                            <tr>
+                                <td>429</td>
+                                <td>Too Many Requests</td>
+                                <td>Rate limit exceeded</td>
+                                <td>Too many API calls in time window</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    
+                    <h3>Server Error Codes</h3>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Code</th>
+                                <th>Status</th>
+                                <th>Description</th>
+                                <th>Action Required</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>500</td>
+                                <td>Internal Server Error</td>
+                                <td>Unexpected server error</td>
+                                <td>Retry request, contact support if persistent</td>
+                            </tr>
+                            <tr>
+                                <td>502</td>
+                                <td>Bad Gateway</td>
+                                <td>Upstream service unavailable</td>
+                                <td>Retry with exponential backoff</td>
+                            </tr>
+                            <tr>
+                                <td>503</td>
+                                <td>Service Unavailable</td>
+                                <td>Service temporarily offline</td>
+                                <td>Check service status, retry later</td>
+                            </tr>
+                            <tr>
+                                <td>504</td>
+                                <td>Gateway Timeout</td>
+                                <td>Request timeout to upstream service</td>
+                                <td>Retry with longer timeout</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    
+                    <h3>Error Response Format</h3>
+                    <div class="code-block">
+                        <pre><code class="language-json">{
+  "error": {
+    "code": "VALIDATION_ERROR",
+    "message": "Invalid request parameters",
+    "details": {
+      "field": "criticality",
+      "issue": "Value must be one of: critical, high, medium, low",
+      "provided": "extreme"
+    },
+    "request_id": "req_12345678",
+    "timestamp": "2024-01-15T10:30:00Z",
+    "documentation_url": "https://docs.securaa.com/api/errors#validation"
+  }
+}</code></pre>
+                    </div>
+                </section>
+
+                <section>
+                    <h2><i class="fas fa-server"></i> CSAM (Asset Management) API</h2>
+                    
+                    <h3>Asset Operations</h3>
+                    <div class="api-endpoints">
+                        <div class="endpoint">
+                            <div class="endpoint-header">
+                                <span class="method get">GET</span>
+                                <span class="path">/api/v1/assets</span>
+                                <span class="description">Retrieve all assets</span>
+                            </div>
+                            <div class="endpoint-details">
+                                <h4>Query Parameters</h4>
+                                <table>
+                                    <tr>
+                                        <td><code>type</code></td>
+                                        <td>string</td>
+                                        <td>Filter by asset type (server, workstation, mobile, etc.)</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>criticality</code></td>
+                                        <td>string</td>
+                                        <td>Filter by criticality level (critical, high, medium, low)</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>status</code></td>
+                                        <td>string</td>
+                                        <td>Filter by asset status (active, inactive, retired)</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>limit</code></td>
+                                        <td>integer</td>
+                                        <td>Number of results to return (default: 50, max: 1000)</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>offset</code></td>
+                                        <td>integer</td>
+                                        <td>Pagination offset (default: 0)</td>
+                                    </tr>
+                                </table>
+                                
+                                <h4>Response Example</h4>
+                                <div class="code-block">
+                                    <pre><code class="language-json">{
+  "data": [
+    {
+      "id": "asset_12345",
+      "name": "WEB-SERVER-01",
+      "type": "server",
+      "ip_address": "192.168.1.100",
+      "hostname": "web01.company.com",
+      "operating_system": "Ubuntu 20.04.3 LTS",
+      "criticality": "high",
+      "status": "active",
+      "owner": "IT Operations",
+      "location": "Data Center A",
+      "last_seen": "2024-01-15T10:30:00Z",
+      "vulnerabilities_count": 3,
+      "risk_score": 7.2,
+      "tags": ["production", "web-server", "public-facing"],
+      "created_at": "2024-01-01T00:00:00Z",
+      "updated_at": "2024-01-15T10:30:00Z"
+    }
+  ],
+  "pagination": {
+    "total": 1247,
+    "limit": 50,
+    "offset": 0,
+    "pages": 25
+  }
+}</code></pre>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="endpoint">
+                            <div class="endpoint-header">
+                                <span class="method post">POST</span>
+                                <span class="path">/api/v1/assets</span>
+                                <span class="description">Create a new asset</span>
+                            </div>
+                            <div class="endpoint-details">
+                                <h4>Request Body</h4>
+                                <div class="code-block">
+                                    <pre><code class="language-json">{
+  "name": "NEW-SERVER-01",
+  "type": "server",
+  "ip_address": "192.168.1.150",
+  "hostname": "new01.company.com",
+  "operating_system": "CentOS 8",
+  "criticality": "medium",
+  "owner": "Development Team",
+  "location": "Cloud - AWS us-east-1",
+  "tags": ["development", "api-server"]
+}</code></pre>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="endpoint">
+                            <div class="endpoint-header">
+                                <span class="method get">GET</span>
+                                <span class="path">/api/v1/assets/{asset_id}/vulnerabilities</span>
+                                <span class="description">Get vulnerabilities for a specific asset</span>
+                            </div>
+                            <div class="endpoint-details">
+                                <h4>Response Example</h4>
+                                <div class="code-block">
+                                    <pre><code class="language-json">{
+  "asset_id": "asset_12345",
+  "vulnerabilities": [
+    {
+      "id": "vuln_67890",
+      "cve_id": "CVE-2024-0001",
+      "title": "Remote Code Execution in Apache HTTP Server",
+      "severity": "critical",
+      "cvss_score": 9.8,
+      "description": "A critical vulnerability allowing remote code execution",
+      "affected_software": "Apache HTTP Server 2.4.41",
+      "solution": "Upgrade to version 2.4.52 or later",
+      "discovered_date": "2024-01-10T08:00:00Z",
+      "status": "open"
+    }
+  ]
+}</code></pre>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <h3>Vulnerability Management</h3>
+                    <div class="api-endpoints">
+                        <div class="endpoint">
+                            <div class="endpoint-header">
+                                <span class="method get">GET</span>
+                                <span class="path">/api/v1/vulnerabilities</span>
+                                <span class="description">Retrieve vulnerability database</span>
+                            </div>
+                        </div>
+
+                        <div class="endpoint">
+                            <div class="endpoint-header">
+                                <span class="method put">PUT</span>
+                                <span class="path">/api/v1/vulnerabilities/{vuln_id}/status</span>
+                                <span class="description">Update vulnerability status</span>
+                            </div>
+                            <div class="endpoint-details">
+                                <div class="code-block">
+                                    <pre><code class="language-json">{
+  "status": "remediated",
+  "remediation_notes": "Patch applied during maintenance window",
+  "remediated_by": "admin@company.com",
+  "remediated_date": "2024-01-15T22:00:00Z"
+}</code></pre>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section>
+                    <h2><i class="fas fa-brain"></i> TIP (Threat Intelligence) API</h2>
+                    
+                    <h3>Indicators of Compromise (IoCs)</h3>
+                    <div class="api-endpoints">
+                        <div class="endpoint">
+                            <div class="endpoint-header">
+                                <span class="method get">GET</span>
+                                <span class="path">/api/v1/indicators</span>
+                                <span class="description">Retrieve threat indicators</span>
+                            </div>
+                            <div class="endpoint-details">
+                                <h4>Query Parameters</h4>
+                                <table>
+                                    <tr>
+                                        <td><code>type</code></td>
+                                        <td>string</td>
+                                        <td>Indicator type (ip, domain, hash, url, email)</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>confidence</code></td>
+                                        <td>integer</td>
+                                        <td>Minimum confidence level (0-100)</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>active</code></td>
+                                        <td>boolean</td>
+                                        <td>Filter active/inactive indicators</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>tags</code></td>
+                                        <td>string</td>
+                                        <td>Comma-separated tags</td>
+                                    </tr>
+                                </table>
+                                
+                                <h4>Response Example</h4>
+                                <div class="code-block">
+                                    <pre><code class="language-json">{
+  "data": [
+    {
+      "id": "ioc_12345",
+      "type": "ip",
+      "value": "192.0.2.100",
+      "confidence": 85,
+      "severity": "high",
+      "description": "C2 server associated with APT group",
+      "first_seen": "2024-01-10T00:00:00Z",
+      "last_seen": "2024-01-15T12:00:00Z",
+      "tags": ["apt", "c2", "botnet"],
+      "sources": ["threat_feed_a", "internal_analysis"],
+      "threat_types": ["command-and-control"],
+      "kill_chain_phases": ["command-and-control"],
+      "is_active": true,
+      "expires_at": "2024-02-15T00:00:00Z"
+    }
+  ]
+}</code></pre>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="endpoint">
+                            <div class="endpoint-header">
+                                <span class="method post">POST</span>
+                                <span class="path">/api/v1/indicators</span>
+                                <span class="description">Submit new threat indicator</span>
+                            </div>
+                            <div class="endpoint-details">
+                                <div class="code-block">
+                                    <pre><code class="language-json">{
+  "type": "domain",
+  "value": "malicious-domain.com",
+  "confidence": 75,
+  "severity": "medium",
+  "description": "Domain hosting phishing content",
+  "tags": ["phishing", "credential-theft"],
+  "threat_types": ["malicious-activity"],
+  "source": "internal_analysis",
+  "ttl_hours": 720
+}</code></pre>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="endpoint">
+                            <div class="endpoint-header">
+                                <span class="method get">GET</span>
+                                <span class="path">/api/v1/indicators/lookup/{value}</span>
+                                <span class="description">Lookup specific indicator</span>
+                            </div>
+                            <div class="endpoint-details">
+                                <p>Query threat intelligence for a specific IP, domain, hash, or URL</p>
+                                <div class="code-block">
+                                    <pre><code class="language-bash">curl "https://api.securaa.com/v1/indicators/lookup/192.0.2.100" \
+     -H "Authorization: Bearer YOUR_API_KEY"</code></pre>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <h3>Threat Actors & Campaigns</h3>
+                    <div class="api-endpoints">
+                        <div class="endpoint">
+                            <div class="endpoint-header">
+                                <span class="method get">GET</span>
+                                <span class="path">/api/v1/threat-actors</span>
+                                <span class="description">Retrieve threat actor profiles</span>
+                            </div>
+                            <div class="endpoint-details">
+                                <div class="code-block">
+                                    <pre><code class="language-json">{
+  "data": [
+    {
+      "id": "actor_12345",
+      "name": "APT29",
+      "aliases": ["Cozy Bear", "The Dukes"],
+      "sophistication": "advanced",
+      "primary_motivation": "espionage",
+      "secondary_motivations": ["political"],
+      "resource_level": "government",
+      "origins": ["Russian Federation"],
+      "first_seen": "2008-01-01",
+      "last_activity": "2024-01-10",
+      "active": true,
+      "targets": {
+        "sectors": ["government", "technology", "healthcare"],
+        "regions": ["North America", "Europe"]
+      },
+      "ttps": [
+        {
+          "tactic": "initial-access",
+          "technique": "T1566.001",
+          "description": "Spearphishing Attachment"
+        }
+      ]
+    }
+  ]
+}</code></pre>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="endpoint">
+                            <div class="endpoint-header">
+                                <span class="method get">GET</span>
+                                <span class="path">/api/v1/campaigns</span>
+                                <span class="description">Retrieve threat campaigns</span>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section>
+                    <h2><i class="fas fa-robot"></i> SOAR (Security Orchestration) API</h2>
+                    
+                    <h3>Incident Management</h3>
+                    <div class="api-endpoints">
+                        <div class="endpoint">
+                            <div class="endpoint-header">
+                                <span class="method get">GET</span>
+                                <span class="path">/api/v1/incidents</span>
+                                <span class="description">Retrieve security incidents</span>
+                            </div>
+                            <div class="endpoint-details">
+                                <h4>Response Example</h4>
+                                <div class="code-block">
+                                    <pre><code class="language-json">{
+  "data": [
+    {
+      "id": "incident_12345",
+      "title": "Malware Detection - WEB-SERVER-01",
+      "description": "Suspicious executable detected on web server",
+      "severity": "high",
+      "status": "investigating",
+      "priority": "P2",
+      "assignee": "analyst@company.com",
+      "reporter": "system",
+      "assets": ["asset_12345"],
+      "indicators": ["ioc_67890"],
+      "created_at": "2024-01-15T10:30:00Z",
+      "updated_at": "2024-01-15T11:15:00Z",
+      "events": [
+        {
+          "timestamp": "2024-01-15T10:30:00Z",
+          "action": "incident_created",
+          "user": "system",
+          "details": "Automated incident creation from SIEM alert"
+        }
+      ]
+    }
+  ]
+}</code></pre>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="endpoint">
+                            <div class="endpoint-header">
+                                <span class="method post">POST</span>
+                                <span class="path">/api/v1/incidents</span>
+                                <span class="description">Create new incident</span>
+                            </div>
+                            <div class="endpoint-details">
+                                <div class="code-block">
+                                    <pre><code class="language-json">{
+  "title": "Suspicious Network Activity",
+  "description": "Unusual outbound connections detected",
+  "severity": "medium",
+  "priority": "P3",
+  "assignee": "soc-team@company.com",
+  "assets": ["asset_67890"],
+  "tags": ["network-anomaly", "investigation-required"]
+}</code></pre>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="endpoint">
+                            <div class="endpoint-header">
+                                <span class="method put">PUT</span>
+                                <span class="path">/api/v1/incidents/{incident_id}/status</span>
+                                <span class="description">Update incident status</span>
+                            </div>
+                            <div class="endpoint-details">
+                                <div class="code-block">
+                                    <pre><code class="language-json">{
+  "status": "resolved",
+  "resolution": "False positive - normal maintenance activity",
+  "resolution_time": "2024-01-15T14:30:00Z"
+}</code></pre>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <h3>Playbook Execution</h3>
+                    <div class="api-endpoints">
+                        <div class="endpoint">
+                            <div class="endpoint-header">
+                                <span class="method get">GET</span>
+                                <span class="path">/api/v1/playbooks</span>
+                                <span class="description">List available playbooks</span>
+                            </div>
+                            <div class="endpoint-details">
+                                <div class="code-block">
+                                    <pre><code class="language-json">{
+  "data": [
+    {
+      "id": "playbook_12345",
+      "name": "Malware Containment",
+      "description": "Automated malware detection and containment",
+      "version": "1.2.0",
+      "category": "incident-response",
+      "triggers": ["malware_detected", "suspicious_process"],
+      "parameters": [
+        {
+          "name": "containment_level",
+          "type": "string",
+          "required": true,
+          "options": ["isolate", "monitor", "block"]
+        }
+      ],
+      "execution_time_avg": 300,
+      "success_rate": 0.95,
+      "last_updated": "2024-01-10T00:00:00Z"
+    }
+  ]
+}</code></pre>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="endpoint">
+                            <div class="endpoint-header">
+                                <span class="method post">POST</span>
+                                <span class="path">/api/v1/playbooks/{playbook_id}/execute</span>
+                                <span class="description">Execute a playbook</span>
+                            </div>
+                            <div class="endpoint-details">
+                                <div class="code-block">
+                                    <pre><code class="language-json">{
+  "parameters": {
+    "containment_level": "isolate",
+    "target_asset": "asset_12345",
+    "incident_id": "incident_67890"
+  },
+  "execute_async": true
+}</code></pre>
+                                </div>
+                                
+                                <h4>Response</h4>
+                                <div class="code-block">
+                                    <pre><code class="language-json">{
+  "execution_id": "exec_12345",
+  "status": "running",
+  "started_at": "2024-01-15T12:00:00Z",
+  "estimated_completion": "2024-01-15T12:05:00Z"
+}</code></pre>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="endpoint">
+                            <div class="endpoint-header">
+                                <span class="method get">GET</span>
+                                <span class="path">/api/v1/executions/{execution_id}</span>
+                                <span class="description">Get playbook execution status</span>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section>
+                    <h2><i class="fas fa-chart-line"></i> SIA (Security Intelligence Analytics) API</h2>
+                    
+                    <h3>Analytics & Metrics</h3>
+                    <div class="api-endpoints">
+                        <div class="endpoint">
+                            <div class="endpoint-header">
+                                <span class="method get">GET</span>
+                                <span class="path">/api/v1/analytics/dashboard</span>
+                                <span class="description">Get dashboard metrics</span>
+                            </div>
+                            <div class="endpoint-details">
+                                <div class="code-block">
+                                    <pre><code class="language-json">{
+  "security_posture": {
+    "overall_score": 7.8,
+    "trend": "improving",
+    "last_updated": "2024-01-15T12:00:00Z"
+  },
+  "threats": {
+    "active_threats": 23,
+    "high_priority": 5,
+    "medium_priority": 12,
+    "low_priority": 6
+  },
+  "incidents": {
+    "open_incidents": 8,
+    "mttr_hours": 4.2,
+    "resolution_rate": 0.92
+  },
+  "assets": {
+    "total_assets": 1247,
+    "critical_assets": 45,
+    "assets_at_risk": 12
+  }
+}</code></pre>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="endpoint">
+                            <div class="endpoint-header">
+                                <span class="method get">GET</span>
+                                <span class="path">/api/v1/analytics/risk-assessment</span>
+                                <span class="description">Get risk assessment data</span>
+                            </div>
+                        </div>
+
+                        <div class="endpoint">
+                            <div class="endpoint-header">
+                                <span class="method get">GET</span>
+                                <span class="path">/api/v1/analytics/trends</span>
+                                <span class="description">Get security trends and predictions</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <h3>Custom Queries</h3>
+                    <div class="api-endpoints">
+                        <div class="endpoint">
+                            <div class="endpoint-header">
+                                <span class="method post">POST</span>
+                                <span class="path">/api/v1/analytics/query</span>
+                                <span class="description">Execute custom analytics query</span>
+                            </div>
+                            <div class="endpoint-details">
+                                <div class="code-block">
+                                    <pre><code class="language-json">{
+  "query": "SELECT COUNT(*) as incident_count, severity FROM incidents WHERE created_at >= '2024-01-01' GROUP BY severity",
+  "format": "json",
+  "limit": 1000
+}</code></pre>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section>
+                    <h2><i class="fas fa-sync-alt"></i> Webhooks & Real-time Events</h2>
+                    
+                    <h3>Webhook Configuration</h3>
+                    <div class="webhook-section">
+                        <p>Configure webhooks to receive real-time notifications about security events:</p>
+                        
+                        <div class="endpoint">
+                            <div class="endpoint-header">
+                                <span class="method post">POST</span>
+                                <span class="path">/api/v1/webhooks</span>
+                                <span class="description">Create webhook subscription</span>
+                            </div>
+                            <div class="endpoint-details">
+                                <div class="code-block">
+                                    <pre><code class="language-json">{
+  "url": "https://your-app.com/webhooks/securaa",
+  "events": [
+    "incident.created",
+    "incident.updated",
+    "threat.detected",
+    "vulnerability.critical"
+  ],
+  "secret": "webhook_secret_key",
+  "active": true
+}</code></pre>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <h4>Supported Events</h4>
+                        <div class="events-list">
+                            <ul>
+                                <li><code>incident.created</code> - New security incident</li>
+                                <li><code>incident.updated</code> - Incident status change</li>
+                                <li><code>incident.resolved</code> - Incident resolution</li>
+                                <li><code>threat.detected</code> - New threat indicator</li>
+                                <li><code>vulnerability.critical</code> - Critical vulnerability found</li>
+                                <li><code>asset.discovered</code> - New asset discovered</li>
+                                <li><code>playbook.completed</code> - Playbook execution finished</li>
+                                <li><code>compliance.violation</code> - Compliance violation detected</li>
+                            </ul>
+                        </div>
+                        
+                        <h4>Webhook Payload Example</h4>
+                        <div class="code-block">
+                            <pre><code class="language-json">{
+  "event": "incident.created",
+  "timestamp": "2024-01-15T12:30:00Z",
+  "data": {
+    "incident_id": "incident_12345",
+    "title": "Critical Vulnerability Detected",
+    "severity": "critical",
+    "assets": ["asset_67890"],
+    "details": {
+      "vulnerability": "CVE-2024-0001",
+      "cvss_score": 9.8
+    }
+  }
+}</code></pre>
+                        </div>
+                    </div>
+                    
+                    <h3>WebSocket Real-time API</h3>
+                    <div class="websocket-section">
+                        <p>Connect to real-time event stream via WebSocket:</p>
+                        <div class="code-block">
+                            <pre><code class="language-javascript">const ws = new WebSocket('wss://your-securaa-instance.com/api/v1/stream');
+
+ws.onopen = function() {
+    // Authenticate
+    ws.send(JSON.stringify({
+        type: 'auth',
+        token: 'YOUR_API_KEY'
+    }));
+    
+    // Subscribe to events
+    ws.send(JSON.stringify({
+        type: 'subscribe',
+        events: ['incident.*', 'threat.detected']
+    }));
+};
+
+ws.onmessage = function(event) {
+    const data = JSON.parse(event.data);
+    console.log('Received event:', data);
+};</code></pre>
+                        </div>
+                    </div>
+                </section>
+
+                <section>
+                    <h2><i class="fas fa-exclamation-triangle"></i> Error Handling</h2>
+                    
+                    <h3>HTTP Status Codes</h3>
+                    <div class="status-codes">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Code</th>
+                                    <th>Status</th>
+                                    <th>Description</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>200</td>
+                                    <td>OK</td>
+                                    <td>Request successful</td>
+                                </tr>
+                                <tr>
+                                    <td>201</td>
+                                    <td>Created</td>
+                                    <td>Resource created successfully</td>
+                                </tr>
+                                <tr>
+                                    <td>400</td>
+                                    <td>Bad Request</td>
+                                    <td>Invalid request parameters</td>
+                                </tr>
+                                <tr>
+                                    <td>401</td>
+                                    <td>Unauthorized</td>
+                                    <td>Invalid or missing authentication</td>
+                                </tr>
+                                <tr>
+                                    <td>403</td>
+                                    <td>Forbidden</td>
+                                    <td>Insufficient permissions</td>
+                                </tr>
+                                <tr>
+                                    <td>404</td>
+                                    <td>Not Found</td>
+                                    <td>Resource not found</td>
+                                </tr>
+                                <tr>
+                                    <td>429</td>
+                                    <td>Too Many Requests</td>
+                                    <td>Rate limit exceeded</td>
+                                </tr>
+                                <tr>
+                                    <td>500</td>
+                                    <td>Internal Server Error</td>
+                                    <td>Server error occurred</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    
+                    <h3>Error Response Format</h3>
+                    <div class="code-block">
+                        <pre><code class="language-json">{
+  "error": {
+    "code": "INVALID_PARAMETER",
+    "message": "The 'severity' parameter must be one of: low, medium, high, critical",
+    "details": {
+      "parameter": "severity",
+      "value": "invalid_value",
+      "valid_options": ["low", "medium", "high", "critical"]
+    },
+    "request_id": "req_12345678"
+  }
+}</code></pre>
+                    </div>
+                </section>
+
+                <section>
+                    <h2><i class="fas fa-shield-alt"></i> Rate Limiting & Security</h2>
+                    
+                    <h3>Rate Limits</h3>
+                    <div class="rate-limits">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Tier</th>
+                                    <th>Requests/Hour</th>
+                                    <th>Burst Limit</th>
+                                    <th>Concurrent Connections</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Basic</td>
+                                    <td>1,000</td>
+                                    <td>100/minute</td>
+                                    <td>10</td>
+                                </tr>
+                                <tr>
+                                    <td>Professional</td>
+                                    <td>10,000</td>
+                                    <td>500/minute</td>
+                                    <td>50</td>
+                                </tr>
+                                <tr>
+                                    <td>Enterprise</td>
+                                    <td>100,000</td>
+                                    <td>2,000/minute</td>
+                                    <td>200</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    
+                    <h3>Security Best Practices</h3>
+                    <div class="security-practices">
+                        <div class="practice-card">
+                            <h4><i class="fas fa-key"></i> API Key Security</h4>
+                            <ul>
+                                <li>Store API keys securely (environment variables, key management systems)</li>
+                                <li>Rotate keys regularly (recommended: every 90 days)</li>
+                                <li>Use minimal required permissions</li>
+                                <li>Monitor key usage and audit logs</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="practice-card">
+                            <h4><i class="fas fa-network-wired"></i> Network Security</h4>
+                            <ul>
+                                <li>Use HTTPS for all API communications</li>
+                                <li>Implement IP whitelisting where possible</li>
+                                <li>Use VPN or private network connections</li>
+                                <li>Validate SSL certificates</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="practice-card">
+                            <h4><i class="fas fa-shield-check"></i> Request Security</h4>
+                            <ul>
+                                <li>Validate and sanitize all input data</li>
+                                <li>Implement proper error handling</li>
+                                <li>Use request signing for sensitive operations</li>
+                                <li>Log and monitor API usage patterns</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+
+                <section>
+                    <h2><i class="fas fa-code"></i> SDK & Client Libraries</h2>
+                    
+                    <h3>Official SDKs</h3>
+                    <div class="sdk-grid">
+                        <div class="sdk-card">
+                            <h4><i class="fab fa-python"></i> Python SDK</h4>
+                            <div class="code-block">
+                                <pre><code class="language-bash">pip install securaa-sdk</code></pre>
+                            </div>
+                            <div class="code-block">
+                                <pre><code class="language-python">from securaa import SecuraaClient
+
+client = SecuraaClient(
+    api_key='your_api_key',
+    base_url='https://your-instance.com'
+)
+
+# Get all assets
+assets = client.assets.list()
+
+# Create incident
+incident = client.incidents.create(
+    title='Security Event',
+    severity='high'
+)</code></pre>
+                            </div>
+                        </div>
+                        
+                        <div class="sdk-card">
+                            <h4><i class="fab fa-js"></i> JavaScript/Node.js SDK</h4>
+                            <div class="code-block">
+                                <pre><code class="language-bash">npm install @securaa/sdk</code></pre>
+                            </div>
+                            <div class="code-block">
+                                <pre><code class="language-javascript">const { SecuraaClient } = require('@securaa/sdk');
+
+const client = new SecuraaClient({
+    apiKey: 'your_api_key',
+    baseUrl: 'https://your-instance.com'
+});
+
+// Get threats
+const threats = await client.threats.list();
+
+// Execute playbook
+const execution = await client.playbooks.execute(
+    'playbook_id',
+    { target_asset: 'asset_123' }
+);</code></pre>
+                            </div>
+                        </div>
+                        
+                        <div class="sdk-card">
+                            <h4><i class="fab fa-java"></i> Java SDK</h4>
+                            <div class="code-block">
+                                <pre><code class="language-xml">&lt;dependency&gt;
+    &lt;groupId&gt;com.securaa&lt;/groupId&gt;
+    &lt;artifactId&gt;securaa-sdk&lt;/artifactId&gt;
+    &lt;version&gt;1.0.0&lt;/version&gt;
+&lt;/dependency&gt;</code></pre>
+                            </div>
+                            <div class="code-block">
+                                <pre><code class="language-java">SecuraaClient client = SecuraaClient.builder()
+    .apiKey("your_api_key")
+    .baseUrl("https://your-instance.com")
+    .build();
+
+List&lt;Asset&gt; assets = client.assets().list();
+Incident incident = client.incidents().create(
+    new CreateIncidentRequest()
+        .title("Security Event")
+        .severity(Severity.HIGH)
+);</code></pre>
+                            </div>
+                        </div>
+                        
+                        <div class="sdk-card">
+                            <h4><i class="fas fa-terminal"></i> CLI Tool</h4>
+                            <div class="code-block">
+                                <pre><code class="language-bash">pip install securaa-cli</code></pre>
+                            </div>
+                            <div class="code-block">
+                                <pre><code class="language-bash"># Configure
+securaa config set --api-key YOUR_API_KEY
+
+# List assets
+securaa assets list --type server
+
+# Create incident
+securaa incidents create \
+  --title "Security Event" \
+  --severity high</code></pre>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section>
+                    <h2><i class="fas fa-list"></i> API Endpoints Reference</h2>
+                    <p>Complete reference of all available API endpoints across the Securaa platform.</p>
+                    
+                    <h3>CSAM (Asset Management) Endpoints</h3>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Method</th>
+                                <th>Endpoint</th>
+                                <th>Description</th>
+                                <th>Auth Required</th>
+                                <th>Rate Limit</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>GET</td>
+                                <td>/api/v1/assets</td>
+                                <td>List all assets with filtering</td>
+                                <td>API Key</td>
+                                <td>100/min</td>
+                            </tr>
+                            <tr>
+                                <td>POST</td>
+                                <td>/api/v1/assets</td>
+                                <td>Create new asset</td>
+                                <td>API Key</td>
+                                <td>50/min</td>
+                            </tr>
+                            <tr>
+                                <td>GET</td>
+                                <td>/api/v1/assets/{id}</td>
+                                <td>Get specific asset details</td>
+                                <td>API Key</td>
+                                <td>200/min</td>
+                            </tr>
+                            <tr>
+                                <td>PUT</td>
+                                <td>/api/v1/assets/{id}</td>
+                                <td>Update asset information</td>
+                                <td>API Key</td>
+                                <td>50/min</td>
+                            </tr>
+                            <tr>
+                                <td>DELETE</td>
+                                <td>/api/v1/assets/{id}</td>
+                                <td>Remove asset from inventory</td>
+                                <td>API Key</td>
+                                <td>25/min</td>
+                            </tr>
+                            <tr>
+                                <td>GET</td>
+                                <td>/api/v1/assets/{id}/vulnerabilities</td>
+                                <td>Get asset vulnerabilities</td>
+                                <td>API Key</td>
+                                <td>100/min</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    
+                    <h3>SIA (Security Analysis) Endpoints</h3>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Method</th>
+                                <th>Endpoint</th>
+                                <th>Description</th>
+                                <th>Auth Required</th>
+                                <th>Rate Limit</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>GET</td>
+                                <td>/api/v1/incidents</td>
+                                <td>List security incidents</td>
+                                <td>API Key</td>
+                                <td>100/min</td>
+                            </tr>
+                            <tr>
+                                <td>POST</td>
+                                <td>/api/v1/incidents</td>
+                                <td>Create new incident</td>
+                                <td>API Key</td>
+                                <td>50/min</td>
+                            </tr>
+                            <tr>
+                                <td>GET</td>
+                                <td>/api/v1/alerts</td>
+                                <td>Retrieve security alerts</td>
+                                <td>API Key</td>
+                                <td>200/min</td>
+                            </tr>
+                            <tr>
+                                <td>POST</td>
+                                <td>/api/v1/analysis/scan</td>
+                                <td>Trigger security analysis</td>
+                                <td>API Key</td>
+                                <td>25/min</td>
+                            </tr>
+                            <tr>
+                                <td>GET</td>
+                                <td>/api/v1/analysis/reports</td>
+                                <td>Get analysis reports</td>
+                                <td>API Key</td>
+                                <td>100/min</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    
+                    <h3>TIP (Threat Intelligence) Endpoints</h3>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Method</th>
+                                <th>Endpoint</th>
+                                <th>Description</th>
+                                <th>Auth Required</th>
+                                <th>Rate Limit</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>GET</td>
+                                <td>/api/v1/indicators</td>
+                                <td>Get threat indicators (IoCs)</td>
+                                <td>API Key</td>
+                                <td>500/min</td>
+                            </tr>
+                            <tr>
+                                <td>POST</td>
+                                <td>/api/v1/indicators</td>
+                                <td>Submit new threat indicator</td>
+                                <td>API Key</td>
+                                <td>100/min</td>
+                            </tr>
+                            <tr>
+                                <td>GET</td>
+                                <td>/api/v1/threats</td>
+                                <td>Browse threat intelligence feed</td>
+                                <td>API Key</td>
+                                <td>200/min</td>
+                            </tr>
+                            <tr>
+                                <td>GET</td>
+                                <td>/api/v1/feeds</td>
+                                <td>List available threat feeds</td>
+                                <td>API Key</td>
+                                <td>50/min</td>
+                            </tr>
+                            <tr>
+                                <td>POST</td>
+                                <td>/api/v1/lookup</td>
+                                <td>Lookup IP/domain/hash reputation</td>
+                                <td>API Key</td>
+                                <td>1000/min</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    
+                    <h3>SOAR (Orchestration) Endpoints</h3>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Method</th>
+                                <th>Endpoint</th>
+                                <th>Description</th>
+                                <th>Auth Required</th>
+                                <th>Rate Limit</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>GET</td>
+                                <td>/api/v1/playbooks</td>
+                                <td>List available playbooks</td>
+                                <td>API Key</td>
+                                <td>100/min</td>
+                            </tr>
+                            <tr>
+                                <td>POST</td>
+                                <td>/api/v1/playbooks/{id}/execute</td>
+                                <td>Execute automation playbook</td>
+                                <td>API Key</td>
+                                <td>25/min</td>
+                            </tr>
+                            <tr>
+                                <td>GET</td>
+                                <td>/api/v1/workflows</td>
+                                <td>Get workflow definitions</td>
+                                <td>API Key</td>
+                                <td>100/min</td>
+                            </tr>
+                            <tr>
+                                <td>GET</td>
+                                <td>/api/v1/executions</td>
+                                <td>Track playbook execution status</td>
+                                <td>API Key</td>
+                                <td>200/min</td>
+                            </tr>
+                            <tr>
+                                <td>POST</td>
+                                <td>/api/v1/actions</td>
+                                <td>Execute individual automation action</td>
+                                <td>API Key</td>
+                                <td>50/min</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    
+                    <h3>System & Administrative Endpoints</h3>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Method</th>
+                                <th>Endpoint</th>
+                                <th>Description</th>
+                                <th>Auth Required</th>
+                                <th>Rate Limit</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>GET</td>
+                                <td>/api/v1/health</td>
+                                <td>System health check</td>
+                                <td>None</td>
+                                <td>1000/min</td>
+                            </tr>
+                            <tr>
+                                <td>GET</td>
+                                <td>/api/v1/version</td>
+                                <td>Get API version information</td>
+                                <td>None</td>
+                                <td>1000/min</td>
+                            </tr>
+                            <tr>
+                                <td>GET</td>
+                                <td>/api/v1/users</td>
+                                <td>List system users</td>
+                                <td>Admin</td>
+                                <td>50/min</td>
+                            </tr>
+                            <tr>
+                                <td>POST</td>
+                                <td>/api/v1/auth/keys</td>
+                                <td>Generate new API key</td>
+                                <td>User Auth</td>
+                                <td>10/min</td>
+                            </tr>
+                            <tr>
+                                <td>GET</td>
+                                <td>/api/v1/audit/logs</td>
+                                <td>Access audit trail</td>
+                                <td>Admin</td>
+                                <td>100/min</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </section>
+
+                <div class="cta-section">
+                    <h2><i class="fas fa-rocket"></i> Start Building with Securaa APIs</h2>
+                    <p>
+                        <strong>Ready to integrate?</strong> Get your API keys from the 
+                        <a href="administration.html">administration panel</a>, explore our 
+                        <a href="integrations.html">integration examples</a>, or 
+                        <a href="support.html">contact our API support team</a> for assistance.
+                    </p>
+                </div>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Securaa</h3>
+                    <p>Advanced cybersecurity solutions for modern threats.</p>
+                    <div class="social-links">
+                        <a href="https://linkedin.com/company/securaa" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://twitter.com/securaa" target="_blank" rel="noopener noreferrer"><i class="fab fa-twitter"></i></a>
+                        <a href="https://github.com/securaa" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Products</h4>
+                    <ul>
+                        <li><a href="sia.html">SIA</a></li>
+                        <li><a href="soar.html">SOAR</a></li>
+                        <li><a href="tip.html">TIP</a></li>
+                        <li><a href="csam.html">CSAM</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Documentation</h4>
+                    <ul>
+                        <li><a href="hardware-specs.html">Hardware Specifications</a></li>
+                        <li><a href="administration.html">Administration</a></li>
+                        <li><a href="integrations.html">Integrations</a></li>
+                        <li><a href="api-reference.html">API Reference</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="support.html">Contact Support</a></li>
+                        <li><a href="troubleshooting.html">Troubleshooting</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Securaa. All rights reserved. | <a href="privacy-policy.html">Privacy Policy</a> | <a href="terms-of-service.html">Terms of Service</a></p>
+                <p>Documentation Version 2.0 | Last Updated: October 2025</p>
+            </div>
+        </footer>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/components/prism-core.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/plugins/autoloader/prism-autoloader.min.js"></script>
+    
+    <script>
+        // Mobile menu functionality
+        function toggleMobileMenu() {
+            const sidebar = document.querySelector('.sidebar');
+            const overlay = document.querySelector('.sidebar-overlay');
+            
+            if (!overlay) {
+                // Create overlay if it doesn't exist
+                const newOverlay = document.createElement('div');
+                newOverlay.className = 'sidebar-overlay';
+                newOverlay.onclick = closeMobileMenu;
+                document.body.appendChild(newOverlay);
+            }
+            
+            sidebar.classList.toggle('show');
+            (overlay || document.querySelector('.sidebar-overlay')).classList.toggle('show');
+        }
+        
+        function closeMobileMenu() {
+            const sidebar = document.querySelector('.sidebar');
+            const overlay = document.querySelector('.sidebar-overlay');
+            
+            sidebar.classList.remove('show');
+            if (overlay) overlay.classList.remove('show');
+        }
+        
+        // Close mobile menu when clicking sidebar links
+        document.addEventListener('DOMContentLoaded', function() {
+            const sidebarLinks = document.querySelectorAll('.sidebar a');
+            sidebarLinks.forEach(link => {
+                link.addEventListener('click', closeMobileMenu);
+            });
+        });
+    </script>
+</body>
+</html>

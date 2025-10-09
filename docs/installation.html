@@ -11,91 +11,117 @@
 </head>
 <body>
     <div class="container">
-        <!-- Header -->
-        <header class="header">
-            <div class="header-content">
-                <div class="logo">
-                    <h1><i class="fas fa-shield-alt"></i> Securaa</h1>
-                    <span class="tagline">Advanced Cybersecurity Solutions</span>
-                </div>
-                <nav class="main-nav">
-                    <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="sia.html">SIA</a></li>
-                        <li><a href="soar.html">SOAR</a></li>
-                        <li><a href="tip.html">TIP</a></li>
-                        <li><a href="csam.html">CSAM</a></li>
-                        <li><a href="support.html">Support</a></li>
-                    </ul>
-                </nav>
-                <div class="search-container">
-                    <input type="text" id="searchInput" placeholder="Search documentation...">
-                    <i class="fas fa-search"></i>
-                </div>
-            </div>
-        </header>
-
-        <!-- Sidebar Navigation -->
         <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="logo">
+                    <i class="fas fa-shield-alt"></i>
+                    <span>Securaa Docs</span>
+                </div>
+                <button class="mobile-menu-toggle" onclick="toggleMobileMenu()">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+            
             <nav class="sidebar-nav">
+                <a href="index.html" class="nav-item">
+                    <i class="fas fa-home"></i>
+                    <span>Home</span>
+                </a>
+                
                 <div class="nav-section">
-                    <h3><i class="fas fa-home"></i> Getting Started</h3>
-                    <ul>
-                        <li><a href="index.html#overview">Product Overview</a></li>
-                        <li><a href="architecture.html">Solution Architecture</a></li>
-                        <li><a href="prerequisites.html">Prerequisites</a></li>
-                    </ul>
+                    <div class="nav-section-title">Products</div>
+                    <a href="sia.html" class="nav-item">
+                        <i class="fas fa-brain"></i>
+                        <span>SIA</span>
+                    </a>
+                    <a href="soar.html" class="nav-item">
+                        <i class="fas fa-robot"></i>
+                        <span>SOAR</span>
+                    </a>
+                    <a href="tip.html" class="nav-item">
+                        <i class="fas fa-shield-virus"></i>
+                        <span>TIP</span>
+                    </a>
+                    <a href="csam.html" class="nav-item">
+                        <i class="fas fa-user-shield"></i>
+                        <span>CSAM</span>
+                    </a>
                 </div>
                 
                 <div class="nav-section">
-                    <h3><i class="fas fa-cube"></i> Products</h3>
-                    <ul>
-                        <li><a href="sia.html">SIA (Security Intelligence Analytics)</a></li>
-                        <li><a href="soar.html">SOAR (Security Orchestration)</a></li>
-                        <li><a href="tip.html">TIP (Threat Intelligence Platform)</a></li>
-                        <li><a href="csam.html">CSAM (Cyber Security Asset Management)</a></li>
-                    </ul>
+                    <div class="nav-section-title">Setup & Configuration</div>
+                    <a href="prerequisites.html" class="nav-item">
+                        <i class="fas fa-list-check"></i>
+                        <span>Prerequisites</span>
+                    </a>
+                    <a href="hardware-specs.html" class="nav-item">
+                        <i class="fas fa-server"></i>
+                        <span>Hardware Specs</span>
+                    </a>
+                    <a href="installation.html" class="nav-item active">
+                        <i class="fas fa-download"></i>
+                        <span>Installation</span>
+                    </a>
+                    <a href="deployment.html" class="nav-item">
+                        <i class="fas fa-rocket"></i>
+                        <span>Deployment</span>
+                    </a>
+                    <a href="architecture.html" class="nav-item">
+                        <i class="fas fa-sitemap"></i>
+                        <span>Architecture</span>
+                    </a>
                 </div>
-
+                
                 <div class="nav-section">
-                    <h3><i class="fas fa-cogs"></i> Installation & Deployment</h3>
-                    <ul>
-                        <li><a href="installation.html" class="active">Installation Guide</a></li>
-                        <li><a href="deployment.html">Deployment Guide</a></li>
-                        <li><a href="hardware-specs.html">Hardware Specifications</a></li>
-                    </ul>
+                    <div class="nav-section-title">Administration</div>
+                    <a href="administration.html" class="nav-item">
+                        <i class="fas fa-cogs"></i>
+                        <span>Administration</span>
+                    </a>
+                    <a href="tip-admin.html" class="nav-item">
+                        <i class="fas fa-shield-virus"></i>
+                        <span>TIP Admin</span>
+                    </a>
+                    <a href="csam-admin.html" class="nav-item">
+                        <i class="fas fa-user-cog"></i>
+                        <span>CSAM Admin</span>
+                    </a>
                 </div>
-
+                
                 <div class="nav-section">
-                    <h3><i class="fas fa-users-cog"></i> Administration</h3>
-                    <ul>
-                        <li><a href="administration.html">Administration</a></li>
-                        <li><a href="csam-admin.html">CSAM Administration</a></li>
-                        <li><a href="tip-admin.html">TIP Administration</a></li>
-                    </ul>
+                    <div class="nav-section-title">Integration</div>
+                    <a href="integrations.html" class="nav-item">
+                        <i class="fas fa-plug"></i>
+                        <span>Integrations</span>
+                    </a>
+                    <a href="playbooks.html" class="nav-item">
+                        <i class="fas fa-book"></i>
+                        <span>Playbooks</span>
+                    </a>
+                    <a href="api-reference.html" class="nav-item">
+                        <i class="fas fa-code"></i>
+                        <span>API Reference</span>
+                    </a>
                 </div>
-
+                
                 <div class="nav-section">
-                    <h3><i class="fas fa-puzzle-piece"></i> Integrations</h3>
-                    <ul>
-                        <li><a href="integrations.html">Available Integrations</a></li>
-                        <li><a href="playbooks.html">Security Playbooks</a></li>
-                        <li><a href="api-reference.html">API Reference</a></li>
-                    </ul>
-                </div>
-
-                <div class="nav-section">
-                    <h3><i class="fas fa-question-circle"></i> Support</h3>
-                    <ul>
-                        <li><a href="troubleshooting.html">Troubleshooting</a></li>
-                        <li><a href="faq.html">FAQ</a></li>
-                        <li><a href="support.html">Contact Support</a></li>
-                    </ul>
+                    <div class="nav-section-title">Support</div>
+                    <a href="troubleshooting.html" class="nav-item">
+                        <i class="fas fa-tools"></i>
+                        <span>Troubleshooting</span>
+                    </a>
+                    <a href="faq.html" class="nav-item">
+                        <i class="fas fa-question-circle"></i>
+                        <span>FAQ</span>
+                    </a>
+                    <a href="support.html" class="nav-item">
+                        <i class="fas fa-life-ring"></i>
+                        <span>Support</span>
+                    </a>
                 </div>
             </nav>
         </aside>
 
-        <!-- Main Content -->
         <main class="main-content">
             <section id="installation-guide" class="content-section">
                 <div class="section-header">
@@ -140,6 +166,336 @@
                         <h3>Virtual Machine</h3>
                         <p>Deploy using pre-configured virtual machine images for quick setup and testing.</p>
                     </div>
+                </div>
+
+                <h3>Installation Methods Comparison</h3>
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Installation Method</th>
+                                <th>Deployment Time</th>
+                                <th>Complexity</th>
+                                <th>Scalability</th>
+                                <th>Use Case</th>
+                                <th>Prerequisites</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>On-Premises Installation</strong></td>
+                                <td>
+                                    4-8 hours<br>
+                                    <span class="badge badge-warning">Medium</span>
+                                </td>
+                                <td>
+                                    <span class="severity-medium">Moderate</span>
+                                </td>
+                                <td>
+                                    <span class="badge badge-success">High</span>
+                                </td>
+                                <td>Production environments requiring maximum control</td>
+                                <td>Physical/Virtual servers, Network configuration</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Cloud Deployment (AWS/Azure/GCP)</strong></td>
+                                <td>
+                                    2-4 hours<br>
+                                    <span class="badge badge-success">Fast</span>
+                                </td>
+                                <td>
+                                    <span class="severity-low">Low</span>
+                                </td>
+                                <td>
+                                    <span class="badge badge-success">Very High</span>
+                                </td>
+                                <td>Scalable production with automated management</td>
+                                <td>Cloud account, IAM permissions, VPC setup</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Container Deployment (Docker/K8s)</strong></td>
+                                <td>
+                                    1-2 hours<br>
+                                    <span class="badge badge-success">Very Fast</span>
+                                </td>
+                                <td>
+                                    <span class="severity-medium">Moderate</span>
+                                </td>
+                                <td>
+                                    <span class="badge badge-success">Very High</span>
+                                </td>
+                                <td>Microservices architecture, DevOps environments</td>
+                                <td>Container runtime, Orchestration platform</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Virtual Machine (OVA/VMDK)</strong></td>
+                                <td>
+                                    30-60 minutes<br>
+                                    <span class="badge badge-success">Very Fast</span>
+                                </td>
+                                <td>
+                                    <span class="severity-low">Low</span>
+                                </td>
+                                <td>
+                                    <span class="badge badge-warning">Limited</span>
+                                </td>
+                                <td>Testing, proof-of-concept, small deployments</td>
+                                <td>VMware vSphere, Hyper-V, or VirtualBox</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Hybrid Deployment</strong></td>
+                                <td>
+                                    6-12 hours<br>
+                                    <span class="badge badge-warning">Complex</span>
+                                </td>
+                                <td>
+                                    <span class="severity-high">High</span>
+                                </td>
+                                <td>
+                                    <span class="badge badge-success">Very High</span>
+                                </td>
+                                <td>Multi-region, disaster recovery scenarios</td>
+                                <td>Multiple infrastructure platforms, Network connectivity</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h3>Component-Specific Installation Requirements</h3>
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Component</th>
+                                <th>Installation Order</th>
+                                <th>Dependencies</th>
+                                <th>Configuration Files</th>
+                                <th>Service Ports</th>
+                                <th>Validation Commands</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Database (PostgreSQL)</strong></td>
+                                <td>
+                                    <span class="badge badge-success">1st - Foundation</span>
+                                </td>
+                                <td>None</td>
+                                <td>/etc/postgresql/postgresql.conf<br>/etc/postgresql/pg_hba.conf</td>
+                                <td>5432 (PostgreSQL)</td>
+                                <td><code>pg_isready -p 5432</code></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Search Engine (Elasticsearch)</strong></td>
+                                <td>
+                                    <span class="badge badge-info">2nd - Core</span>
+                                </td>
+                                <td>Java 11+</td>
+                                <td>/etc/elasticsearch/elasticsearch.yml<br>/etc/elasticsearch/jvm.options</td>
+                                <td>9200 (HTTP)<br>9300 (Transport)</td>
+                                <td><code>curl -X GET "localhost:9200/_cluster/health"</code></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Message Queue (RabbitMQ)</strong></td>
+                                <td>
+                                    <span class="badge badge-info">3rd - Core</span>
+                                </td>
+                                <td>Erlang</td>
+                                <td>/etc/rabbitmq/rabbitmq.conf<br>/etc/rabbitmq/advanced.config</td>
+                                <td>5672 (AMQP)<br>15672 (Management)</td>
+                                <td><code>rabbitmq-diagnostics status</code></td>
+                            </tr>
+                            <tr>
+                                <td><strong>SIA Analytics Engine</strong></td>
+                                <td>
+                                    <span class="badge badge-warning">4th - Application</span>
+                                </td>
+                                <td>Database, Elasticsearch</td>
+                                <td>/opt/securaa/sia/config/application.yml</td>
+                                <td>8080 (API)<br>8443 (HTTPS)</td>
+                                <td><code>curl -k https://localhost:8443/health</code></td>
+                            </tr>
+                            <tr>
+                                <td><strong>SOAR Orchestration</strong></td>
+                                <td>
+                                    <span class="badge badge-warning">5th - Application</span>
+                                </td>
+                                <td>Database, RabbitMQ</td>
+                                <td>/opt/securaa/soar/config/application.yml</td>
+                                <td>8081 (API)<br>8444 (HTTPS)</td>
+                                <td><code>curl -k https://localhost:8444/health</code></td>
+                            </tr>
+                            <tr>
+                                <td><strong>TIP Intelligence Platform</strong></td>
+                                <td>
+                                    <span class="badge badge-warning">6th - Application</span>
+                                </td>
+                                <td>Database, Elasticsearch</td>
+                                <td>/opt/securaa/tip/config/application.yml</td>
+                                <td>8082 (API)<br>8445 (HTTPS)</td>
+                                <td><code>curl -k https://localhost:8445/health</code></td>
+                            </tr>
+                            <tr>
+                                <td><strong>CSAM Asset Management</strong></td>
+                                <td>
+                                    <span class="badge badge-warning">7th - Application</span>
+                                </td>
+                                <td>Database</td>
+                                <td>/opt/securaa/csam/config/application.yml</td>
+                                <td>8083 (API)<br>8446 (HTTPS)</td>
+                                <td><code>curl -k https://localhost:8446/health</code></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Web Interface</strong></td>
+                                <td>
+                                    <span class="badge badge-success">8th - Frontend</span>
+                                </td>
+                                <td>All backend services</td>
+                                <td>/opt/securaa/web/config/nginx.conf</td>
+                                <td>80 (HTTP)<br>443 (HTTPS)</td>
+                                <td><code>curl -k https://localhost/login</code></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h3>Post-Installation Configuration</h3>
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Task</th>
+                                <th>Description</th>
+                                <th>Priority</th>
+                                <th>Estimated Time</th>
+                                <th>Configuration Location</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>SSL Certificate Installation</strong></td>
+                                <td>Install valid SSL certificate for secure access</td>
+                                <td><span class="severity-high">Critical</span></td>
+                                <td>15-30 minutes</td>
+                                <td>/etc/ssl/certs/ and /etc/nginx/ssl/</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Initial Admin Account</strong></td>
+                                <td>Create initial administrator account with strong password</td>
+                                <td><span class="severity-high">Critical</span></td>
+                                <td>5 minutes</td>
+                                <td>Web interface: /admin/users</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Database Backup Configuration</strong></td>
+                                <td>Configure automated database backups and retention</td>
+                                <td><span class="severity-high">Critical</span></td>
+                                <td>30 minutes</td>
+                                <td>/opt/securaa/scripts/backup-config.sh</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Network Security Configuration</strong></td>
+                                <td>Configure firewall rules and network access controls</td>
+                                <td><span class="severity-high">Critical</span></td>
+                                <td>45 minutes</td>
+                                <td>/etc/iptables/ and /etc/securaa/network.conf</td>
+                            </tr>
+                            <tr>
+                                <td><strong>LDAP/Active Directory Integration</strong></td>
+                                <td>Configure enterprise authentication integration</td>
+                                <td><span class="severity-medium">Important</span></td>
+                                <td>60 minutes</td>
+                                <td>/opt/securaa/config/auth/ldap.conf</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Security Tool Integrations</strong></td>
+                                <td>Configure integrations with existing security tools</td>
+                                <td><span class="severity-medium">Important</span></td>
+                                <td>2-4 hours</td>
+                                <td>/opt/securaa/config/integrations/</td>
+                            </tr>
+                            <tr>
+                                <td><strong>System Monitoring Setup</strong></td>
+                                <td>Set up system monitoring, alerting, and log aggregation</td>
+                                <td><span class="severity-medium">Important</span></td>
+                                <td>90 minutes</td>
+                                <td>/opt/securaa/config/monitoring/</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Performance Tuning</strong></td>
+                                <td>Optimize system performance for production workloads</td>
+                                <td><span class="severity-low">Optional</span></td>
+                                <td>2-3 hours</td>
+                                <td>/opt/securaa/config/performance.conf</td>
+                            </tr>
+                            <tr>
+                                <td><strong>User Training & Documentation</strong></td>
+                                <td>Conduct user training and customize documentation</td>
+                                <td><span class="severity-low">Optional</span></td>
+                                <td>4-8 hours</td>
+                                <td>Custom documentation repository</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h3>Common Installation Issues & Solutions</h3>
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Issue</th>
+                                <th>Symptoms</th>
+                                <th>Cause</th>
+                                <th>Solution</th>
+                                <th>Prevention</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Database Connection Failed</strong></td>
+                                <td>Services fail to start, connection errors in logs</td>
+                                <td>Incorrect database credentials or network configuration</td>
+                                <td>Verify credentials in config files, check network connectivity</td>
+                                <td>Test database connectivity before installation</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Insufficient Disk Space</strong></td>
+                                <td>Installation fails, write errors, performance issues</td>
+                                <td>Not enough free disk space for installation</td>
+                                <td>Free up disk space or add additional storage</td>
+                                <td>Check disk space requirements before installation</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Port Conflicts</strong></td>
+                                <td>Services fail to bind to ports, socket errors</td>
+                                <td>Required ports already in use by other services</td>
+                                <td>Stop conflicting services or change port configuration</td>
+                                <td>Verify port availability during planning phase</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Memory Issues</strong></td>
+                                <td>Out of memory errors, services crashing, poor performance</td>
+                                <td>Insufficient RAM for selected deployment size</td>
+                                <td>Increase system memory or reduce deployment size</td>
+                                <td>Verify memory requirements before installation</td>
+                            </tr>
+                            <tr>
+                                <td><strong>SSL Certificate Problems</strong></td>
+                                <td>Browser warnings, HTTPS connection failures</td>
+                                <td>Invalid or self-signed certificates</td>
+                                <td>Install valid SSL certificates from trusted CA</td>
+                                <td>Obtain valid certificates before installation</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Service Dependencies</strong></td>
+                                <td>Some services start but others fail, dependency errors</td>
+                                <td>Services started in wrong order or dependencies missing</td>
+                                <td>Follow proper startup order, install missing dependencies</td>
+                                <td>Follow installation order strictly</td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
 
                 <h3>Quick Installation Steps</h3>
@@ -194,43 +550,6 @@ curl -k https://localhost:443/health</code></pre>
                     </div>
                 </div>
 
-                <h3>Post-Installation Configuration</h3>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Task</th>
-                            <th>Description</th>
-                            <th>Priority</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>SSL Certificate</td>
-                            <td>Install valid SSL certificate for secure access</td>
-                            <td>High</td>
-                        </tr>
-                        <tr>
-                            <td>Admin Account</td>
-                            <td>Create initial administrator account</td>
-                            <td>High</td>
-                        </tr>
-                        <tr>
-                            <td>Database Backup</td>
-                            <td>Configure automated database backups</td>
-                            <td>High</td>
-                        </tr>
-                        <tr>
-                            <td>Integration Setup</td>
-                            <td>Configure integrations with existing security tools</td>
-                            <td>Medium</td>
-                        </tr>
-                        <tr>
-                            <td>Monitoring</td>
-                            <td>Set up system monitoring and alerting</td>
-                            <td>Medium</td>
-                        </tr>
-                    </tbody>
-                </table>
 
                 <div class="alert alert-success">
                     <strong>Next Steps:</strong> After installation, review our <a href="administration.html">Administration Guide</a> for initial configuration and <a href="integrations.html">Integration Guide</a> for connecting to existing security tools.

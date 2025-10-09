@@ -122,27 +122,25 @@
         </aside>
 
         <main class="main-content">
-            <div class="header">
-                <h1><i class="fas fa-tools"></i> Troubleshooting Guide</h1>
-                <p class="subtitle">Common issues, solutions, and diagnostic procedures for the Securaa platform</p>
-            </div>
+            <section id="troubleshooting-guide" class="content-section">
+                <div class="section-header">
+                    <h2><i class="fas fa-tools"></i> Troubleshooting Guide</h2>
+                    <p>Common issues, solutions, and diagnostic procedures for the Securaa platform</p>
+                </div>
 
-            <div class="content">
-                <section class="info-box">
-                    <h2><i class="fas fa-info-circle"></i> Troubleshooting Guide</h2>
-                    <p>
-                        This troubleshooting guide provides basic steps to help resolve common issues. 
-                        Follow these general troubleshooting steps, and if problems persist, 
-                        contact our <a href="support.html">support team</a> for assistance.
-                    </p>
-                </section>
+                <div class="alert alert-info">
+                    <strong>Quick Help:</strong> This troubleshooting guide provides basic steps to help resolve common issues. 
+                    Follow these general troubleshooting steps, and if problems persist, 
+                    contact our <a href="support.html">support team</a> for assistance.
+                </div>
 
-                <section>
-                    <h2><i class="fas fa-tools"></i> General Troubleshooting Steps</h2>
-                    
-                    <div class="troubleshooting-steps">
-                        <div class="step">
-                            <h3><i class="fas fa-step-forward"></i> Step 1: Verify System Status</h3>
+                <h3>General Troubleshooting Steps</h3>
+                
+                <div class="steps-container">
+                    <div class="step">
+                        <div class="step-number">1</div>
+                        <div class="step-content">
+                            <h3><i class="fas fa-step-forward"></i> Verify System Status</h3>
                             <p>Check if all required services are running and accessible:</p>
                             <ul>
                                 <li>Ensure the application is running</li>
@@ -151,9 +149,12 @@
                                 <li>Confirm database connectivity</li>
                             </ul>
                         </div>
+                    </div>
 
-                        <div class="step">
-                            <h3><i class="fas fa-redo"></i> Step 2: Restart Services</h3>
+                    <div class="step">
+                        <div class="step-number">2</div>
+                        <div class="step-content">
+                            <h3><i class="fas fa-redo"></i> Restart Services</h3>
                             <p>Often, a simple restart can resolve temporary issues:</p>
                             <ul>
                                 <li>Restart the application services</li>
@@ -162,9 +163,12 @@
                                 <li>Try accessing from a different browser or device</li>
                             </ul>
                         </div>
+                    </div>
 
-                        <div class="step">
-                            <h3><i class="fas fa-search"></i> Step 3: Check Logs</h3>
+                    <div class="step">
+                        <div class="step-number">3</div>
+                        <div class="step-content">
+                            <h3><i class="fas fa-search"></i> Check Logs</h3>
                             <p>Review log files to identify specific error messages:</p>
                             <ul>
                                 <li>Look for recent error messages</li>
@@ -173,9 +177,12 @@
                                 <li>Document any error codes or messages</li>
                             </ul>
                         </div>
+                    </div>
 
-                        <div class="step">
-                            <h3><i class="fas fa-cog"></i> Step 4: Verify Configuration</h3>
+                    <div class="step">
+                        <div class="step-number">4</div>
+                        <div class="step-content">
+                            <h3><i class="fas fa-cog"></i> Verify Configuration</h3>
                             <p>Ensure all configurations are correct:</p>
                             <ul>
                                 <li>Check network settings and firewall rules</li>
@@ -184,9 +191,12 @@
                                 <li>Review integration configurations</li>
                             </ul>
                         </div>
+                    </div>
 
-                        <div class="step">
-                            <h3><i class="fas fa-sync-alt"></i> Step 5: Update and Patch</h3>
+                    <div class="step">
+                        <div class="step-number">5</div>
+                        <div class="step-content">
+                            <h3><i class="fas fa-sync-alt"></i> Update and Patch</h3>
                             <p>Ensure you're running the latest versions:</p>
                             <ul>
                                 <li>Check for application updates</li>
@@ -195,9 +205,12 @@
                                 <li>Verify system dependencies are current</li>
                             </ul>
                         </div>
+                    </div>
 
-                        <div class="step">
-                            <h3><i class="fas fa-life-ring"></i> Step 6: Contact Support</h3>
+                    <div class="step">
+                        <div class="step-number">6</div>
+                        <div class="step-content">
+                            <h3><i class="fas fa-life-ring"></i> Contact Support</h3>
                             <p>If the issue persists after following the above steps:</p>
                             <ul>
                                 <li>Gather all error messages and log entries</li>
@@ -207,110 +220,129 @@
                             </ul>
                         </div>
                     </div>
-                </section>
+                </div>
 
-                <section>
-                    <h2><i class="fas fa-exclamation-triangle"></i> Common Issues</h2>
-                    <p>Here are some common issues and quick resolution tips:</p>
-                    
-                    <div class="common-issues">
-                        <div class="issue">
-                            <h4>Cannot Access Web Interface</h4>
-                            <ul>
-                                <li>Check if the service is running</li>
-                                <li>Verify firewall settings</li>
-                                <li>Try different browser or clear cache</li>
-                                <li>Check network connectivity</li>
-                            </ul>
+                <h3>Common Issues</h3>
+                <p>Here are some common issues and quick resolution tips:</p>
+                
+                <div class="feature-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-globe"></i>
                         </div>
-
-                        <div class="issue">
-                            <h4>Login Problems</h4>
-                            <ul>
-                                <li>Verify username and password</li>
-                                <li>Check for account lockouts</li>
-                                <li>Clear browser cookies</li>
-                                <li>Try password reset if available</li>
-                            </ul>
-                        </div>
-
-                        <div class="issue">
-                            <h4>Slow Performance</h4>
-                            <ul>
-                                <li>Check system resources</li>
-                                <li>Review network connectivity</li>
-                                <li>Clear temporary files</li>
-                                <li>Restart services</li>
-                            </ul>
-                        </div>
-
-                        <div class="issue">
-                            <h4>Integration Failures</h4>
-                            <ul>
-                                <li>Verify API credentials</li>
-                                <li>Check network connectivity to external services</li>
-                                <li>Review firewall rules</li>
-                                <li>Test connection settings</li>
-                            </ul>
-                        </div>
+                        <h4>Cannot Access Web Interface</h4>
+                        <ul>
+                            <li>Check if the service is running</li>
+                            <li>Verify firewall settings</li>
+                            <li>Try different browser or clear cache</li>
+                            <li>Check network connectivity</li>
+                        </ul>
                     </div>
-                </section>
 
-                <div class="cta-section">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-lock"></i>
+                        </div>
+                        <h4>Login Problems</h4>
+                        <ul>
+                            <li>Verify username and password</li>
+                            <li>Check for account lockouts</li>
+                            <li>Clear browser cookies</li>
+                            <li>Try password reset if available</li>
+                        </ul>
+                    </div>
+
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-tachometer-alt"></i>
+                        </div>
+                        <h4>Slow Performance</h4>
+                        <ul>
+                            <li>Check system resources</li>
+                            <li>Review network connectivity</li>
+                            <li>Clear temporary files</li>
+                            <li>Restart services</li>
+                        </ul>
+                    </div>
+
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-plug"></i>
+                        </div>
+                        <h4>Integration Failures</h4>
+                        <ul>
+                            <li>Verify API credentials</li>
+                            <li>Check network connectivity to external services</li>
+                            <li>Review firewall rules</li>
+                            <li>Test connection settings</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Need Help Section -->
+            <section class="content-section">
+                <div class="section-header">
                     <h2><i class="fas fa-question-circle"></i> Need Additional Help?</h2>
-                    <p>
-                        <strong>Still experiencing issues?</strong> Check our <a href="faq.html">FAQ section</a> 
-                        for additional solutions, review the <a href="api-reference.html">API documentation</a> 
-                        for integration issues, or <a href="support.html">contact our support team</a> 
-                        with your specific problem details.
-                    </p>
+                </div>
+                <div class="alert alert-success">
+                    <strong>Still experiencing issues?</strong> Check our <a href="faq.html">FAQ section</a> 
+                    for additional solutions, review the <a href="api-reference.html">API documentation</a> 
+                    for integration issues, or <a href="support.html">contact our support team</a> 
+                    with your specific problem details.
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Securaa</h3>
+                    <p>Advanced cybersecurity solutions for modern threats.</p>
+                    <div class="social-links">
+                        <a href="https://linkedin.com/company/securaa" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://twitter.com/securaa" target="_blank" rel="noopener noreferrer"><i class="fab fa-twitter"></i></a>
+                        <a href="https://github.com/securaa" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Products</h4>
+                    <ul>
+                        <li><a href="sia.html">SIA</a></li>
+                        <li><a href="soar.html">SOAR</a></li>
+                        <li><a href="tip.html">TIP</a></li>
+                        <li><a href="csam.html">CSAM</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Documentation</h4>
+                    <ul>
+                        <li><a href="hardware-specs.html">Hardware Specifications</a></li>
+                        <li><a href="administration.html">Administration</a></li>
+                        <li><a href="integrations.html">Integrations</a></li>
+                        <li><a href="api-reference.html">API Reference</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="support.html">Contact Support</a></li>
+                        <li><a href="troubleshooting.html">Troubleshooting</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                    </ul>
                 </div>
             </div>
-        </main>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Securaa. All rights reserved. | <a href="privacy-policy.html">Privacy Policy</a> | <a href="terms-of-service.html">Terms of Service</a></p>
+                <p>Documentation Version 2.0 | Last Updated: October 2025</p>
+            </div>
+        </footer>
     </div>
 
-    <footer class="footer">
-        <div class="footer-content">
-            <div class="footer-section">
-                <h3>Products</h3>
-                <ul>
-                    <li><a href="sia.html">SIA</a></li>
-                    <li><a href="soar.html">SOAR</a></li>
-                    <li><a href="tip.html">TIP</a></li>
-                    <li><a href="csam.html">CSAM</a></li>
-                </ul>
-            </div>
-            <div class="footer-section">
-                <h3>Documentation</h3>
-                <ul>
-                    <li><a href="installation.html">Installation</a></li>
-                    <li><a href="api-reference.html">API Reference</a></li>
-                    <li><a href="integrations.html">Integrations</a></li>
-                    <li><a href="troubleshooting.html">Troubleshooting</a></li>
-                </ul>
-            </div>
-            <div class="footer-section">
-                <h3>Support</h3>
-                <ul>
-                    <li><a href="support.html">Contact Support</a></li>
-                    <li><a href="faq.html">FAQ</a></li>
-                    <li><a href="mailto:support@securaa.com">support@securaa.com</a></li>
-                    <li><a href="tel:+1-555-0123">+1 (555) 012-3456</a></li>
-                </ul>
-            </div>
-            <div class="footer-section">
-                <h3>Legal</h3>
-                <ul>
-                    <li><a href="privacy-policy.html">Privacy Policy</a></li>
-                    <li><a href="terms-of-service.html">Terms of Service</a></li>
-                    <li>&copy; 2024 Securaa. All rights reserved.</li>
-                </ul>
-            </div>
-        </div>
-    </footer>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/components/prism-core.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/plugins/autoloader/prism-autoloader.min.js"></script>
+    <!-- JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.28.0/components/prism-core.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.28.0/plugins/autoloader/prism-autoloader.min.js"></script>
     
     <script>
         function toggleMobileMenu() {

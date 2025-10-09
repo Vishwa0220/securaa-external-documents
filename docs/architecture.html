@@ -10,91 +10,113 @@
 </head>
 <body>
     <div class="container">
-        <!-- Header -->
-        <header class="header">
-            <div class="header-content">
-                <div class="logo">
-                    <h1><i class="fas fa-shield-alt"></i> Securaa</h1>
-                    <span class="tagline">Advanced Cybersecurity Solutions</span>
-                </div>
-                <nav class="main-nav">
-                    <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="sia.html">SIA</a></li>
-                        <li><a href="soar.html">SOAR</a></li>
-                        <li><a href="tip.html">TIP</a></li>
-                        <li><a href="csam.html">CSAM</a></li>
-                        <li><a href="support.html">Support</a></li>
-                    </ul>
-                </nav>
-                <div class="header-right">
-                    <div class="search-container">
-                        <input type="text" id="searchInput" placeholder="Search documentation...">
-                        <i class="fas fa-search"></i>
-                    </div>
-                    <button class="mobile-menu-toggle" onclick="toggleMobileMenu()">
-                        <i class="fas fa-bars"></i>
-                    </button>
-                </div>
-            </div>
-        </header>
-
-        <!-- Sidebar Navigation -->
         <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="logo">
+                    <i class="fas fa-shield-alt"></i>
+                    <span>Securaa Docs</span>
+                </div>
+                <button class="mobile-menu-toggle" onclick="toggleMobileMenu()">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+            
             <nav class="sidebar-nav">
+                <a href="index.html" class="nav-item">
+                    <i class="fas fa-home"></i>
+                    <span>Home</span>
+                </a>
+                
                 <div class="nav-section">
-                    <h3><i class="fas fa-home"></i> Getting Started</h3>
-                    <ul>
-                        <li><a href="index.html#overview">Product Overview</a></li>
-                        <li><a href="architecture.html" class="active">Solution Architecture</a></li>
-                        <li><a href="prerequisites.html">Prerequisites</a></li>
-                    </ul>
+                    <div class="nav-section-title">Products</div>
+                    <a href="sia.html" class="nav-item">
+                        <i class="fas fa-brain"></i>
+                        <span>SIA</span>
+                    </a>
+                    <a href="soar.html" class="nav-item">
+                        <i class="fas fa-robot"></i>
+                        <span>SOAR</span>
+                    </a>
+                    <a href="tip.html" class="nav-item">
+                        <i class="fas fa-shield-virus"></i>
+                        <span>TIP</span>
+                    </a>
+                    <a href="csam.html" class="nav-item">
+                        <i class="fas fa-user-shield"></i>
+                        <span>CSAM</span>
+                    </a>
                 </div>
                 
                 <div class="nav-section">
-                    <h3><i class="fas fa-cube"></i> Products</h3>
-                    <ul>
-                        <li><a href="sia.html">SIA (Security Intelligence Analytics)</a></li>
-                        <li><a href="soar.html">SOAR (Security Orchestration)</a></li>
-                        <li><a href="tip.html">TIP (Threat Intelligence Platform)</a></li>
-                        <li><a href="csam.html">CSAM (Cyber Security Asset Management)</a></li>
-                    </ul>
+                    <div class="nav-section-title">Setup & Configuration</div>
+                    <a href="prerequisites.html" class="nav-item">
+                        <i class="fas fa-list-check"></i>
+                        <span>Prerequisites</span>
+                    </a>
+                    <a href="hardware-specs.html" class="nav-item">
+                        <i class="fas fa-server"></i>
+                        <span>Hardware Specs</span>
+                    </a>
+                    <a href="installation.html" class="nav-item">
+                        <i class="fas fa-download"></i>
+                        <span>Installation</span>
+                    </a>
+                    <a href="deployment.html" class="nav-item">
+                        <i class="fas fa-rocket"></i>
+                        <span>Deployment</span>
+                    </a>
+                    <a href="architecture.html" class="nav-item active">
+                        <i class="fas fa-sitemap"></i>
+                        <span>Architecture</span>
+                    </a>
                 </div>
-
+                
                 <div class="nav-section">
-                    <h3><i class="fas fa-cogs"></i> Installation & Deployment</h3>
-                    <ul>
-                        <li><a href="installation.html">Installation Guide</a></li>
-                        <li><a href="deployment.html">Deployment Guide</a></li>
-                        <li><a href="hardware-specs.html">Hardware Specifications</a></li>
-                    </ul>
+                    <div class="nav-section-title">Administration</div>
+                    <a href="administration.html" class="nav-item">
+                        <i class="fas fa-cogs"></i>
+                        <span>Administration</span>
+                    </a>
+                    <a href="tip-admin.html" class="nav-item">
+                        <i class="fas fa-shield-virus"></i>
+                        <span>TIP Admin</span>
+                    </a>
+                    <a href="csam-admin.html" class="nav-item">
+                        <i class="fas fa-user-cog"></i>
+                        <span>CSAM Admin</span>
+                    </a>
                 </div>
-
+                
                 <div class="nav-section">
-                    <h3><i class="fas fa-users-cog"></i> Administration</h3>
-                    <ul>
-                        <li><a href="administration.html">Administration</a></li>
-                        <li><a href="csam-admin.html">CSAM Administration</a></li>
-                        <li><a href="tip-admin.html">TIP Administration</a></li>
-                    </ul>
+                    <div class="nav-section-title">Integration</div>
+                    <a href="integrations.html" class="nav-item">
+                        <i class="fas fa-plug"></i>
+                        <span>Integrations</span>
+                    </a>
+                    <a href="playbooks.html" class="nav-item">
+                        <i class="fas fa-book"></i>
+                        <span>Playbooks</span>
+                    </a>
+                    <a href="api-reference.html" class="nav-item">
+                        <i class="fas fa-code"></i>
+                        <span>API Reference</span>
+                    </a>
                 </div>
-
+                
                 <div class="nav-section">
-                    <h3><i class="fas fa-puzzle-piece"></i> Integrations</h3>
-                    <ul>
-                        <li><a href="integrations.html">Available Integrations</a></li>
-                        <li><a href="playbooks.html">Security Playbooks</a></li>
-                        <li><a href="api-reference.html">API Reference</a></li>
-                    </ul>
-                </div>
-
-                <div class="nav-section">
-                    <h3><i class="fas fa-question-circle"></i> Support</h3>
-                    <ul>
-                        <li><a href="troubleshooting.html">Troubleshooting</a></li>
-                        <li><a href="faq.html">FAQ</a></li>
-                        <li><a href="support.html">Contact Support</a></li>
-                    </ul>
+                    <div class="nav-section-title">Support</div>
+                    <a href="troubleshooting.html" class="nav-item">
+                        <i class="fas fa-tools"></i>
+                        <span>Troubleshooting</span>
+                    </a>
+                    <a href="faq.html" class="nav-item">
+                        <i class="fas fa-question-circle"></i>
+                        <span>FAQ</span>
+                    </a>
+                    <a href="support.html" class="nav-item">
+                        <i class="fas fa-life-ring"></i>
+                        <span>Support</span>
+                    </a>
                 </div>
             </nav>
         </aside>
@@ -175,6 +197,350 @@
                                 <li>Compliance monitoring</li>
                             </ul>
                         </div>
+                    </div>
+                </section>
+
+                <section>
+                    <h2><i class="fas fa-table"></i> Architecture Comparison Matrix</h2>
+                    <p>Comprehensive comparison of architectural components across different deployment models:</p>
+                    
+                    <div class="table-container">
+                        <table class="comparison-table">
+                            <thead>
+                                <tr>
+                                    <th>Component</th>
+                                    <th>On-Premise</th>
+                                    <th>Cloud (SaaS)</th>
+                                    <th>Hybrid</th>
+                                    <th>Multi-Cloud</th>
+                                    <th>Edge Computing</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>SIA Analytics Engine</strong></td>
+                                    <td><span class="badge badge-success">Full Control</span></td>
+                                    <td><span class="badge badge-info">Managed Service</span></td>
+                                    <td><span class="badge badge-warning">Distributed</span></td>
+                                    <td><span class="badge badge-info">Multi-Region</span></td>
+                                    <td><span class="badge badge-secondary">Edge Nodes</span></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>SOAR Orchestration</strong></td>
+                                    <td><span class="badge badge-success">On-Site</span></td>
+                                    <td><span class="badge badge-info">Cloud Native</span></td>
+                                    <td><span class="badge badge-warning">Split Operations</span></td>
+                                    <td><span class="badge badge-info">Cloud Agnostic</span></td>
+                                    <td><span class="badge badge-secondary">Local Processing</span></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>TIP Intelligence</strong></td>
+                                    <td><span class="badge badge-warning">Limited Feeds</span></td>
+                                    <td><span class="badge badge-success">Global Feeds</span></td>
+                                    <td><span class="badge badge-success">Best of Both</span></td>
+                                    <td><span class="badge badge-success">Federated Intel</span></td>
+                                    <td><span class="badge badge-warning">Cached Intel</span></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>CSAM Asset Management</strong></td>
+                                    <td><span class="badge badge-success">Direct Access</span></td>
+                                    <td><span class="badge badge-warning">Agent-Based</span></td>
+                                    <td><span class="badge badge-info">Hybrid Scanning</span></td>
+                                    <td><span class="badge badge-info">Multi-Env Scan</span></td>
+                                    <td><span class="badge badge-success">Real-time</span></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Data Storage</strong></td>
+                                    <td><span class="badge badge-success">Local Control</span></td>
+                                    <td><span class="badge badge-info">Cloud Storage</span></td>
+                                    <td><span class="badge badge-warning">Tiered Storage</span></td>
+                                    <td><span class="badge badge-info">Geo-Distributed</span></td>
+                                    <td><span class="badge badge-secondary">Edge Cache</span></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Processing Power</strong></td>
+                                    <td><span class="badge badge-warning">Fixed Capacity</span></td>
+                                    <td><span class="badge badge-success">Auto-Scale</span></td>
+                                    <td><span class="badge badge-info">Burst to Cloud</span></td>
+                                    <td><span class="badge badge-success">Unlimited Scale</span></td>
+                                    <td><span class="badge badge-warning">Limited Local</span></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Security Controls</strong></td>
+                                    <td><span class="badge badge-success">Full Control</span></td>
+                                    <td><span class="badge badge-info">Shared Model</span></td>
+                                    <td><span class="badge badge-warning">Complex Policy</span></td>
+                                    <td><span class="badge badge-warning">Multi-Policy</span></td>
+                                    <td><span class="badge badge-success">Local Security</span></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Compliance</strong></td>
+                                    <td><span class="badge badge-success">Full Audit</span></td>
+                                    <td><span class="badge badge-info">Provider Certs</span></td>
+                                    <td><span class="badge badge-warning">Dual Compliance</span></td>
+                                    <td><span class="badge badge-warning">Multi-Jurisdiction</span></td>
+                                    <td><span class="badge badge-info">Local Compliance</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+
+                <section>
+                    <h2><i class="fas fa-layer-group"></i> Component Integration Matrix</h2>
+                    <p>How different platform components integrate and share data:</p>
+                    
+                    <div class="table-container">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Integration</th>
+                                    <th>Data Flow</th>
+                                    <th>Protocol</th>
+                                    <th>Frequency</th>
+                                    <th>Security</th>
+                                    <th>Performance Impact</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>SIA → SOAR</strong></td>
+                                    <td>Alert/Incident Data</td>
+                                    <td><code>REST API / Webhook</code></td>
+                                    <td>Real-time</td>
+                                    <td><span class="badge badge-success">TLS 1.3</span></td>
+                                    <td><span class="severity low">Low</span></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>TIP → SIA</strong></td>
+                                    <td>Threat Intelligence</td>
+                                    <td><code>STIX/TAXII 2.1</code></td>
+                                    <td>Every 15 min</td>
+                                    <td><span class="badge badge-success">mTLS</span></td>
+                                    <td><span class="severity low">Low</span></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>CSAM → SIA</strong></td>
+                                    <td>Asset/Vulnerability Data</td>
+                                    <td><code>REST API / JSON</code></td>
+                                    <td>Hourly</td>
+                                    <td><span class="badge badge-success">OAuth 2.0</span></td>
+                                    <td><span class="severity medium">Medium</span></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>SOAR → CSAM</strong></td>
+                                    <td>Remediation Actions</td>
+                                    <td><code>REST API</code></td>
+                                    <td>On-demand</td>
+                                    <td><span class="badge badge-success">JWT Token</span></td>
+                                    <td><span class="severity low">Low</span></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>TIP → SOAR</strong></td>
+                                    <td>IOC/Context Data</td>
+                                    <td><code>GraphQL</code></td>
+                                    <td>Real-time</td>
+                                    <td><span class="badge badge-success">API Key</span></td>
+                                    <td><span class="severity low">Low</span></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>External SIEM → SIA</strong></td>
+                                    <td>Log/Event Data</td>
+                                    <td><code>Syslog / CEF</code></td>
+                                    <td>Continuous</td>
+                                    <td><span class="badge badge-warning">TLS 1.2</span></td>
+                                    <td><span class="severity high">High</span></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>External Feeds → TIP</strong></td>
+                                    <td>Threat Feed Data</td>
+                                    <td><code>STIX/TAXII</code></td>
+                                    <td>Every 5 min</td>
+                                    <td><span class="badge badge-success">Certificate Auth</span></td>
+                                    <td><span class="severity medium">Medium</span></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Cloud Services → All</strong></td>
+                                    <td>Config/Metadata</td>
+                                    <td><code>Cloud APIs</code></td>
+                                    <td>Daily</td>
+                                    <td><span class="badge badge-success">IAM Roles</span></td>
+                                    <td><span class="severity low">Low</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+
+                <section>
+                    <h2><i class="fas fa-database"></i> Data Architecture Specifications</h2>
+                    <p>Detailed specifications for data storage, processing, and retention across the platform:</p>
+                    
+                    <div class="table-container">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Data Type</th>
+                                    <th>Storage Technology</th>
+                                    <th>Retention Period</th>
+                                    <th>Backup Strategy</th>
+                                    <th>Encryption</th>
+                                    <th>Access Controls</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>Security Events</strong></td>
+                                    <td>Elasticsearch Cluster</td>
+                                    <td>2 years (configurable)</td>
+                                    <td>Daily incremental</td>
+                                    <td><span class="badge badge-success">AES-256</span></td>
+                                    <td>RBAC + Field-level</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Threat Intelligence</strong></td>
+                                    <td>PostgreSQL + Redis</td>
+                                    <td>5 years</td>
+                                    <td>Real-time replication</td>
+                                    <td><span class="badge badge-success">AES-256</span></td>
+                                    <td>API-based access</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Asset Inventory</strong></td>
+                                    <td>MongoDB Sharded</td>
+                                    <td>Indefinite</td>
+                                    <td>Weekly full backup</td>
+                                    <td><span class="badge badge-success">TDE + Field</span></td>
+                                    <td>Attribute-based</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Incident Data</strong></td>
+                                    <td>PostgreSQL HA</td>
+                                    <td>7 years (regulatory)</td>
+                                    <td>Continuous WAL</td>
+                                    <td><span class="badge badge-success">AES-256</span></td>
+                                    <td>Case-based access</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>User Activity Logs</strong></td>
+                                    <td>TimescaleDB</td>
+                                    <td>1 year</td>
+                                    <td>Daily snapshots</td>
+                                    <td><span class="badge badge-success">Column-level</span></td>
+                                    <td>Audit-only access</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Configuration Data</strong></td>
+                                    <td>etcd Cluster</td>
+                                    <td>Versioned (50 versions)</td>
+                                    <td>Git-based versioning</td>
+                                    <td><span class="badge badge-success">At-rest + Transit</span></td>
+                                    <td>Admin-only</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>ML Models</strong></td>
+                                    <td>S3-compatible + MLflow</td>
+                                    <td>Model lifecycle</td>
+                                    <td>Versioned artifacts</td>
+                                    <td><span class="badge badge-success">S3 Encryption</span></td>
+                                    <td>Data scientist access</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Archived Data</strong></td>
+                                    <td>Cold Storage (Glacier)</td>
+                                    <td>10+ years</td>
+                                    <td>Cross-region replication</td>
+                                    <td><span class="badge badge-success">KMS Managed</span></td>
+                                    <td>Compliance officer</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+
+                <section>
+                    <h2><i class="fas fa-network-wired"></i> Network Architecture Requirements</h2>
+                    <p>Network infrastructure requirements and topology specifications:</p>
+                    
+                    <div class="table-container">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Network Segment</th>
+                                    <th>VLAN/Subnet</th>
+                                    <th>Required Ports</th>
+                                    <th>Bandwidth</th>
+                                    <th>Latency Requirement</th>
+                                    <th>Security Zone</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>Management Network</strong></td>
+                                    <td>10.0.10.0/24</td>
+                                    <td><code>22, 443, 8080</code></td>
+                                    <td>1 Gbps</td>
+                                    <td>&lt; 10ms</td>
+                                    <td><span class="badge badge-danger">Restricted</span></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Data Processing</strong></td>
+                                    <td>10.0.20.0/23</td>
+                                    <td><code>5432, 9200, 6379</code></td>
+                                    <td>10 Gbps</td>
+                                    <td>&lt; 5ms</td>
+                                    <td><span class="badge badge-warning">Internal</span></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>API Gateway</strong></td>
+                                    <td>10.0.50.0/24</td>
+                                    <td><code>80, 443, 8443</code></td>
+                                    <td>5 Gbps</td>
+                                    <td>&lt; 20ms</td>
+                                    <td><span class="badge badge-info">DMZ</span></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Analytics Engine</strong></td>
+                                    <td>10.0.30.0/22</td>
+                                    <td><code>8080, 9092, 2181</code></td>
+                                    <td>25 Gbps</td>
+                                    <td>&lt; 2ms</td>
+                                    <td><span class="badge badge-warning">Compute</span></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Storage Network</strong></td>
+                                    <td>10.0.100.0/22</td>
+                                    <td><code>3260, 2049, 111</code></td>
+                                    <td>40 Gbps</td>
+                                    <td>&lt; 1ms</td>
+                                    <td><span class="badge badge-warning">Storage</span></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Backup Network</strong></td>
+                                    <td>10.0.200.0/24</td>
+                                    <td><code>10000, 8080</code></td>
+                                    <td>10 Gbps</td>
+                                    <td>&lt; 50ms</td>
+                                    <td><span class="badge badge-secondary">Backup</span></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>External Feeds</strong></td>
+                                    <td>DMZ - 172.16.1.0/24</td>
+                                    <td><code>443, 8443, 9443</code></td>
+                                    <td>1 Gbps</td>
+                                    <td>&lt; 100ms</td>
+                                    <td><span class="badge badge-info">External</span></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>User Access</strong></td>
+                                    <td>Corporate - 192.168.0.0/16</td>
+                                    <td><code>443, 8080</code></td>
+                                    <td>100 Mbps</td>
+                                    <td>&lt; 50ms</td>
+                                    <td><span class="badge badge-success">User</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </div>
                 </section>
 

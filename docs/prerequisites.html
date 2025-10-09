@@ -11,82 +11,117 @@
 </head>
 <body>
     <div class="container">
-        <!-- Header -->
-        <header class="header">
-            <div class="header-content">
-                <div class="logo">
-                    <h1><i class="fas fa-shield-alt"></i> Securaa</h1>
-                    <span class="tagline">Advanced Cybersecurity Solutions</span>
-                </div>
-                <nav class="main-nav">
-                    <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="sia.html">SIA</a></li>
-                        <li><a href="soar.html">SOAR</a></li>
-                        <li><a href="tip.html">TIP</a></li>
-                        <li><a href="csam.html">CSAM</a></li>
-                        <li><a href="support.html">Support</a></li>
-                    </ul>
-                </nav>
-                <div class="search-container">
-                    <input type="text" id="searchInput" placeholder="Search documentation...">
-                    <i class="fas fa-search"></i>
-                </div>
-            </div>
-        </header>
-
-        <!-- Sidebar Navigation -->
         <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="logo">
+                    <i class="fas fa-shield-alt"></i>
+                    <span>Securaa Docs</span>
+                </div>
+                <button class="mobile-menu-toggle" onclick="toggleMobileMenu()">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+            
             <nav class="sidebar-nav">
+                <a href="index.html" class="nav-item">
+                    <i class="fas fa-home"></i>
+                    <span>Home</span>
+                </a>
+                
                 <div class="nav-section">
-                    <h3><i class="fas fa-home"></i> Getting Started</h3>
-                    <ul>
-                        <li><a href="index.html#overview">Product Overview</a></li>
-                        <li><a href="architecture.html">Solution Architecture</a></li>
-                        <li><a href="prerequisites.html" class="active">Prerequisites</a></li>
-                    </ul>
+                    <div class="nav-section-title">Products</div>
+                    <a href="sia.html" class="nav-item">
+                        <i class="fas fa-brain"></i>
+                        <span>SIA</span>
+                    </a>
+                    <a href="soar.html" class="nav-item">
+                        <i class="fas fa-robot"></i>
+                        <span>SOAR</span>
+                    </a>
+                    <a href="tip.html" class="nav-item">
+                        <i class="fas fa-shield-virus"></i>
+                        <span>TIP</span>
+                    </a>
+                    <a href="csam.html" class="nav-item">
+                        <i class="fas fa-user-shield"></i>
+                        <span>CSAM</span>
+                    </a>
                 </div>
                 
                 <div class="nav-section">
-                    <h3><i class="fas fa-cube"></i> Products</h3>
-                    <ul>
-                        <li><a href="sia.html">SIA (Security Intelligence Analytics)</a></li>
-                        <li><a href="soar.html">SOAR (Security Orchestration)</a></li>
-                        <li><a href="tip.html">TIP (Threat Intelligence Platform)</a></li>
-                        <li><a href="csam.html">CSAM (Cyber Security Asset Management)</a></li>
-                    </ul>
+                    <div class="nav-section-title">Setup & Configuration</div>
+                    <a href="prerequisites.html" class="nav-item active">
+                        <i class="fas fa-list-check"></i>
+                        <span>Prerequisites</span>
+                    </a>
+                    <a href="hardware-specs.html" class="nav-item">
+                        <i class="fas fa-server"></i>
+                        <span>Hardware Specs</span>
+                    </a>
+                    <a href="installation.html" class="nav-item">
+                        <i class="fas fa-download"></i>
+                        <span>Installation</span>
+                    </a>
+                    <a href="deployment.html" class="nav-item">
+                        <i class="fas fa-rocket"></i>
+                        <span>Deployment</span>
+                    </a>
+                    <a href="architecture.html" class="nav-item">
+                        <i class="fas fa-sitemap"></i>
+                        <span>Architecture</span>
+                    </a>
                 </div>
-
+                
                 <div class="nav-section">
-                    <h3><i class="fas fa-users-cog"></i> Administration</h3>
-                    <ul>
-                        <li><a href="administration.html">Administration</a></li>
-                        <li><a href="csam-admin.html">CSAM Administration</a></li>
-                        <li><a href="tip-admin.html">TIP Administration</a></li>
-                    </ul>
+                    <div class="nav-section-title">Administration</div>
+                    <a href="administration.html" class="nav-item">
+                        <i class="fas fa-cogs"></i>
+                        <span>Administration</span>
+                    </a>
+                    <a href="tip-admin.html" class="nav-item">
+                        <i class="fas fa-shield-virus"></i>
+                        <span>TIP Admin</span>
+                    </a>
+                    <a href="csam-admin.html" class="nav-item">
+                        <i class="fas fa-user-cog"></i>
+                        <span>CSAM Admin</span>
+                    </a>
                 </div>
-
+                
                 <div class="nav-section">
-                    <h3><i class="fas fa-puzzle-piece"></i> Integrations</h3>
-                    <ul>
-                        <li><a href="integrations.html">Available Integrations</a></li>
-                        <li><a href="playbooks.html">Security Playbooks</a></li>
-                        <li><a href="api-reference.html">API Reference</a></li>
-                    </ul>
+                    <div class="nav-section-title">Integration</div>
+                    <a href="integrations.html" class="nav-item">
+                        <i class="fas fa-plug"></i>
+                        <span>Integrations</span>
+                    </a>
+                    <a href="playbooks.html" class="nav-item">
+                        <i class="fas fa-book"></i>
+                        <span>Playbooks</span>
+                    </a>
+                    <a href="api-reference.html" class="nav-item">
+                        <i class="fas fa-code"></i>
+                        <span>API Reference</span>
+                    </a>
                 </div>
-
+                
                 <div class="nav-section">
-                    <h3><i class="fas fa-question-circle"></i> Support</h3>
-                    <ul>
-                        <li><a href="troubleshooting.html">Troubleshooting</a></li>
-                        <li><a href="faq.html">FAQ</a></li>
-                        <li><a href="support.html">Contact Support</a></li>
-                    </ul>
+                    <div class="nav-section-title">Support</div>
+                    <a href="troubleshooting.html" class="nav-item">
+                        <i class="fas fa-tools"></i>
+                        <span>Troubleshooting</span>
+                    </a>
+                    <a href="faq.html" class="nav-item">
+                        <i class="fas fa-question-circle"></i>
+                        <span>FAQ</span>
+                    </a>
+                    <a href="support.html" class="nav-item">
+                        <i class="fas fa-life-ring"></i>
+                        <span>Support</span>
+                    </a>
                 </div>
             </nav>
         </aside>
 
-        <!-- Main Content -->
         <main class="main-content">
             <section id="prerequisites" class="content-section">
                 <div class="section-header">
@@ -98,48 +133,363 @@
                     <strong>Important:</strong> Please review all prerequisites carefully before beginning installation. Failure to meet requirements may result in installation issues or suboptimal performance.
                 </div>
 
-                <h3>General System Requirements</h3>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Component</th>
-                            <th>SIA</th>
-                            <th>SOAR</th>
-                            <th>TIP</th>
-                            <th>CSAM</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td><strong>CPU</strong></td>
-                            <td>16+ cores</td>
-                            <td>8+ cores</td>
-                            <td>8+ cores</td>
-                            <td>12+ cores</td>
-                        </tr>
-                        <tr>
-                            <td><strong>RAM</strong></td>
-                            <td>64+ GB</td>
-                            <td>32+ GB</td>
-                            <td>32+ GB</td>
-                            <td>48+ GB</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Storage</strong></td>
-                            <td>2+ TB SSD</td>
-                            <td>1+ TB SSD</td>
-                            <td>1+ TB SSD</td>
-                            <td>1.5+ TB SSD</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Network</strong></td>
-                            <td>10+ Gbps</td>
-                            <td>1+ Gbps</td>
-                            <td>1+ Gbps</td>
-                            <td>1+ Gbps</td>
-                        </tr>
-                    </tbody>
-                </table>
+                <h3>Detailed System Requirements by Deployment Size</h3>
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Component</th>
+                                <th>Small (Testing)</th>
+                                <th>Medium (Production)</th>
+                                <th>Large (Enterprise)</th>
+                                <th>Performance Impact</th>
+                                <th>Scaling Notes</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>SIA Analytics Engine</strong></td>
+                                <td>
+                                    8 vCPU, 32GB RAM<br>
+                                    500GB SSD<br>
+                                    <span class="badge badge-info">Basic</span>
+                                </td>
+                                <td>
+                                    16 vCPU, 64GB RAM<br>
+                                    2TB NVMe SSD<br>
+                                    <span class="badge badge-success">Recommended</span>
+                                </td>
+                                <td>
+                                    32+ vCPU, 128GB+ RAM<br>
+                                    4TB+ NVMe SSD<br>
+                                    <span class="badge badge-success">High Performance</span>
+                                </td>
+                                <td>CPU-intensive ML processing, memory for data caching</td>
+                                <td>Scale CPU and memory together, prioritize fast storage</td>
+                            </tr>
+                            <tr>
+                                <td><strong>SOAR Orchestration</strong></td>
+                                <td>
+                                    4 vCPU, 16GB RAM<br>
+                                    200GB SSD<br>
+                                    <span class="badge badge-info">Basic</span>
+                                </td>
+                                <td>
+                                    8 vCPU, 32GB RAM<br>
+                                    500GB SSD<br>
+                                    <span class="badge badge-success">Recommended</span>
+                                </td>
+                                <td>
+                                    16+ vCPU, 64GB+ RAM<br>
+                                    1TB+ SSD<br>
+                                    <span class="badge badge-success">High Throughput</span>
+                                </td>
+                                <td>Memory for concurrent playbooks, CPU for automation</td>
+                                <td>Add memory for more concurrent workflows</td>
+                            </tr>
+                            <tr>
+                                <td><strong>TIP Intelligence Platform</strong></td>
+                                <td>
+                                    4 vCPU, 16GB RAM<br>
+                                    1TB HDD<br>
+                                    <span class="badge badge-warning">Limited</span>
+                                </td>
+                                <td>
+                                    8 vCPU, 32GB RAM<br>
+                                    2TB SSD<br>
+                                    <span class="badge badge-success">Recommended</span>
+                                </td>
+                                <td>
+                                    16+ vCPU, 64GB+ RAM<br>
+                                    4TB+ SSD<br>
+                                    <span class="badge badge-success">Intelligence Hub</span>
+                                </td>
+                                <td>Storage for threat data, memory for search performance</td>
+                                <td>Prioritize storage capacity and search performance</td>
+                            </tr>
+                            <tr>
+                                <td><strong>CSAM Asset Management</strong></td>
+                                <td>
+                                    4 vCPU, 16GB RAM<br>
+                                    500GB SSD<br>
+                                    <span class="badge badge-info">Basic</span>
+                                </td>
+                                <td>
+                                    8 vCPU, 32GB RAM<br>
+                                    1TB SSD<br>
+                                    <span class="badge badge-success">Recommended</span>
+                                </td>
+                                <td>
+                                    16+ vCPU, 64GB+ RAM<br>
+                                    2TB+ SSD<br>
+                                    <span class="badge badge-success">Enterprise Scale</span>
+                                </td>
+                                <td>Network scanning requires CPU, asset storage needs disk</td>
+                                <td>Scale based on network size and scan frequency</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Database Server</strong></td>
+                                <td>
+                                    4 vCPU, 16GB RAM<br>
+                                    500GB SSD<br>
+                                    <span class="badge badge-warning">Single Instance</span>
+                                </td>
+                                <td>
+                                    8 vCPU, 32GB RAM<br>
+                                    1TB NVMe SSD<br>
+                                    <span class="badge badge-success">With Replica</span>
+                                </td>
+                                <td>
+                                    16+ vCPU, 64GB+ RAM<br>
+                                    2TB+ NVMe SSD<br>
+                                    <span class="badge badge-success">HA Cluster</span>
+                                </td>
+                                <td>Critical for all operations, requires high IOPS</td>
+                                <td>Memory and storage are critical, consider clustering</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Search Engine</strong></td>
+                                <td>
+                                    4 vCPU, 16GB RAM<br>
+                                    1TB SSD<br>
+                                    <span class="badge badge-warning">Single Node</span>
+                                </td>
+                                <td>
+                                    8 vCPU, 32GB RAM<br>
+                                    2TB SSD<br>
+                                    <span class="badge badge-success">3-Node Cluster</span>
+                                </td>
+                                <td>
+                                    16+ vCPU, 64GB+ RAM<br>
+                                    4TB+ SSD<br>
+                                    <span class="badge badge-success">Multi-Node Cluster</span>
+                                </td>
+                                <td>Memory-intensive indexing, storage for search indices</td>
+                                <td>Follow Elasticsearch sizing guidelines for heap</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h3>Operating System & Software Prerequisites</h3>
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Category</th>
+                                <th>Requirement</th>
+                                <th>Version</th>
+                                <th>Purpose</th>
+                                <th>Installation Notes</th>
+                                <th>Configuration Requirements</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Operating System</strong></td>
+                                <td>Ubuntu Server LTS</td>
+                                <td>20.04+ or 22.04+</td>
+                                <td>Base operating system</td>
+                                <td>
+                                    <span class="badge badge-success">Recommended</span><br>
+                                    Long-term support, security updates
+                                </td>
+                                <td>Minimal installation, no desktop environment</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Alternative OS</strong></td>
+                                <td>RHEL/CentOS Stream</td>
+                                <td>8+ or 9+</td>
+                                <td>Enterprise alternative</td>
+                                <td>
+                                    <span class="badge badge-info">Supported</span><br>
+                                    Enterprise support available
+                                </td>
+                                <td>SELinux may require additional configuration</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Container Runtime</strong></td>
+                                <td>Docker CE</td>
+                                <td>20.10+</td>
+                                <td>Application containerization</td>
+                                <td>
+                                    <span class="badge badge-success">Required</span><br>
+                                    For container deployments
+                                </td>
+                                <td>Configure daemon for production use</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Orchestration</strong></td>
+                                <td>Kubernetes</td>
+                                <td>1.24+</td>
+                                <td>Container orchestration</td>
+                                <td>
+                                    <span class="badge badge-info">Optional</span><br>
+                                    For cloud-native deployments
+                                </td>
+                                <td>CNI, CSI, and ingress controller required</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Java Runtime</strong></td>
+                                <td>OpenJDK</td>
+                                <td>11 or 17</td>
+                                <td>Elasticsearch and application services</td>
+                                <td>
+                                    <span class="badge badge-success">Critical</span><br>
+                                    Required for search functionality
+                                </td>
+                                <td>Configure heap size based on available memory</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Python Runtime</strong></td>
+                                <td>Python</td>
+                                <td>3.8+ or 3.9+</td>
+                                <td>Automation scripts and integrations</td>
+                                <td>
+                                    <span class="badge badge-success">Required</span><br>
+                                    For SOAR and automation
+                                </td>
+                                <td>Virtual environments recommended</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Web Server</strong></td>
+                                <td>Nginx</td>
+                                <td>1.18+</td>
+                                <td>Reverse proxy and SSL termination</td>
+                                <td>
+                                    <span class="badge badge-success">Recommended</span><br>
+                                    High performance web serving
+                                </td>
+                                <td>SSL/TLS configuration for security</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Time Synchronization</strong></td>
+                                <td>NTP/Chrony</td>
+                                <td>Latest</td>
+                                <td>System time synchronization</td>
+                                <td>
+                                    <span class="badge badge-success">Critical</span><br>
+                                    Required for log correlation
+                                </td>
+                                <td>Configure reliable time sources</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h3>Network Requirements & Port Configuration</h3>
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Service</th>
+                                <th>Port(s)</th>
+                                <th>Protocol</th>
+                                <th>Direction</th>
+                                <th>Source/Destination</th>
+                                <th>Purpose</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Web Interface (HTTPS)</strong></td>
+                                <td>443</td>
+                                <td>TCP</td>
+                                <td>Inbound</td>
+                                <td>User networks</td>
+                                <td>Secure web access to Securaa platform</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Web Interface (HTTP)</strong></td>
+                                <td>80</td>
+                                <td>TCP</td>
+                                <td>Inbound</td>
+                                <td>User networks (redirect to HTTPS)</td>
+                                <td>HTTP to HTTPS redirection</td>
+                            </tr>
+                            <tr>
+                                <td><strong>API Access</strong></td>
+                                <td>8080-8083</td>
+                                <td>TCP</td>
+                                <td>Inbound</td>
+                                <td>API clients, integrations</td>
+                                <td>REST API access for each component</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Database (PostgreSQL)</strong></td>
+                                <td>5432</td>
+                                <td>TCP</td>
+                                <td>Internal</td>
+                                <td>Application servers</td>
+                                <td>Database connectivity</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Elasticsearch</strong></td>
+                                <td>9200, 9300</td>
+                                <td>TCP</td>
+                                <td>Internal</td>
+                                <td>Application servers, ES cluster</td>
+                                <td>Search and analytics functionality</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Message Queue (RabbitMQ)</strong></td>
+                                <td>5672, 15672</td>
+                                <td>TCP</td>
+                                <td>Internal</td>
+                                <td>Application servers</td>
+                                <td>Async processing and job queues</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Syslog Collection</strong></td>
+                                <td>514, 1514</td>
+                                <td>UDP/TCP</td>
+                                <td>Inbound</td>
+                                <td>Network devices, servers</td>
+                                <td>Log data collection and ingestion</td>
+                            </tr>
+                            <tr>
+                                <td><strong>SNMP Monitoring</strong></td>
+                                <td>161</td>
+                                <td>UDP</td>
+                                <td>Outbound</td>
+                                <td>Network devices</td>
+                                <td>Device monitoring and asset discovery</td>
+                            </tr>
+                            <tr>
+                                <td><strong>SSH Management</strong></td>
+                                <td>22</td>
+                                <td>TCP</td>
+                                <td>Inbound</td>
+                                <td>Administrator networks</td>
+                                <td>System administration and maintenance</td>
+                            </tr>
+                            <tr>
+                                <td><strong>NTP Time Sync</strong></td>
+                                <td>123</td>
+                                <td>UDP</td>
+                                <td>Outbound</td>
+                                <td>Time servers</td>
+                                <td>System time synchronization</td>
+                            </tr>
+                            <tr>
+                                <td><strong>DNS Resolution</strong></td>
+                                <td>53</td>
+                                <td>UDP/TCP</td>
+                                <td>Outbound</td>
+                                <td>DNS servers</td>
+                                <td>Domain name resolution</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Internet Access (HTTPS)</strong></td>
+                                <td>443</td>
+                                <td>TCP</td>
+                                <td>Outbound</td>
+                                <td>Internet</td>
+                                <td>Threat intelligence feeds, updates</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
 
                 <h3>Software Prerequisites</h3>
                 <div class="feature-grid">

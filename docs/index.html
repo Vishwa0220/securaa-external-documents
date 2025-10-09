@@ -11,91 +11,113 @@
 </head>
 <body>
     <div class="container">
-        <!-- Header -->
-        <header class="header">
-            <div class="header-content">
-                <div class="logo">
-                    <h1><i class="fas fa-shield-alt"></i> Securaa</h1>
-                    <span class="tagline">Advanced Cybersecurity Solutions</span>
-                </div>
-                <nav class="main-nav">
-                    <ul>
-                        <li><a href="index.html" class="active">Home</a></li>
-                        <li><a href="sia.html">SIA</a></li>
-                        <li><a href="soar.html">SOAR</a></li>
-                        <li><a href="tip.html">TIP</a></li>
-                        <li><a href="csam.html">CSAM</a></li>
-                        <li><a href="support.html">Support</a></li>
-                    </ul>
-                </nav>
-                <div class="header-right">
-                    <div class="search-container">
-                        <input type="text" id="searchInput" placeholder="Search documentation...">
-                        <i class="fas fa-search"></i>
-                    </div>
-                    <button class="mobile-menu-toggle" onclick="toggleMobileMenu()">
-                        <i class="fas fa-bars"></i>
-                    </button>
-                </div>
-            </div>
-        </header>
-
-        <!-- Sidebar Navigation -->
         <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="logo">
+                    <i class="fas fa-shield-alt"></i>
+                    <span>Securaa Docs</span>
+                </div>
+                <button class="mobile-menu-toggle" onclick="toggleMobileMenu()">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+            
             <nav class="sidebar-nav">
+                <a href="index.html" class="nav-item active">
+                    <i class="fas fa-home"></i>
+                    <span>Home</span>
+                </a>
+                
                 <div class="nav-section">
-                    <h3><i class="fas fa-home"></i> Getting Started</h3>
-                    <ul>
-                        <li><a href="#overview">Product Overview</a></li>
-                        <li><a href="architecture.html">Solution Architecture</a></li>
-                        <li><a href="prerequisites.html">Prerequisites</a></li>
-                    </ul>
+                    <div class="nav-section-title">Products</div>
+                    <a href="sia.html" class="nav-item">
+                        <i class="fas fa-brain"></i>
+                        <span>SIA</span>
+                    </a>
+                    <a href="soar.html" class="nav-item">
+                        <i class="fas fa-robot"></i>
+                        <span>SOAR</span>
+                    </a>
+                    <a href="tip.html" class="nav-item">
+                        <i class="fas fa-shield-virus"></i>
+                        <span>TIP</span>
+                    </a>
+                    <a href="csam.html" class="nav-item">
+                        <i class="fas fa-user-shield"></i>
+                        <span>CSAM</span>
+                    </a>
                 </div>
                 
                 <div class="nav-section">
-                    <h3><i class="fas fa-cube"></i> Products</h3>
-                    <ul>
-                        <li><a href="sia.html">SIA (Security Intelligence Analytics)</a></li>
-                        <li><a href="soar.html">SOAR (Security Orchestration)</a></li>
-                        <li><a href="tip.html">TIP (Threat Intelligence Platform)</a></li>
-                        <li><a href="csam.html">CSAM (Cyber Security Asset Management)</a></li>
-                    </ul>
+                    <div class="nav-section-title">Setup & Configuration</div>
+                    <a href="prerequisites.html" class="nav-item">
+                        <i class="fas fa-list-check"></i>
+                        <span>Prerequisites</span>
+                    </a>
+                    <a href="hardware-specs.html" class="nav-item">
+                        <i class="fas fa-server"></i>
+                        <span>Hardware Specs</span>
+                    </a>
+                    <a href="installation.html" class="nav-item">
+                        <i class="fas fa-download"></i>
+                        <span>Installation</span>
+                    </a>
+                    <a href="deployment.html" class="nav-item">
+                        <i class="fas fa-rocket"></i>
+                        <span>Deployment</span>
+                    </a>
+                    <a href="architecture.html" class="nav-item">
+                        <i class="fas fa-sitemap"></i>
+                        <span>Architecture</span>
+                    </a>
                 </div>
-
+                
                 <div class="nav-section">
-                    <h3><i class="fas fa-cogs"></i> Installation & Deployment</h3>
-                    <ul>
-                        <li><a href="installation.html">Installation Guide</a></li>
-                        <li><a href="deployment.html">Deployment Guide</a></li>
-                        <li><a href="hardware-specs.html">Hardware Specifications</a></li>
-                    </ul>
+                    <div class="nav-section-title">Administration</div>
+                    <a href="administration.html" class="nav-item">
+                        <i class="fas fa-cogs"></i>
+                        <span>Administration</span>
+                    </a>
+                    <a href="tip-admin.html" class="nav-item">
+                        <i class="fas fa-shield-virus"></i>
+                        <span>TIP Admin</span>
+                    </a>
+                    <a href="csam-admin.html" class="nav-item">
+                        <i class="fas fa-user-cog"></i>
+                        <span>CSAM Admin</span>
+                    </a>
                 </div>
-
+                
                 <div class="nav-section">
-                    <h3><i class="fas fa-users-cog"></i> Administration</h3>
-                    <ul>
-                        <li><a href="administration.html">Administration</a></li>
-                        <li><a href="csam-admin.html">CSAM Administration</a></li>
-                        <li><a href="tip-admin.html">TIP Administration</a></li>
-                    </ul>
+                    <div class="nav-section-title">Integration</div>
+                    <a href="integrations.html" class="nav-item">
+                        <i class="fas fa-plug"></i>
+                        <span>Integrations</span>
+                    </a>
+                    <a href="playbooks.html" class="nav-item">
+                        <i class="fas fa-book"></i>
+                        <span>Playbooks</span>
+                    </a>
+                    <a href="api-reference.html" class="nav-item">
+                        <i class="fas fa-code"></i>
+                        <span>API Reference</span>
+                    </a>
                 </div>
-
+                
                 <div class="nav-section">
-                    <h3><i class="fas fa-puzzle-piece"></i> Integrations</h3>
-                    <ul>
-                        <li><a href="integrations.html">Available Integrations</a></li>
-                        <li><a href="playbooks.html">Security Playbooks</a></li>
-                        <li><a href="api-reference.html">API Reference</a></li>
-                    </ul>
-                </div>
-
-                <div class="nav-section">
-                    <h3><i class="fas fa-question-circle"></i> Support</h3>
-                    <ul>
-                        <li><a href="troubleshooting.html">Troubleshooting</a></li>
-                        <li><a href="faq.html">FAQ</a></li>
-                        <li><a href="support.html">Contact Support</a></li>
-                    </ul>
+                    <div class="nav-section-title">Support</div>
+                    <a href="troubleshooting.html" class="nav-item">
+                        <i class="fas fa-tools"></i>
+                        <span>Troubleshooting</span>
+                    </a>
+                    <a href="faq.html" class="nav-item">
+                        <i class="fas fa-question-circle"></i>
+                        <span>FAQ</span>
+                    </a>
+                    <a href="support.html" class="nav-item">
+                        <i class="fas fa-life-ring"></i>
+                        <span>Support</span>
+                    </a>
                 </div>
             </nav>
         </aside>
@@ -168,100 +190,118 @@
                     <p>Compare capabilities and features across all Securaa platform components.</p>
                 </div>
                 
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Capability</th>
-                            <th>SIA</th>
-                            <th>SOAR</th>
-                            <th>TIP</th>
-                            <th>CSAM</th>
-                            <th>Description</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td><strong>Real-time Monitoring</strong></td>
-                            <td>✅</td>
-                            <td>✅</td>
-                            <td>✅</td>
-                            <td>✅</td>
-                            <td>Continuous monitoring of security events and assets</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Machine Learning</strong></td>
-                            <td>✅</td>
-                            <td>❌</td>
-                            <td>✅</td>
-                            <td>✅</td>
-                            <td>AI-powered threat detection and analysis</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Automation & Orchestration</strong></td>
-                            <td>❌</td>
-                            <td>✅</td>
-                            <td>❌</td>
-                            <td>❌</td>
-                            <td>Automated incident response and workflow execution</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Threat Intelligence Feeds</strong></td>
-                            <td>✅</td>
-                            <td>✅</td>
-                            <td>✅</td>
-                            <td>❌</td>
-                            <td>Integration with external threat intelligence sources</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Asset Discovery</strong></td>
-                            <td>❌</td>
-                            <td>❌</td>
-                            <td>❌</td>
-                            <td>✅</td>
-                            <td>Automated discovery and classification of network assets</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Vulnerability Assessment</strong></td>
-                            <td>✅</td>
-                            <td>✅</td>
-                            <td>❌</td>
-                            <td>✅</td>
-                            <td>Security vulnerability scanning and assessment</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Incident Response</strong></td>
-                            <td>✅</td>
-                            <td>✅</td>
-                            <td>✅</td>
-                            <td>❌</td>
-                            <td>Coordinated response to security incidents</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Compliance Monitoring</strong></td>
-                            <td>✅</td>
-                            <td>✅</td>
-                            <td>❌</td>
-                            <td>✅</td>
-                            <td>Regulatory compliance tracking and reporting</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Custom Dashboards</strong></td>
-                            <td>✅</td>
-                            <td>✅</td>
-                            <td>✅</td>
-                            <td>✅</td>
-                            <td>Customizable reporting and visualization</td>
-                        </tr>
-                        <tr>
-                            <td><strong>API Integration</strong></td>
-                            <td>✅</td>
-                            <td>✅</td>
-                            <td>✅</td>
-                            <td>✅</td>
-                            <td>REST API for third-party tool integration</td>
-                        </tr>
-                    </tbody>
-                </table>
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Capability</th>
+                                <th>SIA</th>
+                                <th>SOAR</th>
+                                <th>TIP</th>
+                                <th>CSAM</th>
+                                <th>Description</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Real-time Monitoring</strong></td>
+                                <td><span class="badge badge-success">Full Support</span></td>
+                                <td><span class="badge badge-success">Full Support</span></td>
+                                <td><span class="badge badge-success">Full Support</span></td>
+                                <td><span class="badge badge-success">Full Support</span></td>
+                                <td>Continuous monitoring of security events and assets</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Machine Learning</strong></td>
+                                <td><span class="badge badge-success">Advanced ML</span></td>
+                                <td><span class="badge badge-danger">Not Available</span></td>
+                                <td><span class="badge badge-success">Advanced ML</span></td>
+                                <td><span class="badge badge-info">Basic ML</span></td>
+                                <td>AI-powered threat detection and analysis</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Automation & Orchestration</strong></td>
+                                <td><span class="badge badge-warning">Limited</span></td>
+                                <td><span class="badge badge-success">Core Feature</span></td>
+                                <td><span class="badge badge-warning">Limited</span></td>
+                                <td><span class="badge badge-info">Basic</span></td>
+                                <td>Automated incident response and workflow execution</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Threat Intelligence Feeds</strong></td>
+                                <td><span class="badge badge-success">Full Integration</span></td>
+                                <td><span class="badge badge-success">Full Integration</span></td>
+                                <td><span class="badge badge-success">Core Feature</span></td>
+                                <td><span class="badge badge-danger">Not Available</span></td>
+                                <td>Integration with external threat intelligence sources</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Asset Discovery</strong></td>
+                                <td><span class="badge badge-warning">Limited</span></td>
+                                <td><span class="badge badge-danger">Not Available</span></td>
+                                <td><span class="badge badge-danger">Not Available</span></td>
+                                <td><span class="badge badge-success">Core Feature</span></td>
+                                <td>Automated discovery and classification of network assets</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Vulnerability Assessment</strong></td>
+                                <td><span class="badge badge-success">Advanced</span></td>
+                                <td><span class="badge badge-info">Integration</span></td>
+                                <td><span class="badge badge-warning">Limited</span></td>
+                                <td><span class="badge badge-success">Full Support</span></td>
+                                <td>Security vulnerability scanning and assessment</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Incident Response</strong></td>
+                                <td><span class="badge badge-success">Detection Focus</span></td>
+                                <td><span class="badge badge-success">Core Feature</span></td>
+                                <td><span class="badge badge-info">Intelligence Support</span></td>
+                                <td><span class="badge badge-warning">Limited</span></td>
+                                <td>Coordinated response to security incidents</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Compliance Monitoring</strong></td>
+                                <td><span class="badge badge-success">Full Support</span></td>
+                                <td><span class="badge badge-success">Full Support</span></td>
+                                <td><span class="badge badge-warning">Limited</span></td>
+                                <td><span class="badge badge-success">Full Support</span></td>
+                                <td>Regulatory compliance tracking and reporting</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Custom Dashboards</strong></td>
+                                <td><span class="badge badge-success">Advanced Analytics</span></td>
+                                <td><span class="badge badge-success">Workflow Views</span></td>
+                                <td><span class="badge badge-success">Intelligence Views</span></td>
+                                <td><span class="badge badge-success">Asset Views</span></td>
+                                <td>Customizable reporting and visualization</td>
+                            </tr>
+                            <tr>
+                                <td><strong>API Integration</strong></td>
+                                <td><span class="badge badge-success">RESTful API</span></td>
+                                <td><span class="badge badge-success">RESTful API</span></td>
+                                <td><span class="badge badge-success">RESTful API</span></td>
+                                <td><span class="badge badge-success">RESTful API</span></td>
+                                <td>REST API for third-party tool integration</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Scalability</strong></td>
+                                <td><span class="badge badge-success">Enterprise Scale</span></td>
+                                <td><span class="badge badge-success">High Volume</span></td>
+                                <td><span class="badge badge-success">Global Intel</span></td>
+                                <td><span class="badge badge-success">Large Networks</span></td>
+                                <td>Platform scaling capabilities for large environments</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Reporting & Analytics</strong></td>
+                                <td><span class="badge badge-success">Advanced Analytics</span></td>
+                                <td><span class="badge badge-info">Operational Reports</span></td>
+                                <td><span class="badge badge-success">Intel Reports</span></td>
+                                <td><span class="badge badge-success">Asset Reports</span></td>
+                                <td>Comprehensive reporting and data analytics capabilities</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
                 
                 <div class="alert alert-info">
                     <strong>Integrated Platform:</strong> All components work together seamlessly, sharing data and intelligence for comprehensive cybersecurity operations. Individual components can be deployed separately or as a complete integrated solution.

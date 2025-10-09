@@ -10,91 +10,113 @@
 </head>
 <body>
     <div class="container">
-        <!-- Header -->
-        <header class="header">
-            <div class="header-content">
-                <div class="logo">
-                    <h1><i class="fas fa-shield-alt"></i> Securaa</h1>
-                    <span class="tagline">Advanced Cybersecurity Solutions</span>
-                </div>
-                <nav class="main-nav">
-                    <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="sia.html">SIA</a></li>
-                        <li><a href="soar.html">SOAR</a></li>
-                        <li><a href="tip.html">TIP</a></li>
-                        <li><a href="csam.html">CSAM</a></li>
-                        <li><a href="support.html">Support</a></li>
-                    </ul>
-                </nav>
-                <div class="header-right">
-                    <div class="search-container">
-                        <input type="text" id="searchInput" placeholder="Search documentation...">
-                        <i class="fas fa-search"></i>
-                    </div>
-                    <button class="mobile-menu-toggle" onclick="toggleMobileMenu()">
-                        <i class="fas fa-bars"></i>
-                    </button>
-                </div>
-            </div>
-        </header>
-
-        <!-- Sidebar Navigation -->
         <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="logo">
+                    <i class="fas fa-shield-alt"></i>
+                    <span>Securaa Docs</span>
+                </div>
+                <button class="mobile-menu-toggle" onclick="toggleMobileMenu()">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+            
             <nav class="sidebar-nav">
+                <a href="index.html" class="nav-item">
+                    <i class="fas fa-home"></i>
+                    <span>Home</span>
+                </a>
+                
                 <div class="nav-section">
-                    <h3><i class="fas fa-home"></i> Getting Started</h3>
-                    <ul>
-                        <li><a href="index.html#overview">Product Overview</a></li>
-                        <li><a href="architecture.html">Solution Architecture</a></li>
-                        <li><a href="prerequisites.html">Prerequisites</a></li>
-                    </ul>
+                    <div class="nav-section-title">Products</div>
+                    <a href="sia.html" class="nav-item">
+                        <i class="fas fa-brain"></i>
+                        <span>SIA</span>
+                    </a>
+                    <a href="soar.html" class="nav-item">
+                        <i class="fas fa-robot"></i>
+                        <span>SOAR</span>
+                    </a>
+                    <a href="tip.html" class="nav-item">
+                        <i class="fas fa-shield-virus"></i>
+                        <span>TIP</span>
+                    </a>
+                    <a href="csam.html" class="nav-item">
+                        <i class="fas fa-user-shield"></i>
+                        <span>CSAM</span>
+                    </a>
                 </div>
-
+                
                 <div class="nav-section">
-                    <h3><i class="fas fa-cube"></i> Products</h3>
-                    <ul>
-                        <li><a href="sia.html">SIA (Security Intelligence Analytics)</a></li>
-                        <li><a href="soar.html">SOAR (Security Orchestration)</a></li>
-                        <li><a href="tip.html">TIP (Threat Intelligence Platform)</a></li>
-                        <li><a href="csam.html">CSAM (Cyber Security Asset Management)</a></li>
-                    </ul>
+                    <div class="nav-section-title">Setup & Configuration</div>
+                    <a href="prerequisites.html" class="nav-item">
+                        <i class="fas fa-list-check"></i>
+                        <span>Prerequisites</span>
+                    </a>
+                    <a href="hardware-specs.html" class="nav-item active">
+                        <i class="fas fa-server"></i>
+                        <span>Hardware Specs</span>
+                    </a>
+                    <a href="installation.html" class="nav-item">
+                        <i class="fas fa-download"></i>
+                        <span>Installation</span>
+                    </a>
+                    <a href="deployment.html" class="nav-item">
+                        <i class="fas fa-rocket"></i>
+                        <span>Deployment</span>
+                    </a>
+                    <a href="architecture.html" class="nav-item">
+                        <i class="fas fa-sitemap"></i>
+                        <span>Architecture</span>
+                    </a>
                 </div>
-
+                
                 <div class="nav-section">
-                    <h3><i class="fas fa-cogs"></i> Installation & Deployment</h3>
-                    <ul>
-                        <li><a href="installation.html">Installation Guide</a></li>
-                        <li><a href="deployment.html">Deployment Guide</a></li>
-                        <li><a href="hardware-specs.html" class="active">Hardware Specifications</a></li>
-                    </ul>
+                    <div class="nav-section-title">Administration</div>
+                    <a href="administration.html" class="nav-item">
+                        <i class="fas fa-cogs"></i>
+                        <span>Administration</span>
+                    </a>
+                    <a href="tip-admin.html" class="nav-item">
+                        <i class="fas fa-shield-virus"></i>
+                        <span>TIP Admin</span>
+                    </a>
+                    <a href="csam-admin.html" class="nav-item">
+                        <i class="fas fa-user-cog"></i>
+                        <span>CSAM Admin</span>
+                    </a>
                 </div>
-
+                
                 <div class="nav-section">
-                    <h3><i class="fas fa-users-cog"></i> Administration</h3>
-                    <ul>
-                        <li><a href="administration.html">Administration</a></li>
-                        <li><a href="csam-admin.html">CSAM Administration</a></li>
-                        <li><a href="tip-admin.html">TIP Administration</a></li>
-                    </ul>
+                    <div class="nav-section-title">Integration</div>
+                    <a href="integrations.html" class="nav-item">
+                        <i class="fas fa-plug"></i>
+                        <span>Integrations</span>
+                    </a>
+                    <a href="playbooks.html" class="nav-item">
+                        <i class="fas fa-book"></i>
+                        <span>Playbooks</span>
+                    </a>
+                    <a href="api-reference.html" class="nav-item">
+                        <i class="fas fa-code"></i>
+                        <span>API Reference</span>
+                    </a>
                 </div>
-
+                
                 <div class="nav-section">
-                    <h3><i class="fas fa-puzzle-piece"></i> Integrations</h3>
-                    <ul>
-                        <li><a href="integrations.html">Available Integrations</a></li>
-                        <li><a href="playbooks.html">Security Playbooks</a></li>
-                        <li><a href="api-reference.html">API Reference</a></li>
-                    </ul>
-                </div>
-
-                <div class="nav-section">
-                    <h3><i class="fas fa-question-circle"></i> Support</h3>
-                    <ul>
-                        <li><a href="troubleshooting.html">Troubleshooting</a></li>
-                        <li><a href="faq.html">FAQ</a></li>
-                        <li><a href="support.html">Contact Support</a></li>
-                    </ul>
+                    <div class="nav-section-title">Support</div>
+                    <a href="troubleshooting.html" class="nav-item">
+                        <i class="fas fa-tools"></i>
+                        <span>Troubleshooting</span>
+                    </a>
+                    <a href="faq.html" class="nav-item">
+                        <i class="fas fa-question-circle"></i>
+                        <span>FAQ</span>
+                    </a>
+                    <a href="support.html" class="nav-item">
+                        <i class="fas fa-life-ring"></i>
+                        <span>Support</span>
+                    </a>
                 </div>
             </nav>
         </aside>
@@ -113,6 +135,513 @@
                         and performance requirements. This guide provides recommendations for different 
                         deployment scenarios to ensure optimal platform performance.
                     </p>
+                </section>
+
+                <section>
+                    <h2><i class="fas fa-table"></i> Detailed Hardware Requirements by Component</h2>
+                    <p>Comprehensive hardware specifications for each Securaa platform component across different deployment sizes:</p>
+                    
+                    <div class="table-container">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Component</th>
+                                    <th>Small Deployment</th>
+                                    <th>Medium Deployment</th>
+                                    <th>Large Deployment</th>
+                                    <th>Enterprise Deployment</th>
+                                    <th>Performance Notes</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>SIA Analytics Engine</strong></td>
+                                    <td>
+                                        8 vCPU, 32GB RAM<br>
+                                        500GB SSD<br>
+                                        <span class="badge badge-info">VM Ready</span>
+                                    </td>
+                                    <td>
+                                        16 vCPU, 64GB RAM<br>
+                                        1TB NVMe SSD<br>
+                                        <span class="badge badge-success">Recommended</span>
+                                    </td>
+                                    <td>
+                                        32 vCPU, 128GB RAM<br>
+                                        2TB NVMe SSD<br>
+                                        <span class="badge badge-success">High Performance</span>
+                                    </td>
+                                    <td>
+                                        64 vCPU, 256GB RAM<br>
+                                        4TB NVMe SSD RAID 10<br>
+                                        <span class="badge badge-success">Enterprise Scale</span>
+                                    </td>
+                                    <td>CPU-intensive ML processing, requires high-speed storage for data analytics</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>SOAR Orchestration Server</strong></td>
+                                    <td>
+                                        4 vCPU, 16GB RAM<br>
+                                        200GB SSD<br>
+                                        <span class="badge badge-info">Basic</span>
+                                    </td>
+                                    <td>
+                                        8 vCPU, 32GB RAM<br>
+                                        500GB SSD<br>
+                                        <span class="badge badge-success">Standard</span>
+                                    </td>
+                                    <td>
+                                        16 vCPU, 64GB RAM<br>
+                                        1TB SSD<br>
+                                        <span class="badge badge-success">Advanced</span>
+                                    </td>
+                                    <td>
+                                        32 vCPU, 128GB RAM<br>
+                                        2TB SSD HA<br>
+                                        <span class="badge badge-success">HA Cluster</span>
+                                    </td>
+                                    <td>Memory-intensive for concurrent playbook execution, moderate storage needs</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>TIP Intelligence Platform</strong></td>
+                                    <td>
+                                        4 vCPU, 16GB RAM<br>
+                                        1TB HDD<br>
+                                        <span class="badge badge-warning">Limited</span>
+                                    </td>
+                                    <td>
+                                        8 vCPU, 32GB RAM<br>
+                                        2TB SSD<br>
+                                        <span class="badge badge-info">Standard</span>
+                                    </td>
+                                    <td>
+                                        16 vCPU, 64GB RAM<br>
+                                        4TB SSD<br>
+                                        <span class="badge badge-success">Enhanced</span>
+                                    </td>
+                                    <td>
+                                        32 vCPU, 128GB RAM<br>
+                                        8TB SSD RAID 5<br>
+                                        <span class="badge badge-success">Intelligence Hub</span>
+                                    </td>
+                                    <td>Storage-intensive for threat intelligence data, requires fast search capabilities</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>CSAM Asset Management</strong></td>
+                                    <td>
+                                        4 vCPU, 16GB RAM<br>
+                                        500GB SSD<br>
+                                        <span class="badge badge-info">Starter</span>
+                                    </td>
+                                    <td>
+                                        8 vCPU, 32GB RAM<br>
+                                        1TB SSD<br>
+                                        <span class="badge badge-success">Production</span>
+                                    </td>
+                                    <td>
+                                        16 vCPU, 64GB RAM<br>
+                                        2TB SSD<br>
+                                        <span class="badge badge-success">Enterprise</span>
+                                    </td>
+                                    <td>
+                                        32 vCPU, 128GB RAM<br>
+                                        4TB SSD Cluster<br>
+                                        <span class="badge badge-success">Global Scale</span>
+                                    </td>
+                                    <td>Balanced CPU/Memory for asset discovery, scalable storage for inventory data</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Database Server (PostgreSQL)</strong></td>
+                                    <td>
+                                        4 vCPU, 16GB RAM<br>
+                                        500GB SSD<br>
+                                        <span class="badge badge-warning">Single Instance</span>
+                                    </td>
+                                    <td>
+                                        8 vCPU, 32GB RAM<br>
+                                        1TB NVMe SSD<br>
+                                        <span class="badge badge-info">With Replica</span>
+                                    </td>
+                                    <td>
+                                        16 vCPU, 64GB RAM<br>
+                                        2TB NVMe SSD<br>
+                                        <span class="badge badge-success">HA Cluster</span>
+                                    </td>
+                                    <td>
+                                        32 vCPU, 128GB RAM<br>
+                                        4TB NVMe RAID 10<br>
+                                        <span class="badge badge-success">Multi-Master</span>
+                                    </td>
+                                    <td>Critical for platform stability, requires high IOPS and reliable storage</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Search Engine (Elasticsearch)</strong></td>
+                                    <td>
+                                        4 vCPU, 16GB RAM<br>
+                                        1TB SSD<br>
+                                        <span class="badge badge-info">Single Node</span>
+                                    </td>
+                                    <td>
+                                        8 vCPU, 32GB RAM<br>
+                                        2TB SSD<br>
+                                        <span class="badge badge-success">3-Node Cluster</span>
+                                    </td>
+                                    <td>
+                                        16 vCPU, 64GB RAM<br>
+                                        4TB SSD<br>
+                                        <span class="badge badge-success">5-Node Cluster</span>
+                                    </td>
+                                    <td>
+                                        32 vCPU, 128GB RAM<br>
+                                        8TB SSD Hot/Warm<br>
+                                        <span class="badge badge-success">Distributed</span>
+                                    </td>
+                                    <td>Memory and storage intensive, benefits from SSD storage and clustering</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Load Balancer/Proxy</strong></td>
+                                    <td>
+                                        2 vCPU, 8GB RAM<br>
+                                        100GB SSD<br>
+                                        <span class="badge badge-info">Software LB</span>
+                                    </td>
+                                    <td>
+                                        4 vCPU, 16GB RAM<br>
+                                        200GB SSD<br>
+                                        <span class="badge badge-success">HA Pair</span>
+                                    </td>
+                                    <td>
+                                        8 vCPU, 32GB RAM<br>
+                                        500GB SSD<br>
+                                        <span class="badge badge-success">Clustered</span>
+                                    </td>
+                                    <td>
+                                        16 vCPU, 64GB RAM<br>
+                                        1TB SSD + Hardware LB<br>
+                                        <span class="badge badge-success">Hardware + Software</span>
+                                    </td>
+                                    <td>Network-focused, minimal storage needs, benefits from dedicated network hardware</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+
+                <section>
+                    <h2><i class="fas fa-hdd"></i> Storage Requirements by Data Type</h2>
+                    <p>Detailed storage specifications based on data retention and performance requirements:</p>
+                    
+                    <div class="table-container">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Data Type</th>
+                                    <th>Storage Technology</th>
+                                    <th>Small Environment</th>
+                                    <th>Medium Environment</th>
+                                    <th>Large Environment</th>
+                                    <th>Growth Rate/Month</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>Active Security Events</strong></td>
+                                    <td>NVMe SSD (High IOPS)</td>
+                                    <td>500GB</td>
+                                    <td>2TB</td>
+                                    <td>8TB</td>
+                                    <td>10-50GB/month</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Historical Event Data</strong></td>
+                                    <td>SATA SSD</td>
+                                    <td>2TB</td>
+                                    <td>10TB</td>
+                                    <td>50TB</td>
+                                    <td>50-200GB/month</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Threat Intelligence Database</strong></td>
+                                    <td>SSD (Fast Access)</td>
+                                    <td>200GB</td>
+                                    <td>1TB</td>
+                                    <td>5TB</td>
+                                    <td>5-20GB/month</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Asset Inventory Data</strong></td>
+                                    <td>SSD</td>
+                                    <td>100GB</td>
+                                    <td>500GB</td>
+                                    <td>2TB</td>
+                                    <td>2-10GB/month</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Configuration & Logs</strong></td>
+                                    <td>SSD</td>
+                                    <td>200GB</td>
+                                    <td>1TB</td>
+                                    <td>5TB</td>
+                                    <td>5-25GB/month</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Archived Data (Cold Storage)</strong></td>
+                                    <td>HDD/Object Storage</td>
+                                    <td>5TB</td>
+                                    <td>25TB</td>
+                                    <td>100TB+</td>
+                                    <td>20-100GB/month</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Backup Storage</strong></td>
+                                    <td>HDD/Tape</td>
+                                    <td>10TB</td>
+                                    <td>50TB</td>
+                                    <td>200TB+</td>
+                                    <td>Full + Incremental</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>ML Models & Analytics</strong></td>
+                                    <td>NVMe SSD</td>
+                                    <td>100GB</td>
+                                    <td>500GB</td>
+                                    <td>2TB</td>
+                                    <td>1-5GB/month</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+
+                <section>
+                    <h2><i class="fas fa-network-wired"></i> Network Infrastructure Requirements</h2>
+                    <p>Network specifications for optimal platform performance and security:</p>
+                    
+                    <div class="table-container">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Network Component</th>
+                                    <th>Small Environment</th>
+                                    <th>Medium Environment</th>
+                                    <th>Large Environment</th>
+                                    <th>Requirements</th>
+                                    <th>Redundancy</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>Internet Bandwidth</strong></td>
+                                    <td>100 Mbps</td>
+                                    <td>500 Mbps</td>
+                                    <td>1+ Gbps</td>
+                                    <td>Threat feed updates, cloud integration</td>
+                                    <td><span class="badge badge-warning">Recommended</span></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Internal Network</strong></td>
+                                    <td>1 Gbps</td>
+                                    <td>10 Gbps</td>
+                                    <td>25+ Gbps</td>
+                                    <td>Inter-component communication</td>
+                                    <td><span class="badge badge-success">Required</span></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Storage Network</strong></td>
+                                    <td>1 Gbps</td>
+                                    <td>10 Gbps</td>
+                                    <td>40+ Gbps</td>
+                                    <td>High-speed data access</td>
+                                    <td><span class="badge badge-success">Required</span></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Management Network</strong></td>
+                                    <td>100 Mbps</td>
+                                    <td>1 Gbps</td>
+                                    <td>1 Gbps</td>
+                                    <td>Administration and monitoring</td>
+                                    <td><span class="badge badge-info">Optional</span></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>User Access Network</strong></td>
+                                    <td>100 Mbps</td>
+                                    <td>1 Gbps</td>
+                                    <td>10 Gbps</td>
+                                    <td>Web interface and API access</td>
+                                    <td><span class="badge badge-success">Required</span></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Log Collection Network</strong></td>
+                                    <td>1 Gbps</td>
+                                    <td>10 Gbps</td>
+                                    <td>100+ Gbps</td>
+                                    <td>Syslog and event data ingestion</td>
+                                    <td><span class="badge badge-success">Critical</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+
+                <section>
+                    <h2><i class="fas fa-tachometer-alt"></i> Performance Benchmarks & Optimization</h2>
+                    <p>Expected performance metrics and optimization recommendations for different deployment sizes:</p>
+                    
+                    <div class="table-container">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Performance Metric</th>
+                                    <th>Small Environment</th>
+                                    <th>Medium Environment</th>
+                                    <th>Large Environment</th>
+                                    <th>Optimization Tips</th>
+                                    <th>Monitoring</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>Events/Second Processing</strong></td>
+                                    <td>
+                                        1,000 EPS<br>
+                                        <span class="badge badge-info">Basic Load</span>
+                                    </td>
+                                    <td>
+                                        10,000 EPS<br>
+                                        <span class="badge badge-success">Standard Load</span>
+                                    </td>
+                                    <td>
+                                        100,000+ EPS<br>
+                                        <span class="badge badge-success">High Volume</span>
+                                    </td>
+                                    <td>Optimize parsing rules, use event buffering, scale horizontally</td>
+                                    <td><span class="severity-high">Critical</span></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Query Response Time</strong></td>
+                                    <td>
+                                        &lt; 2 seconds<br>
+                                        <span class="badge badge-success">Interactive</span>
+                                    </td>
+                                    <td>
+                                        &lt; 1 second<br>
+                                        <span class="badge badge-success">Fast</span>
+                                    </td>
+                                    <td>
+                                        &lt; 500ms<br>
+                                        <span class="badge badge-success">Real-time</span>
+                                    </td>
+                                    <td>Index optimization, query caching, SSD storage</td>
+                                    <td><span class="severity-medium">Important</span></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Dashboard Load Time</strong></td>
+                                    <td>
+                                        &lt; 5 seconds<br>
+                                        <span class="badge badge-info">Acceptable</span>
+                                    </td>
+                                    <td>
+                                        &lt; 3 seconds<br>
+                                        <span class="badge badge-success">Good</span>
+                                    </td>
+                                    <td>
+                                        &lt; 1 second<br>
+                                        <span class="badge badge-success">Excellent</span>
+                                    </td>
+                                    <td>Widget caching, data aggregation, CDN for static assets</td>
+                                    <td><span class="severity-low">Monitor</span></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Playbook Execution</strong></td>
+                                    <td>
+                                        5-10 concurrent<br>
+                                        <span class="badge badge-warning">Limited</span>
+                                    </td>
+                                    <td>
+                                        50+ concurrent<br>
+                                        <span class="badge badge-success">Standard</span>
+                                    </td>
+                                    <td>
+                                        500+ concurrent<br>
+                                        <span class="badge badge-success">High Scale</span>
+                                    </td>
+                                    <td>Worker pool sizing, task queuing, resource limits</td>
+                                    <td><span class="severity-high">Critical</span></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Data Retention Performance</strong></td>
+                                    <td>
+                                        90 days active<br>
+                                        <span class="badge badge-info">Standard</span>
+                                    </td>
+                                    <td>
+                                        1 year active<br>
+                                        <span class="badge badge-success">Extended</span>
+                                    </td>
+                                    <td>
+                                        3+ years tiered<br>
+                                        <span class="badge badge-success">Enterprise</span>
+                                    </td>
+                                    <td>Data lifecycle policies, compression, archival strategies</td>
+                                    <td><span class="severity-medium">Important</span></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Backup & Recovery</strong></td>
+                                    <td>
+                                        RTO: 4 hours<br>
+                                        RPO: 1 hour<br>
+                                        <span class="badge badge-warning">Basic</span>
+                                    </td>
+                                    <td>
+                                        RTO: 1 hour<br>
+                                        RPO: 15 minutes<br>
+                                        <span class="badge badge-success">Standard</span>
+                                    </td>
+                                    <td>
+                                        RTO: 15 minutes<br>
+                                        RPO: 5 minutes<br>
+                                        <span class="badge badge-success">HA</span>
+                                    </td>
+                                    <td>Automated backups, clustering, geographic distribution</td>
+                                    <td><span class="severity-high">Critical</span></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>User Concurrent Sessions</strong></td>
+                                    <td>
+                                        25 users<br>
+                                        <span class="badge badge-info">Small Team</span>
+                                    </td>
+                                    <td>
+                                        250 users<br>
+                                        <span class="badge badge-success">Department</span>
+                                    </td>
+                                    <td>
+                                        2,500+ users<br>
+                                        <span class="badge badge-success">Enterprise</span>
+                                    </td>
+                                    <td>Session management, load balancing, resource pooling</td>
+                                    <td><span class="severity-medium">Important</span></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Integration Throughput</strong></td>
+                                    <td>
+                                        10 integrations<br>
+                                        <span class="badge badge-info">Basic</span>
+                                    </td>
+                                    <td>
+                                        100 integrations<br>
+                                        <span class="badge badge-success">Extended</span>
+                                    </td>
+                                    <td>
+                                        1,000+ integrations<br>
+                                        <span class="badge badge-success">Comprehensive</span>
+                                    </td>
+                                    <td>API rate limiting, connection pooling, async processing</td>
+                                    <td><span class="severity-medium">Important</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
                 </section>
 
                 <section>

@@ -20,13 +20,13 @@
                     <i class="fas fa-bars"></i>
                 </button>
             </div>
-            
+
             <nav class="sidebar-nav">
                 <a href="index.html" class="nav-item">
                     <i class="fas fa-home"></i>
                     <span>Home</span>
                 </a>
-                
+
                 <div class="nav-section">
                     <div class="nav-section-title">Products</div>
                     <a href="sia.html" class="nav-item">
@@ -46,7 +46,7 @@
                         <span>CSAM</span>
                     </a>
                 </div>
-                
+
                 <div class="nav-section">
                     <div class="nav-section-title">Setup & Configuration</div>
                     <a href="prerequisites.html" class="nav-item active">
@@ -70,7 +70,7 @@
                         <span>Architecture</span>
                     </a>
                 </div>
-                
+
                 <div class="nav-section">
                     <div class="nav-section-title">Administration</div>
                     <a href="administration.html" class="nav-item">
@@ -86,7 +86,7 @@
                         <span>CSAM Admin</span>
                     </a>
                 </div>
-                
+
                 <div class="nav-section">
                     <div class="nav-section-title">Integration</div>
                     <a href="integrations.html" class="nav-item">
@@ -102,7 +102,7 @@
                         <span>API Reference</span>
                     </a>
                 </div>
-                
+
                 <div class="nav-section">
                     <div class="nav-section-title">Support</div>
                     <a href="troubleshooting.html" class="nav-item">
@@ -125,603 +125,631 @@
             <section id="prerequisites" class="content-section">
                 <div class="section-header">
                     <h2><i class="fas fa-list-check"></i> Prerequisites & Requirements</h2>
-                    <p>Comprehensive requirements for deploying Securaa solutions in your environment.</p>
+                    <p>Comprehensive requirements for deploying Securaa SIA, SOAR, TIP & CSAM solutions in your environment.</p>
                 </div>
 
                 <div class="alert alert-warning">
                     <strong>Important:</strong> Please review all prerequisites carefully before beginning installation. Failure to meet requirements may result in installation issues or suboptimal performance.
                 </div>
 
-                <h3>Detailed System Requirements by Deployment Size</h3>
+                <!-- Operating System Requirements -->
+                <h3><i class="fas fa-desktop"></i> Operating System Requirements</h3>
+                <div class="alert alert-info">
+                    <strong>CPU Requirement:</strong> Securaa requires AVX (Advanced Vector Extensions) support on the CPU. Verify AVX support using: <code>grep avx /proc/cpuinfo</code>
+                </div>
+
+                <h4>Supported Operating Systems</h4>
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Operating System</th>
+                                <th>Supported Versions</th>
+                                <th>Status</th>
+                                <th>Notes</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Red Hat Enterprise Linux (RHEL)</strong></td>
+                                <td>9.x, 8.x</td>
+                                <td><span class="badge badge-success">Recommended</span></td>
+                                <td>Enterprise support available</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Rocky Linux</strong></td>
+                                <td>8.x</td>
+                                <td><span class="badge badge-success">Supported</span></td>
+                                <td>RHEL-compatible alternative</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Alma Linux</strong></td>
+                                <td>8.x</td>
+                                <td><span class="badge badge-success">Supported</span></td>
+                                <td>RHEL-compatible alternative</td>
+                            </tr>
+                            <tr>
+                                <td><strong>CentOS</strong></td>
+                                <td>9.x</td>
+                                <td><span class="badge badge-success">Supported</span></td>
+                                <td>CentOS Stream</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Ubuntu</strong></td>
+                                <td>20.04x, 22.04x</td>
+                                <td><span class="badge badge-success">Supported</span></td>
+                                <td>LTS versions only</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h4>AWS AMI IDs for Supported Operating Systems</h4>
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Operating System</th>
+                                <th>AMI ID</th>
+                                <th>Region</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Rocky Linux 8</td>
+                                <td><code>ami-017fecd1353bcc96e</code></td>
+                                <td>US East</td>
+                            </tr>
+                            <tr>
+                                <td>AlmaLinux 8</td>
+                                <td><code>ami-079db87dc4c10ac91</code></td>
+                                <td>US East</td>
+                            </tr>
+                            <tr>
+                                <td>Red Hat Enterprise Linux 8</td>
+                                <td><code>ami-0aa8fc2422063977a</code></td>
+                                <td>US East</td>
+                            </tr>
+                            <tr>
+                                <td>Red Hat Enterprise Linux 9</td>
+                                <td><code>ami-067d1e60475437da2</code></td>
+                                <td>US East</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Hardware Requirements -->
+                <h3><i class="fas fa-server"></i> Hardware Requirements</h3>
+
+                <h4>Enterprise/Standalone Deployment - POC</h4>
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Deployment Type</th>
+                                <th>Component</th>
+                                <th>CPU</th>
+                                <th>RAM</th>
+                                <th>Storage</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td rowspan="1"><strong>Single VM</strong></td>
+                                <td>All Components</td>
+                                <td>8 Cores</td>
+                                <td>16 GB</td>
+                                <td>250-500 GB SSD</td>
+                            </tr>
+                            <tr>
+                                <td rowspan="2"><strong>Multi VM (2 Servers)</strong></td>
+                                <td>Securaa Server</td>
+                                <td>6 Cores</td>
+                                <td>8 GB</td>
+                                <td>250 GB SSD</td>
+                            </tr>
+                            <tr>
+                                <td>Database Server</td>
+                                <td>6 Cores</td>
+                                <td>8 GB</td>
+                                <td>250 GB SSD</td>
+                            </tr>
+                            <tr>
+                                <td rowspan="3"><strong>Multi VM (3 Servers)</strong></td>
+                                <td>Securaa Server</td>
+                                <td>8 Cores</td>
+                                <td>16 GB</td>
+                                <td>250 GB SSD</td>
+                            </tr>
+                            <tr>
+                                <td>Mongo Server</td>
+                                <td>8 Cores</td>
+                                <td>16 GB</td>
+                                <td>250 GB SSD</td>
+                            </tr>
+                            <tr>
+                                <td>Elasticsearch Server</td>
+                                <td>8 Cores</td>
+                                <td>16 GB</td>
+                                <td>250 GB SSD</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h4>Enterprise/Standalone Deployment - Production</h4>
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Deployment Type</th>
+                                <th>Component</th>
+                                <th>CPU</th>
+                                <th>RAM</th>
+                                <th>Storage</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td rowspan="1"><strong>Single VM</strong></td>
+                                <td>All Components</td>
+                                <td>16 Cores</td>
+                                <td>32 GB</td>
+                                <td>500 GB SSD</td>
+                            </tr>
+                            <tr>
+                                <td rowspan="2"><strong>Multi VM (2 Servers)</strong></td>
+                                <td>Securaa Server</td>
+                                <td>8 Cores</td>
+                                <td>16 GB</td>
+                                <td>250 GB SSD</td>
+                            </tr>
+                            <tr>
+                                <td>Database Server</td>
+                                <td>8 Cores</td>
+                                <td>16 GB</td>
+                                <td>250 GB SSD</td>
+                            </tr>
+                            <tr>
+                                <td rowspan="3"><strong>Multi VM (3 Servers)</strong></td>
+                                <td>Securaa Server</td>
+                                <td>8 Cores</td>
+                                <td>16 GB</td>
+                                <td>250 GB SSD</td>
+                            </tr>
+                            <tr>
+                                <td>Mongo Server</td>
+                                <td>8 Cores</td>
+                                <td>16 GB</td>
+                                <td>250 GB SSD</td>
+                            </tr>
+                            <tr>
+                                <td>Elasticsearch Server</td>
+                                <td>8 Cores</td>
+                                <td>16 GB</td>
+                                <td>250 GB SSD</td>
+                            </tr>
+                            <tr>
+                                <td colspan="2"><strong>Remote Integration Server</strong></td>
+                                <td>8 Cores</td>
+                                <td>4 GB</td>
+                                <td>100 GB SSD</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h4>MSSP Deployment - POC</h4>
                 <div class="table-container">
                     <table>
                         <thead>
                             <tr>
                                 <th>Component</th>
-                                <th>Small (Testing)</th>
-                                <th>Medium (Production)</th>
-                                <th>Large (Enterprise)</th>
-                                <th>Performance Impact</th>
-                                <th>Scaling Notes</th>
+                                <th>CPU</th>
+                                <th>RAM</th>
+                                <th>Storage</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
-                                <td><strong>SIA Analytics Engine</strong></td>
-                                <td>
-                                    8 vCPU, 32GB RAM<br>
-                                    500GB SSD<br>
-                                    <span class="badge badge-info">Basic</span>
-                                </td>
-                                <td>
-                                    16 vCPU, 64GB RAM<br>
-                                    2TB NVMe SSD<br>
-                                    <span class="badge badge-success">Recommended</span>
-                                </td>
-                                <td>
-                                    32+ vCPU, 128GB+ RAM<br>
-                                    4TB+ NVMe SSD<br>
-                                    <span class="badge badge-success">High Performance</span>
-                                </td>
-                                <td>CPU-intensive ML processing, memory for data caching</td>
-                                <td>Scale CPU and memory together, prioritize fast storage</td>
-                            </tr>
-                            <tr>
-                                <td><strong>SOAR Orchestration</strong></td>
-                                <td>
-                                    4 vCPU, 16GB RAM<br>
-                                    200GB SSD<br>
-                                    <span class="badge badge-info">Basic</span>
-                                </td>
-                                <td>
-                                    8 vCPU, 32GB RAM<br>
-                                    500GB SSD<br>
-                                    <span class="badge badge-success">Recommended</span>
-                                </td>
-                                <td>
-                                    16+ vCPU, 64GB+ RAM<br>
-                                    1TB+ SSD<br>
-                                    <span class="badge badge-success">High Throughput</span>
-                                </td>
-                                <td>Memory for concurrent playbooks, CPU for automation</td>
-                                <td>Add memory for more concurrent workflows</td>
-                            </tr>
-                            <tr>
-                                <td><strong>TIP Intelligence Platform</strong></td>
-                                <td>
-                                    4 vCPU, 16GB RAM<br>
-                                    1TB HDD<br>
-                                    <span class="badge badge-warning">Limited</span>
-                                </td>
-                                <td>
-                                    8 vCPU, 32GB RAM<br>
-                                    2TB SSD<br>
-                                    <span class="badge badge-success">Recommended</span>
-                                </td>
-                                <td>
-                                    16+ vCPU, 64GB+ RAM<br>
-                                    4TB+ SSD<br>
-                                    <span class="badge badge-success">Intelligence Hub</span>
-                                </td>
-                                <td>Storage for threat data, memory for search performance</td>
-                                <td>Prioritize storage capacity and search performance</td>
-                            </tr>
-                            <tr>
-                                <td><strong>CSAM Asset Management</strong></td>
-                                <td>
-                                    4 vCPU, 16GB RAM<br>
-                                    500GB SSD<br>
-                                    <span class="badge badge-info">Basic</span>
-                                </td>
-                                <td>
-                                    8 vCPU, 32GB RAM<br>
-                                    1TB SSD<br>
-                                    <span class="badge badge-success">Recommended</span>
-                                </td>
-                                <td>
-                                    16+ vCPU, 64GB+ RAM<br>
-                                    2TB+ SSD<br>
-                                    <span class="badge badge-success">Enterprise Scale</span>
-                                </td>
-                                <td>Network scanning requires CPU, asset storage needs disk</td>
-                                <td>Scale based on network size and scan frequency</td>
+                                <td><strong>Securaa Server</strong></td>
+                                <td>8 Cores</td>
+                                <td>16 GB</td>
+                                <td>250 GB SSD</td>
                             </tr>
                             <tr>
                                 <td><strong>Database Server</strong></td>
-                                <td>
-                                    4 vCPU, 16GB RAM<br>
-                                    500GB SSD<br>
-                                    <span class="badge badge-warning">Single Instance</span>
-                                </td>
-                                <td>
-                                    8 vCPU, 32GB RAM<br>
-                                    1TB NVMe SSD<br>
-                                    <span class="badge badge-success">With Replica</span>
-                                </td>
-                                <td>
-                                    16+ vCPU, 64GB+ RAM<br>
-                                    2TB+ NVMe SSD<br>
-                                    <span class="badge badge-success">HA Cluster</span>
-                                </td>
-                                <td>Critical for all operations, requires high IOPS</td>
-                                <td>Memory and storage are critical, consider clustering</td>
-                            </tr>
-                            <tr>
-                                <td><strong>Search Engine</strong></td>
-                                <td>
-                                    4 vCPU, 16GB RAM<br>
-                                    1TB SSD<br>
-                                    <span class="badge badge-warning">Single Node</span>
-                                </td>
-                                <td>
-                                    8 vCPU, 32GB RAM<br>
-                                    2TB SSD<br>
-                                    <span class="badge badge-success">3-Node Cluster</span>
-                                </td>
-                                <td>
-                                    16+ vCPU, 64GB+ RAM<br>
-                                    4TB+ SSD<br>
-                                    <span class="badge badge-success">Multi-Node Cluster</span>
-                                </td>
-                                <td>Memory-intensive indexing, storage for search indices</td>
-                                <td>Follow Elasticsearch sizing guidelines for heap</td>
+                                <td>8 Cores</td>
+                                <td>16 GB</td>
+                                <td>250 GB SSD</td>
                             </tr>
                         </tbody>
                     </table>
                 </div>
 
-                <h3>Operating System & Software Prerequisites</h3>
+                <h4>MSSP Deployment - Production</h4>
                 <div class="table-container">
                     <table>
                         <thead>
                             <tr>
-                                <th>Category</th>
-                                <th>Requirement</th>
-                                <th>Version</th>
-                                <th>Purpose</th>
-                                <th>Installation Notes</th>
-                                <th>Configuration Requirements</th>
+                                <th>Component</th>
+                                <th>CPU</th>
+                                <th>RAM</th>
+                                <th>Storage</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
-                                <td><strong>Operating System</strong></td>
-                                <td>Ubuntu Server LTS</td>
-                                <td>20.04+ or 22.04+</td>
-                                <td>Base operating system</td>
-                                <td>
-                                    <span class="badge badge-success">Recommended</span><br>
-                                    Long-term support, security updates
-                                </td>
-                                <td>Minimal installation, no desktop environment</td>
+                                <td><strong>Securaa Server</strong></td>
+                                <td>16 Cores</td>
+                                <td>32 GB</td>
+                                <td>500 GB SSD</td>
                             </tr>
                             <tr>
-                                <td><strong>Alternative OS</strong></td>
-                                <td>RHEL/CentOS Stream</td>
-                                <td>8+ or 9+</td>
-                                <td>Enterprise alternative</td>
-                                <td>
-                                    <span class="badge badge-info">Supported</span><br>
-                                    Enterprise support available
-                                </td>
-                                <td>SELinux may require additional configuration</td>
+                                <td><strong>Mongo Server</strong></td>
+                                <td>16 Cores</td>
+                                <td>32 GB</td>
+                                <td>500 GB SSD</td>
                             </tr>
                             <tr>
-                                <td><strong>Container Runtime</strong></td>
-                                <td>Docker CE</td>
-                                <td>20.10+</td>
-                                <td>Application containerization</td>
-                                <td>
-                                    <span class="badge badge-success">Required</span><br>
-                                    For container deployments
-                                </td>
-                                <td>Configure daemon for production use</td>
+                                <td><strong>Elasticsearch Server</strong></td>
+                                <td>16 Cores</td>
+                                <td>32 GB</td>
+                                <td>500 GB SSD</td>
                             </tr>
                             <tr>
-                                <td><strong>Orchestration</strong></td>
-                                <td>Kubernetes</td>
-                                <td>1.24+</td>
-                                <td>Container orchestration</td>
-                                <td>
-                                    <span class="badge badge-info">Optional</span><br>
-                                    For cloud-native deployments
-                                </td>
-                                <td>CNI, CSI, and ingress controller required</td>
-                            </tr>
-                            <tr>
-                                <td><strong>Java Runtime</strong></td>
-                                <td>OpenJDK</td>
-                                <td>11 or 17</td>
-                                <td>Elasticsearch and application services</td>
-                                <td>
-                                    <span class="badge badge-success">Critical</span><br>
-                                    Required for search functionality
-                                </td>
-                                <td>Configure heap size based on available memory</td>
-                            </tr>
-                            <tr>
-                                <td><strong>Python Runtime</strong></td>
-                                <td>Python</td>
-                                <td>3.8+ or 3.9+</td>
-                                <td>Automation scripts and integrations</td>
-                                <td>
-                                    <span class="badge badge-success">Required</span><br>
-                                    For SOAR and automation
-                                </td>
-                                <td>Virtual environments recommended</td>
-                            </tr>
-                            <tr>
-                                <td><strong>Web Server</strong></td>
-                                <td>Nginx</td>
-                                <td>1.18+</td>
-                                <td>Reverse proxy and SSL termination</td>
-                                <td>
-                                    <span class="badge badge-success">Recommended</span><br>
-                                    High performance web serving
-                                </td>
-                                <td>SSL/TLS configuration for security</td>
-                            </tr>
-                            <tr>
-                                <td><strong>Time Synchronization</strong></td>
-                                <td>NTP/Chrony</td>
-                                <td>Latest</td>
-                                <td>System time synchronization</td>
-                                <td>
-                                    <span class="badge badge-success">Critical</span><br>
-                                    Required for log correlation
-                                </td>
-                                <td>Configure reliable time sources</td>
+                                <td><strong>Remote Integration Server</strong></td>
+                                <td>8 Cores</td>
+                                <td>4 GB</td>
+                                <td>100 GB SSD</td>
                             </tr>
                         </tbody>
                     </table>
                 </div>
 
-                <h3>Network Requirements & Port Configuration</h3>
+                <h4>TIP (Threat Intelligence Platform) Hardware Requirements</h4>
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Environment</th>
+                                <th>CPU</th>
+                                <th>RAM</th>
+                                <th>Storage</th>
+                                <th>Capacity</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>POC</strong></td>
+                                <td>4 Cores</td>
+                                <td>16 GB</td>
+                                <td>300 GB SSD</td>
+                                <td>~20 Million records</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Production</strong></td>
+                                <td>8 Cores</td>
+                                <td>32 GB</td>
+                                <td>500 GB SSD</td>
+                                <td>~30 Million records</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Network Requirements -->
+                <h3><i class="fas fa-network-wired"></i> Network Requirements</h3>
+
+                <h4>Required Ports</h4>
                 <div class="table-container">
                     <table>
                         <thead>
                             <tr>
                                 <th>Service</th>
-                                <th>Port(s)</th>
+                                <th>Port</th>
                                 <th>Protocol</th>
                                 <th>Direction</th>
-                                <th>Source/Destination</th>
                                 <th>Purpose</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
-                                <td><strong>Web Interface (HTTPS)</strong></td>
+                                <td><strong>Web Interface</strong></td>
                                 <td>443</td>
-                                <td>TCP</td>
+                                <td>HTTPS</td>
                                 <td>Inbound</td>
-                                <td>User networks</td>
-                                <td>Secure web access to Securaa platform</td>
+                                <td>Securaa Web Application Access</td>
                             </tr>
                             <tr>
-                                <td><strong>Web Interface (HTTP)</strong></td>
-                                <td>80</td>
-                                <td>TCP</td>
+                                <td><strong>WebSocket</strong></td>
+                                <td>8000</td>
+                                <td>WSS</td>
                                 <td>Inbound</td>
-                                <td>User networks (redirect to HTTPS)</td>
-                                <td>HTTP to HTTPS redirection</td>
+                                <td>Real-time communication</td>
                             </tr>
                             <tr>
-                                <td><strong>API Access</strong></td>
-                                <td>8080-8083</td>
+                                <td><strong>TIP Connectivity</strong></td>
+                                <td>7000</td>
                                 <td>TCP</td>
-                                <td>Inbound</td>
-                                <td>API clients, integrations</td>
-                                <td>REST API access for each component</td>
+                                <td>Inbound/Outbound</td>
+                                <td>TIP platform communication</td>
                             </tr>
                             <tr>
-                                <td><strong>Database (PostgreSQL)</strong></td>
-                                <td>5432</td>
-                                <td>TCP</td>
-                                <td>Internal</td>
-                                <td>Application servers</td>
-                                <td>Database connectivity</td>
-                            </tr>
-                            <tr>
-                                <td><strong>Elasticsearch</strong></td>
-                                <td>9200, 9300</td>
-                                <td>TCP</td>
-                                <td>Internal</td>
-                                <td>Application servers, ES cluster</td>
-                                <td>Search and analytics functionality</td>
-                            </tr>
-                            <tr>
-                                <td><strong>Message Queue (RabbitMQ)</strong></td>
-                                <td>5672, 15672</td>
-                                <td>TCP</td>
-                                <td>Internal</td>
-                                <td>Application servers</td>
-                                <td>Async processing and job queues</td>
-                            </tr>
-                            <tr>
-                                <td><strong>Syslog Collection</strong></td>
-                                <td>514, 1514</td>
-                                <td>UDP/TCP</td>
-                                <td>Inbound</td>
-                                <td>Network devices, servers</td>
-                                <td>Log data collection and ingestion</td>
-                            </tr>
-                            <tr>
-                                <td><strong>SNMP Monitoring</strong></td>
-                                <td>161</td>
-                                <td>UDP</td>
-                                <td>Outbound</td>
-                                <td>Network devices</td>
-                                <td>Device monitoring and asset discovery</td>
-                            </tr>
-                            <tr>
-                                <td><strong>SSH Management</strong></td>
+                                <td><strong>SSH</strong></td>
                                 <td>22</td>
                                 <td>TCP</td>
                                 <td>Inbound</td>
-                                <td>Administrator networks</td>
-                                <td>System administration and maintenance</td>
-                            </tr>
-                            <tr>
-                                <td><strong>NTP Time Sync</strong></td>
-                                <td>123</td>
-                                <td>UDP</td>
-                                <td>Outbound</td>
-                                <td>Time servers</td>
-                                <td>System time synchronization</td>
-                            </tr>
-                            <tr>
-                                <td><strong>DNS Resolution</strong></td>
-                                <td>53</td>
-                                <td>UDP/TCP</td>
-                                <td>Outbound</td>
-                                <td>DNS servers</td>
-                                <td>Domain name resolution</td>
-                            </tr>
-                            <tr>
-                                <td><strong>Internet Access (HTTPS)</strong></td>
-                                <td>443</td>
-                                <td>TCP</td>
-                                <td>Outbound</td>
-                                <td>Internet</td>
-                                <td>Threat intelligence feeds, updates</td>
+                                <td>Server administration</td>
                             </tr>
                         </tbody>
                     </table>
                 </div>
 
-                <h3>Software Prerequisites</h3>
+                <h4>URLs to Whitelist for Installation</h4>
+                <div class="alert alert-info">
+                    <strong>Important:</strong> The following URLs must be accessible from your Securaa server for installation and updates.
+                </div>
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>URL</th>
+                                <th>Purpose</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><code>https://s3.us-east-2.amazonaws.com/</code></td>
+                                <td>AWS S3 - Installation packages</td>
+                            </tr>
+                            <tr>
+                                <td><code>https://665853670667.dkr.ecr.us-east-2.amazonaws.com/</code></td>
+                                <td>AWS ECR - Docker images</td>
+                            </tr>
+                            <tr>
+                                <td><code>https://release.securaa.io:9002</code></td>
+                                <td>Securaa Release Server</td>
+                            </tr>
+                            <tr>
+                                <td><code>https://repo.securaa.io/</code></td>
+                                <td>Securaa Repository</td>
+                            </tr>
+                            <tr>
+                                <td><code>https://production.cloudflare.docker.com</code></td>
+                                <td>Docker CDN</td>
+                            </tr>
+                            <tr>
+                                <td><code>https://registry-1.docker.io</code></td>
+                                <td>Docker Registry</td>
+                            </tr>
+                            <tr>
+                                <td><code>https://auth.docker.io</code></td>
+                                <td>Docker Authentication</td>
+                            </tr>
+                            <tr>
+                                <td><code>https://ecr.us-east-2.amazonaws.com</code></td>
+                                <td>AWS ECR API</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- TIP Network Requirements -->
+                <h4>TIP Feed URLs to Whitelist</h4>
+                <div class="alert alert-warning">
+                    <strong>Note:</strong> TIP requires access to various threat intelligence feeds. The following URLs must be whitelisted for full TIP functionality.
+                </div>
+                <div class="table-container" style="max-height: 400px; overflow-y: auto;">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Category</th>
+                                <th>URL</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>Abuse.ch</td><td><code>https://feodotracker.abuse.ch/</code></td></tr>
+                            <tr><td>Abuse.ch</td><td><code>https://sslbl.abuse.ch/</code></td></tr>
+                            <tr><td>Abuse.ch</td><td><code>https://urlhaus.abuse.ch/</code></td></tr>
+                            <tr><td>Abuse.ch</td><td><code>https://bazaar.abuse.ch/</code></td></tr>
+                            <tr><td>Abuse.ch</td><td><code>https://threatfox.abuse.ch/</code></td></tr>
+                            <tr><td>AlienVault</td><td><code>https://otx.alienvault.com/</code></td></tr>
+                            <tr><td>Blocklist.de</td><td><code>https://lists.blocklist.de/</code></td></tr>
+                            <tr><td>Botvrij</td><td><code>https://www.botvrij.eu/</code></td></tr>
+                            <tr><td>C2IntelFeeds</td><td><code>https://raw.githubusercontent.com/drb-ra/</code></td></tr>
+                            <tr><td>CERT.PL</td><td><code>https://hole.cert.pl/</code></td></tr>
+                            <tr><td>CINSscore</td><td><code>https://cinsscore.com/</code></td></tr>
+                            <tr><td>Cisco Talos</td><td><code>https://talosintelligence.com/</code></td></tr>
+                            <tr><td>CVE</td><td><code>https://cve.circl.lu/</code></td></tr>
+                            <tr><td>CyberCure</td><td><code>https://api.cybercure.ai/</code></td></tr>
+                            <tr><td>DataPlane</td><td><code>https://dataplane.org/</code></td></tr>
+                            <tr><td>DigitalSide</td><td><code>https://osint.digitalside.it/</code></td></tr>
+                            <tr><td>Disposable Email</td><td><code>https://raw.githubusercontent.com/disposable-email-domains/</code></td></tr>
+                            <tr><td>Emerging Threats</td><td><code>https://rules.emergingthreats.net/</code></td></tr>
+                            <tr><td>Exploit-DB</td><td><code>https://gitlab.com/exploit-database/</code></td></tr>
+                            <tr><td>GitHub</td><td><code>https://raw.githubusercontent.com/</code></td></tr>
+                            <tr><td>GreenSnow</td><td><code>https://blocklist.greensnow.co/</code></td></tr>
+                            <tr><td>IPsum</td><td><code>https://raw.githubusercontent.com/stamparm/ipsum/</code></td></tr>
+                            <tr><td>Malshare</td><td><code>https://malshare.com/</code></td></tr>
+                            <tr><td>Malware Bazaar</td><td><code>https://mb-api.abuse.ch/</code></td></tr>
+                            <tr><td>MalwareDomains</td><td><code>https://mirror1.malwaredomains.com/</code></td></tr>
+                            <tr><td>MISP</td><td><code>https://www.circl.lu/doc/misp/</code></td></tr>
+                            <tr><td>NoCoin</td><td><code>https://raw.githubusercontent.com/nicehash/</code></td></tr>
+                            <tr><td>OpenPhish</td><td><code>https://openphish.com/</code></td></tr>
+                            <tr><td>PhishTank</td><td><code>https://data.phishtank.com/</code></td></tr>
+                            <tr><td>Proofpoint</td><td><code>https://rules.emergingthreats.net/fwrules/</code></td></tr>
+                            <tr><td>Ransomware Tracker</td><td><code>https://ransomwaretracker.abuse.ch/</code></td></tr>
+                            <tr><td>RiskIQ</td><td><code>https://community.riskiq.com/</code></td></tr>
+                            <tr><td>Rutgers</td><td><code>https://report.cs.rutgers.edu/</code></td></tr>
+                            <tr><td>Spamhaus</td><td><code>https://www.spamhaus.org/</code></td></tr>
+                            <tr><td>StopForumSpam</td><td><code>https://www.stopforumspam.com/</code></td></tr>
+                            <tr><td>ThreatMiner</td><td><code>https://www.threatminer.org/</code></td></tr>
+                            <tr><td>URLVir</td><td><code>https://urlvir.com/</code></td></tr>
+                            <tr><td>VirusTotal</td><td><code>https://www.virustotal.com/</code></td></tr>
+                            <tr><td>VX Vault</td><td><code>https://vxvault.net/</code></td></tr>
+                            <tr><td>ZeuS Tracker</td><td><code>https://zeustracker.abuse.ch/</code></td></tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Software Prerequisites -->
+                <h3><i class="fas fa-cog"></i> Software Prerequisites</h3>
+
+                <h4>Pre-Installation Requirements</h4>
+                <div class="steps-container">
+                    <div class="step">
+                        <div class="step-number">1</div>
+                        <div class="step-content">
+                            <h3>Install wget</h3>
+                            <p>The wget utility must be installed on the server before running the Securaa installer.</p>
+                            <pre><code class="language-bash"># RHEL/CentOS/Rocky/Alma
+sudo yum install wget -y
+
+# Ubuntu
+sudo apt-get install wget -y</code></pre>
+                        </div>
+                    </div>
+
+                    <div class="step">
+                        <div class="step-number">2</div>
+                        <div class="step-content">
+                            <h3>Verify AVX Support</h3>
+                            <p>Securaa requires AVX (Advanced Vector Extensions) CPU support. Verify with:</p>
+                            <pre><code class="language-bash">grep avx /proc/cpuinfo</code></pre>
+                            <p>If output shows "avx", your CPU supports AVX.</p>
+                        </div>
+                    </div>
+
+                    <div class="step">
+                        <div class="step-number">3</div>
+                        <div class="step-content">
+                            <h3>Network Connectivity</h3>
+                            <p>Ensure the server has internet connectivity to download Docker images and installation packages. Verify connectivity to required URLs.</p>
+                        </div>
+                    </div>
+
+                    <div class="step">
+                        <div class="step-number">4</div>
+                        <div class="step-content">
+                            <h3>Root Access</h3>
+                            <p>Root or sudo access is required for installation. The installer will configure Docker, system services, and firewall rules.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <h4>Platform Components (Installed Automatically)</h4>
                 <div class="feature-grid">
                     <div class="feature-card">
-                        <h3>Operating System</h3>
-                        <ul style="text-align: left; list-style: disc; padding-left: 1rem;">
-                            <li>Ubuntu 20.04 LTS or later</li>
-                            <li>CentOS 8 or RHEL 8+</li>
-                            <li>Windows Server 2019+</li>
-                            <li>SUSE Linux Enterprise 15+</li>
-                        </ul>
+                        <h3>Docker</h3>
+                        <p>Container runtime for running Securaa services. Installed and configured automatically by the installer.</p>
                     </div>
-                    
+
                     <div class="feature-card">
-                        <h3>Database</h3>
-                        <ul style="text-align: left; list-style: disc; padding-left: 1rem;">
-                            <li>PostgreSQL 13+</li>
-                            <li>MySQL 8.0+</li>
-                            <li>MongoDB 5.0+</li>
-                            <li>Oracle Database 19c+</li>
-                        </ul>
+                        <h3>MongoDB</h3>
+                        <p>Primary database for storing incidents, cases, playbooks, and configuration data.</p>
                     </div>
-                    
+
                     <div class="feature-card">
-                        <h3>Web Server</h3>
-                        <ul style="text-align: left; list-style: disc; padding-left: 1rem;">
-                            <li>Apache 2.4+</li>
-                            <li>Nginx 1.18+</li>
-                            <li>IIS 10.0+</li>
-                            <li>Built-in server available</li>
-                        </ul>
+                        <h3>Elasticsearch</h3>
+                        <p>Search and analytics engine for log data, threat intelligence, and full-text search capabilities.</p>
                     </div>
-                    
+
                     <div class="feature-card">
-                        <h3>Runtime</h3>
-                        <ul style="text-align: left; list-style: disc; padding-left: 1rem;">
-                            <li>Python 3.8+</li>
-                            <li>Node.js 16+</li>
-                            <li>Java 11+</li>
-                            <li>.NET Core 6.0+</li>
-                        </ul>
+                        <h3>Nginx</h3>
+                        <p>Web server and reverse proxy handling HTTPS termination and serving the React frontend.</p>
                     </div>
                 </div>
 
-                <h3>Network Requirements</h3>
-                <div class="alert alert-info">
-                    <strong>Firewall Configuration:</strong> Ensure the following ports are open for proper operation. Customize based on your deployment configuration.
-                </div>
-                
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Service</th>
-                            <th>Port</th>
-                            <th>Protocol</th>
-                            <th>Purpose</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Web Interface</td>
-                            <td>443</td>
-                            <td>HTTPS</td>
-                            <td>User access to web console</td>
-                        </tr>
-                        <tr>
-                            <td>API</td>
-                            <td>8080</td>
-                            <td>HTTPS</td>
-                            <td>REST API access</td>
-                        </tr>
-                        <tr>
-                            <td>Database</td>
-                            <td>5432</td>
-                            <td>TCP</td>
-                            <td>PostgreSQL connection</td>
-                        </tr>
-                        <tr>
-                            <td>Syslog</td>
-                            <td>514</td>
-                            <td>UDP</td>
-                            <td>Log collection</td>
-                        </tr>
-                        <tr>
-                            <td>SNMP</td>
-                            <td>161</td>
-                            <td>UDP</td>
-                            <td>Network monitoring</td>
-                        </tr>
-                        <tr>
-                            <td>SSH</td>
-                            <td>22</td>
-                            <td>TCP</td>
-                            <td>Remote administration</td>
-                        </tr>
-                        <tr>
-                            <td>NTP</td>
-                            <td>123</td>
-                            <td>UDP</td>
-                            <td>Time synchronization</td>
-                        </tr>
-                    </tbody>
-                </table>
-
-                <h3>POC Prerequisites</h3>
+                <!-- POC Prerequisites -->
+                <h3><i class="fas fa-flask"></i> POC Prerequisites</h3>
                 <div class="steps-container">
                     <div class="step">
                         <div class="step-number">1</div>
                         <div class="step-content">
                             <h3>Environment Preparation</h3>
-                            <p>Prepare a dedicated environment with required resources and network connectivity. Ensure isolation from production systems during POC evaluation.</p>
+                            <p>Prepare a dedicated VM/server meeting hardware requirements. Ensure isolation from production systems during POC evaluation.</p>
                         </div>
                     </div>
-                    
+
                     <div class="step">
                         <div class="step-number">2</div>
                         <div class="step-content">
                             <h3>Data Sources</h3>
-                            <p>Identify and prepare data sources for integration during the POC period. Include representative sample data for realistic testing.</p>
+                            <p>Identify SIEM, EDR, firewall, and other security tools for integration. Prepare API credentials and connection details.</p>
                         </div>
                     </div>
-                    
+
                     <div class="step">
                         <div class="step-number">3</div>
                         <div class="step-content">
-                            <h3>Team Readiness</h3>
-                            <p>Ensure security team members are available for training and evaluation activities. Plan for dedicated time during POC period.</p>
+                            <h3>Use Cases</h3>
+                            <p>Define 2-3 primary use cases to validate during POC. Common use cases include phishing response, malware containment, and vulnerability management.</p>
                         </div>
                     </div>
-                    
+
                     <div class="step">
                         <div class="step-number">4</div>
                         <div class="step-content">
-                            <h3>Success Criteria</h3>
-                            <p>Define clear success criteria and evaluation metrics for the POC to ensure objective assessment of the solution.</p>
+                            <h3>Team Availability</h3>
+                            <p>Ensure security team members are available for training, configuration, and evaluation activities throughout the POC period.</p>
                         </div>
                     </div>
                 </div>
 
-                <h3>Security Requirements</h3>
+                <!-- Security Requirements -->
+                <h3><i class="fas fa-lock"></i> Security Requirements</h3>
                 <div class="feature-grid">
                     <div class="feature-card">
                         <h3>SSL/TLS Certificates</h3>
-                        <p>Valid SSL certificates for secure communications. Support for both self-signed and CA-signed certificates.</p>
+                        <p>Valid SSL certificates required for HTTPS access. Self-signed certificates supported for POC; CA-signed recommended for production.</p>
                     </div>
-                    
+
                     <div class="feature-card">
                         <h3>Authentication</h3>
-                        <p>Integration with LDAP, Active Directory, SAML, or other enterprise authentication systems.</p>
+                        <p>Local authentication supported out-of-box. LDAP, Active Directory, and SAML integration available for enterprise deployments.</p>
                     </div>
-                    
+
                     <div class="feature-card">
-                        <h3>Access Controls</h3>
-                        <p>Role-based access control (RBAC) and integration with existing authorization frameworks.</p>
+                        <h3>Network Segmentation</h3>
+                        <p>Recommended to deploy Securaa in a management network segment with controlled access to security tools and endpoints.</p>
                     </div>
-                    
+
                     <div class="feature-card">
                         <h3>Data Encryption</h3>
-                        <p>Support for data encryption at rest and in transit using industry-standard encryption algorithms.</p>
+                        <p>All data encrypted in transit (TLS 1.2+). Database encryption at rest available for production deployments.</p>
                     </div>
                 </div>
 
-                <h3>Cloud Requirements</h3>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Cloud Provider</th>
-                            <th>Minimum Instance Type</th>
-                            <th>Storage</th>
-                            <th>Network</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>AWS</td>
-                            <td>m5.4xlarge</td>
-                            <td>EBS gp3 2TB</td>
-                            <td>VPC with public/private subnets</td>
-                        </tr>
-                        <tr>
-                            <td>Azure</td>
-                            <td>Standard_D16s_v3</td>
-                            <td>Premium SSD 2TB</td>
-                            <td>Virtual Network with NSGs</td>
-                        </tr>
-                        <tr>
-                            <td>Google Cloud</td>
-                            <td>n2-standard-16</td>
-                            <td>Persistent SSD 2TB</td>
-                            <td>VPC with firewall rules</td>
-                        </tr>
-                        <tr>
-                            <td>Private Cloud</td>
-                            <td>16 vCPU, 64GB RAM</td>
-                            <td>SSD storage 2TB</td>
-                            <td>VLAN segmentation</td>
-                        </tr>
-                    </tbody>
-                </table>
-
-                <h3>Integration Prerequisites</h3>
-                <div class="alert alert-success">
-                    <strong>Pre-Integration Planning:</strong> Review existing security tools and plan integration points before deployment to ensure smooth implementation.
-                </div>
-
-                <div class="steps-container">
-                    <div class="step">
-                        <div class="step-number">1</div>
-                        <div class="step-content">
-                            <h3>SIEM Integration</h3>
-                            <p>Prepare SIEM connection details, API credentials, and data format specifications for log forwarding and alert correlation.</p>
-                        </div>
-                    </div>
-                    
-                    <div class="step">
-                        <div class="step-number">2</div>
-                        <div class="step-content">
-                            <h3>Directory Services</h3>
-                            <p>Gather Active Directory or LDAP connection parameters, service accounts, and group membership information.</p>
-                        </div>
-                    </div>
-                    
-                    <div class="step">
-                        <div class="step-number">3</div>
-                        <div class="step-content">
-                            <h3>Network Devices</h3>
-                            <p>Configure SNMP credentials, network device access, and monitoring permissions for asset discovery.</p>
-                        </div>
-                    </div>
-                </div>
-
+                <!-- Default Credentials -->
+                <h3><i class="fas fa-key"></i> Default Credentials</h3>
                 <div class="alert alert-warning">
-                    <strong>Performance Note:</strong> These are minimum requirements. For production environments with high data volumes or user loads, consider scaling resources accordingly.
+                    <strong>Security Notice:</strong> Change default credentials immediately after installation.
+                </div>
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Component</th>
+                                <th>Default Username</th>
+                                <th>Default Password</th>
+                                <th>Notes</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Securaa Web Console</strong></td>
+                                <td>admin@securaa.io</td>
+                                <td>password</td>
+                                <td>Change immediately after first login</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="alert alert-success">
+                    <strong>Ready to Install?</strong> Once all prerequisites are met, proceed to the <a href="installation.html">Installation Guide</a> for step-by-step deployment instructions.
                 </div>
             </section>
         </main>
@@ -733,9 +761,9 @@
                     <h3>Securaa</h3>
                     <p>Advanced cybersecurity solutions for modern threats.</p>
                     <div class="social-links">
-                        <a href="#"><i class="fab fa-linkedin"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-github"></i></a>
+                        <a href="https://linkedin.com/company/securaa" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://twitter.com/securaa" target="_blank" rel="noopener noreferrer"><i class="fab fa-twitter"></i></a>
+                        <a href="https://github.com/securaa" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i></a>
                     </div>
                 </div>
                 <div class="footer-section">
@@ -766,7 +794,7 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2025 Securaa. All rights reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+                <p>&copy; 2025 Securaa. All rights reserved. | <a href="privacy-policy.html">Privacy Policy</a> | <a href="terms-of-service.html">Terms of Service</a></p>
                 <p>Documentation Version 2.0 | Last Updated: October 2025</p>
             </div>
         </footer>
@@ -775,5 +803,37 @@
     <!-- JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.28.0/components/prism-core.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.28.0/plugins/autoloader/prism-autoloader.min.js"></script>
+
+    <script>
+        function toggleMobileMenu() {
+            const sidebar = document.querySelector('.sidebar');
+            const overlay = document.querySelector('.sidebar-overlay');
+
+            if (!overlay) {
+                const newOverlay = document.createElement('div');
+                newOverlay.className = 'sidebar-overlay';
+                newOverlay.onclick = closeMobileMenu;
+                document.body.appendChild(newOverlay);
+            }
+
+            sidebar.classList.toggle('show');
+            (overlay || document.querySelector('.sidebar-overlay')).classList.toggle('show');
+        }
+
+        function closeMobileMenu() {
+            const sidebar = document.querySelector('.sidebar');
+            const overlay = document.querySelector('.sidebar-overlay');
+
+            sidebar.classList.remove('show');
+            if (overlay) overlay.classList.remove('show');
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const sidebarLinks = document.querySelectorAll('.sidebar a');
+            sidebarLinks.forEach(link => {
+                link.addEventListener('click', closeMobileMenu);
+            });
+        });
+    </script>
 </body>
 </html>

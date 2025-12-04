@@ -131,11 +131,142 @@
                 <section class="reference-section">
                     <h2><i class="fas fa-info-circle"></i> Architecture Overview</h2>
                     <p>
-                        The Securaa cybersecurity platform is built on a modular, scalable architecture that integrates 
-                        Security Intelligence Analytics (SIA), Security Orchestration, Automation, and Response (SOAR), 
-                        Threat Intelligence Platform (TIP), and Cyber Security Asset Management (CSAM) capabilities 
+                        The Securaa cybersecurity platform is built on a modular, scalable architecture that integrates
+                        Security Intelligence Analytics (SIA), Security Orchestration, Automation, and Response (SOAR),
+                        Threat Intelligence Platform (TIP), and Cyber Security Asset Management (CSAM) capabilities
                         into a unified security ecosystem.
                     </p>
+                </section>
+
+                <!-- Containerized Architecture -->
+                <section class="content-section">
+                    <h2><i class="fas fa-docker"></i> Containerized Architecture</h2>
+                    <p>Securaa uses a Docker-based containerized architecture for deployment flexibility and scalability.</p>
+
+                    <div class="feature-grid">
+                        <div class="feature-card">
+                            <h3>Frontend Layer</h3>
+                            <ul>
+                                <li><strong>React Web Application</strong> - Modern SPA interface</li>
+                                <li><strong>Nginx Web Server</strong> - Reverse proxy and SSL termination</li>
+                                <li><strong>WebSocket Support</strong> - Real-time updates (Port 8000)</li>
+                            </ul>
+                        </div>
+                        <div class="feature-card">
+                            <h3>Backend Services</h3>
+                            <ul>
+                                <li><strong>Go REST API</strong> - High-performance backend</li>
+                                <li><strong>Python Workers</strong> - Playbook execution engine</li>
+                                <li><strong>Integration Services</strong> - 294+ security tool connectors</li>
+                            </ul>
+                        </div>
+                        <div class="feature-card">
+                            <h3>Data Layer</h3>
+                            <ul>
+                                <li><strong>MongoDB</strong> - Primary document database</li>
+                                <li><strong>Elasticsearch</strong> - Search and log analytics</li>
+                                <li><strong>Redis</strong> - Caching and session management</li>
+                            </ul>
+                        </div>
+                        <div class="feature-card">
+                            <h3>Infrastructure</h3>
+                            <ul>
+                                <li><strong>Docker Runtime</strong> - Container orchestration</li>
+                                <li><strong>Docker Compose</strong> - Service definitions</li>
+                                <li><strong>Persistent Volumes</strong> - Data persistence</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Deployment Topologies -->
+                <section class="content-section">
+                    <h2><i class="fas fa-server"></i> Deployment Topologies</h2>
+
+                    <h3>Single VM Deployment</h3>
+                    <div class="alert alert-info">
+                        <strong>Best for:</strong> POC, small environments, and evaluation deployments.
+                    </div>
+                    <p>All components run on a single server with Docker containers:</p>
+                    <ul>
+                        <li>Securaa Application Container</li>
+                        <li>MongoDB Container</li>
+                        <li>Elasticsearch Container</li>
+                        <li>Nginx Container</li>
+                    </ul>
+
+                    <h3>Multi-VM Deployment (2 Servers)</h3>
+                    <div class="alert alert-info">
+                        <strong>Best for:</strong> Standard production environments with moderate workloads.
+                    </div>
+                    <div class="table-container">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Server</th>
+                                    <th>Components</th>
+                                    <th>Purpose</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>Server 1 - Application</strong></td>
+                                    <td>Securaa Services, Nginx, React UI, Workers</td>
+                                    <td>Application processing and user interface</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Server 2 - Database</strong></td>
+                                    <td>MongoDB, Elasticsearch</td>
+                                    <td>Data storage and search</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <h3>Multi-VM Deployment (3 Servers)</h3>
+                    <div class="alert alert-info">
+                        <strong>Best for:</strong> High-performance production environments with heavy workloads.
+                    </div>
+                    <div class="table-container">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Server</th>
+                                    <th>Components</th>
+                                    <th>Purpose</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>Server 1 - Application</strong></td>
+                                    <td>Securaa Services, Nginx, React UI, Workers</td>
+                                    <td>Application processing</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Server 2 - MongoDB</strong></td>
+                                    <td>MongoDB (with replica set optional)</td>
+                                    <td>Document database</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Server 3 - Elasticsearch</strong></td>
+                                    <td>Elasticsearch cluster</td>
+                                    <td>Search and analytics</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <h3>MSSP Multi-Tenant Deployment</h3>
+                    <div class="alert alert-warning">
+                        <strong>Best for:</strong> Managed Security Service Providers supporting multiple customers.
+                    </div>
+                    <ul>
+                        <li>Separate tenant databases for data isolation</li>
+                        <li>Shared application infrastructure</li>
+                        <li>Per-tenant configuration and customization</li>
+                        <li>Centralized management and monitoring</li>
+                        <li>Optional remote integration servers per customer</li>
+                    </ul>
                 </section>
 
                 <section class="content-section">

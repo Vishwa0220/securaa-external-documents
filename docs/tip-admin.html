@@ -131,10 +131,134 @@
                 <section class="info-box">
                     <h2><i class="fas fa-info-circle"></i> Overview</h2>
                     <p>
-                        The TIP (Threat Intelligence Platform) administration interface provides comprehensive 
-                        tools for managing threat intelligence feeds, indicators of compromise (IoCs), 
+                        The TIP (Threat Intelligence Platform) administration interface provides comprehensive
+                        tools for managing threat intelligence feeds, indicators of compromise (IoCs),
                         threat actor profiles, campaign tracking, and intelligence analysis workflows.
+                        TIP integrates 130+ open-source threat intelligence feeds and supports STIX/TAXII protocols
+                        for threat intelligence sharing.
                     </p>
+                </section>
+
+                <!-- TIP Hardware Requirements -->
+                <section class="content-section">
+                    <h2><i class="fas fa-server"></i> TIP Hardware Requirements</h2>
+                    <div class="table-container">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Environment</th>
+                                    <th>CPU</th>
+                                    <th>RAM</th>
+                                    <th>Storage</th>
+                                    <th>Capacity</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>POC</strong></td>
+                                    <td>4 Cores</td>
+                                    <td>16 GB</td>
+                                    <td>300 GB SSD</td>
+                                    <td>~20 Million records</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Production</strong></td>
+                                    <td>8 Cores</td>
+                                    <td>32 GB</td>
+                                    <td>500 GB SSD</td>
+                                    <td>~30 Million records</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+
+                <!-- TIP Installation -->
+                <section class="content-section">
+                    <h2><i class="fas fa-download"></i> TIP Installation</h2>
+                    <div class="steps-container">
+                        <div class="step">
+                            <div class="step-number">1</div>
+                            <div class="step-content">
+                                <h3>Pre-Installation Requirements</h3>
+                                <p>Ensure the server meets minimum requirements and has network access to threat intelligence feed URLs.</p>
+                            </div>
+                        </div>
+                        <div class="step">
+                            <div class="step-number">2</div>
+                            <div class="step-content">
+                                <h3>Download TIP Installer</h3>
+                                <pre><code class="language-bash">wget https://release.securaa.io:9002/tip-installer.sh
+chmod +x tip-installer.sh</code></pre>
+                            </div>
+                        </div>
+                        <div class="step">
+                            <div class="step-number">3</div>
+                            <div class="step-content">
+                                <h3>Run Installation</h3>
+                                <pre><code class="language-bash">sudo ./tip-installer.sh</code></pre>
+                            </div>
+                        </div>
+                        <div class="step">
+                            <div class="step-number">4</div>
+                            <div class="step-content">
+                                <h3>Configure TIP Connection (Port 7000)</h3>
+                                <p>Access Securaa and configure TIP connection under Administration > TIP Settings.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Open-Source Feeds -->
+                <section class="content-section">
+                    <h2><i class="fas fa-rss"></i> 130+ Open-Source Threat Intelligence Feeds</h2>
+                    <div class="alert alert-info">
+                        <strong>Pre-Configured Feeds:</strong> TIP comes with 130+ open-source threat intelligence feeds pre-configured and ready to ingest.
+                    </div>
+
+                    <h3>Featured Feed Sources</h3>
+                    <div class="feature-grid">
+                        <div class="feature-card">
+                            <h4>Abuse.ch Feeds</h4>
+                            <ul>
+                                <li>Feodo Tracker</li>
+                                <li>SSL Blacklist</li>
+                                <li>URLhaus</li>
+                                <li>Malware Bazaar</li>
+                                <li>ThreatFox</li>
+                            </ul>
+                        </div>
+                        <div class="feature-card">
+                            <h4>IP Reputation Feeds</h4>
+                            <ul>
+                                <li>AlienVault OTX</li>
+                                <li>Blocklist.de</li>
+                                <li>CINSscore</li>
+                                <li>DataPlane</li>
+                                <li>GreenSnow</li>
+                            </ul>
+                        </div>
+                        <div class="feature-card">
+                            <h4>Domain/URL Feeds</h4>
+                            <ul>
+                                <li>OpenPhish</li>
+                                <li>PhishTank</li>
+                                <li>URLVir</li>
+                                <li>MalwareDomains</li>
+                                <li>Emerging Threats</li>
+                            </ul>
+                        </div>
+                        <div class="feature-card">
+                            <h4>Vulnerability Feeds</h4>
+                            <ul>
+                                <li>CVE (CIRCL)</li>
+                                <li>Exploit-DB</li>
+                                <li>VulnDB</li>
+                                <li>NVD</li>
+                                <li>MITRE ATT&CK</li>
+                            </ul>
+                        </div>
+                    </div>
                 </section>
 
                 <section>
@@ -1043,7 +1167,8 @@ correlation_rules:
             </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; 2024 Securaa. All rights reserved.</p>
+            <p>&copy; 2025 Securaa. All rights reserved. | <a href="privacy-policy.html">Privacy Policy</a> | <a href="terms-of-service.html">Terms of Service</a></p>
+            <p>Documentation Version 2.0 | Last Updated: October 2025</p>
         </div>
     </footer>
 

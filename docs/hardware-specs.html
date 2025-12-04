@@ -20,13 +20,13 @@
                     <i class="fas fa-bars"></i>
                 </button>
             </div>
-            
+
             <nav class="sidebar-nav">
                 <a href="index.html" class="nav-item">
                     <i class="fas fa-home"></i>
                     <span>Home</span>
                 </a>
-                
+
                 <div class="nav-section">
                     <div class="nav-section-title">Products</div>
                     <a href="sia.html" class="nav-item">
@@ -46,7 +46,7 @@
                         <span>CSAM</span>
                     </a>
                 </div>
-                
+
                 <div class="nav-section">
                     <div class="nav-section-title">Setup & Configuration</div>
                     <a href="prerequisites.html" class="nav-item">
@@ -70,7 +70,7 @@
                         <span>Architecture</span>
                     </a>
                 </div>
-                
+
                 <div class="nav-section">
                     <div class="nav-section-title">Administration</div>
                     <a href="administration.html" class="nav-item">
@@ -86,7 +86,7 @@
                         <span>CSAM Admin</span>
                     </a>
                 </div>
-                
+
                 <div class="nav-section">
                     <div class="nav-section-title">Integration</div>
                     <a href="integrations.html" class="nav-item">
@@ -102,7 +102,7 @@
                         <span>API Reference</span>
                     </a>
                 </div>
-                
+
                 <div class="nav-section">
                     <div class="nav-section-title">Support</div>
                     <a href="troubleshooting.html" class="nav-item">
@@ -124,1084 +124,819 @@
         <main class="main-content">
             <div class="header">
                 <h1><i class="fas fa-server"></i> Hardware Specifications</h1>
-                <p class="subtitle">Detailed hardware requirements for optimal Securaa platform performance</p>
+                <p class="subtitle">Detailed hardware requirements for optimal Securaa SIA platform performance</p>
             </div>
 
             <div class="content">
                 <section class="info-box">
                     <h2><i class="fas fa-info-circle"></i> Overview</h2>
                     <p>
-                        The hardware specifications vary based on your deployment size, expected data volume, 
-                        and performance requirements. This guide provides recommendations for different 
-                        deployment scenarios to ensure optimal platform performance.
+                        Securaa SIA (Securaa Intelligent Automation) hardware specifications are designed to support
+                        varying workloads from small POC deployments to large enterprise production environments.
+                        This guide provides detailed specifications for different deployment scenarios.
                     </p>
                 </section>
 
+                <div class="alert alert-warning">
+                    <strong>Important:</strong> All systems require AVX (Advanced Vector Extensions) CPU support.
+                    Verify with: <code>grep avx /proc/cpuinfo</code>
+                </div>
+
+                <!-- SIA Enterprise/Standalone POC -->
                 <section>
-                    <h2><i class="fas fa-table"></i> Detailed Hardware Requirements by Component</h2>
-                    <p>Comprehensive hardware specifications for each Securaa platform component across different deployment sizes:</p>
-                    
+                    <h2><i class="fas fa-flask"></i> SIA Enterprise/Standalone - POC Deployment</h2>
+                    <p>Hardware specifications for Proof of Concept and evaluation deployments:</p>
+
+                    <h3>Single VM Deployment</h3>
                     <div class="table-container">
                         <table>
                             <thead>
                                 <tr>
                                     <th>Component</th>
-                                    <th>Small Deployment</th>
-                                    <th>Medium Deployment</th>
-                                    <th>Large Deployment</th>
-                                    <th>Enterprise Deployment</th>
-                                    <th>Performance Notes</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td><strong>SIA Analytics Engine</strong></td>
-                                    <td>
-                                        8 vCPU, 32GB RAM<br>
-                                        500GB SSD<br>
-                                        <span class="badge badge-info">VM Ready</span>
-                                    </td>
-                                    <td>
-                                        16 vCPU, 64GB RAM<br>
-                                        1TB NVMe SSD<br>
-                                        <span class="badge badge-success">Recommended</span>
-                                    </td>
-                                    <td>
-                                        32 vCPU, 128GB RAM<br>
-                                        2TB NVMe SSD<br>
-                                        <span class="badge badge-success">High Performance</span>
-                                    </td>
-                                    <td>
-                                        64 vCPU, 256GB RAM<br>
-                                        4TB NVMe SSD RAID 10<br>
-                                        <span class="badge badge-success">Enterprise Scale</span>
-                                    </td>
-                                    <td>CPU-intensive ML processing, requires high-speed storage for data analytics</td>
-                                </tr>
-                                <tr>
-                                    <td><strong>SOAR Orchestration Server</strong></td>
-                                    <td>
-                                        4 vCPU, 16GB RAM<br>
-                                        200GB SSD<br>
-                                        <span class="badge badge-info">Basic</span>
-                                    </td>
-                                    <td>
-                                        8 vCPU, 32GB RAM<br>
-                                        500GB SSD<br>
-                                        <span class="badge badge-success">Standard</span>
-                                    </td>
-                                    <td>
-                                        16 vCPU, 64GB RAM<br>
-                                        1TB SSD<br>
-                                        <span class="badge badge-success">Advanced</span>
-                                    </td>
-                                    <td>
-                                        32 vCPU, 128GB RAM<br>
-                                        2TB SSD HA<br>
-                                        <span class="badge badge-success">HA Cluster</span>
-                                    </td>
-                                    <td>Memory-intensive for concurrent playbook execution, moderate storage needs</td>
-                                </tr>
-                                <tr>
-                                    <td><strong>TIP Intelligence Platform</strong></td>
-                                    <td>
-                                        4 vCPU, 16GB RAM<br>
-                                        1TB HDD<br>
-                                        <span class="badge badge-warning">Limited</span>
-                                    </td>
-                                    <td>
-                                        8 vCPU, 32GB RAM<br>
-                                        2TB SSD<br>
-                                        <span class="badge badge-info">Standard</span>
-                                    </td>
-                                    <td>
-                                        16 vCPU, 64GB RAM<br>
-                                        4TB SSD<br>
-                                        <span class="badge badge-success">Enhanced</span>
-                                    </td>
-                                    <td>
-                                        32 vCPU, 128GB RAM<br>
-                                        8TB SSD RAID 5<br>
-                                        <span class="badge badge-success">Intelligence Hub</span>
-                                    </td>
-                                    <td>Storage-intensive for threat intelligence data, requires fast search capabilities</td>
-                                </tr>
-                                <tr>
-                                    <td><strong>CSAM Asset Management</strong></td>
-                                    <td>
-                                        4 vCPU, 16GB RAM<br>
-                                        500GB SSD<br>
-                                        <span class="badge badge-info">Starter</span>
-                                    </td>
-                                    <td>
-                                        8 vCPU, 32GB RAM<br>
-                                        1TB SSD<br>
-                                        <span class="badge badge-success">Production</span>
-                                    </td>
-                                    <td>
-                                        16 vCPU, 64GB RAM<br>
-                                        2TB SSD<br>
-                                        <span class="badge badge-success">Enterprise</span>
-                                    </td>
-                                    <td>
-                                        32 vCPU, 128GB RAM<br>
-                                        4TB SSD Cluster<br>
-                                        <span class="badge badge-success">Global Scale</span>
-                                    </td>
-                                    <td>Balanced CPU/Memory for asset discovery, scalable storage for inventory data</td>
-                                </tr>
-                                <tr>
-                                    <td><strong>Database Server (PostgreSQL)</strong></td>
-                                    <td>
-                                        4 vCPU, 16GB RAM<br>
-                                        500GB SSD<br>
-                                        <span class="badge badge-warning">Single Instance</span>
-                                    </td>
-                                    <td>
-                                        8 vCPU, 32GB RAM<br>
-                                        1TB NVMe SSD<br>
-                                        <span class="badge badge-info">With Replica</span>
-                                    </td>
-                                    <td>
-                                        16 vCPU, 64GB RAM<br>
-                                        2TB NVMe SSD<br>
-                                        <span class="badge badge-success">HA Cluster</span>
-                                    </td>
-                                    <td>
-                                        32 vCPU, 128GB RAM<br>
-                                        4TB NVMe RAID 10<br>
-                                        <span class="badge badge-success">Multi-Master</span>
-                                    </td>
-                                    <td>Critical for platform stability, requires high IOPS and reliable storage</td>
-                                </tr>
-                                <tr>
-                                    <td><strong>Search Engine (Elasticsearch)</strong></td>
-                                    <td>
-                                        4 vCPU, 16GB RAM<br>
-                                        1TB SSD<br>
-                                        <span class="badge badge-info">Single Node</span>
-                                    </td>
-                                    <td>
-                                        8 vCPU, 32GB RAM<br>
-                                        2TB SSD<br>
-                                        <span class="badge badge-success">3-Node Cluster</span>
-                                    </td>
-                                    <td>
-                                        16 vCPU, 64GB RAM<br>
-                                        4TB SSD<br>
-                                        <span class="badge badge-success">5-Node Cluster</span>
-                                    </td>
-                                    <td>
-                                        32 vCPU, 128GB RAM<br>
-                                        8TB SSD Hot/Warm<br>
-                                        <span class="badge badge-success">Distributed</span>
-                                    </td>
-                                    <td>Memory and storage intensive, benefits from SSD storage and clustering</td>
-                                </tr>
-                                <tr>
-                                    <td><strong>Load Balancer/Proxy</strong></td>
-                                    <td>
-                                        2 vCPU, 8GB RAM<br>
-                                        100GB SSD<br>
-                                        <span class="badge badge-info">Software LB</span>
-                                    </td>
-                                    <td>
-                                        4 vCPU, 16GB RAM<br>
-                                        200GB SSD<br>
-                                        <span class="badge badge-success">HA Pair</span>
-                                    </td>
-                                    <td>
-                                        8 vCPU, 32GB RAM<br>
-                                        500GB SSD<br>
-                                        <span class="badge badge-success">Clustered</span>
-                                    </td>
-                                    <td>
-                                        16 vCPU, 64GB RAM<br>
-                                        1TB SSD + Hardware LB<br>
-                                        <span class="badge badge-success">Hardware + Software</span>
-                                    </td>
-                                    <td>Network-focused, minimal storage needs, benefits from dedicated network hardware</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </section>
-
-                <section>
-                    <h2><i class="fas fa-hdd"></i> Storage Requirements by Data Type</h2>
-                    <p>Detailed storage specifications based on data retention and performance requirements:</p>
-                    
-                    <div class="table-container">
-                        <table>
-                            <thead>
-                                <tr>
-                                    <th>Data Type</th>
-                                    <th>Storage Technology</th>
-                                    <th>Small Environment</th>
-                                    <th>Medium Environment</th>
-                                    <th>Large Environment</th>
-                                    <th>Growth Rate/Month</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td><strong>Active Security Events</strong></td>
-                                    <td>NVMe SSD (High IOPS)</td>
-                                    <td>500GB</td>
-                                    <td>2TB</td>
-                                    <td>8TB</td>
-                                    <td>10-50GB/month</td>
-                                </tr>
-                                <tr>
-                                    <td><strong>Historical Event Data</strong></td>
-                                    <td>SATA SSD</td>
-                                    <td>2TB</td>
-                                    <td>10TB</td>
-                                    <td>50TB</td>
-                                    <td>50-200GB/month</td>
-                                </tr>
-                                <tr>
-                                    <td><strong>Threat Intelligence Database</strong></td>
-                                    <td>SSD (Fast Access)</td>
-                                    <td>200GB</td>
-                                    <td>1TB</td>
-                                    <td>5TB</td>
-                                    <td>5-20GB/month</td>
-                                </tr>
-                                <tr>
-                                    <td><strong>Asset Inventory Data</strong></td>
-                                    <td>SSD</td>
-                                    <td>100GB</td>
-                                    <td>500GB</td>
-                                    <td>2TB</td>
-                                    <td>2-10GB/month</td>
-                                </tr>
-                                <tr>
-                                    <td><strong>Configuration & Logs</strong></td>
-                                    <td>SSD</td>
-                                    <td>200GB</td>
-                                    <td>1TB</td>
-                                    <td>5TB</td>
-                                    <td>5-25GB/month</td>
-                                </tr>
-                                <tr>
-                                    <td><strong>Archived Data (Cold Storage)</strong></td>
-                                    <td>HDD/Object Storage</td>
-                                    <td>5TB</td>
-                                    <td>25TB</td>
-                                    <td>100TB+</td>
-                                    <td>20-100GB/month</td>
-                                </tr>
-                                <tr>
-                                    <td><strong>Backup Storage</strong></td>
-                                    <td>HDD/Tape</td>
-                                    <td>10TB</td>
-                                    <td>50TB</td>
-                                    <td>200TB+</td>
-                                    <td>Full + Incremental</td>
-                                </tr>
-                                <tr>
-                                    <td><strong>ML Models & Analytics</strong></td>
-                                    <td>NVMe SSD</td>
-                                    <td>100GB</td>
-                                    <td>500GB</td>
-                                    <td>2TB</td>
-                                    <td>1-5GB/month</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </section>
-
-                <section>
-                    <h2><i class="fas fa-network-wired"></i> Network Infrastructure Requirements</h2>
-                    <p>Network specifications for optimal platform performance and security:</p>
-                    
-                    <div class="table-container">
-                        <table>
-                            <thead>
-                                <tr>
-                                    <th>Network Component</th>
-                                    <th>Small Environment</th>
-                                    <th>Medium Environment</th>
-                                    <th>Large Environment</th>
-                                    <th>Requirements</th>
-                                    <th>Redundancy</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td><strong>Internet Bandwidth</strong></td>
-                                    <td>100 Mbps</td>
-                                    <td>500 Mbps</td>
-                                    <td>1+ Gbps</td>
-                                    <td>Threat feed updates, cloud integration</td>
-                                    <td><span class="badge badge-warning">Recommended</span></td>
-                                </tr>
-                                <tr>
-                                    <td><strong>Internal Network</strong></td>
-                                    <td>1 Gbps</td>
-                                    <td>10 Gbps</td>
-                                    <td>25+ Gbps</td>
-                                    <td>Inter-component communication</td>
-                                    <td><span class="badge badge-success">Required</span></td>
-                                </tr>
-                                <tr>
-                                    <td><strong>Storage Network</strong></td>
-                                    <td>1 Gbps</td>
-                                    <td>10 Gbps</td>
-                                    <td>40+ Gbps</td>
-                                    <td>High-speed data access</td>
-                                    <td><span class="badge badge-success">Required</span></td>
-                                </tr>
-                                <tr>
-                                    <td><strong>Management Network</strong></td>
-                                    <td>100 Mbps</td>
-                                    <td>1 Gbps</td>
-                                    <td>1 Gbps</td>
-                                    <td>Administration and monitoring</td>
-                                    <td><span class="badge badge-info">Optional</span></td>
-                                </tr>
-                                <tr>
-                                    <td><strong>User Access Network</strong></td>
-                                    <td>100 Mbps</td>
-                                    <td>1 Gbps</td>
-                                    <td>10 Gbps</td>
-                                    <td>Web interface and API access</td>
-                                    <td><span class="badge badge-success">Required</span></td>
-                                </tr>
-                                <tr>
-                                    <td><strong>Log Collection Network</strong></td>
-                                    <td>1 Gbps</td>
-                                    <td>10 Gbps</td>
-                                    <td>100+ Gbps</td>
-                                    <td>Syslog and event data ingestion</td>
-                                    <td><span class="badge badge-success">Critical</span></td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </section>
-
-                <section>
-                    <h2><i class="fas fa-tachometer-alt"></i> Performance Benchmarks & Optimization</h2>
-                    <p>Expected performance metrics and optimization recommendations for different deployment sizes:</p>
-                    
-                    <div class="table-container">
-                        <table>
-                            <thead>
-                                <tr>
-                                    <th>Performance Metric</th>
-                                    <th>Small Environment</th>
-                                    <th>Medium Environment</th>
-                                    <th>Large Environment</th>
-                                    <th>Optimization Tips</th>
-                                    <th>Monitoring</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td><strong>Events/Second Processing</strong></td>
-                                    <td>
-                                        1,000 EPS<br>
-                                        <span class="badge badge-info">Basic Load</span>
-                                    </td>
-                                    <td>
-                                        10,000 EPS<br>
-                                        <span class="badge badge-success">Standard Load</span>
-                                    </td>
-                                    <td>
-                                        100,000+ EPS<br>
-                                        <span class="badge badge-success">High Volume</span>
-                                    </td>
-                                    <td>Optimize parsing rules, use event buffering, scale horizontally</td>
-                                    <td><span class="severity-high">Critical</span></td>
-                                </tr>
-                                <tr>
-                                    <td><strong>Query Response Time</strong></td>
-                                    <td>
-                                        &lt; 2 seconds<br>
-                                        <span class="badge badge-success">Interactive</span>
-                                    </td>
-                                    <td>
-                                        &lt; 1 second<br>
-                                        <span class="badge badge-success">Fast</span>
-                                    </td>
-                                    <td>
-                                        &lt; 500ms<br>
-                                        <span class="badge badge-success">Real-time</span>
-                                    </td>
-                                    <td>Index optimization, query caching, SSD storage</td>
-                                    <td><span class="severity-medium">Important</span></td>
-                                </tr>
-                                <tr>
-                                    <td><strong>Dashboard Load Time</strong></td>
-                                    <td>
-                                        &lt; 5 seconds<br>
-                                        <span class="badge badge-info">Acceptable</span>
-                                    </td>
-                                    <td>
-                                        &lt; 3 seconds<br>
-                                        <span class="badge badge-success">Good</span>
-                                    </td>
-                                    <td>
-                                        &lt; 1 second<br>
-                                        <span class="badge badge-success">Excellent</span>
-                                    </td>
-                                    <td>Widget caching, data aggregation, CDN for static assets</td>
-                                    <td><span class="severity-low">Monitor</span></td>
-                                </tr>
-                                <tr>
-                                    <td><strong>Playbook Execution</strong></td>
-                                    <td>
-                                        5-10 concurrent<br>
-                                        <span class="badge badge-warning">Limited</span>
-                                    </td>
-                                    <td>
-                                        50+ concurrent<br>
-                                        <span class="badge badge-success">Standard</span>
-                                    </td>
-                                    <td>
-                                        500+ concurrent<br>
-                                        <span class="badge badge-success">High Scale</span>
-                                    </td>
-                                    <td>Worker pool sizing, task queuing, resource limits</td>
-                                    <td><span class="severity-high">Critical</span></td>
-                                </tr>
-                                <tr>
-                                    <td><strong>Data Retention Performance</strong></td>
-                                    <td>
-                                        90 days active<br>
-                                        <span class="badge badge-info">Standard</span>
-                                    </td>
-                                    <td>
-                                        1 year active<br>
-                                        <span class="badge badge-success">Extended</span>
-                                    </td>
-                                    <td>
-                                        3+ years tiered<br>
-                                        <span class="badge badge-success">Enterprise</span>
-                                    </td>
-                                    <td>Data lifecycle policies, compression, archival strategies</td>
-                                    <td><span class="severity-medium">Important</span></td>
-                                </tr>
-                                <tr>
-                                    <td><strong>Backup & Recovery</strong></td>
-                                    <td>
-                                        RTO: 4 hours<br>
-                                        RPO: 1 hour<br>
-                                        <span class="badge badge-warning">Basic</span>
-                                    </td>
-                                    <td>
-                                        RTO: 1 hour<br>
-                                        RPO: 15 minutes<br>
-                                        <span class="badge badge-success">Standard</span>
-                                    </td>
-                                    <td>
-                                        RTO: 15 minutes<br>
-                                        RPO: 5 minutes<br>
-                                        <span class="badge badge-success">HA</span>
-                                    </td>
-                                    <td>Automated backups, clustering, geographic distribution</td>
-                                    <td><span class="severity-high">Critical</span></td>
-                                </tr>
-                                <tr>
-                                    <td><strong>User Concurrent Sessions</strong></td>
-                                    <td>
-                                        25 users<br>
-                                        <span class="badge badge-info">Small Team</span>
-                                    </td>
-                                    <td>
-                                        250 users<br>
-                                        <span class="badge badge-success">Department</span>
-                                    </td>
-                                    <td>
-                                        2,500+ users<br>
-                                        <span class="badge badge-success">Enterprise</span>
-                                    </td>
-                                    <td>Session management, load balancing, resource pooling</td>
-                                    <td><span class="severity-medium">Important</span></td>
-                                </tr>
-                                <tr>
-                                    <td><strong>Integration Throughput</strong></td>
-                                    <td>
-                                        10 integrations<br>
-                                        <span class="badge badge-info">Basic</span>
-                                    </td>
-                                    <td>
-                                        100 integrations<br>
-                                        <span class="badge badge-success">Extended</span>
-                                    </td>
-                                    <td>
-                                        1,000+ integrations<br>
-                                        <span class="badge badge-success">Comprehensive</span>
-                                    </td>
-                                    <td>API rate limiting, connection pooling, async processing</td>
-                                    <td><span class="severity-medium">Important</span></td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </section>
-
-                <section>
-                    <h2><i class="fas fa-layer-group"></i> Deployment Sizing</h2>
-                    
-                    <div class="sizing-grid">
-                        <div class="sizing-option">
-                            <h3><i class="fas fa-laptop"></i> Small Environment</h3>
-                            <div class="sizing-details">
-                                <p><strong>Ideal for:</strong></p>
-                                <ul>
-                                    <li>Development/Testing</li>
-                                    <li>Small organizations (&lt; 500 endpoints)</li>
-                                    <li>Proof of Concept deployments</li>
-                                    <li>Event volume: &lt; 10K events/day</li>
-                                </ul>
-                            </div>
-                        </div>
-                        
-                        <div class="sizing-option">
-                            <h3><i class="fas fa-building"></i> Medium Environment</h3>
-                            <div class="sizing-details">
-                                <p><strong>Ideal for:</strong></p>
-                                <ul>
-                                    <li>Mid-size organizations (500-5K endpoints)</li>
-                                    <li>Regional deployments</li>
-                                    <li>Production environments</li>
-                                    <li>Event volume: 10K-100K events/day</li>
-                                </ul>
-                            </div>
-                        </div>
-                        
-                        <div class="sizing-option">
-                            <h3><i class="fas fa-city"></i> Large Environment</h3>
-                            <div class="sizing-details">
-                                <p><strong>Ideal for:</strong></p>
-                                <ul>
-                                    <li>Enterprise organizations (&gt; 5K endpoints)</li>
-                                    <li>High-volume environments</li>
-                                    <li>Multi-tenant deployments</li>
-                                    <li>Event volume: &gt; 100K events/day</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-
-                <section>
-                    <h2><i class="fas fa-desktop"></i> Small Environment Specifications</h2>
-                    
-                    <div class="spec-table">
-                        <h3>Single Node Deployment</h3>
-                        <table>
-                            <thead>
-                                <tr>
-                                    <th>Component</th>
-                                    <th>Minimum</th>
-                                    <th>Recommended</th>
+                                    <th>Specification</th>
                                     <th>Notes</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr>
                                     <td><strong>CPU</strong></td>
-                                    <td>4 cores, 2.4 GHz</td>
-                                    <td>8 cores, 3.0 GHz</td>
-                                    <td>Intel Xeon or AMD EPYC preferred</td>
+                                    <td>8 Cores</td>
+                                    <td>AVX support required</td>
                                 </tr>
                                 <tr>
                                     <td><strong>Memory</strong></td>
                                     <td>16 GB RAM</td>
+                                    <td>Minimum for all services</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Storage</strong></td>
+                                    <td>250-500 GB SSD</td>
+                                    <td>SSD required for performance</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <h3>Multi VM Deployment (2 Servers)</h3>
+                    <div class="table-container">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Server Role</th>
+                                    <th>CPU</th>
+                                    <th>RAM</th>
+                                    <th>Storage</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>Securaa Server</strong></td>
+                                    <td>6 Cores</td>
+                                    <td>8 GB</td>
+                                    <td>250 GB SSD</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Database Server</strong></td>
+                                    <td>6 Cores</td>
+                                    <td>8 GB</td>
+                                    <td>250 GB SSD</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <h3>Multi VM Deployment (3 Servers)</h3>
+                    <div class="table-container">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Server Role</th>
+                                    <th>CPU</th>
+                                    <th>RAM</th>
+                                    <th>Storage</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>Securaa Server</strong></td>
+                                    <td>8 Cores</td>
+                                    <td>16 GB</td>
+                                    <td>250 GB SSD</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>MongoDB Server</strong></td>
+                                    <td>8 Cores</td>
+                                    <td>16 GB</td>
+                                    <td>250 GB SSD</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Elasticsearch Server</strong></td>
+                                    <td>8 Cores</td>
+                                    <td>16 GB</td>
+                                    <td>250 GB SSD</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+
+                <!-- SIA Enterprise/Standalone Production -->
+                <section>
+                    <h2><i class="fas fa-industry"></i> SIA Enterprise/Standalone - Production Deployment</h2>
+                    <p>Hardware specifications for production environments with higher performance requirements:</p>
+
+                    <h3>Single VM Deployment</h3>
+                    <div class="table-container">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Component</th>
+                                    <th>Specification</th>
+                                    <th>Notes</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>CPU</strong></td>
+                                    <td>16 Cores</td>
+                                    <td>AVX support required</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Memory</strong></td>
                                     <td>32 GB RAM</td>
-                                    <td>ECC memory recommended</td>
+                                    <td>Production workload support</td>
                                 </tr>
                                 <tr>
                                     <td><strong>Storage</strong></td>
                                     <td>500 GB SSD</td>
-                                    <td>1 TB NVMe SSD</td>
-                                    <td>High IOPS required for database</td>
+                                    <td>High IOPS SSD recommended</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <h3>Multi VM Deployment (2 Servers)</h3>
+                    <div class="table-container">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Server Role</th>
+                                    <th>CPU</th>
+                                    <th>RAM</th>
+                                    <th>Storage</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>Securaa Server</strong></td>
+                                    <td>8 Cores</td>
+                                    <td>16 GB</td>
+                                    <td>250 GB SSD</td>
                                 </tr>
                                 <tr>
-                                    <td><strong>Network</strong></td>
-                                    <td>1 Gbps</td>
-                                    <td>10 Gbps</td>
-                                    <td>Low latency preferred</td>
+                                    <td><strong>Database Server</strong></td>
+                                    <td>8 Cores</td>
+                                    <td>16 GB</td>
+                                    <td>250 GB SSD</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <h3>Multi VM Deployment (3 Servers)</h3>
+                    <div class="table-container">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Server Role</th>
+                                    <th>CPU</th>
+                                    <th>RAM</th>
+                                    <th>Storage</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>Securaa Server</strong></td>
+                                    <td>8 Cores</td>
+                                    <td>16 GB</td>
+                                    <td>250 GB SSD</td>
                                 </tr>
                                 <tr>
-                                    <td><strong>OS</strong></td>
-                                    <td colspan="2">Ubuntu 20.04 LTS, RHEL 8+, CentOS 8+</td>
-                                    <td>64-bit required</td>
+                                    <td><strong>MongoDB Server</strong></td>
+                                    <td>8 Cores</td>
+                                    <td>16 GB</td>
+                                    <td>250 GB SSD</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Elasticsearch Server</strong></td>
+                                    <td>8 Cores</td>
+                                    <td>16 GB</td>
+                                    <td>250 GB SSD</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <h3>Remote Integration Server</h3>
+                    <div class="alert alert-info">
+                        <strong>Note:</strong> Remote Integration Server is optional and used for connecting to isolated network segments or remote locations.
+                    </div>
+                    <div class="table-container">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Component</th>
+                                    <th>Specification</th>
+                                    <th>Notes</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>CPU</strong></td>
+                                    <td>8 Cores</td>
+                                    <td>For integration workloads</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Memory</strong></td>
+                                    <td>4 GB RAM</td>
+                                    <td>Lightweight requirements</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Storage</strong></td>
+                                    <td>100 GB SSD</td>
+                                    <td>For logs and temp data</td>
                                 </tr>
                             </tbody>
                         </table>
                     </div>
                 </section>
 
+                <!-- SIA MSSP POC -->
                 <section>
-                    <h2><i class="fas fa-building"></i> Medium Environment Specifications</h2>
-                    
-                    <div class="spec-table">
-                        <h3>Multi-Node Deployment</h3>
-                        
-                        <h4>Management Node</h4>
+                    <h2><i class="fas fa-building"></i> SIA MSSP - POC Deployment</h2>
+                    <p>Hardware specifications for Managed Security Service Provider POC deployments:</p>
+
+                    <div class="table-container">
                         <table>
                             <thead>
                                 <tr>
-                                    <th>Component</th>
-                                    <th>Minimum</th>
-                                    <th>Recommended</th>
-                                    <th>Notes</th>
+                                    <th>Server Role</th>
+                                    <th>CPU</th>
+                                    <th>RAM</th>
+                                    <th>Storage</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td><strong>CPU</strong></td>
-                                    <td>8 cores, 2.4 GHz</td>
-                                    <td>16 cores, 3.0 GHz</td>
-                                    <td>High single-thread performance</td>
+                                    <td><strong>Securaa Server</strong></td>
+                                    <td>8 Cores</td>
+                                    <td>16 GB</td>
+                                    <td>250 GB SSD</td>
                                 </tr>
                                 <tr>
-                                    <td><strong>Memory</strong></td>
-                                    <td>32 GB RAM</td>
-                                    <td>64 GB RAM</td>
-                                    <td>Web interface and API gateway</td>
-                                </tr>
-                                <tr>
-                                    <td><strong>Storage</strong></td>
-                                    <td>1 TB SSD</td>
-                                    <td>2 TB NVMe SSD</td>
-                                    <td>Configuration and logs</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                        
-                        <h4>Processing Nodes (2-3 nodes)</h4>
-                        <table>
-                            <thead>
-                                <tr>
-                                    <th>Component</th>
-                                    <th>Minimum</th>
-                                    <th>Recommended</th>
-                                    <th>Notes</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td><strong>CPU</strong></td>
-                                    <td>16 cores, 2.8 GHz</td>
-                                    <td>32 cores, 3.2 GHz</td>
-                                    <td>High computational requirements</td>
-                                </tr>
-                                <tr>
-                                    <td><strong>Memory</strong></td>
-                                    <td>64 GB RAM</td>
-                                    <td>128 GB RAM</td>
-                                    <td>Analytics and processing</td>
-                                </tr>
-                                <tr>
-                                    <td><strong>Storage</strong></td>
-                                    <td>2 TB SSD</td>
-                                    <td>4 TB NVMe SSD</td>
-                                    <td>Temporary processing data</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                        
-                        <h4>Data Nodes (3 nodes for HA)</h4>
-                        <table>
-                            <thead>
-                                <tr>
-                                    <th>Component</th>
-                                    <th>Minimum</th>
-                                    <th>Recommended</th>
-                                    <th>Notes</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td><strong>CPU</strong></td>
-                                    <td>12 cores, 2.4 GHz</td>
-                                    <td>24 cores, 3.0 GHz</td>
-                                    <td>Database and search operations</td>
-                                </tr>
-                                <tr>
-                                    <td><strong>Memory</strong></td>
-                                    <td>64 GB RAM</td>
-                                    <td>256 GB RAM</td>
-                                    <td>Database caching crucial</td>
-                                </tr>
-                                <tr>
-                                    <td><strong>Storage</strong></td>
-                                    <td>10 TB SSD</td>
-                                    <td>20 TB NVMe SSD</td>
-                                    <td>RAID 10 configuration recommended</td>
+                                    <td><strong>Database Server</strong></td>
+                                    <td>8 Cores</td>
+                                    <td>16 GB</td>
+                                    <td>250 GB SSD</td>
                                 </tr>
                             </tbody>
                         </table>
                     </div>
                 </section>
 
+                <!-- SIA MSSP Production -->
                 <section>
-                    <h2><i class="fas fa-city"></i> Large Environment Specifications</h2>
-                    
-                    <div class="spec-table">
-                        <h3>Enterprise Deployment</h3>
-                        
-                        <h4>Load Balancer Nodes (2 nodes for HA)</h4>
+                    <h2><i class="fas fa-city"></i> SIA MSSP - Production Deployment</h2>
+                    <p>Hardware specifications for MSSP production environments supporting multiple tenants:</p>
+
+                    <div class="table-container">
                         <table>
                             <thead>
                                 <tr>
-                                    <th>Component</th>
-                                    <th>Specification</th>
-                                    <th>Notes</th>
+                                    <th>Server Role</th>
+                                    <th>CPU</th>
+                                    <th>RAM</th>
+                                    <th>Storage</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td><strong>CPU</strong></td>
-                                    <td>8 cores, 3.0 GHz</td>
-                                    <td>High network throughput</td>
+                                    <td><strong>Securaa Server</strong></td>
+                                    <td>16 Cores</td>
+                                    <td>32 GB</td>
+                                    <td>500 GB SSD</td>
                                 </tr>
                                 <tr>
-                                    <td><strong>Memory</strong></td>
-                                    <td>16 GB RAM</td>
-                                    <td>Connection state management</td>
+                                    <td><strong>MongoDB Server</strong></td>
+                                    <td>16 Cores</td>
+                                    <td>32 GB</td>
+                                    <td>500 GB SSD</td>
                                 </tr>
                                 <tr>
-                                    <td><strong>Network</strong></td>
-                                    <td>40 Gbps</td>
-                                    <td>Multiple 10G interfaces</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                        
-                        <h4>Management Cluster (3 nodes)</h4>
-                        <table>
-                            <thead>
-                                <tr>
-                                    <th>Component</th>
-                                    <th>Specification</th>
-                                    <th>Notes</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td><strong>CPU</strong></td>
-                                    <td>16 cores, 3.2 GHz</td>
-                                    <td>Cluster coordination</td>
+                                    <td><strong>Elasticsearch Server</strong></td>
+                                    <td>16 Cores</td>
+                                    <td>32 GB</td>
+                                    <td>500 GB SSD</td>
                                 </tr>
                                 <tr>
-                                    <td><strong>Memory</strong></td>
-                                    <td>128 GB RAM</td>
-                                    <td>Management overhead</td>
-                                </tr>
-                                <tr>
-                                    <td><strong>Storage</strong></td>
-                                    <td>4 TB NVMe SSD</td>
-                                    <td>Configuration replication</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                        
-                        <h4>Processing Cluster (6-12 nodes)</h4>
-                        <table>
-                            <thead>
-                                <tr>
-                                    <th>Component</th>
-                                    <th>Specification</th>
-                                    <th>Notes</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td><strong>CPU</strong></td>
-                                    <td>32-64 cores, 3.5 GHz</td>
-                                    <td>Dedicated processing power</td>
-                                </tr>
-                                <tr>
-                                    <td><strong>Memory</strong></td>
-                                    <td>256-512 GB RAM</td>
-                                    <td>In-memory analytics</td>
-                                </tr>
-                                <tr>
-                                    <td><strong>Storage</strong></td>
-                                    <td>8 TB NVMe SSD</td>
-                                    <td>High-speed temporary storage</td>
-                                </tr>
-                                <tr>
-                                    <td><strong>Accelerators</strong></td>
-                                    <td>GPU cards (optional)</td>
-                                    <td>ML/AI workloads acceleration</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                        
-                        <h4>Data Storage Cluster (6+ nodes)</h4>
-                        <table>
-                            <thead>
-                                <tr>
-                                    <th>Component</th>
-                                    <th>Specification</th>
-                                    <th>Notes</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td><strong>CPU</strong></td>
-                                    <td>24 cores, 3.0 GHz</td>
-                                    <td>Database operations</td>
-                                </tr>
-                                <tr>
-                                    <td><strong>Memory</strong></td>
-                                    <td>512 GB - 1 TB RAM</td>
-                                    <td>Large dataset caching</td>
-                                </tr>
-                                <tr>
-                                    <td><strong>Storage</strong></td>
-                                    <td>50-100 TB NVMe SSD</td>
-                                    <td>Distributed storage with replication</td>
-                                </tr>
-                                <tr>
-                                    <td><strong>Network</strong></td>
-                                    <td>25 Gbps</td>
-                                    <td>Data replication traffic</td>
+                                    <td><strong>Remote Integration Server</strong></td>
+                                    <td>8 Cores</td>
+                                    <td>4 GB</td>
+                                    <td>100 GB SSD</td>
                                 </tr>
                             </tbody>
                         </table>
                     </div>
                 </section>
 
+                <!-- TIP Hardware Specs -->
                 <section>
-                    <h2><i class="fas fa-cloud"></i> Cloud Specifications</h2>
-                    
-                    <div class="cloud-specs">
-                        <h3>AWS Instance Types</h3>
+                    <h2><i class="fas fa-shield-virus"></i> TIP (Threat Intelligence Platform) Hardware</h2>
+                    <p>Dedicated hardware specifications for the Threat Intelligence Platform:</p>
+
+                    <div class="table-container">
                         <table>
                             <thead>
                                 <tr>
                                     <th>Environment</th>
-                                    <th>Management</th>
-                                    <th>Processing</th>
-                                    <th>Data Storage</th>
+                                    <th>CPU</th>
+                                    <th>RAM</th>
+                                    <th>Storage</th>
+                                    <th>Capacity</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td><strong>Small</strong></td>
-                                    <td>t3.2xlarge</td>
-                                    <td>c5.4xlarge</td>
+                                    <td><strong>POC</strong> <span class="badge badge-info">Evaluation</span></td>
+                                    <td>4 Cores</td>
+                                    <td>16 GB</td>
+                                    <td>300 GB SSD</td>
+                                    <td>~20 Million records</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Production</strong> <span class="badge badge-success">Recommended</span></td>
+                                    <td>8 Cores</td>
+                                    <td>32 GB</td>
+                                    <td>500 GB SSD</td>
+                                    <td>~30 Million records</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="alert alert-info">
+                        <strong>TIP Features:</strong> The Threat Intelligence Platform supports 130+ open-source threat feeds and can store millions of indicators of compromise (IOCs).
+                    </div>
+                </section>
+
+                <!-- Deployment Comparison -->
+                <section>
+                    <h2><i class="fas fa-balance-scale"></i> Deployment Comparison</h2>
+                    <p>Quick comparison of deployment options to help choose the right configuration:</p>
+
+                    <div class="table-container">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Deployment Type</th>
+                                    <th>Total CPU</th>
+                                    <th>Total RAM</th>
+                                    <th>Total Storage</th>
+                                    <th>Best For</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>Single VM POC</strong></td>
+                                    <td>8 Cores</td>
+                                    <td>16 GB</td>
+                                    <td>250-500 GB</td>
+                                    <td>Evaluation, testing</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>2-Server POC</strong></td>
+                                    <td>12 Cores</td>
+                                    <td>16 GB</td>
+                                    <td>500 GB</td>
+                                    <td>Extended POC with separation</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>3-Server POC</strong></td>
+                                    <td>24 Cores</td>
+                                    <td>48 GB</td>
+                                    <td>750 GB</td>
+                                    <td>Production-like evaluation</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Single VM Production</strong></td>
+                                    <td>16 Cores</td>
+                                    <td>32 GB</td>
+                                    <td>500 GB</td>
+                                    <td>Small production environment</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>3-Server Production</strong></td>
+                                    <td>24 Cores</td>
+                                    <td>48 GB</td>
+                                    <td>750 GB</td>
+                                    <td>Standard production</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>MSSP Production</strong></td>
+                                    <td>56 Cores</td>
+                                    <td>100 GB</td>
+                                    <td>1.6 TB</td>
+                                    <td>Multi-tenant MSSP</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+
+                <!-- Cloud Specifications -->
+                <section>
+                    <h2><i class="fas fa-cloud"></i> Cloud Deployment Specifications</h2>
+
+                    <h3>AWS Instance Types</h3>
+                    <div class="table-container">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Deployment</th>
+                                    <th>Instance Type</th>
+                                    <th>vCPU</th>
+                                    <th>Memory</th>
+                                    <th>Notes</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>Single VM POC</strong></td>
+                                    <td>m5.2xlarge</td>
+                                    <td>8</td>
+                                    <td>32 GB</td>
+                                    <td>Exceeds minimum requirements</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Single VM Production</strong></td>
+                                    <td>m5.4xlarge</td>
+                                    <td>16</td>
+                                    <td>64 GB</td>
+                                    <td>Recommended for production</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Database Server</strong></td>
                                     <td>r5.2xlarge</td>
+                                    <td>8</td>
+                                    <td>64 GB</td>
+                                    <td>Memory-optimized</td>
                                 </tr>
                                 <tr>
-                                    <td><strong>Medium</strong></td>
-                                    <td>c5.4xlarge</td>
-                                    <td>c5.12xlarge</td>
-                                    <td>r5.8xlarge</td>
+                                    <td><strong>Elasticsearch Server</strong></td>
+                                    <td>r5.2xlarge</td>
+                                    <td>8</td>
+                                    <td>64 GB</td>
+                                    <td>Memory-optimized</td>
                                 </tr>
                                 <tr>
-                                    <td><strong>Large</strong></td>
-                                    <td>c5.9xlarge</td>
-                                    <td>c5.24xlarge</td>
-                                    <td>r5.24xlarge</td>
+                                    <td><strong>MSSP Production</strong></td>
+                                    <td>m5.8xlarge</td>
+                                    <td>32</td>
+                                    <td>128 GB</td>
+                                    <td>High performance</td>
                                 </tr>
                             </tbody>
                         </table>
-                        
-                        <h3>Azure VM Sizes</h3>
+                    </div>
+
+                    <h4>AWS AMI IDs for Supported Operating Systems</h4>
+                    <div class="table-container">
                         <table>
                             <thead>
                                 <tr>
-                                    <th>Environment</th>
-                                    <th>Management</th>
-                                    <th>Processing</th>
-                                    <th>Data Storage</th>
+                                    <th>Operating System</th>
+                                    <th>AMI ID</th>
+                                    <th>Region</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td><strong>Small</strong></td>
+                                    <td>Rocky Linux 8</td>
+                                    <td><code>ami-017fecd1353bcc96e</code></td>
+                                    <td>US East</td>
+                                </tr>
+                                <tr>
+                                    <td>AlmaLinux 8</td>
+                                    <td><code>ami-079db87dc4c10ac91</code></td>
+                                    <td>US East</td>
+                                </tr>
+                                <tr>
+                                    <td>Red Hat Enterprise Linux 8</td>
+                                    <td><code>ami-0aa8fc2422063977a</code></td>
+                                    <td>US East</td>
+                                </tr>
+                                <tr>
+                                    <td>Red Hat Enterprise Linux 9</td>
+                                    <td><code>ami-067d1e60475437da2</code></td>
+                                    <td>US East</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <h3>Azure VM Sizes</h3>
+                    <div class="table-container">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Deployment</th>
+                                    <th>VM Size</th>
+                                    <th>vCPU</th>
+                                    <th>Memory</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>Single VM POC</strong></td>
                                     <td>Standard_D8s_v3</td>
-                                    <td>Standard_F16s_v2</td>
-                                    <td>Standard_E8s_v3</td>
+                                    <td>8</td>
+                                    <td>32 GB</td>
                                 </tr>
                                 <tr>
-                                    <td><strong>Medium</strong></td>
+                                    <td><strong>Single VM Production</strong></td>
                                     <td>Standard_D16s_v3</td>
-                                    <td>Standard_F48s_v2</td>
-                                    <td>Standard_E32s_v3</td>
+                                    <td>16</td>
+                                    <td>64 GB</td>
                                 </tr>
                                 <tr>
-                                    <td><strong>Large</strong></td>
+                                    <td><strong>Database Server</strong></td>
+                                    <td>Standard_E8s_v3</td>
+                                    <td>8</td>
+                                    <td>64 GB</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>MSSP Production</strong></td>
                                     <td>Standard_D32s_v3</td>
-                                    <td>Standard_F72s_v2</td>
-                                    <td>Standard_E64s_v3</td>
+                                    <td>32</td>
+                                    <td>128 GB</td>
                                 </tr>
                             </tbody>
                         </table>
                     </div>
-                </section>
 
-                <section>
-                    <h2><i class="fas fa-network-wired"></i> Network Requirements</h2>
-                    
-                    <div class="network-requirements">
-                        <h3>Bandwidth Requirements</h3>
+                    <h3>Google Cloud VM Types</h3>
+                    <div class="table-container">
                         <table>
                             <thead>
                                 <tr>
-                                    <th>Traffic Type</th>
-                                    <th>Small Environment</th>
-                                    <th>Medium Environment</th>
-                                    <th>Large Environment</th>
+                                    <th>Deployment</th>
+                                    <th>Machine Type</th>
+                                    <th>vCPU</th>
+                                    <th>Memory</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td><strong>Management Traffic</strong></td>
-                                    <td>100 Mbps</td>
-                                    <td>1 Gbps</td>
-                                    <td>10 Gbps</td>
+                                    <td><strong>Single VM POC</strong></td>
+                                    <td>n2-standard-8</td>
+                                    <td>8</td>
+                                    <td>32 GB</td>
                                 </tr>
                                 <tr>
-                                    <td><strong>Data Ingestion</strong></td>
-                                    <td>500 Mbps</td>
-                                    <td>5 Gbps</td>
-                                    <td>25 Gbps</td>
+                                    <td><strong>Single VM Production</strong></td>
+                                    <td>n2-standard-16</td>
+                                    <td>16</td>
+                                    <td>64 GB</td>
                                 </tr>
                                 <tr>
-                                    <td><strong>Inter-Node Communication</strong></td>
-                                    <td>1 Gbps</td>
-                                    <td>10 Gbps</td>
-                                    <td>40 Gbps</td>
+                                    <td><strong>Database Server</strong></td>
+                                    <td>n2-highmem-8</td>
+                                    <td>8</td>
+                                    <td>64 GB</td>
                                 </tr>
                                 <tr>
-                                    <td><strong>Backup/Replication</strong></td>
-                                    <td>1 Gbps</td>
-                                    <td>10 Gbps</td>
-                                    <td>25 Gbps</td>
+                                    <td><strong>MSSP Production</strong></td>
+                                    <td>n2-standard-32</td>
+                                    <td>32</td>
+                                    <td>128 GB</td>
                                 </tr>
                             </tbody>
                         </table>
-                        
-                        <h3>Network Architecture</h3>
-                        <ul>
-                            <li><strong>Redundancy:</strong> Dual network paths for high availability</li>
-                            <li><strong>Segmentation:</strong> Separate VLANs for management, data, and backup traffic</li>
-                            <li><strong>Security:</strong> Network firewalls and intrusion detection systems</li>
-                            <li><strong>Monitoring:</strong> Network performance monitoring and alerting</li>
-                        </ul>
                     </div>
                 </section>
 
+                <!-- Storage Specifications -->
                 <section>
-                    <h2><i class="fas fa-database"></i> Storage Requirements</h2>
-                    
-                    <div class="storage-requirements">
-                        <h3>Storage Performance</h3>
+                    <h2><i class="fas fa-hdd"></i> Storage Specifications</h2>
+
+                    <h3>Storage Type Requirements</h3>
+                    <div class="table-container">
                         <table>
                             <thead>
                                 <tr>
                                     <th>Storage Type</th>
-                                    <th>IOPS Requirement</th>
-                                    <th>Throughput</th>
                                     <th>Use Case</th>
+                                    <th>Minimum IOPS</th>
+                                    <th>Recommended</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td><strong>Database Storage</strong></td>
-                                    <td>10,000+ IOPS</td>
-                                    <td>500+ MB/s</td>
-                                    <td>Transactional workloads</td>
+                                    <td><strong>Operating System</strong></td>
+                                    <td>OS and application binaries</td>
+                                    <td>3,000 IOPS</td>
+                                    <td>SSD</td>
                                 </tr>
                                 <tr>
-                                    <td><strong>Analytics Storage</strong></td>
-                                    <td>5,000+ IOPS</td>
-                                    <td>1,000+ MB/s</td>
-                                    <td>Large dataset processing</td>
+                                    <td><strong>MongoDB Data</strong></td>
+                                    <td>Primary database storage</td>
+                                    <td>5,000 IOPS</td>
+                                    <td>NVMe SSD</td>
                                 </tr>
                                 <tr>
-                                    <td><strong>Log Storage</strong></td>
-                                    <td>1,000+ IOPS</td>
-                                    <td>200+ MB/s</td>
-                                    <td>Sequential write operations</td>
+                                    <td><strong>Elasticsearch Data</strong></td>
+                                    <td>Search indices and logs</td>
+                                    <td>5,000 IOPS</td>
+                                    <td>NVMe SSD</td>
                                 </tr>
                                 <tr>
                                     <td><strong>Backup Storage</strong></td>
-                                    <td>500+ IOPS</td>
-                                    <td>100+ MB/s</td>
-                                    <td>Archival and recovery</td>
+                                    <td>Backup and archive</td>
+                                    <td>1,000 IOPS</td>
+                                    <td>SSD or HDD</td>
                                 </tr>
                             </tbody>
                         </table>
-                        
-                        <h3>Data Retention Guidelines</h3>
-                        <div class="retention-guidelines">
-                            <div class="retention-tier">
-                                <h4>Hot Data (Active)</h4>
-                                <ul>
-                                    <li>Recent security events (30 days)</li>
-                                    <li>Active investigations</li>
-                                    <li>Real-time analytics data</li>
-                                    <li>Storage: High-performance NVMe SSD</li>
-                                </ul>
-                            </div>
-                            
-                            <div class="retention-tier">
-                                <h4>Warm Data (Occasional Access)</h4>
-                                <ul>
-                                    <li>Historical events (3-12 months)</li>
-                                    <li>Compliance data</li>
-                                    <li>Archived investigations</li>
-                                    <li>Storage: Standard SSD</li>
-                                </ul>
-                            </div>
-                            
-                            <div class="retention-tier">
-                                <h4>Cold Data (Archive)</h4>
-                                <ul>
-                                    <li>Long-term historical data (&gt; 1 year)</li>
-                                    <li>Regulatory compliance archives</li>
-                                    <li>Forensic evidence</li>
-                                    <li>Storage: High-capacity HDD or cloud archive</li>
-                                </ul>
-                            </div>
+                    </div>
+
+                    <h3>Storage Sizing Guidelines</h3>
+                    <div class="feature-grid">
+                        <div class="feature-card">
+                            <h3>POC Environment</h3>
+                            <ul style="text-align: left; list-style: disc; padding-left: 1rem;">
+                                <li>OS + Application: 50 GB</li>
+                                <li>MongoDB Data: 100 GB</li>
+                                <li>Elasticsearch: 100 GB</li>
+                                <li>Logs: 50 GB</li>
+                                <li><strong>Total: 250-500 GB</strong></li>
+                            </ul>
+                        </div>
+
+                        <div class="feature-card">
+                            <h3>Production Environment</h3>
+                            <ul style="text-align: left; list-style: disc; padding-left: 1rem;">
+                                <li>OS + Application: 100 GB</li>
+                                <li>MongoDB Data: 200 GB</li>
+                                <li>Elasticsearch: 150 GB</li>
+                                <li>Logs: 50 GB</li>
+                                <li><strong>Total: 500 GB+</strong></li>
+                            </ul>
+                        </div>
+
+                        <div class="feature-card">
+                            <h3>MSSP Environment</h3>
+                            <ul style="text-align: left; list-style: disc; padding-left: 1rem;">
+                                <li>Per-tenant data isolation</li>
+                                <li>Scalable storage per tenant</li>
+                                <li>Shared Elasticsearch cluster</li>
+                                <li>Backup per tenant</li>
+                                <li><strong>Total: 1.5 TB+</strong></li>
+                            </ul>
+                        </div>
+
+                        <div class="feature-card">
+                            <h3>TIP Storage</h3>
+                            <ul style="text-align: left; list-style: disc; padding-left: 1rem;">
+                                <li>IOC Database: 200 GB</li>
+                                <li>Feed Cache: 50 GB</li>
+                                <li>Search Indices: 50 GB</li>
+                                <li><strong>Total: 300-500 GB</strong></li>
+                            </ul>
                         </div>
                     </div>
                 </section>
 
+                <!-- Network Requirements -->
+                <section>
+                    <h2><i class="fas fa-network-wired"></i> Network Requirements</h2>
+
+                    <h3>Port Requirements</h3>
+                    <div class="table-container">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Port</th>
+                                    <th>Protocol</th>
+                                    <th>Direction</th>
+                                    <th>Purpose</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>443</strong></td>
+                                    <td>HTTPS</td>
+                                    <td>Inbound</td>
+                                    <td>Web Interface</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>8000</strong></td>
+                                    <td>WSS</td>
+                                    <td>Inbound</td>
+                                    <td>WebSocket Communication</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>7000</strong></td>
+                                    <td>TCP</td>
+                                    <td>Both</td>
+                                    <td>TIP Connectivity</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>22</strong></td>
+                                    <td>SSH</td>
+                                    <td>Inbound</td>
+                                    <td>Server Administration</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <h3>Bandwidth Requirements</h3>
+                    <div class="table-container">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Deployment Size</th>
+                                    <th>Internet Bandwidth</th>
+                                    <th>Internal Network</th>
+                                    <th>Notes</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>POC</strong></td>
+                                    <td>100 Mbps</td>
+                                    <td>1 Gbps</td>
+                                    <td>Minimum for evaluation</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Production</strong></td>
+                                    <td>500 Mbps</td>
+                                    <td>10 Gbps</td>
+                                    <td>Standard production</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>MSSP</strong></td>
+                                    <td>1 Gbps</td>
+                                    <td>10 Gbps</td>
+                                    <td>Multi-tenant workload</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+
+                <!-- Considerations -->
                 <section>
                     <h2><i class="fas fa-exclamation-triangle"></i> Important Considerations</h2>
-                    
-                    <div class="considerations-grid">
-                        <div class="consideration-item">
-                            <h3><i class="fas fa-thermometer-half"></i> Environmental</h3>
-                            <ul>
-                                <li>Operating temperature: 18-27°C (64-80°F)</li>
-                                <li>Humidity: 20-80% non-condensing</li>
-                                <li>Adequate ventilation and cooling</li>
-                                <li>Uninterruptible Power Supply (UPS)</li>
+
+                    <div class="feature-grid">
+                        <div class="feature-card">
+                            <h3><i class="fas fa-microchip"></i> CPU Requirements</h3>
+                            <ul style="text-align: left; list-style: disc; padding-left: 1rem;">
+                                <li>AVX support is mandatory</li>
+                                <li>Intel Xeon or AMD EPYC recommended</li>
+                                <li>Higher clock speed benefits single-threaded tasks</li>
+                                <li>More cores benefit concurrent operations</li>
                             </ul>
                         </div>
-                        
-                        <div class="consideration-item">
-                            <h3><i class="fas fa-expand-arrows-alt"></i> Scalability</h3>
-                            <ul>
+
+                        <div class="feature-card">
+                            <h3><i class="fas fa-memory"></i> Memory Considerations</h3>
+                            <ul style="text-align: left; list-style: disc; padding-left: 1rem;">
+                                <li>ECC memory recommended for production</li>
+                                <li>MongoDB requires 50% of RAM for WiredTiger cache</li>
+                                <li>Elasticsearch heap should be 50% of RAM (max 32 GB)</li>
+                                <li>Reserve memory for OS and other services</li>
+                            </ul>
+                        </div>
+
+                        <div class="feature-card">
+                            <h3><i class="fas fa-hdd"></i> Storage Considerations</h3>
+                            <ul style="text-align: left; list-style: disc; padding-left: 1rem;">
+                                <li>SSD storage is mandatory</li>
+                                <li>NVMe preferred for database workloads</li>
+                                <li>RAID 10 recommended for production</li>
+                                <li>Plan for 20% free space at all times</li>
+                            </ul>
+                        </div>
+
+                        <div class="feature-card">
+                            <h3><i class="fas fa-expand-arrows-alt"></i> Scalability Planning</h3>
+                            <ul style="text-align: left; list-style: disc; padding-left: 1rem;">
                                 <li>Plan for 50% growth capacity</li>
-                                <li>Modular architecture for easy expansion</li>
-                                <li>Load balancer capacity planning</li>
-                                <li>Network bandwidth scaling</li>
-                            </ul>
-                        </div>
-                        
-                        <div class="consideration-item">
-                            <h3><i class="fas fa-shield-check"></i> Redundancy</h3>
-                            <ul>
-                                <li>N+1 redundancy for critical components</li>
-                                <li>Geographic distribution for DR</li>
-                                <li>Automated failover mechanisms</li>
-                                <li>Regular backup and recovery testing</li>
+                                <li>Multi-VM deployment allows horizontal scaling</li>
+                                <li>Consider future TIP integration requirements</li>
+                                <li>MSSP deployments benefit from dedicated database servers</li>
                             </ul>
                         </div>
                     </div>
@@ -1210,8 +945,9 @@
                 <div class="cta-section">
                     <h2><i class="fas fa-tools"></i> Ready to Deploy?</h2>
                     <p>
-                        <strong>Hardware specifications confirmed?</strong> Proceed to the 
-                        <a href="prerequisites.html">prerequisites checklist</a> to prepare for your Securaa platform deployment.
+                        Hardware specifications confirmed? Review the <a href="prerequisites.html">Prerequisites</a>
+                        page to ensure all requirements are met, then proceed to the
+                        <a href="installation.html">Installation Guide</a> for deployment instructions.
                     </p>
                 </div>
             </div>
@@ -1264,34 +1000,31 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.28.0/components/prism-core.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.28.0/plugins/autoloader/prism-autoloader.min.js"></script>
-    
+
     <script>
-        // Mobile menu functionality
         function toggleMobileMenu() {
             const sidebar = document.querySelector('.sidebar');
             const overlay = document.querySelector('.sidebar-overlay');
-            
+
             if (!overlay) {
-                // Create overlay if it doesn't exist
                 const newOverlay = document.createElement('div');
                 newOverlay.className = 'sidebar-overlay';
                 newOverlay.onclick = closeMobileMenu;
                 document.body.appendChild(newOverlay);
             }
-            
+
             sidebar.classList.toggle('show');
             (overlay || document.querySelector('.sidebar-overlay')).classList.toggle('show');
         }
-        
+
         function closeMobileMenu() {
             const sidebar = document.querySelector('.sidebar');
             const overlay = document.querySelector('.sidebar-overlay');
-            
+
             sidebar.classList.remove('show');
             if (overlay) overlay.classList.remove('show');
         }
-        
-        // Close mobile menu when clicking sidebar links
+
         document.addEventListener('DOMContentLoaded', function() {
             const sidebarLinks = document.querySelectorAll('.sidebar a');
             sidebarLinks.forEach(link => {

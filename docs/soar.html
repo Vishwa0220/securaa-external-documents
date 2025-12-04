@@ -206,7 +206,8 @@
                     </div>
 
                     <h3>Core Capabilities</h3>
-                    <table class="data-table">
+                    <div class="table-container">
+                        <table class="data-table">
                         <thead>
                             <tr>
                                 <th>Capability</th>
@@ -241,29 +242,105 @@
                                 <td>Compliance and metrics</td>
                             </tr>
                         </tbody>
-                    </table>
+                        </table>
+                    </div>
 
                     <h3>Integration Ecosystem</h3>
-                    <div class="feature-grid">
-                        <div class="feature-card">
-                            <h3>SIEM Platforms</h3>
-                            <p>Splunk, QRadar, ArcSight, LogRhythm, Elastic Security, Microsoft Sentinel</p>
-                        </div>
-                        
-                        <div class="feature-card">
-                            <h3>Network Security</h3>
-                            <p>Palo Alto Networks, Cisco, Fortinet, Check Point, Juniper</p>
-                        </div>
-                        
-                        <div class="feature-card">
-                            <h3>Endpoint Protection</h3>
-                            <p>CrowdStrike, SentinelOne, Microsoft Defender, Carbon Black</p>
-                        </div>
-                        
-                        <div class="feature-card">
-                            <h3>Threat Intelligence</h3>
-                            <p>VirusTotal, ThreatConnect, MISP, AlienVault OTX</p>
-                        </div>
+                    <div class="table-container">
+                        <table class="data-table">
+                            <thead>
+                                <tr>
+                                    <th>Category</th>
+                                    <th>Supported Platforms</th>
+                                    <th>Integration Type</th>
+                                    <th>Use Cases</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>SIEM Platforms</td>
+                                    <td>Splunk, QRadar, ArcSight, LogRhythm, Elastic Security, Microsoft Sentinel</td>
+                                    <td>Bidirectional</td>
+                                    <td>Alert ingestion, enrichment, automated response</td>
+                                </tr>
+                                <tr>
+                                    <td>Network Security</td>
+                                    <td>Palo Alto Networks, Cisco, Fortinet, Check Point, Juniper</td>
+                                    <td>API/CLI</td>
+                                    <td>Firewall rules, IP blocking, network isolation</td>
+                                </tr>
+                                <tr>
+                                    <td>Endpoint Protection</td>
+                                    <td>CrowdStrike, SentinelOne, Microsoft Defender, Carbon Black</td>
+                                    <td>API</td>
+                                    <td>Host isolation, malware removal, forensic collection</td>
+                                </tr>
+                                <tr>
+                                    <td>Threat Intelligence</td>
+                                    <td>VirusTotal, ThreatConnect, MISP, AlienVault OTX</td>
+                                    <td>API/STIX-TAXII</td>
+                                    <td>IOC enrichment, threat lookup, reputation check</td>
+                                </tr>
+                                <tr>
+                                    <td>Email Security</td>
+                                    <td>Proofpoint, Mimecast, Microsoft Defender for O365</td>
+                                    <td>API</td>
+                                    <td>Email quarantine, attachment analysis, phishing response</td>
+                                </tr>
+                                <tr>
+                                    <td>Ticketing & ITSM</td>
+                                    <td>ServiceNow, Jira, BMC Remedy, Zendesk</td>
+                                    <td>API</td>
+                                    <td>Ticket creation, status updates, workflow integration</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <h3>Automation Metrics</h3>
+                    <div class="table-container">
+                        <table class="data-table">
+                            <thead>
+                                <tr>
+                                    <th>Metric</th>
+                                    <th>Before SOAR</th>
+                                    <th>After SOAR</th>
+                                    <th>Improvement</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Mean Time to Detect (MTTD)</td>
+                                    <td>Hours to Days</td>
+                                    <td>Minutes</td>
+                                    <td><span class="badge badge-success">95% faster</span></td>
+                                </tr>
+                                <tr>
+                                    <td>Mean Time to Respond (MTTR)</td>
+                                    <td>Hours</td>
+                                    <td>Minutes</td>
+                                    <td><span class="badge badge-success">90% faster</span></td>
+                                </tr>
+                                <tr>
+                                    <td>Manual Tasks Automated</td>
+                                    <td>0%</td>
+                                    <td>80%+</td>
+                                    <td><span class="badge badge-success">80% reduction</span></td>
+                                </tr>
+                                <tr>
+                                    <td>Alert Fatigue Reduction</td>
+                                    <td>1000s of alerts/day</td>
+                                    <td>Prioritized incidents</td>
+                                    <td><span class="badge badge-success">70% reduction</span></td>
+                                </tr>
+                                <tr>
+                                    <td>Analyst Productivity</td>
+                                    <td>Baseline</td>
+                                    <td>3x more efficient</td>
+                                    <td><span class="badge badge-success">300% improvement</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </div>
 
                     <div class="alert alert-success">

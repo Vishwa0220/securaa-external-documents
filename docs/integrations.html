@@ -164,23 +164,91 @@
                 <!-- Quick Stats -->
                 <section class="content-section">
                     <h2><i class="fas fa-chart-bar"></i> Integration Categories Overview</h2>
-                    <div class="feature-grid">
-                        <div class="feature-card">
-                            <h3>SIEM & Log Management</h3>
-                            <p><strong>26</strong> integrations including Splunk, QRadar, ArcSight, Elastic, and more.</p>
-                        </div>
-                        <div class="feature-card">
-                            <h3>Endpoint Protection</h3>
-                            <p><strong>32</strong> integrations including CrowdStrike, Microsoft Defender, SentinelOne.</p>
-                        </div>
-                        <div class="feature-card">
-                            <h3>Threat Intelligence</h3>
-                            <p><strong>28</strong> integrations including VirusTotal, Recorded Future, MISP.</p>
-                        </div>
-                        <div class="feature-card">
-                            <h3>Network Security</h3>
-                            <p><strong>45</strong> integrations including Palo Alto, Fortinet, Cisco, Check Point.</p>
-                        </div>
+                    <div class="table-container">
+                        <table class="data-table">
+                            <thead>
+                                <tr>
+                                    <th>Category</th>
+                                    <th>Count</th>
+                                    <th>Key Platforms</th>
+                                    <th>Integration Type</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>SIEM & Log Management</strong></td>
+                                    <td><span class="badge badge-info">26</span></td>
+                                    <td>Splunk, QRadar, ArcSight, Elastic, Microsoft Sentinel</td>
+                                    <td>Bidirectional API</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Endpoint Protection</strong></td>
+                                    <td><span class="badge badge-info">32</span></td>
+                                    <td>CrowdStrike, Microsoft Defender, SentinelOne, Carbon Black</td>
+                                    <td>API</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Network Security</strong></td>
+                                    <td><span class="badge badge-info">45</span></td>
+                                    <td>Palo Alto, Fortinet, Cisco, Check Point, Juniper</td>
+                                    <td>API/CLI</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Threat Intelligence</strong></td>
+                                    <td><span class="badge badge-info">28</span></td>
+                                    <td>VirusTotal, Recorded Future, MISP, ThreatConnect</td>
+                                    <td>API/STIX-TAXII</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Cloud Security</strong></td>
+                                    <td><span class="badge badge-info">24</span></td>
+                                    <td>AWS, Azure, GCP, Prisma Cloud, Wiz</td>
+                                    <td>Native API</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Identity & Access</strong></td>
+                                    <td><span class="badge badge-info">22</span></td>
+                                    <td>Azure AD, Okta, CyberArk, Ping Identity</td>
+                                    <td>SAML/OAuth/API</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Email Security</strong></td>
+                                    <td><span class="badge badge-info">15</span></td>
+                                    <td>Proofpoint, Mimecast, Microsoft Defender for O365</td>
+                                    <td>API</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Vulnerability Management</strong></td>
+                                    <td><span class="badge badge-info">18</span></td>
+                                    <td>Tenable, Qualys, Rapid7, OpenVAS</td>
+                                    <td>API</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Ticketing & ITSM</strong></td>
+                                    <td><span class="badge badge-info">16</span></td>
+                                    <td>ServiceNow, Jira, BMC Remedy, Zendesk</td>
+                                    <td>API/Webhook</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Communication</strong></td>
+                                    <td><span class="badge badge-info">12</span></td>
+                                    <td>Slack, Microsoft Teams, Cisco Webex</td>
+                                    <td>Webhook/API</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Other Categories</strong></td>
+                                    <td><span class="badge badge-info">56</span></td>
+                                    <td>DLP, CASB, DNS Security, Backup, Monitoring</td>
+                                    <td>Various</td>
+                                </tr>
+                            </tbody>
+                            <tfoot>
+                                <tr>
+                                    <td><strong>Total Integrations</strong></td>
+                                    <td colspan="3"><span class="badge badge-success">294+</span></td>
+                                </tr>
+                            </tfoot>
+                        </table>
                     </div>
                 </section>
 

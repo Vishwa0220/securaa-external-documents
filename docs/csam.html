@@ -204,7 +204,8 @@
                 </div>
 
                 <h3>Discovery Methods</h3>
-                <table class="data-table">
+                <div class="table-container">
+                    <table class="data-table">
                     <thead>
                         <tr>
                             <th>Method</th>
@@ -239,29 +240,53 @@
                             <td>Network infrastructure, managed devices</td>
                         </tr>
                     </tbody>
-                </table>
+                    </table>
+                </div>
 
                 <h3>Asset Lifecycle Management</h3>
-                <div class="feature-grid">
-                    <div class="feature-card">
-                        <h3>Acquisition</h3>
-                        <p>Track asset procurement, purchase orders, and initial deployment with vendor and cost information.</p>
-                    </div>
-                    
-                    <div class="feature-card">
-                        <h3>Deployment</h3>
-                        <p>Monitor asset deployment status, configuration changes, and integration with existing infrastructure.</p>
-                    </div>
-                    
-                    <div class="feature-card">
-                        <h3>Maintenance</h3>
-                        <p>Schedule and track maintenance activities, updates, patches, and configuration changes.</p>
-                    </div>
-                    
-                    <div class="feature-card">
-                        <h3>Retirement</h3>
-                        <p>Manage asset retirement process including data sanitization, disposal, and certificate updates.</p>
-                    </div>
+                <div class="table-container">
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Phase</th>
+                                <th>Key Activities</th>
+                                <th>CSAM Features</th>
+                                <th>Outputs</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Acquisition</strong></td>
+                                <td>Procurement, PO tracking, vendor management</td>
+                                <td>Purchase order integration, vendor database</td>
+                                <td>Asset records, cost tracking, warranty info</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Deployment</strong></td>
+                                <td>Installation, configuration, network integration</td>
+                                <td>Auto-discovery, baseline configuration</td>
+                                <td>Asset inventory, network maps, config records</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Operations</strong></td>
+                                <td>Daily use, monitoring, performance tracking</td>
+                                <td>Health monitoring, utilization metrics</td>
+                                <td>Performance reports, usage analytics</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Maintenance</strong></td>
+                                <td>Patching, updates, repairs, upgrades</td>
+                                <td>Patch management, maintenance scheduling</td>
+                                <td>Maintenance logs, patch compliance</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Retirement</strong></td>
+                                <td>Data sanitization, disposal, documentation</td>
+                                <td>Retirement workflows, audit trails</td>
+                                <td>Disposal certificates, compliance records</td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
 
                 <h3>Risk-Based Prioritization</h3>
@@ -269,7 +294,8 @@
                     <strong>Smart Prioritization:</strong> CSAM uses risk-based scoring to help you focus on the most critical assets and vulnerabilities first.
                 </div>
 
-                <table class="data-table">
+                <div class="table-container">
+                    <table class="data-table">
                     <thead>
                         <tr>
                             <th>Risk Factor</th>
@@ -304,7 +330,8 @@
                             <td>Regulatory and policy compliance obligations</td>
                         </tr>
                     </tbody>
-                </table>
+                    </table>
+                </div>
 
                 <h3>Integration Capabilities</h3>
                 <div class="steps-container">
@@ -342,26 +369,94 @@
                 </div>
 
                 <h3>Reporting and Analytics</h3>
-                <div class="feature-grid">
-                    <div class="feature-card">
-                        <h3>Executive Dashboards</h3>
-                        <p>High-level security posture and risk metrics for executive reporting and decision-making.</p>
-                    </div>
-                    
-                    <div class="feature-card">
-                        <h3>Operational Reports</h3>
-                        <p>Detailed operational reports for IT and security teams with actionable insights and recommendations.</p>
-                    </div>
-                    
-                    <div class="feature-card">
-                        <h3>Compliance Reports</h3>
-                        <p>Automated compliance reporting for frameworks like SOX, PCI-DSS, HIPAA, and ISO 27001.</p>
-                    </div>
-                    
-                    <div class="feature-card">
-                        <h3>Trend Analysis</h3>
-                        <p>Historical trend analysis to track security posture improvements and identify emerging risks.</p>
-                    </div>
+                <div class="table-container">
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Report Type</th>
+                                <th>Audience</th>
+                                <th>Key Metrics</th>
+                                <th>Frequency</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Executive Dashboard</strong></td>
+                                <td>C-Suite, Board</td>
+                                <td>Risk score, compliance %, threat trends</td>
+                                <td>Real-time / Weekly</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Operational Reports</strong></td>
+                                <td>IT & Security Teams</td>
+                                <td>Asset counts, vulnerabilities, patch status</td>
+                                <td>Daily / Weekly</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Compliance Reports</strong></td>
+                                <td>Auditors, GRC Teams</td>
+                                <td>Control status, gaps, remediation</td>
+                                <td>On-demand / Quarterly</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Trend Analysis</strong></td>
+                                <td>Security Analysts</td>
+                                <td>Historical trends, emerging risks</td>
+                                <td>Monthly / Quarterly</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Asset Inventory</strong></td>
+                                <td>IT Operations</td>
+                                <td>Complete asset list, ownership, status</td>
+                                <td>On-demand</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h3>Supported Compliance Frameworks</h3>
+                <div class="table-container">
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Framework</th>
+                                <th>Coverage</th>
+                                <th>Key Controls</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>ISO 27001</strong></td>
+                                <td><span class="badge badge-success">Full</span></td>
+                                <td>Asset management, access control, cryptography</td>
+                            </tr>
+                            <tr>
+                                <td><strong>PCI-DSS</strong></td>
+                                <td><span class="badge badge-success">Full</span></td>
+                                <td>Network security, vulnerability management</td>
+                            </tr>
+                            <tr>
+                                <td><strong>HIPAA</strong></td>
+                                <td><span class="badge badge-success">Full</span></td>
+                                <td>PHI protection, access controls, audit logs</td>
+                            </tr>
+                            <tr>
+                                <td><strong>SOX</strong></td>
+                                <td><span class="badge badge-info">Partial</span></td>
+                                <td>IT general controls, change management</td>
+                            </tr>
+                            <tr>
+                                <td><strong>NIST CSF</strong></td>
+                                <td><span class="badge badge-success">Full</span></td>
+                                <td>Identify, Protect, Detect functions</td>
+                            </tr>
+                            <tr>
+                                <td><strong>CIS Controls</strong></td>
+                                <td><span class="badge badge-success">Full</span></td>
+                                <td>Hardware/software inventory, secure config</td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
 
                 <div class="alert alert-success">

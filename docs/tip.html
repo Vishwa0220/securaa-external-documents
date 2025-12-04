@@ -169,7 +169,8 @@
                 </div>
 
                 <h3>Supported IOC Types</h3>
-                <table class="data-table">
+                <div class="table-container">
+                    <table class="data-table">
                     <thead>
                         <tr>
                             <th>IOC Type</th>
@@ -203,8 +204,19 @@
                             <td>Malicious email addresses</td>
                             <td>Spam sources, phishing campaigns</td>
                         </tr>
+                        <tr>
+                            <td>CVE IDs</td>
+                            <td>Known vulnerability identifiers</td>
+                            <td>Exploit attempts, vulnerability tracking</td>
+                        </tr>
+                        <tr>
+                            <td>YARA Rules</td>
+                            <td>Pattern matching rules</td>
+                            <td>Malware classification, threat hunting</td>
+                        </tr>
                     </tbody>
-                </table>
+                    </table>
+                </div>
 
                 <h3>Threat Intelligence Lifecycle</h3>
                 <div class="steps-container">
@@ -242,26 +254,55 @@
                 </div>
 
                 <h3>Intelligence Sources</h3>
-                <div class="feature-grid">
-                    <div class="feature-card">
-                        <h3>Commercial Feeds</h3>
-                        <p>Premium threat intelligence from leading commercial providers with high-fidelity indicators and detailed analysis.</p>
-                    </div>
-                    
-                    <div class="feature-card">
-                        <h3>Open Source Intelligence</h3>
-                        <p>Community-driven threat intelligence from public repositories, research organizations, and security communities.</p>
-                    </div>
-                    
-                    <div class="feature-card">
-                        <h3>Government Sources</h3>
-                        <p>Threat intelligence from government agencies, including classified and unclassified threat bulletins.</p>
-                    </div>
-                    
-                    <div class="feature-card">
-                        <h3>Internal Intelligence</h3>
-                        <p>Organization-specific threat intelligence derived from security incidents, honeypots, and internal analysis.</p>
-                    </div>
+                <div class="table-container">
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Source Type</th>
+                                <th>Examples</th>
+                                <th>Data Quality</th>
+                                <th>Update Frequency</th>
+                                <th>Cost</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Commercial Feeds</td>
+                                <td>Recorded Future, Mandiant, CrowdStrike Intel</td>
+                                <td><span class="badge badge-success">High Fidelity</span></td>
+                                <td>Real-time</td>
+                                <td>Premium</td>
+                            </tr>
+                            <tr>
+                                <td>Open Source Intelligence</td>
+                                <td>AlienVault OTX, Abuse.ch, MalwareBazaar</td>
+                                <td><span class="badge badge-warning">Variable</span></td>
+                                <td>Hourly to Daily</td>
+                                <td>Free</td>
+                            </tr>
+                            <tr>
+                                <td>Government Sources</td>
+                                <td>CISA, FBI IC3, CERT/CC, NCSC</td>
+                                <td><span class="badge badge-success">High Fidelity</span></td>
+                                <td>As Published</td>
+                                <td>Free</td>
+                            </tr>
+                            <tr>
+                                <td>Industry ISACs</td>
+                                <td>FS-ISAC, H-ISAC, IT-ISAC, Energy ISAC</td>
+                                <td><span class="badge badge-success">High Fidelity</span></td>
+                                <td>Real-time</td>
+                                <td>Membership</td>
+                            </tr>
+                            <tr>
+                                <td>Internal Intelligence</td>
+                                <td>Honeypots, SIEM alerts, incident data</td>
+                                <td><span class="badge badge-info">Org-specific</span></td>
+                                <td>Continuous</td>
+                                <td>Internal</td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
 
                 <h3>STIX/TAXII Support</h3>
@@ -269,7 +310,8 @@
                     <strong>Standards Compliance:</strong> Full support for STIX 2.1 and TAXII 2.1 standards for structured threat intelligence exchange.
                 </div>
 
-                <table class="data-table">
+                <div class="table-container">
+                    <table class="data-table">
                     <thead>
                         <tr>
                             <th>Standard</th>
@@ -299,7 +341,8 @@
                             <td>Malware information sharing platform integration</td>
                         </tr>
                     </tbody>
-                </table>
+                    </table>
+                </div>
 
                 <h3>Threat Actor Tracking</h3>
                 <div class="steps-container">

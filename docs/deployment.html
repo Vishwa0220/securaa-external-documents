@@ -374,16 +374,10 @@
                             </tbody>
                         </table>
                     </div>
-                                <td>Multi-region</td>
-                                <td>High</td>
-                                <td>12-24 hours</td>
-                                <td>Enterprise, compliance</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                    
+
                     <h3>Resource Requirements by Deployment Type</h3>
-                    <table class="data-table">
+                    <div class="table-container">
+                        <table class="data-table">
                         <thead>
                             <tr>
                                 <th>Component</th>
@@ -430,10 +424,12 @@
                                 <td>10 Gbps</td>
                             </tr>
                         </tbody>
-                    </table>
-                    
+                        </table>
+                    </div>
+
                     <h3>Deployment Features Matrix</h3>
-                    <table class="data-table">
+                    <div class="table-container">
+                        <table class="data-table">
                         <thead>
                             <tr>
                                 <th>Feature</th>
@@ -501,7 +497,8 @@
                                 <td>✅</td>
                             </tr>
                         </tbody>
-                    </table>
+                        </table>
+                    </div>
                 </section>
 
                 <section>
@@ -529,7 +526,7 @@ nano /opt/securaa/config/securaa.conf</code></pre>
                     </div>
                     
                     <h3>3. Database Configuration</h3>
-                    <div class="config-table">
+                    <div class="table-container config-table">
                         <table class="data-table">
                             <thead>
                                 <tr>
@@ -730,7 +727,8 @@ sudo nano /etc/nginx/sites-available/securaa-ssl.conf</code></pre>
                     <h3>Firewall Configuration</h3>
                     <div class="firewall-rules">
                         <h4>Required Network Ports</h4>
-                        <table class="data-table">
+                        <div class="table-container">
+                            <table class="data-table">
                             <thead>
                                 <tr>
                                     <th>Port</th>
@@ -823,10 +821,12 @@ sudo nano /etc/nginx/sites-available/securaa-ssl.conf</code></pre>
                                     <td>Email notifications</td>
                                 </tr>
                             </tbody>
-                        </table>
-                        
+                            </table>
+                        </div>
+
                         <h4>Load Balancer Configuration (Multi-Node)</h4>
-                        <table class="data-table">
+                        <div class="table-container">
+                            <table class="data-table">
                             <thead>
                                 <tr>
                                     <th>Frontend Port</th>
@@ -859,10 +859,12 @@ sudo nano /etc/nginx/sites-available/securaa-ssl.conf</code></pre>
                                     <td>Redirect to 443</td>
                                 </tr>
                             </tbody>
-                        </table>
-                        
+                            </table>
+                        </div>
+
                         <h4>Firewall Rules Template</h4>
-                        <table class="data-table">
+                        <div class="table-container">
+                            <table class="data-table">
                             <thead>
                                 <tr>
                                     <th>Rule Type</th>
@@ -916,7 +918,8 @@ sudo nano /etc/nginx/sites-available/securaa-ssl.conf</code></pre>
                                     <td>DENY</td>
                                 </tr>
                             </tbody>
-                        </table>
+                            </table>
+                        </div>
                     </div>
                 </section>
 

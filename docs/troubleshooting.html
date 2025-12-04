@@ -222,61 +222,116 @@
                     </div>
                 </div>
 
-                <h3>Common Issues</h3>
+                <h3>Common Issues Quick Reference</h3>
                 <p>Here are some common issues and quick resolution tips:</p>
-                
-                <div class="feature-grid">
-                    <div class="feature-card">
-                        <div class="feature-icon">
-                            <i class="fas fa-globe"></i>
-                        </div>
-                        <h4>Cannot Access Web Interface</h4>
-                        <ul>
-                            <li>Check if the service is running</li>
-                            <li>Verify firewall settings</li>
-                            <li>Try different browser or clear cache</li>
-                            <li>Check network connectivity</li>
-                        </ul>
-                    </div>
 
-                    <div class="feature-card">
-                        <div class="feature-icon">
-                            <i class="fas fa-lock"></i>
-                        </div>
-                        <h4>Login Problems</h4>
-                        <ul>
-                            <li>Verify username and password</li>
-                            <li>Check for account lockouts</li>
-                            <li>Clear browser cookies</li>
-                            <li>Try password reset if available</li>
-                        </ul>
-                    </div>
+                <div class="table-container">
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Issue</th>
+                                <th>Symptoms</th>
+                                <th>Quick Fix</th>
+                                <th>Severity</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Cannot Access Web Interface</strong></td>
+                                <td>Browser timeout, connection refused</td>
+                                <td>Check service status, verify firewall, clear cache</td>
+                                <td><span class="badge badge-danger">High</span></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Login Problems</strong></td>
+                                <td>Invalid credentials, account locked</td>
+                                <td>Verify credentials, check lockout policy, reset password</td>
+                                <td><span class="badge badge-warning">Medium</span></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Slow Performance</strong></td>
+                                <td>Page load delays, timeouts</td>
+                                <td>Check system resources, restart services</td>
+                                <td><span class="badge badge-warning">Medium</span></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Integration Failures</strong></td>
+                                <td>API errors, data not syncing</td>
+                                <td>Verify API credentials, check network connectivity</td>
+                                <td><span class="badge badge-warning">Medium</span></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Database Connection Error</strong></td>
+                                <td>Service fails to start, data unavailable</td>
+                                <td>Check DB service, verify credentials, test connection</td>
+                                <td><span class="badge badge-danger">High</span></td>
+                            </tr>
+                            <tr>
+                                <td><strong>SSL Certificate Issues</strong></td>
+                                <td>Browser warnings, HTTPS errors</td>
+                                <td>Check certificate validity, verify file permissions</td>
+                                <td><span class="badge badge-info">Low</span></td>
+                            </tr>
+                            <tr>
+                                <td><strong>High Memory Usage</strong></td>
+                                <td>System freezes, OOM errors</td>
+                                <td>Review processes, increase memory, restart services</td>
+                                <td><span class="badge badge-danger">High</span></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Asset Discovery Not Working</strong></td>
+                                <td>New assets not appearing</td>
+                                <td>Check network scan settings, verify credentials</td>
+                                <td><span class="badge badge-warning">Medium</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
 
-                    <div class="feature-card">
-                        <div class="feature-icon">
-                            <i class="fas fa-tachometer-alt"></i>
-                        </div>
-                        <h4>Slow Performance</h4>
-                        <ul>
-                            <li>Check system resources</li>
-                            <li>Review network connectivity</li>
-                            <li>Clear temporary files</li>
-                            <li>Restart services</li>
-                        </ul>
-                    </div>
-
-                    <div class="feature-card">
-                        <div class="feature-icon">
-                            <i class="fas fa-plug"></i>
-                        </div>
-                        <h4>Integration Failures</h4>
-                        <ul>
-                            <li>Verify API credentials</li>
-                            <li>Check network connectivity to external services</li>
-                            <li>Review firewall rules</li>
-                            <li>Test connection settings</li>
-                        </ul>
-                    </div>
+                <h3>Service Status Commands</h3>
+                <div class="table-container">
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Service</th>
+                                <th>Check Status</th>
+                                <th>Restart Command</th>
+                                <th>Log Location</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Securaa Core</td>
+                                <td><code>systemctl status securaa</code></td>
+                                <td><code>systemctl restart securaa</code></td>
+                                <td><code>/var/log/securaa/securaa.log</code></td>
+                            </tr>
+                            <tr>
+                                <td>Web Service</td>
+                                <td><code>systemctl status securaa-web</code></td>
+                                <td><code>systemctl restart securaa-web</code></td>
+                                <td><code>/var/log/securaa/web.log</code></td>
+                            </tr>
+                            <tr>
+                                <td>Database</td>
+                                <td><code>systemctl status postgresql</code></td>
+                                <td><code>systemctl restart postgresql</code></td>
+                                <td><code>/var/log/postgresql/</code></td>
+                            </tr>
+                            <tr>
+                                <td>Message Queue</td>
+                                <td><code>systemctl status rabbitmq-server</code></td>
+                                <td><code>systemctl restart rabbitmq-server</code></td>
+                                <td><code>/var/log/rabbitmq/</code></td>
+                            </tr>
+                            <tr>
+                                <td>Discovery Agent</td>
+                                <td><code>systemctl status securaa-discovery</code></td>
+                                <td><code>systemctl restart securaa-discovery</code></td>
+                                <td><code>/var/log/securaa/discovery.log</code></td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
             </section>
 

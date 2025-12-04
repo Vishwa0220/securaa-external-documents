@@ -3096,31 +3096,33 @@ h1 i, h2 i, h3 i, h4 i, h5 i, h6 i {
 /* Data Table - Main class for all documentation tables */
 .data-table {
     width: 100%;
-    border-collapse: collapse;
+    border-collapse: separate;
+    border-spacing: 0;
     margin: 1.5rem 0;
     background: #ffffff;
     font-size: 0.95rem;
     line-height: 1.6;
     border: 2px solid #d1d5db;
-    border-radius: 8px;
+    border-radius: 10px;
     overflow: hidden;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 }
 
 .data-table thead {
-    background: #1e3a5f;
+    background: linear-gradient(135deg, #1e3a5f 0%, #2d4a6f 100%);
 }
 
 .data-table thead th {
     color: #ffffff;
     font-weight: 600;
-    font-size: 0.875rem;
+    font-size: 0.85rem;
     text-transform: uppercase;
-    letter-spacing: 0.05em;
-    padding: 14px 20px;
+    letter-spacing: 0.06em;
+    padding: 16px 20px;
     text-align: left;
-    border-bottom: 2px solid #1e3a5f;
-    border-right: 1px solid rgba(255, 255, 255, 0.1);
+    border-bottom: 3px solid #0f2744;
+    border-right: 1px solid rgba(255, 255, 255, 0.15);
+    white-space: nowrap;
 }
 
 .data-table thead th:last-child {
@@ -3129,27 +3131,33 @@ h1 i, h2 i, h3 i, h4 i, h5 i, h6 i {
 
 .data-table tbody tr {
     border-bottom: 1px solid #e5e7eb;
+    transition: background-color 0.2s ease;
 }
 
 .data-table tbody tr:nth-child(even) {
-    background-color: #f9fafb;
+    background-color: #f8fafc;
 }
 
 .data-table tbody tr:hover {
-    background-color: #eff6ff;
+    background-color: #e0f2fe;
 }
 
 .data-table tbody tr:last-child {
     border-bottom: none;
 }
 
+.data-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
 .data-table td {
     padding: 14px 20px;
     color: #374151;
-    vertical-align: top;
+    vertical-align: middle;
     border-right: 1px solid #e5e7eb;
+    border-bottom: 1px solid #e5e7eb;
     font-size: 0.95rem;
-    line-height: 1.6;
+    line-height: 1.65;
 }
 
 .data-table td:last-child {
@@ -3158,23 +3166,109 @@ h1 i, h2 i, h3 i, h4 i, h5 i, h6 i {
 
 .data-table td:first-child {
     font-weight: 600;
-    color: #1f2937;
-    background-color: rgba(243, 244, 246, 0.5);
+    color: #1e293b;
+    background-color: rgba(241, 245, 249, 0.7);
 }
 
 .data-table tbody tr:nth-child(even) td:first-child {
-    background-color: rgba(243, 244, 246, 0.8);
+    background-color: rgba(241, 245, 249, 0.9);
+}
+
+.data-table tbody tr:hover td:first-child {
+    background-color: rgba(186, 230, 253, 0.5);
+}
+
+/* Rowspan and colspan handling */
+.data-table td[rowspan],
+.data-table th[rowspan] {
+    vertical-align: middle;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+/* Strong text in tables */
+.data-table td strong {
+    color: #0f172a;
+    font-weight: 700;
 }
 
 /* Code in tables */
 .data-table code {
     background: rgba(59, 130, 246, 0.1);
     color: #2563eb;
-    padding: 2px 6px;
+    padding: 3px 8px;
     border-radius: 4px;
     font-family: 'JetBrains Mono', 'Monaco', 'Consolas', monospace;
     font-size: 0.85rem;
     font-weight: 500;
+    border: 1px solid rgba(59, 130, 246, 0.2);
+}
+
+/* Severity indicators in tables */
+.severity-low {
+    display: inline-block;
+    padding: 4px 12px;
+    background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+    color: #ffffff;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+}
+
+.severity-medium {
+    display: inline-block;
+    padding: 4px 12px;
+    background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+    color: #ffffff;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+}
+
+.severity-high {
+    display: inline-block;
+    padding: 4px 12px;
+    background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+    color: #ffffff;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+}
+
+/* Checkmark and X styles in tables */
+.data-table td:has(span:contains('✅')),
+.data-table td:has(span:contains('❌')) {
+    text-align: center;
+}
+
+/* Print styles for tables */
+@media print {
+    .data-table {
+        box-shadow: none;
+        border: 2px solid #000;
+    }
+
+    .data-table thead {
+        background: #1e3a5f !important;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+
+    .data-table thead th {
+        color: #ffffff !important;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+
+    .table-container {
+        overflow: visible;
+        box-shadow: none;
+    }
 }
 
 /* Table wrapper for scroll on mobile */
@@ -3253,14 +3347,46 @@ table:not(.data-table) td:first-child {
     color: #1f2937;
 }
 
-/* Table container styling */
+/* Table container styling - Enhanced for customer presentation */
 .table-container {
-    margin: 1.5rem 0;
+    margin: 2rem 0;
     overflow-x: auto;
+    border: 2px solid #d1d5db;
+    border-radius: 12px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+    background: #ffffff;
 }
 
 .table-container table {
     margin: 0;
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+}
+
+.table-container .data-table {
+    border: none;
+    border-radius: 0;
+}
+
+/* Tables within endpoint-details, status-codes, rate-limits sections */
+.endpoint-details .data-table,
+.status-codes .data-table,
+.rate-limits .data-table,
+.config-table .data-table {
+    border: 2px solid #d1d5db;
+    border-radius: 8px;
+}
+
+/* Nested table styling for inline tables */
+.faq-answer .data-table,
+.endpoint-details .data-table {
+    margin: 1rem 0;
+    font-size: 0.9rem;
+}
+
+.endpoint-details .data-table td {
+    padding: 10px 14px;
 }
 
 /* Enhanced Badge Styles */
@@ -3859,6 +3985,35 @@ code {
         font-size: 1rem;
     }
 
+    /* Responsive table improvements */
+    .table-container {
+        margin: 1.5rem -1rem;
+        border-radius: 0;
+        border-left: none;
+        border-right: none;
+        box-shadow: none;
+    }
+
+    .data-table {
+        font-size: 0.85rem;
+        border-radius: 0;
+    }
+
+    .data-table thead th {
+        padding: 12px 14px;
+        font-size: 0.75rem;
+        white-space: normal;
+    }
+
+    .data-table td {
+        padding: 12px 14px;
+        font-size: 0.85rem;
+    }
+
+    .data-table td:first-child {
+        min-width: 120px;
+    }
+
     table {
         font-size: 0.85rem;
     }
@@ -3870,5 +4025,14 @@ code {
     .integration-grid,
     .playbook-grid {
         grid-template-columns: 1fr;
+    }
+
+    /* Badge sizes on mobile */
+    .badge,
+    .severity-low,
+    .severity-medium,
+    .severity-high {
+        font-size: 0.65rem;
+        padding: 3px 8px;
     }
 }

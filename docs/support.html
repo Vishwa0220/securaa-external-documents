@@ -151,42 +151,44 @@
                         </div>
                         <div class="faq-answer">
                             <p>System requirements vary by solution:</p>
-                            <table>
-                                <thead>
-                                    <tr>
-                                        <th>Solution</th>
-                                        <th>CPU</th>
-                                        <th>RAM</th>
-                                        <th>Storage</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>SIA</td>
-                                        <td>16+ cores</td>
-                                        <td>64+ GB</td>
-                                        <td>2+ TB SSD</td>
-                                    </tr>
-                                    <tr>
-                                        <td>SOAR</td>
-                                        <td>8+ cores</td>
-                                        <td>32+ GB</td>
-                                        <td>1+ TB SSD</td>
-                                    </tr>
-                                    <tr>
-                                        <td>TIP</td>
-                                        <td>8+ cores</td>
-                                        <td>32+ GB</td>
-                                        <td>1+ TB SSD</td>
-                                    </tr>
-                                    <tr>
-                                        <td>CSAM</td>
-                                        <td>12+ cores</td>
-                                        <td>48+ GB</td>
-                                        <td>1.5+ TB SSD</td>
-                                    </tr>
-                                </tbody>
-                            </table>
+                            <div class="table-container">
+                                <table class="data-table">
+                                    <thead>
+                                        <tr>
+                                            <th>Solution</th>
+                                            <th>CPU</th>
+                                            <th>RAM</th>
+                                            <th>Storage</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>SIA</td>
+                                            <td>16+ cores</td>
+                                            <td>64+ GB</td>
+                                            <td>2+ TB SSD</td>
+                                        </tr>
+                                        <tr>
+                                            <td>SOAR</td>
+                                            <td>8+ cores</td>
+                                            <td>32+ GB</td>
+                                            <td>1+ TB SSD</td>
+                                        </tr>
+                                        <tr>
+                                            <td>TIP</td>
+                                            <td>8+ cores</td>
+                                            <td>32+ GB</td>
+                                            <td>1+ TB SSD</td>
+                                        </tr>
+                                        <tr>
+                                            <td>CSAM</td>
+                                            <td>12+ cores</td>
+                                            <td>48+ GB</td>
+                                            <td>1.5+ TB SSD</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
                         </div>
                     </div>
                     
@@ -282,36 +284,38 @@
                         </div>
                         <div class="faq-answer">
                             <p>Securaa offers multiple support tiers:</p>
-                            <table>
-                                <thead>
-                                    <tr>
-                                        <th>Support Tier</th>
-                                        <th>Response Time</th>
-                                        <th>Availability</th>
-                                        <th>Channels</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>Standard</td>
-                                        <td>4-8 hours</td>
-                                        <td>Business hours</td>
-                                        <td>Email, Portal</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Premium</td>
-                                        <td>2-4 hours</td>
-                                        <td>Extended hours</td>
-                                        <td>Email, Phone, Portal</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Enterprise</td>
-                                        <td>1 hour</td>
-                                        <td>24/7</td>
-                                        <td>All channels + Dedicated CSM</td>
-                                    </tr>
-                                </tbody>
-                            </table>
+                            <div class="table-container">
+                                <table class="data-table">
+                                    <thead>
+                                        <tr>
+                                            <th>Support Tier</th>
+                                            <th>Response Time</th>
+                                            <th>Availability</th>
+                                            <th>Channels</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Standard</td>
+                                            <td>4-8 hours</td>
+                                            <td>Business hours</td>
+                                            <td>Email, Portal</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Premium</td>
+                                            <td>2-4 hours</td>
+                                            <td>Extended hours</td>
+                                            <td>Email, Phone, Portal</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Enterprise</td>
+                                            <td>1 hour</td>
+                                            <td>24/7</td>
+                                            <td>All channels + Dedicated CSM</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
                         </div>
                     </div>
                     
@@ -485,43 +489,45 @@ curl -X POST https://siem.company.com/api/events \
                 <div class="alert alert-warning">
                     <strong>Important:</strong> Always check log files for detailed error information. Logs are located in <code>/var/log/securaa/</code>
                 </div>
-                
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Log File</th>
-                            <th>Purpose</th>
-                            <th>Location</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>securaa.log</td>
-                            <td>Main application log</td>
-                            <td>/var/log/securaa/securaa.log</td>
-                        </tr>
-                        <tr>
-                            <td>discovery.log</td>
-                            <td>Asset discovery activities</td>
-                            <td>/var/log/securaa/discovery.log</td>
-                        </tr>
-                        <tr>
-                            <td>api.log</td>
-                            <td>API requests and responses</td>
-                            <td>/var/log/securaa/api.log</td>
-                        </tr>
-                        <tr>
-                            <td>integration.log</td>
-                            <td>Third-party integrations</td>
-                            <td>/var/log/securaa/integration.log</td>
-                        </tr>
-                        <tr>
-                            <td>error.log</td>
-                            <td>System errors and exceptions</td>
-                            <td>/var/log/securaa/error.log</td>
-                        </tr>
-                    </tbody>
-                </table>
+
+                <div class="table-container">
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Log File</th>
+                                <th>Purpose</th>
+                                <th>Location</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>securaa.log</td>
+                                <td>Main application log</td>
+                                <td><code>/var/log/securaa/securaa.log</code></td>
+                            </tr>
+                            <tr>
+                                <td>discovery.log</td>
+                                <td>Asset discovery activities</td>
+                                <td><code>/var/log/securaa/discovery.log</code></td>
+                            </tr>
+                            <tr>
+                                <td>api.log</td>
+                                <td>API requests and responses</td>
+                                <td><code>/var/log/securaa/api.log</code></td>
+                            </tr>
+                            <tr>
+                                <td>integration.log</td>
+                                <td>Third-party integrations</td>
+                                <td><code>/var/log/securaa/integration.log</code></td>
+                            </tr>
+                            <tr>
+                                <td>error.log</td>
+                                <td>System errors and exceptions</td>
+                                <td><code>/var/log/securaa/error.log</code></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
             </section>
 
             <section id="contact" class="content-section">

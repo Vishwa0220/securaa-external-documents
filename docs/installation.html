@@ -223,7 +223,7 @@ sudo ./installer.sh</code></pre>
                     <h4>Installation Options</h4>
                     <p>During installation, you will be prompted to select:</p>
                     <div class="table-container">
-                        <table>
+                        <table class="data-table">
                             <thead>
                                 <tr>
                                     <th>Option</th>
@@ -233,22 +233,22 @@ sudo ./installer.sh</code></pre>
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td><strong>Deployment Type</strong></td>
+                                    <td>Deployment Type</td>
                                     <td>Single VM or Multi VM deployment</td>
                                     <td>Single VM</td>
                                 </tr>
                                 <tr>
-                                    <td><strong>Environment</strong></td>
+                                    <td>Environment</td>
                                     <td>Enterprise/Standalone or MSSP</td>
                                     <td>Enterprise</td>
                                 </tr>
                                 <tr>
-                                    <td><strong>SSL Certificate</strong></td>
+                                    <td>SSL Certificate</td>
                                     <td>Self-signed or custom certificate</td>
                                     <td>Self-signed</td>
                                 </tr>
                                 <tr>
-                                    <td><strong>TIP Installation</strong></td>
+                                    <td>TIP Installation</td>
                                     <td>Include TIP module</td>
                                     <td>Optional</td>
                                 </tr>
@@ -278,7 +278,7 @@ docker-compose -f /opt/securaa/docker-compose.yml ps</code></pre>
                         <strong>Security Warning:</strong> Change the default password immediately after first login!
                     </div>
                     <div class="table-container">
-                        <table>
+                        <table class="data-table">
                             <thead>
                                 <tr>
                                     <th>Field</th>
@@ -287,11 +287,11 @@ docker-compose -f /opt/securaa/docker-compose.yml ps</code></pre>
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td><strong>Username</strong></td>
+                                    <td>Username</td>
                                     <td>admin@securaa.io</td>
                                 </tr>
                                 <tr>
-                                    <td><strong>Password</strong></td>
+                                    <td>Password</td>
                                     <td>password</td>
                                 </tr>
                             </tbody>
@@ -340,7 +340,7 @@ docker-compose -f /opt/securaa/docker-compose.yml ps</code></pre>
                     <p>For MSSP deployments, configure tenants with the following settings:</p>
 
                     <div class="table-container">
-                        <table>
+                        <table class="data-table">
                             <thead>
                                 <tr>
                                     <th>Setting</th>
@@ -350,27 +350,27 @@ docker-compose -f /opt/securaa/docker-compose.yml ps</code></pre>
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td><strong>Tenant Name</strong></td>
+                                    <td>Tenant Name</td>
                                     <td>Unique identifier for the tenant</td>
                                     <td>acme-corp</td>
                                 </tr>
                                 <tr>
-                                    <td><strong>Display Name</strong></td>
+                                    <td>Display Name</td>
                                     <td>Human-readable tenant name</td>
                                     <td>ACME Corporation</td>
                                 </tr>
                                 <tr>
-                                    <td><strong>Admin Email</strong></td>
+                                    <td>Admin Email</td>
                                     <td>Primary admin contact</td>
                                     <td>admin@acme.com</td>
                                 </tr>
                                 <tr>
-                                    <td><strong>Data Retention</strong></td>
+                                    <td>Data Retention</td>
                                     <td>Days to retain incident data</td>
                                     <td>90 days</td>
                                 </tr>
                                 <tr>
-                                    <td><strong>User Limit</strong></td>
+                                    <td>User Limit</td>
                                     <td>Maximum users per tenant</td>
                                     <td>50</td>
                                 </tr>
@@ -385,7 +385,7 @@ docker-compose -f /opt/securaa/docker-compose.yml ps</code></pre>
                     <p>Configure email settings for notifications and alerts:</p>
 
                     <div class="table-container">
-                        <table>
+                        <table class="data-table">
                             <thead>
                                 <tr>
                                     <th>Setting</th>
@@ -395,32 +395,32 @@ docker-compose -f /opt/securaa/docker-compose.yml ps</code></pre>
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td><strong>SMTP Host</strong></td>
+                                    <td>SMTP Host</td>
                                     <td>Mail server hostname</td>
                                     <td>smtp.company.com</td>
                                 </tr>
                                 <tr>
-                                    <td><strong>SMTP Port</strong></td>
+                                    <td>SMTP Port</td>
                                     <td>Mail server port</td>
                                     <td>587 (TLS) or 465 (SSL)</td>
                                 </tr>
                                 <tr>
-                                    <td><strong>Username</strong></td>
+                                    <td>Username</td>
                                     <td>SMTP authentication username</td>
                                     <td>securaa@company.com</td>
                                 </tr>
                                 <tr>
-                                    <td><strong>Password</strong></td>
+                                    <td>Password</td>
                                     <td>SMTP authentication password</td>
                                     <td>••••••••</td>
                                 </tr>
                                 <tr>
-                                    <td><strong>From Address</strong></td>
+                                    <td>From Address</td>
                                     <td>Sender email address</td>
                                     <td>securaa-alerts@company.com</td>
                                 </tr>
                                 <tr>
-                                    <td><strong>TLS/SSL</strong></td>
+                                    <td>TLS/SSL</td>
                                     <td>Enable secure connection</td>
                                     <td>Enabled</td>
                                 </tr>
@@ -435,7 +435,7 @@ docker-compose -f /opt/securaa/docker-compose.yml ps</code></pre>
                     <p>Configure batch processing settings for SIEM integrations:</p>
 
                     <div class="table-container">
-                        <table>
+                        <table class="data-table">
                             <thead>
                                 <tr>
                                     <th>Setting</th>
@@ -446,25 +446,25 @@ docker-compose -f /opt/securaa/docker-compose.yml ps</code></pre>
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td><strong>Batch Size</strong></td>
+                                    <td>Batch Size</td>
                                     <td>Number of events per batch</td>
                                     <td>100</td>
                                     <td>100-500</td>
                                 </tr>
                                 <tr>
-                                    <td><strong>Batch Interval</strong></td>
+                                    <td>Batch Interval</td>
                                     <td>Seconds between batch pulls</td>
                                     <td>60</td>
                                     <td>30-120</td>
                                 </tr>
                                 <tr>
-                                    <td><strong>Max Retries</strong></td>
+                                    <td>Max Retries</td>
                                     <td>Retry attempts on failure</td>
                                     <td>3</td>
                                     <td>3-5</td>
                                 </tr>
                                 <tr>
-                                    <td><strong>Timeout</strong></td>
+                                    <td>Timeout</td>
                                     <td>API request timeout (seconds)</td>
                                     <td>30</td>
                                     <td>30-60</td>
@@ -514,7 +514,7 @@ chmod +x tip-installer.sh</code></pre>
 
                     <h4>TIP Hardware Requirements</h4>
                     <div class="table-container">
-                        <table>
+                        <table class="data-table">
                             <thead>
                                 <tr>
                                     <th>Environment</th>
@@ -526,14 +526,14 @@ chmod +x tip-installer.sh</code></pre>
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td><strong>POC</strong></td>
+                                    <td>POC</td>
                                     <td>4 Cores</td>
                                     <td>16 GB</td>
                                     <td>300 GB SSD</td>
                                     <td>~20 Million records</td>
                                 </tr>
                                 <tr>
-                                    <td><strong>Production</strong></td>
+                                    <td>Production</td>
                                     <td>8 Cores</td>
                                     <td>32 GB</td>
                                     <td>500 GB SSD</td>
@@ -551,7 +551,7 @@ chmod +x tip-installer.sh</code></pre>
 
                     <h4>2-Server Deployment</h4>
                     <div class="table-container">
-                        <table>
+                        <table class="data-table">
                             <thead>
                                 <tr>
                                     <th>Server</th>
@@ -561,12 +561,12 @@ chmod +x tip-installer.sh</code></pre>
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td><strong>Server 1 - Database</strong></td>
+                                    <td>Server 1 - Database</td>
                                     <td>MongoDB, Elasticsearch</td>
                                     <td>Install first</td>
                                 </tr>
                                 <tr>
-                                    <td><strong>Server 2 - Application</strong></td>
+                                    <td>Server 2 - Application</td>
                                     <td>Securaa Services, Nginx, React UI</td>
                                     <td>Install after database server</td>
                                 </tr>
@@ -576,7 +576,7 @@ chmod +x tip-installer.sh</code></pre>
 
                     <h4>3-Server Deployment</h4>
                     <div class="table-container">
-                        <table>
+                        <table class="data-table">
                             <thead>
                                 <tr>
                                     <th>Server</th>
@@ -586,17 +586,17 @@ chmod +x tip-installer.sh</code></pre>
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td><strong>Server 1 - MongoDB</strong></td>
+                                    <td>Server 1 - MongoDB</td>
                                     <td>MongoDB database</td>
                                     <td>Install first</td>
                                 </tr>
                                 <tr>
-                                    <td><strong>Server 2 - Elasticsearch</strong></td>
+                                    <td>Server 2 - Elasticsearch</td>
                                     <td>Elasticsearch cluster</td>
                                     <td>Install second</td>
                                 </tr>
                                 <tr>
-                                    <td><strong>Server 3 - Application</strong></td>
+                                    <td>Server 3 - Application</td>
                                     <td>Securaa Services, Nginx, React UI</td>
                                     <td>Install last</td>
                                 </tr>
@@ -644,7 +644,7 @@ docker restart securaa-nginx</code></pre>
                     <h3><i class="fas fa-tools"></i> Common Installation Issues</h3>
 
                     <div class="table-container">
-                        <table>
+                        <table class="data-table">
                             <thead>
                                 <tr>
                                     <th>Issue</th>
@@ -654,32 +654,32 @@ docker restart securaa-nginx</code></pre>
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td><strong>Docker Pull Fails</strong></td>
+                                    <td>Docker Pull Fails</td>
                                     <td>Unable to pull images from registry</td>
                                     <td>Verify network connectivity to Docker registry URLs. Check firewall rules.</td>
                                 </tr>
                                 <tr>
-                                    <td><strong>AVX Not Supported</strong></td>
+                                    <td>AVX Not Supported</td>
                                     <td>Installation fails with CPU error</td>
                                     <td>Use a VM or physical server with AVX-capable CPU. Check with: <code>grep avx /proc/cpuinfo</code></td>
                                 </tr>
                                 <tr>
-                                    <td><strong>Port Already in Use</strong></td>
+                                    <td>Port Already in Use</td>
                                     <td>Services fail to start</td>
                                     <td>Check for existing services on ports 443, 8000, 7000. Stop conflicting services.</td>
                                 </tr>
                                 <tr>
-                                    <td><strong>Insufficient Disk Space</strong></td>
+                                    <td>Insufficient Disk Space</td>
                                     <td>Installation fails or services crash</td>
                                     <td>Ensure minimum 250 GB SSD available. Clean up unnecessary files.</td>
                                 </tr>
                                 <tr>
-                                    <td><strong>Database Connection Failed</strong></td>
+                                    <td>Database Connection Failed</td>
                                     <td>Services cannot connect to MongoDB/ES</td>
                                     <td>For multi-VM: Verify database server IPs are correct and ports are open.</td>
                                 </tr>
                                 <tr>
-                                    <td><strong>Web Interface Not Loading</strong></td>
+                                    <td>Web Interface Not Loading</td>
                                     <td>Browser shows connection error</td>
                                     <td>Check Nginx container status: <code>docker logs securaa-nginx</code></td>
                                 </tr>

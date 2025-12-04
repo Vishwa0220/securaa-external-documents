@@ -2351,88 +2351,8 @@ h1 i, h2 i, h3 i, h4 i, h5 i, h6 i {
     margin-bottom: 1rem;
 }
 
-/* Professional Table Styling */
-.table-container {
-    margin: var(--spacing-2xl) 0;
-    border-radius: var(--radius-lg);
-    overflow: hidden;
-    box-shadow: var(--shadow-lg);
-    border: 1px solid var(--border-color);
-    background: var(--surface-color);
-}
-
-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin: 0;
-    background: var(--surface-color);
-    font-size: var(--font-size-sm);
-    line-height: 1.6;
-}
-
-.table-container table {
-    border-radius: 0;
-    box-shadow: none;
-    border: none;
-}
-
-thead {
-    background: var(--gradient-primary);
-    position: sticky;
-    top: 0;
-    z-index: var(--z-sticky);
-}
-
-thead th {
-    background: transparent;
-    color: var(--text-inverse);
-    font-weight: 600;
-    font-size: var(--font-size-sm);
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    padding: var(--spacing-lg) var(--spacing-xl);
-    border-bottom: 2px solid rgba(255, 255, 255, 0.1);
-    text-align: left;
-    white-space: nowrap;
-}
-
-tbody tr {
-    transition: var(--transition-fast);
-    border-bottom: 1px solid var(--border-light);
-}
-
-tbody tr:hover {
-    background: var(--gradient-surface);
-    transform: translateX(2px);
-    box-shadow: var(--shadow-sm);
-}
-
-tbody tr:last-child {
-    border-bottom: none;
-}
-
-td {
-    padding: var(--spacing-lg) var(--spacing-xl);
-    color: var(--text-secondary);
-    vertical-align: top;
-    border-bottom: none;
-}
-
-td:first-child {
-    font-weight: 500;
-    color: var(--text-primary);
-}
-
-/* Code in tables */
-td code, th code {
-    background: rgba(59, 130, 246, 0.1);
-    color: var(--secondary-color);
-    padding: var(--spacing-xs) var(--spacing-sm);
-    border-radius: var(--radius-sm);
-    font-family: var(--font-mono);
-    font-size: var(--font-size-xs);
-    font-weight: 500;
-}
+/* Professional Table Styling - Base styles (overridden by enhanced styles at end of file) */
+/* See "ENHANCED CUSTOMER-FACING STYLES" section for final table styles */
 
 /* Table badges and status indicators */
 .badge {
@@ -3169,87 +3089,153 @@ td code, th code {
    ========================================= */
 
 /* Enhanced Table Styles for Customer Presentation */
+/* Table Container - Optional wrapper for extra styling */
 .table-container {
-    margin: 2rem 0;
-    border-radius: 12px;
-    overflow: hidden;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-    border: 1px solid #e5e7eb;
-    background: #ffffff;
+    margin: 2rem 0 !important;
+    border-radius: 12px !important;
+    overflow: hidden !important;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08) !important;
+    border: 1px solid #e5e7eb !important;
+    background: #ffffff !important;
 }
 
+/* Base Table Styles - Apply to ALL tables */
+.main-content table,
+.content table,
+.content-section table,
+section table,
 table {
-    width: 100%;
-    border-collapse: collapse;
-    margin: 0;
-    background: #ffffff;
-    font-size: 0.95rem;
-    line-height: 1.6;
+    width: 100% !important;
+    border-collapse: separate !important;
+    border-spacing: 0 !important;
+    margin: 1.5rem 0 !important;
+    background: #ffffff !important;
+    font-size: 0.95rem !important;
+    line-height: 1.7 !important;
+    border-radius: 12px !important;
+    overflow: hidden !important;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08) !important;
+    border: 1px solid #e5e7eb !important;
 }
 
+/* Tables inside containers should not have double margins/shadows */
+.table-container table {
+    margin: 0 !important;
+    box-shadow: none !important;
+    border: none !important;
+    border-radius: 0 !important;
+}
+
+/* Table Header Styles */
+.main-content thead,
+.content thead,
+.content-section thead,
+section thead,
 thead {
-    background: linear-gradient(135deg, #1e3a5f 0%, #2d4a6f 100%);
+    background: linear-gradient(135deg, #1e3a5f 0%, #2d4a6f 100%) !important;
 }
 
+.main-content thead th,
+.content thead th,
+.content-section thead th,
+section thead th,
 thead th {
-    color: #ffffff;
-    font-weight: 600;
-    font-size: 0.85rem;
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-    padding: 1rem 1.25rem;
-    text-align: left;
-    border-bottom: none;
-    white-space: nowrap;
+    color: #ffffff !important;
+    font-weight: 600 !important;
+    font-size: 0.85rem !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.08em !important;
+    padding: 1rem 1.5rem !important;
+    text-align: left !important;
+    border: none !important;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.1) !important;
+    white-space: nowrap !important;
+    background: transparent !important;
 }
 
-thead th:first-child {
-    border-radius: 0;
-}
-
-thead th:last-child {
-    border-radius: 0;
-}
-
+/* Table Body Row Styles */
+.main-content tbody tr,
+.content tbody tr,
+.content-section tbody tr,
+section tbody tr,
 tbody tr {
-    border-bottom: 1px solid #f3f4f6;
-    transition: background-color 0.2s ease;
+    border-bottom: 1px solid #e5e7eb !important;
+    transition: background-color 0.2s ease !important;
+    background-color: #ffffff !important;
 }
 
+.main-content tbody tr:nth-child(even),
+.content tbody tr:nth-child(even),
+.content-section tbody tr:nth-child(even),
+section tbody tr:nth-child(even),
 tbody tr:nth-child(even) {
-    background-color: #f9fafb;
+    background-color: #f9fafb !important;
 }
 
+.main-content tbody tr:hover,
+.content tbody tr:hover,
+.content-section tbody tr:hover,
+section tbody tr:hover,
 tbody tr:hover {
-    background-color: #eff6ff;
+    background-color: #eff6ff !important;
 }
 
+.main-content tbody tr:last-child,
+.content tbody tr:last-child,
+.content-section tbody tr:last-child,
+section tbody tr:last-child,
 tbody tr:last-child {
-    border-bottom: none;
+    border-bottom: none !important;
 }
 
+/* Table Cell Styles */
+.main-content td,
+.content td,
+.content-section td,
+section td,
 td {
-    padding: 1rem 1.25rem;
-    color: #374151;
-    vertical-align: middle;
-    font-size: 0.95rem;
-    line-height: 1.6;
+    padding: 1rem 1.5rem !important;
+    color: #374151 !important;
+    vertical-align: middle !important;
+    font-size: 0.95rem !important;
+    line-height: 1.7 !important;
+    border: none !important;
+    border-bottom: 1px solid #e5e7eb !important;
 }
 
+/* First column bold styling */
+.main-content td:first-child,
+.content td:first-child,
+.content-section td:first-child,
+section td:first-child,
 td:first-child {
-    font-weight: 600;
-    color: #1f2937;
+    font-weight: 600 !important;
+    color: #1f2937 !important;
+}
+
+/* Last row cells should not have bottom border */
+.main-content tbody tr:last-child td,
+.content tbody tr:last-child td,
+.content-section tbody tr:last-child td,
+section tbody tr:last-child td,
+tbody tr:last-child td {
+    border-bottom: none !important;
 }
 
 /* Table code styling */
-td code, th code {
-    background: rgba(59, 130, 246, 0.1);
-    color: #2563eb;
-    padding: 0.25rem 0.5rem;
-    border-radius: 4px;
-    font-family: 'JetBrains Mono', 'Monaco', 'Consolas', monospace;
-    font-size: 0.85rem;
-    font-weight: 500;
+.main-content td code,
+.main-content th code,
+.content td code,
+.content th code,
+td code,
+th code {
+    background: rgba(59, 130, 246, 0.1) !important;
+    color: #2563eb !important;
+    padding: 0.25rem 0.5rem !important;
+    border-radius: 4px !important;
+    font-family: 'JetBrains Mono', 'Monaco', 'Consolas', monospace !important;
+    font-size: 0.85rem !important;
+    font-weight: 500 !important;
 }
 
 /* Enhanced Badge Styles */

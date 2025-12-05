@@ -1,30 +1,10 @@
 # GitHub Pages Configuration for Securaa Documentation
 title: "Securaa Documentation"
 description: "Comprehensive documentation for Securaa security platform products"
-url: ""
-baseurl: ""
 
-# Build settings
-markdown: kramdown
-highlighter: rouge
-permalink: pretty
-
-# GitHub Pages settings
-plugins:
-  - jekyll-feed
-  - jekyll-sitemap
+# Build settings - Use docs folder as source
+source: docs
 
 # Exclude files from build
 exclude:
   - README.md
-  - launch-docs.sh
-  - "*.pdf"
-  - "*.png"
-  - COMPLETION_SUMMARY.md
-  - remove_favicon.py
-
-# Include docs folder explicitly
-include:
-  - docs
-  - docs/css
-  - docs/assets

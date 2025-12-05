@@ -21,10 +21,10 @@ exclude:
   - "*.pdf"
   - "*.png"
   - COMPLETION_SUMMARY.md
+  - remove_favicon.py
 
-# Include docs folder
+# Include docs folder explicitly
 include:
   - docs
-
-# Set source directory
-source: docs
+  - docs/css
+  - docs/assets

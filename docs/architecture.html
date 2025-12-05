@@ -5,6 +5,135 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Solution Architecture - Securaa Documentation</title>
     <link rel="stylesheet" href="css/styles.css">
+    <!-- Inline Table Styles for GitHub Pages -->
+    <style>
+        /* Table Base Styles */
+        table, .data-table, .comparison-table {
+            width: 100% !important;
+            border-collapse: collapse !important;
+            margin: 1.5rem 0 !important;
+            background: #ffffff !important;
+            font-size: 0.95rem !important;
+            line-height: 1.6 !important;
+            border: 2px solid #1e3a5f !important;
+            border-radius: 8px !important;
+            overflow: hidden !important;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1) !important;
+        }
+
+        /* Table Header Styles */
+        table thead, .data-table thead, .comparison-table thead {
+            background: linear-gradient(135deg, #1e3a5f 0%, #2d4a6f 100%) !important;
+        }
+
+        table th, .data-table th, .comparison-table th {
+            color: #ffffff !important;
+            font-weight: 700 !important;
+            font-size: 0.9rem !important;
+            text-transform: uppercase !important;
+            letter-spacing: 0.05em !important;
+            padding: 16px 20px !important;
+            text-align: left !important;
+            border: 1px solid #0f2744 !important;
+            border-top: none !important;
+            white-space: nowrap !important;
+        }
+
+        table th:first-child, .data-table th:first-child, .comparison-table th:first-child {
+            border-left: none !important;
+        }
+
+        table th:last-child, .data-table th:last-child, .comparison-table th:last-child {
+            border-right: none !important;
+        }
+
+        /* Table Body Row Styles */
+        table tbody tr:nth-child(odd), .data-table tbody tr:nth-child(odd), .comparison-table tbody tr:nth-child(odd) {
+            background-color: #ffffff !important;
+        }
+
+        table tbody tr:nth-child(even), .data-table tbody tr:nth-child(even), .comparison-table tbody tr:nth-child(even) {
+            background-color: #f1f5f9 !important;
+        }
+
+        table tbody tr:hover, .data-table tbody tr:hover, .comparison-table tbody tr:hover {
+            background-color: #e0f2fe !important;
+        }
+
+        /* Table Cell Styles */
+        table td, .data-table td, .comparison-table td {
+            padding: 14px 20px !important;
+            color: #374151 !important;
+            vertical-align: top !important;
+            text-align: left !important;
+            border: 1px solid #d1d5db !important;
+            font-size: 0.95rem !important;
+            line-height: 1.65 !important;
+        }
+
+        table td:first-child, .data-table td:first-child, .comparison-table td:first-child {
+            font-weight: 600 !important;
+            color: #1e293b !important;
+            background-color: rgba(241, 245, 249, 0.5) !important;
+            border-left: none !important;
+        }
+
+        table td:last-child, .data-table td:last-child, .comparison-table td:last-child {
+            border-right: none !important;
+        }
+
+        table tbody tr:last-child td, .data-table tbody tr:last-child td, .comparison-table tbody tr:last-child td {
+            border-bottom: none !important;
+        }
+
+        table tbody tr:nth-child(even) td:first-child,
+        .data-table tbody tr:nth-child(even) td:first-child,
+        .comparison-table tbody tr:nth-child(even) td:first-child {
+            background-color: rgba(226, 232, 240, 0.6) !important;
+        }
+
+        table tbody tr:hover td:first-child,
+        .data-table tbody tr:hover td:first-child,
+        .comparison-table tbody tr:hover td:first-child {
+            background-color: rgba(186, 230, 253, 0.5) !important;
+        }
+
+        /* Code in tables */
+        table code, .data-table code, .comparison-table code {
+            background: rgba(59, 130, 246, 0.1) !important;
+            color: #2563eb !important;
+            padding: 3px 8px !important;
+            border-radius: 4px !important;
+            font-family: 'JetBrains Mono', 'Monaco', 'Consolas', monospace !important;
+            font-size: 0.85rem !important;
+            font-weight: 500 !important;
+            border: 1px solid rgba(59, 130, 246, 0.2) !important;
+        }
+
+        /* Strong text in tables */
+        table td strong, .data-table td strong, .comparison-table td strong {
+            color: #0f172a !important;
+            font-weight: 700 !important;
+        }
+
+        /* Table container */
+        .table-container {
+            margin: 2rem 0 !important;
+            overflow-x: auto !important;
+            border: 2px solid #d1d5db !important;
+            border-radius: 12px !important;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08) !important;
+            background: #ffffff !important;
+        }
+
+        .table-container table {
+            margin: 0 !important;
+            border: none !important;
+            border-radius: 0 !important;
+            box-shadow: none !important;
+        }
+    </style>
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/themes/prism.min.css">
 </head>
